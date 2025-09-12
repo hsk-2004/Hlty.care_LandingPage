@@ -125,7 +125,7 @@ export default function ObesogenicWorld() {
               >
                 {obesogenicTabs.map((tab) => (
                   <div key={tab} className="w-full flex-shrink-0 px-4">
-                    <div className="bg-soft-yellow w-full rounded-lg text-primary h-[550px] flex flex-col">
+                    <div className="bg-soft-yellow w-full text-primary h-[550px] flex flex-col">
                       {/* Main Content Area */}
                       <div className="flex-1 p-6 flex flex-col">
                         {/* Tab Name Heading */}
@@ -175,7 +175,7 @@ export default function ObesogenicWorld() {
                       </div>
 
                       {/* White Paper Coming Soon - Attached to bottom */}
-                      <div className="bg-medium-yellow py-2 px-6 rounded-b-lg">
+                      <div className="bg-medium-yellow py-2 px-6">
                         <p className="text-gray-400 text-center italic text-sm">
                           White paper coming soon
                         </p>
