@@ -6,6 +6,7 @@ A modern, responsive web application built with Next.js that serves as India's l
 [![React](https://img.shields.io/badge/React-19.1.0-blue?style=flat-square&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=flat-square&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.1.12-38B2AC?style=flat-square&logo=tailwind-css)](https://tailwindcss.com/)
+[![Live Site](https://img.shields.io/badge/Live_Site-hlty.care-00b4a6?style=flat-square)](https://hlty.care)
 [![License](https://img.shields.io/badge/License-Private-red?style=flat-square)](#license)
 
 ## Table of Contents
@@ -35,7 +36,10 @@ A modern, responsive web application built with Next.js that serves as India's l
 - ⚡ **Performance Optimized** - Built with Next.js 15 and Turbopack for fast development and production builds
 - 🎨 **Modern UI/UX** - Beautiful animations with Framer Motion
 - 📧 **Email Integration** - Contact forms with Resend API
-- 🔍 **SEO Optimized** - Comprehensive meta tags and Open Graph support
+- 🔍 **SEO Optimized** - Comprehensive meta tags, structured data, and Open Graph support
+- 🖼️ **Image Optimization** - Next.js Image component with WebP/AVIF support
+- 📊 **Analytics Ready** - Web Vitals tracking and performance monitoring
+- 🚀 **PWA Ready** - Service worker and manifest for app-like experience
 
 ## Tech Stack
 
@@ -133,11 +137,29 @@ Create a `.env.local` file in the root directory:
 RESEND_API_KEY=your_resend_api_key_here
 
 # Next.js
-NEXT_PUBLIC_SITE_URL=https://hlty.in
+NEXT_PUBLIC_SITE_URL=https://hlty.care
 NEXT_PUBLIC_APP_ENV=production
 
 # Optional: Analytics
 NEXT_PUBLIC_GA_ID=your_google_analytics_id
+```
+
+### Image Loading Issues
+
+If you encounter image loading issues:
+
+1. **Check image paths** - Ensure all images are in the `public/` directory
+2. **Verify file names** - Check for case sensitivity (e.g., `logo.png` vs `Logo.png`)
+3. **Clear cache** - Run `rm -rf .next` to clear Next.js cache
+4. **Check console** - Look for 404 errors in browser developer tools
+
+**Common fixes:**
+```bash
+# Clear Next.js cache
+rm -rf .next
+
+# Restart development server
+npm run dev
 ```
 
 ## Project Structure
@@ -188,6 +210,28 @@ hlthy-fe/
 | `npm run start` | Start the production server |
 | `npm run lint` | Run ESLint to check for code issues |
 
+## Performance & SEO
+
+### SEO Features
+- ✅ **Meta Tags** - Comprehensive meta descriptions and keywords
+- ✅ **Open Graph** - Social media sharing optimization
+- ✅ **Twitter Cards** - Enhanced Twitter sharing
+- ✅ **Structured Data** - JSON-LD schema markup
+- ✅ **Sitemap** - Automatic sitemap generation
+- ✅ **Robots.txt** - Search engine crawling instructions
+
+### Performance Optimizations
+- ✅ **Image Optimization** - Next.js Image component with WebP/AVIF
+- ✅ **Code Splitting** - Automatic route-based code splitting
+- ✅ **Caching** - Optimized cache headers for static assets
+- ✅ **Compression** - Gzip compression enabled
+- ✅ **PWA Ready** - Service worker and manifest.json
+
+### Core Web Vitals
+- **LCP (Largest Contentful Paint)**: < 2.5s
+- **FID (First Input Delay)**: < 100ms  
+- **CLS (Cumulative Layout Shift)**: < 0.1
+
 
 ## Guidelines
 
@@ -220,9 +264,11 @@ This project is private and proprietary. All rights reserved.
 
 ## Contact
 
-**HLTY Beings**
-- Website: [https://hlty.in](https://hlty.in)
-- Email: [Contact us through the website](https://hlty.in)
+**HLTY - VOS Health and Life Solutions Private Limited**
+- Website: [https://hlty.care](https://hlty.care)
+- Email: hello@hlty.care
+- Phone: +91 9980545813
+- Address: A-301 Purva Panorama, Kalena Agrahara, Bannerghatta Road, Bangalore, Karnataka, India, 560076
 
 ### Team
 - **Suraj Prasad** - Hlty Founder
