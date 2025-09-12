@@ -8,33 +8,38 @@ import EnrollForQuizWrapper from "@/components/EnrollForQuiz/EnrollForQuizWrappe
 // import AboutUsSlider from "@/components/About-Us/AboutUsSlider/AboutUsSlider";
 
 export const metadata: Metadata = {
-  title: "About Us - HLTY | Meet Our Team & Mission",
+  title: "About Us - HLTY Team & Mission | Childhood Wellness Experts",
   description:
-    "Meet the HLTY team of clinicians, designers, educators, technologists, and parents on a shared mission to save childhood and secure the future of health through science, storytelling, and humor.",
+    "Meet the HLTY team of clinicians, designers, educators, technologists, and parents on a shared mission to save childhood and secure the future of health. Led by Suraj Prasad and Ankita Dey, we're building India's leading childhood wellness platform through science, storytelling, and humor.",
   keywords:
-    "about HLTY, team, mission, childhood wellness, Suraj Prasad, Ankita Dey, healthcare team, wellness mission",
+    "about HLTY, team, mission, childhood wellness, Suraj Prasad, Ankita Dey, healthcare team, wellness mission, VOS Health Solutions, clinical collective, parent collective, childhood health experts, healthcare innovation, wellness platform team, health technology, preventive healthcare",
   openGraph: {
-    title: "About Us - HLTY | Meet Our Team & Mission",
+    title: "About Us - HLTY Team & Mission | Childhood Wellness Experts",
     description:
-      "Meet the HLTY team on a shared mission to save childhood and secure the future of health.",
-    url: "https://hlty.in/about-us",
+      "Meet the HLTY team on a shared mission to save childhood and secure the future of health through science, storytelling, and humor.",
+    url: "https://hlty.care/about-us",
     images: [
       {
-        url: "/logo.png",
+        url: "https://hlty.care/logo.png",
         width: 1200,
         height: 630,
         alt: "HLTY Team - About Us",
       },
     ],
+    type: "website",
+    locale: "en_IN",
   },
   twitter: {
-    title: "About Us - HLTY | Meet Our Team & Mission",
+    card: "summary_large_image",
+    site: "@hltycare",
+    creator: "@hltycare",
+    title: "About Us - HLTY Team & Mission",
     description:
-      "Meet the HLTY team on a shared mission to save childhood and secure the future of health.",
-    images: ["/logo.png"],
+      "Meet the HLTY team on a shared mission to save childhood and secure the future of health through science and storytelling.",
+    images: ["https://hlty.care/logo.png"],
   },
   alternates: {
-    canonical: "https://hlty.in/about-us",
+    canonical: "https://hlty.care/about-us",
   },
 };
 
