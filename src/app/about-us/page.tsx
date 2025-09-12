@@ -57,7 +57,7 @@ export default function AboutUs() {
           {
             name: "Solutionec",
             description: "Knowledge, Clinical & Tech Partner",
-            image: "/images/company/solutionec.png",
+            image: "/images/company/solutionec.svg",
             link: "https://www.solutionec.com/",
           },
           {
@@ -113,8 +113,9 @@ export default function AboutUs() {
           },
           {
             name: "Sonika Choudhury",
-            image: "/images/company/sonika.png",
+            image: "/images/company/sonika.jpeg",
             link: "https://www.linkedin.com/in/sonika-choudhury-0097381a1/",
+            style: "object-cover"
           },
           {
             name: "Peeyush Jain",

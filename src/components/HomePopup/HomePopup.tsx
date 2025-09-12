@@ -24,13 +24,16 @@ export default function HomePopup() {
 
   useEffect(() => {
     // Only show popup on desktop after 10 seconds
-    if (!isMobile) {
-      // Check if popup was shown in the last 2 minutes
+    // This effect only runs when the component mounts (page load/reload/redirect)
+    const isMobileDevice = window.innerWidth < 1024;
+    
+    if (!isMobileDevice) {
+      // Check if popup was shown in the last 5 minutes
       const lastShown = localStorage.getItem('homePopupLastShown');
       const now = Date.now();
-      const twoMinutes = 2 * 60 * 1000; // 2 minutes in milliseconds
+      const fiveMinutes = 5 * 60 * 1000; // 5 minutes in milliseconds
       
-      if (!lastShown || (now - parseInt(lastShown)) > twoMinutes) {
+      if (!lastShown || (now - parseInt(lastShown)) > fiveMinutes) {
         const timer = setTimeout(() => {
           setIsOpen(true);
           // Store the time when popup was shown
@@ -40,7 +43,7 @@ export default function HomePopup() {
         return () => clearTimeout(timer);
       }
     }
-  }, [isMobile]);
+  }, []); // Empty dependency array - only runs once on mount
 
   const handleClose = () => {
     setIsOpen(false);

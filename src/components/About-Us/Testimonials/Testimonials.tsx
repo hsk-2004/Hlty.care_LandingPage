@@ -64,7 +64,7 @@ const Testimonials = () => {
             }}
           >
             <Image
-              src="/images/company/suraj.jpg"
+              src="/images/company/suraj.png"
               alt="suraj"
               width={240}
               height={240}
