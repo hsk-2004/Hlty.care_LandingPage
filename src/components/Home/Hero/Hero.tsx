@@ -26,7 +26,7 @@ const Hero = () => {
               src="/images/home/hero.png"
               alt="Hero Left"
               width={1000}
-              height={1000}
+              height={100}
               className="w-full h-auto"
               priority
             />
