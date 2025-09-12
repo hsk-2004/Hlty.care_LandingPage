@@ -20,19 +20,16 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
 
-  // Build for server deploys; run with node .next/standalone/server.js
-  output: 'standalone',
-
   // Use the built-in image optimizer (/ _next/image)
   images: {
-    formats: ['image/avif', 'image/webp'],
-    // Add remote hosts here if you load external images:
-    // remotePatterns: [{ protocol: 'https', hostname: 'your-cdn.example.com' }],
-    // DO NOT set `loader` or `unoptimized` if you want /_next/image to work
+    // Disable optimization completely for now to fix loading issues
+    unoptimized: true,
   },
 
   // App-level headers (play well with your Nginx caching)
   async headers() {
+    const isDevelopment = process.env.NODE_ENV === 'development';
+    
     return [
       // Immutable build assets
       {
@@ -47,7 +44,22 @@ const nextConfig = {
       // Public images (tune while iterating)
       {
         source: '/images/:path*',
-        headers: [{ key: 'Cache-Control', value: `public, max-age=${ONE_DAY}` }],
+        headers: [{ 
+          key: 'Cache-Control', 
+          value: isDevelopment 
+            ? 'public, max-age=0, must-revalidate' 
+            : `public, max-age=${ONE_DAY}` 
+        }],
+      },
+      // Root level images (logo, etc.)
+      {
+        source: '/:path*\\.(png|jpg|jpeg|gif|webp|svg|ico)',
+        headers: [{ 
+          key: 'Cache-Control', 
+          value: isDevelopment 
+            ? 'public, max-age=0, must-revalidate' 
+            : `public, max-age=${ONE_DAY}` 
+        }],
       },
       // Security headers for everything
       {

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     url: "https://hlty.care",
     images: [
       {
-        url: "https://hlty.care/logo.png",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "HLTY - India's Leading Childhood Wellness Platform",
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     creator: "@hltycare",
     title: "HLTY - India's Leading Childhood Wellness Platform",
     description: "Behind every healthy child is a heroic parent. Join our movement to combat childhood obesity with science-backed tools and interactive learning.",
-    images: ["https://hlty.care/logo.png"],
+    images: ["/logo.png"],
   },
   alternates: {
     canonical: "https://hlty.care",
@@ -58,7 +58,7 @@ export default function Home() {
     "name": "HLTY",
     "alternateName": "VOS Health and Life Solutions Private Limited",
     "url": "https://hlty.care",
-    "logo": "https://hlty.care/logo.png",
+    "logo": "/logo.png",
     "description": "India's leading childhood wellness platform helping parents raise healthier, happier children through playful tools, joyful routines, and science-backed habits that heal.",
     "foundingDate": "2024",
     "founders": [

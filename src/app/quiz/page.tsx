@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     url: "https://hlty.care/quiz",
     images: [
       {
-        url: "https://hlty.care/logo.png",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "HLTY Health & Wellness Quiz for Kids",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     creator: "@hltycare",
     title: "Health & Wellness Quiz for Kids | HLTY",
     description: "Join our interactive health and wellness quiz for children. Learn about nutrition and healthy habits while winning prizes!",
-    images: ["https://hlty.care/logo.png"],
+    images: ["/logo.png"],
   },
   alternates: {
     canonical: "https://hlty.care/quiz",

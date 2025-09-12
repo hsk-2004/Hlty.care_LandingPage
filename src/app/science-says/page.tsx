@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     url: "https://hlty.care/science-says",
     images: [
       {
-        url: "https://hlty.care/logo.png",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "HLTY Science Says - Evidence-Based Childhood Health Research",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     creator: "@hltycare",
     title: "Science Says | Evidence-Based Childhood Health Research",
     description: "Explore evidence-based research on childhood health, nutrition, and wellness. Understand the science behind healthy living.",
-    images: ["https://hlty.care/logo.png"],
+    images: ["/logo.png"],
   },
   alternates: {
     canonical: "https://hlty.care/science-says",

@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     url: "https://hlty.care/about-us",
     images: [
       {
-        url: "https://hlty.care/logo.png",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "HLTY Team - About Us",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
     title: "About Us - HLTY Team & Mission",
     description:
       "Meet the HLTY team on a shared mission to save childhood and secure the future of health through science and storytelling.",
-    images: ["https://hlty.care/logo.png"],
+    images: ["/logo.png"],
   },
   alternates: {
     canonical: "https://hlty.care/about-us",

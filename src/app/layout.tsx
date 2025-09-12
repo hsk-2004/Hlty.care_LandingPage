@@ -35,7 +35,7 @@ export const metadata: Metadata = {
     siteName: "HLTY",
     images: [
       {
-        url: "https://hlty.care/logo.png",
+        url: "/logo.png",
         width: 1200,
         height: 630,
         alt: "HLTY - India's Leading Childhood Wellness Platform",
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     creator: "@hltycare",
     title: "HLTY - India's Leading Childhood Wellness Platform",
     description: "Help your children grow healthier, happier, and stronger with science-backed tools and interactive learning experiences.",
-    images: ["https://hlty.care/logo.png"],
+    images: ["/logo.png"],
   },
   robots: {
     index: true,
