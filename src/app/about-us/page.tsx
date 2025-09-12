@@ -63,7 +63,7 @@ export default function AboutUs() {
           {
             name: "Author Nest",
             description: "Marketing Partner",
-            image: "/images/company/authors-nest.png",
+            image: "/images/company/authors-nest.webp",
             link: "https://theauthorsnest.com/",
             style: "lg:-mt-8"
           },
@@ -87,16 +87,6 @@ export default function AboutUs() {
         heading="Advisors"
         cards={[
           {
-            name: "Karthik 'KK' Subramanian",
-            image: "/images/company/karthik.jpg",
-            link: "https://www.linkedin.com/in/karthik-krishnan-subramanian-2234a42/",
-          },
-          {
-            name: "Sonika Choudhury",
-            image: "/images/company/sonika.png",
-            link: "https://www.linkedin.com/in/sonika-choudhury-0097381a1/",
-          },
-          {
             name: "Rafeek Muhammed Mannantakath",
             image: "/images/company/rafeek.png",  
             link: "https://www.linkedin.com/in/rafmannan/",
@@ -115,6 +105,26 @@ export default function AboutUs() {
             name: "Ratheesh Elayat",
             image: "/images/company/ratheesh.png",
             link: "https://www.linkedin.com/in/ratheeshelayat",
+          },
+          {
+            name: "Karthik 'KK' Subramanian",
+            image: "/images/company/karthik.jpg",
+            link: "https://www.linkedin.com/in/karthik-krishnan-subramanian-2234a42/",
+          },
+          {
+            name: "Sonika Choudhury",
+            image: "/images/company/sonika.png",
+            link: "https://www.linkedin.com/in/sonika-choudhury-0097381a1/",
+          },
+          {
+            name: "Peeyush Jain",
+            image: "/images/company/peeyush.jpg",
+            link: "https://www.linkedin.com/in/peeyush2000/",
+          },
+          {
+            name: "Tity Lyngdoh",
+            image: "/images/company/tity.jpeg",
+            link: "https://www.linkedin.com/in/tity-moni/",
           },
         ]}
       />

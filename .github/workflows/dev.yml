@@ -1,11 +1,13 @@
 name: Deploy on Prod Env
 on:
-  push:
+  pull_request:
+    types:
+      - closed
     branches:
       - main
-
 jobs:
   deploy:
+    if: github.event.pull_request.merged == true
     name: deploy
     runs-on: ubuntu-latest
 
@@ -21,6 +23,5 @@ jobs:
           
       - name: Connect, Pull and Deploy
         run: ssh ${{ secrets.PROD_SSH_USER }}@${{ secrets.PROD_SSH_HOST }} "export NVM_DIR=~/.nvm && source ~/.nvm/nvm.sh && cd ${{ secrets.WORK_DIR }} && git checkout ${{ secrets.PROD_BRANCH }} && git pull && npm i --legacy-peer-deps && npm run build && pm2 reload web && exit"
-
       - name: cleanup
         run: rm -rf ~/.ssh
