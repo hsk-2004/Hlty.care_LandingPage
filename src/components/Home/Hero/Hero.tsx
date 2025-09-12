@@ -28,6 +28,7 @@ const Hero = () => {
               width={1000}
               height={1000}
               className="w-full h-auto"
+              priority
             />
           </motion.div>
 
