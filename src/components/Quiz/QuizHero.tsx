@@ -26,7 +26,7 @@ export default function QuizHero() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <Image
-            src="/theo-happy.png"
+            src="/Theo-happy.png"
             alt="Quiz character with glasses and checkered scarf"
             width={400}
             height={400}
