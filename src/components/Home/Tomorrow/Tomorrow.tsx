@@ -136,8 +136,7 @@ const Tomorrow = () => {
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
         >
-          Today, <span className="font-aleo font-extrabold">15M</span> kids are
-          obese. Start reversing the clock
+          Today, over <span className="font-aleo font-extrabold">400M</span> kids are overweight in the world. Start reversing the clock
         </motion.h3>
         {/* <div className="h-1 mt-1 flex justify-center lg:-ml-32">
           <div className="flex -ml-16">
@@ -158,7 +157,7 @@ const Tomorrow = () => {
 
         {/* Button */}
         <motion.div
-          className="mt-6 flex justify-center"
+          className="mt-8 flex justify-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}

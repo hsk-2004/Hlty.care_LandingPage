@@ -122,7 +122,7 @@ export default function QuizHero() {
 
             {/* Action buttons */}
             <div className="mt-14 w-full flex items-center justify-center text-white font-medium text-center gap-2 sm:gap-3 flex-wrap">
-              <div className="relative bg-yellow px-4 min-w-[280px] flex items-center justify-center text-center py-2 rounded-none cursor-pointer hover:bg-yellow/90 transition-colors">
+              <a href="https://docs.google.com/forms/d/e/1FAIpQLScHa2R2hB-2gc507-82Mc1FI_A8Yya_u3avJDkj8ZERnaB0lg/viewform?usp=preview" target="_blank" rel="noopener noreferrer" className="relative bg-yellow px-4 min-w-[280px] flex items-center justify-center text-center py-2 rounded-none cursor-pointer hover:bg-yellow/90 transition-colors">
                 <Image
                   src="/three.png"
                   alt="Three Icon-alt"
@@ -131,7 +131,7 @@ export default function QuizHero() {
                   className="absolute -top-3 -left-4 sm:-top-4 sm:-left-5 rotate-180 w-4 h-4 sm:w-5 sm:h-5"
                 />
                 <p className="text-xl sm:text-xl">Register your school</p>
-              </div>
+              </a>
               <div className="relative bg-gray-400 px-4 min-w-[280px] flex items-end justify-center text-center py-2.5 rounded-none">
                 <p className="text-xl sm:text-base relative w-full text-center flex items-center justify-center">
                   School pack

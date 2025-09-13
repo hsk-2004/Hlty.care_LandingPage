@@ -11,7 +11,10 @@ export default function QuizFooter() {
       transition={{ duration: 0.6 }}
       viewport={{ once: true }}
     >
-      <motion.div 
+      <motion.a 
+        href="https://docs.google.com/forms/d/e/1FAIpQLScHa2R2hB-2gc507-82Mc1FI_A8Yya_u3avJDkj8ZERnaB0lg/viewform?usp=preview"
+        target="_blank"
+        rel="noopener noreferrer"
         className="relative bg-yellow px-4 py-1 sm:px-6 sm:py-1 rounded-none cursor-pointer hover:bg-yellow/90 transition-colors"
         whileHover={{ scale: 1.05, y: -2 }}
         whileTap={{ scale: 0.95 }}
@@ -24,7 +27,7 @@ export default function QuizFooter() {
           className="absolute -top-3 -left-4 sm:-top-4 sm:-left-5 rotate-180 w-4 h-4 sm:w-5 sm:h-5"
         />
         <p className="text-sm sm:text-lg">Register your school</p>
-      </motion.div>
+      </motion.a>
       <motion.div 
         className="relative bg-gray-400 px-2 py-1 flex items-center justify-center text-center rounded-none"
       >
