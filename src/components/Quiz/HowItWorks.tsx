@@ -69,7 +69,7 @@ export default function HowItWorks() {
             Oct 10-31, 2025
           </p>
           <p className="text-primary text-xs sm:text-sm font-light text-center max-w-xs">
-            conduct at your school <br /> with provided quiz kit
+            To be conducted at a set time, date, and center to be announced soon.
           </p>
         </motion.div>
 

@@ -12,29 +12,29 @@ const caveat = Caveat({
 const quizItems = [
   {
     question:
-      "Which vitamin is primarily produced when skin is exposed to sunlight?",
+      "In which yoga pose do you sit cross-legged with your hands resting on your knees and focus on your breath to achieve relaxation and mental clarity?",
     answer: 1,
-    options: ["Vitamin A", "Vitamin D", "Vitamin C", "Vitamin K"],
-    correctOption: "Vitamin D",
+    options: ["Virasana", "Padmasana", "Bhujangasana", "Siddhasana"],
+    correctOption: "Padmasana",
   },
   {
-    question: "What is the powerhouse of the cell?",
+    question: "The masseter is one of the strongest muscles in the human body, and can exert a force of up to 90 kg. In which part of the body will you find it?",
     answer: 0,
-    options: ["Mitochondria", "Nucleus", "Ribosome", "Chloroplast"],
-    correctOption: "Mitochondria",
+    options: ["Mouth", "Thighs", "Arms", "Back"],
+    correctOption: "Mouth",
   },
   {
-    question: "Which blood cells help the body fight infections?",
-    answer: 1,
-    options: ["Red blood cells", "White blood cells", "Platelets", "Plasma"],
-    correctOption: "White blood cells",
+    question: "Vitamin B1, also known as thiamine, helps the body convert carbohydrates into energy. What common deficiency disease is associated with a lack of this vitamin?",
+    answer: 3,
+    options: ["Rickets", "Anemia", "Diabetes", "Beriberi"],
+    correctOption: "Beriberi",
   },
-  {
-    question: "What part of the human brain controls balance and coordination?",
-    answer: 2,
-    options: ["Cerebrum", "Medulla", "Cerebellum", "Hypothalamus"],
-    correctOption: "Cerebellum",
-  },
+  // {
+  //   question: "What part of the human brain controls balance and coordination?",
+  //   answer: 2,
+  //   options: ["Cerebrum", "Medulla", "Cerebellum", "Hypothalamus"],
+  //   correctOption: "Cerebellum",
+  // },
 ];
 
 export default function SampleQuiz() {
