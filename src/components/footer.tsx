@@ -115,6 +115,7 @@ export default function Footer() {
                     <p>Bangalore,</p>
                     <p>Bangalore South,</p>
                     <p>Karnataka, India, 560076</p>
+                    <p className="mt-2">CIN U86909KA2023PTC181856</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
