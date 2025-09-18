@@ -21,7 +21,7 @@ const faqItems = [
   },
   {
     question: "Who can participate?",
-    answer: `Students from Grades 5–8 of any recognized school in Bangalore can participate. Teams must have 3 students. Members can be from the same or different grades. Each school may nominate up to 5 teams.`,
+    answer: `Students from Grades 5–8 of any recognized school in Bangalore can participate. Teams must have 3 students. Members can be from the same or different grades. Each school may nominate up to 2 teams.`,
   },
   {
     question: "How will the prelims work?",
@@ -95,7 +95,7 @@ export default function FAQ() {
 
   return (
     <div className="flex flex-col items-center mt-12 sm:mt-16 w-full max-w-4xl mx-auto pb-20 sm:pb-30 px-4 overflow-hidden">
-      <motion.h2 
+      <motion.h2
         className="text-center text-xl sm:text-2xl font-bold mb-6 sm:mb-8 text-primary"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -104,7 +104,7 @@ export default function FAQ() {
       >
         FAQ
       </motion.h2>
-      <motion.div 
+      <motion.div
         className="flex flex-col lg:flex-row gap-4 w-full overflow-hidden"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
