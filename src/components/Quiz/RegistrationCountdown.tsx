@@ -13,7 +13,7 @@ export default function RegistrationCountdown() {
   const [daysLeft, setDaysLeft] = useState(0);
 
   useEffect(() => {
-    const targetDate = new Date('September 30, 2025 23:59:59').getTime();
+    const targetDate = new Date('October 8, 2025 23:59:59').getTime();
 
     const timer = setInterval(() => {
       const now = new Date().getTime();
