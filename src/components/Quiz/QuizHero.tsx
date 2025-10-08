@@ -159,7 +159,7 @@ export default function QuizHero() {
             <p
               className={`text-primary mt-4 text-sm sm:text-base md:text-lg leading-relaxed mb-6 sm:mb-8 max-w-3xl mx-auto ${montserrat.className}`}
             >
-              Register by 14th October 2025
+              Register by 18th October 2025
             </p>
           </div>
 

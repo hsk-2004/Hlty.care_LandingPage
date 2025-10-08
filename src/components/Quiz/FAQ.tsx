@@ -21,7 +21,7 @@ const faqItems = [
   },
   {
     question: "Who can participate?",
-    answer: `Students from Grades 5–8 of any recognized school in Bangalore can participate. Teams must have 3 students. Members can be from the same or different grades. Each school may nominate up to 2 teams.`,
+    answer: `Students from Grades 5–8 of any recognized school in Bangalore can participate. Teams must have 3 students. Members can be from the same or different grades. Each school may nominate up to 3 teams.`,
   },
   {
     question: "How will the prelims work?",
