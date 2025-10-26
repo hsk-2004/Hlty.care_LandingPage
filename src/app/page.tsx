@@ -12,6 +12,7 @@ import Tomorrow from "@/components/Home/Tomorrow/Tomorrow";
 import PeopleSay from "@/components/Home/PeopleSay/PeopleSay";
 import EnrollForQuizWrapper from "@/components/EnrollForQuiz/EnrollForQuizWrapper";
 import HomePopup from "@/components/HomePopup/HomePopup";
+import HubbaWrapper from "@/components/Hubba/HubbaWrapper";
 
 // Set the metadata for the page here
 export const metadata: Metadata = {
@@ -152,6 +153,8 @@ export default function Home() {
 
         {/* Press & Media */}
         <Slide />
+
+        <HubbaWrapper />
         
         {/* Enroll For Quiz */}
         <EnrollForQuizWrapper />
