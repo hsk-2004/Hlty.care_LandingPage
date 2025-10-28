@@ -11,7 +11,7 @@ export default function FollowAlt() {
           <a
             target="_blank"
             rel="noopener noreferrer"
-            href="https://www.instagram.com/raising.hltyhumans?igsh=bGcweWVpNmFjenZs"
+            href="https://www.instagram.com/hltybeings?igsh=MWdoMTExeDNpajhzcg=="
           >
             <Image
               src="/instagram-alt.png"

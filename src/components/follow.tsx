@@ -8,7 +8,7 @@ export default function Follow() {
       </h3>
       <ul className="flex justify-center gap-2">
       <li>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/raising.hltyhumans?igsh=bGcweWVpNmFjenZs">
+          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/hltybeings?igsh=MWdoMTExeDNpajhzcg==">
             <Image
               src="/instagram.png"
               alt="Instagram-alt"

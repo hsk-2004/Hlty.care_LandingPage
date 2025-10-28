@@ -164,10 +164,12 @@ const Tomorrow = () => {
           viewport={{ once: true }}
         >
           <motion.a
-            href="https://www.instagram.com/raising.hltyhumans?igsh=bGcweWVpNmFjenZs"
+            href="https://www.instagram.com/hltybeings?igsh=MWdoMTExeDNpajhzcg=="
             className="bg-[#FFB21E] font-aleo font-[700] text-white px-4 py-2 rounded-md text-center relative"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
+            target="_blank"
+            rel="noopener noreferrer"
           >
             Join the movement
             <motion.div>
