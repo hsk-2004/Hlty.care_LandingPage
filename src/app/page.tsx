@@ -160,7 +160,7 @@ export default function Home() {
         <EnrollForQuizWrapper />
         
         {/* Home Popup */}
-        <HomePopup />
+        {/* <HomePopup /> */}
       </div>
     </>
   );
