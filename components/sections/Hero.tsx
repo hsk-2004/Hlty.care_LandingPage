@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import DesignPanel from "@/components/ui/DesignPanel";
 
 const scatteredElements = [
   { top: "15%", left: "30%", color: "blue" },
@@ -91,70 +90,6 @@ export default function Hero() {
           <span className="block whitespace-nowrap">across schools, camps, and shared spaces.</span>
         </motion.p>
       </div>
-
-      {/* Floating Design Panels */}
-      <motion.div
-        initial={{ opacity: 0, x: 20, y: -20 }}
-        animate={{ opacity: 1, x: 0, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-        className="absolute right-8 top-32 hidden lg:block z-20 scale-90 origin-top-right space-y-4"
-      >
-        <DesignPanel
-          sections={[
-            {
-              title: "Layout",
-              properties: [
-                { label: "Width", value: "268px" },
-                { label: "Height", value: "30px" }
-              ]
-            },
-            {
-              title: "Content",
-              content: "Experiences for Children"
-            },
-            {
-              title: "Typography",
-              properties: [
-                { label: "Font", value: "Jubilat" },
-                { label: "Weight", value: "400" },
-                { label: "Style", value: "Regular" },
-                { label: "Size", value: "24px" },
-                { label: "Line height", value: "100%" },
-                { label: "Letter spacing", value: "0%" },
-                { label: "Horizontal align...", value: "Center" }
-              ]
-            }
-          ]}
-        />
-
-        <DesignPanel
-          sections={[
-            {
-              title: "Layout",
-              properties: [
-                { label: "Width", value: "268px" },
-                { label: "Height", value: "30px" }
-              ]
-            },
-            {
-              title: "Content",
-              content: "Designed for children to return to — across schools, camps, and shared spaces."
-            },
-            {
-              title: "Typography",
-              properties: [
-                { label: "Font", value: "Jubilat" },
-                { label: "Weight", value: "400" },
-                { label: "Style", value: "Regular" },
-                { label: "Size", value: "12px" },
-                { label: "Line height", value: "100%" },
-                { label: "Letter spacing", value: "0%" },
-                { label: "Horizontal align...", value: "Center" }
-              ]
-            }
-          ]}
-        />
-      </motion.div>
     </section>
   );
 }
