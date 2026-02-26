@@ -1,0 +1,160 @@
+"use client";
+
+import { motion } from "framer-motion";
+import DesignPanel from "@/components/ui/DesignPanel";
+
+const scatteredElements = [
+  { top: "15%", left: "30%", color: "blue" },
+  { top: "25%", left: "55%", color: "green" },
+  { top: "20%", left: "80%", color: "red" },
+  { top: "35%", left: "10%", color: "orange" },
+  { top: "38%", left: "68%", color: "blue" },
+  { top: "45%", left: "22%", color: "green" },
+  { top: "50%", left: "48%", color: "red" },
+  { top: "55%", left: "88%", color: "orange" },
+  { top: "75%", left: "10%", color: "red" },
+  { top: "90%", left: "22%", color: "blue" },
+  { top: "88%", left: "42%", color: "orange" },
+  { top: "92%", left: "68%", color: "red" },
+  { top: "85%", left: "88%", color: "green" },
+];
+
+const DistressedSquare = ({ color }: { color: string }) => {
+  const colors: Record<string, string> = {
+    blue: "#4a6fa5",
+    green: "#82c09a",
+    red: "#d9534f",
+    orange: "#f0ad4e",
+  };
+
+  return (
+    <div
+      className="w-10 h-10 opacity-70"
+      style={{
+        backgroundColor: colors[color],
+        maskImage: 'url("https://www.transparenttextures.com/patterns/distressed-grid.png")',
+        WebkitMaskImage: 'url("https://www.transparenttextures.com/patterns/distressed-grid.png")',
+        clipPath: 'polygon(2% 2%, 98% 5%, 95% 95%, 5% 98%)' // Slightly irregular shape
+      }}
+    />
+  );
+};
+
+export default function Hero() {
+  return (
+    <section className="relative flex flex-col items-center pt-32 md:pt-40 pb-12 text-center px-4 overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 pointer-events-none">
+        {/* Large Background SVG */}
+        <div className="absolute inset-0 flex items-start justify-center pt-20 md:pt-40 opacity-100 overflow-hidden">
+          <img
+            src="/back.svg"
+            alt=""
+            className="w-[337px] h-[200px] opacity-80 select-none pointer-events-none"
+            style={{ transform: "rotate(-180deg)" }}
+          />
+        </div>
+
+        {scatteredElements.map((el, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 0.6, scale: 1 }}
+            transition={{ delay: i * 0.1, duration: 0.5 }}
+            className="absolute"
+            style={{ top: el.top, left: el.left }}
+          >
+            <DistressedSquare color={el.color} />
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Main Content */}
+      <div className="relative z-10 max-w-4xl mx-auto space-y-4">
+
+        <motion.h1
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="font-serif text-[24px] leading-[100%] text-foreground"
+        >
+          Experiences for Children
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="font-serif text-[12px] leading-tight mx-auto text-foreground opacity-60 text-center space-y-1"
+        >
+          <span className="block whitespace-nowrap">Designed for children to return to —</span>
+          <span className="block whitespace-nowrap">across schools, camps, and shared spaces.</span>
+        </motion.p>
+      </div>
+
+      {/* Floating Design Panels */}
+      <motion.div
+        initial={{ opacity: 0, x: 20, y: -20 }}
+        animate={{ opacity: 1, x: 0, y: 0 }}
+        transition={{ delay: 0.6, duration: 0.8 }}
+        className="absolute right-8 top-32 hidden lg:block z-20 scale-90 origin-top-right space-y-4"
+      >
+        <DesignPanel
+          sections={[
+            {
+              title: "Layout",
+              properties: [
+                { label: "Width", value: "268px" },
+                { label: "Height", value: "30px" }
+              ]
+            },
+            {
+              title: "Content",
+              content: "Experiences for Children"
+            },
+            {
+              title: "Typography",
+              properties: [
+                { label: "Font", value: "Jubilat" },
+                { label: "Weight", value: "400" },
+                { label: "Style", value: "Regular" },
+                { label: "Size", value: "24px" },
+                { label: "Line height", value: "100%" },
+                { label: "Letter spacing", value: "0%" },
+                { label: "Horizontal align...", value: "Center" }
+              ]
+            }
+          ]}
+        />
+
+        <DesignPanel
+          sections={[
+            {
+              title: "Layout",
+              properties: [
+                { label: "Width", value: "268px" },
+                { label: "Height", value: "30px" }
+              ]
+            },
+            {
+              title: "Content",
+              content: "Designed for children to return to — across schools, camps, and shared spaces."
+            },
+            {
+              title: "Typography",
+              properties: [
+                { label: "Font", value: "Jubilat" },
+                { label: "Weight", value: "400" },
+                { label: "Style", value: "Regular" },
+                { label: "Size", value: "12px" },
+                { label: "Line height", value: "100%" },
+                { label: "Letter spacing", value: "0%" },
+                { label: "Horizontal align...", value: "Center" }
+              ]
+            }
+          ]}
+        />
+      </motion.div>
+    </section>
+  );
+}
