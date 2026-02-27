@@ -2,9 +2,29 @@
 
 import { ShoppingBag, Menu } from "lucide-react";
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { useState } from "react";
 
 export default function Navbar() {
+    const [hidden, setHidden] = useState(false);
+    const [scrolled, setScrolled] = useState(false);
+    const { scrollY } = useScroll();
+
+    useMotionValueEvent(scrollY, "change", (latest) => {
+        const previous = scrollY.getPrevious() ?? 0;
+        if (latest > previous && latest > 150) {
+            setHidden(true);
+        } else {
+            setHidden(false);
+        }
+
+        if (latest > 50) {
+            setScrolled(true);
+        } else {
+            setScrolled(false);
+        }
+    });
+
     const navLinks = [
         { name: "EXPLORE", href: "#" },
         { name: "WORKSHOPS", href: "/workshop" },
@@ -14,15 +34,19 @@ export default function Navbar() {
 
     return (
         <motion.nav
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="fixed top-0 left-0 w-full z-50 p-8 md:py-6 md:px-12 flex justify-between items-center transition-all"
+            variants={{
+                visible: { y: 0, opacity: 1 },
+                hidden: { y: "-100%", opacity: 0 },
+            }}
+            animate={hidden ? "hidden" : "visible"}
+            transition={{ duration: 0.35, ease: "easeInOut" }}
+            className={`fixed top-0 left-0 w-full z-50 p-6 md:py-4 md:px-12 flex justify-between items-center transition-all duration-300 ${scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+                }`}
         >
             <div className="max-w-7xl mx-auto flex justify-between items-center w-full">
                 {/* Logo Section */}
                 <Link href="/" className="flex items-center gap-2 group">
-                    <img src="/logo.svg" alt="Logo" className="h-10 w-auto" />
+                    <img src="/logo.svg" alt="Logo" className="h-8 md:h-10 w-auto" />
                     <span className="hidden md:inline font-serif text-[20px] text-[#183A39] tracking-tight">
                         Hlty Beings
                     </span>
@@ -54,7 +78,7 @@ export default function Navbar() {
 
                     {/* Original Mobile Menu Icon */}
                     <button className="md:hidden text-foreground p-1 hover:opacity-70 transition-opacity">
-                        <Menu size={40} strokeWidth={2.5} />
+                        <Menu size={32} strokeWidth={2.5} />
                     </button>
                 </div>
             </div>
