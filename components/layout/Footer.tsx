@@ -9,13 +9,22 @@ export default function Footer() {
             className="w-full text-[#F0EEE6] overflow-hidden"
             style={{
                 backgroundColor: "#183A39",
-                paddingTop: "40px",
+                paddingTop: "0px",
                 paddingRight: "32px",
                 paddingBottom: "0px",
                 paddingLeft: "32px",
             }}
         >
-            <div className="flex flex-col" style={{ gap: "40px" }}>
+            {/* Top Image */}
+            <div className="-mx-8 bg-[#F0EEE6]">
+                <img
+                    src="/f1 copy.svg"
+                    alt="Footer top decoration"
+                    className="w-full h-auto block"
+                />
+            </div>
+
+            <div className="flex flex-col pt-10" style={{ gap: "40px" }}>
 
                 {/* Logo + Disclaimer + Social */}
                 <div className="flex flex-col" style={{ gap: "24px" }}>
