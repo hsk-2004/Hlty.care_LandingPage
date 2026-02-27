@@ -51,7 +51,7 @@ export default function Footer() {
             transition={{ duration: 1 }}
             className="w-full bg-[#183A39] text-[#F0EEE6] overflow-hidden"
         >
-            {/* Mobile Top Decoration */}
+            {/* Mobile Top Decoration - Restored */}
             <div className="lg:hidden -mx-8 bg-[#F0EEE6]">
                 <img
                     src="/f1 copy.svg"
@@ -60,17 +60,17 @@ export default function Footer() {
                 />
             </div>
 
-            <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 py-12 lg:py-20">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 py-16 lg:py-20">
                 <motion.div
-                    initial={{ y: 20, opacity: 0 }}
-                    whileInView={{ y: 0, opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, delay: 0.2 }}
-                    className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start"
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    viewport={{ once: true, margin: "-50px" }}
+                    transition={{ duration: 0.8 }}
+                    className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-start"
                 >
 
-                    {/* Left Block: Logo, Disclaimer, Copyright, Socials */}
-                    <div className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left space-y-8">
+                    {/* Left Block: Logo, Disclaimer, Socials */}
+                    <div className="lg:col-span-6 flex flex-col items-start text-left space-y-8">
                         {/* Logo */}
                         <div className="flex items-center gap-4">
                             <img src="/logo.svg" alt="Hlty Beings" className="h-10 lg:h-12 w-auto" />
@@ -81,26 +81,21 @@ export default function Footer() {
                         </div>
 
                         {/* Disclaimer */}
-                        <p className="font-serif text-[12px] lg:text-[14px] leading-relaxed opacity-80 max-w-sm lg:max-w-md">
+                        <p className="font-serif text-[14px] lg:text-[14px] leading-relaxed opacity-90 lg:opacity-80 max-w-sm lg:max-w-md">
                             Hlty Beings&apos; products and services are not intended to
                             substitute for professional medical guidance.
                             Our content, products and experiential offerings do not
                             aim to diagnose, cure, or address any medical issues.
                         </p>
 
-                        {/* Copyright */}
-                        <p className="font-serif text-[12px] lg:text-[14px] opacity-90">
-                            © 2026 Hlty Beings
-                        </p>
-
                         {/* Social Icons */}
-                        <div className="flex items-center gap-6 lg:gap-8 pt-4">
+                        <div className="flex items-center gap-6 lg:gap-8 pt-2">
                             {socialIcons.map((social) => (
                                 <motion.a
                                     key={social.name}
                                     href={social.href}
                                     whileHover={{ y: -3, opacity: 1 }}
-                                    className="text-[#F0EEE6] opacity-80 transition-all font-sans"
+                                    className="text-[#F0EEE6] opacity-90 hover:opacity-100 transition-opacity"
                                     aria-label={social.name}
                                 >
                                     {social.icon}
@@ -110,10 +105,10 @@ export default function Footer() {
                     </div>
 
                     {/* Right Blocks: Navigation Sections */}
-                    <div className="lg:col-span-6 grid grid-cols-2 gap-8 lg:gap-24 w-full">
+                    <div className="lg:col-span-6 flex flex-col gap-12 lg:grid lg:grid-cols-2 lg:gap-24 w-full">
                         {/* Company Section */}
                         <div className="flex flex-col space-y-6 lg:space-y-8">
-                            <h3 className="font-sans text-[14px] lg:text-[16px] font-medium uppercase tracking-[0.2em] text-[#F0EEE6]">
+                            <h3 className="font-sans text-[16px] lg:text-[16px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
                                 Company
                             </h3>
                             <nav className="flex flex-col space-y-4 lg:space-y-5">
@@ -121,7 +116,7 @@ export default function Footer() {
                                     <a
                                         key={link}
                                         href="#"
-                                        className="font-serif text-[15px] lg:text-[18px] text-[#F0EEE6] opacity-80 hover:opacity-100 transition-all"
+                                        className="font-serif text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal"
                                     >
                                         {link}
                                     </a>
@@ -131,13 +126,13 @@ export default function Footer() {
 
                         {/* Legal Section */}
                         <div className="flex flex-col space-y-6 lg:space-y-8">
-                            <h3 className="font-sans text-[14px] lg:text-[16px] font-medium uppercase tracking-[0.2em] text-[#F0EEE6]">
+                            <h3 className="font-sans text-[16px] lg:text-[16px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
                                 Legal
                             </h3>
                             <nav className="flex flex-col space-y-4 lg:space-y-5">
-                                <a href="#" className="font-serif text-[15px] lg:text-[18px] text-[#F0EEE6] opacity-80 hover:opacity-100 transition-all">Privacy</a>
-                                <a href="#" className="font-serif text-[15px] lg:text-[18px] text-[#F0EEE6] opacity-80 hover:opacity-100 transition-all">Terms</a>
-                                <a href="#" className="flex items-center gap-3 font-serif text-[15px] lg:text-[18px] text-[#F0EEE6] opacity-80 hover:opacity-100 transition-all">
+                                <a href="#" className="font-serif text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">Privacy</a>
+                                <a href="#" className="font-serif text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">Terms</a>
+                                <a href="#" className="flex items-center gap-3 font-serif text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">
                                     <Mail size={18} />
                                     Contact Us
                                 </a>
@@ -145,9 +140,19 @@ export default function Footer() {
                         </div>
                     </div>
                 </motion.div>
+
+                {/* Copyright - Repositioned for left alignment */}
+                <motion.p
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 0.9 }}
+                    viewport={{ once: true }}
+                    className="font-serif text-[14px] mt-16 md:mt-20 text-left border-t border-white/10 pt-8"
+                >
+                    © 2026 Hlty Beings
+                </motion.p>
             </div>
 
-            {/* Mobile Bottom Decoration */}
+            {/* Mobile Bottom Decoration - Restored */}
             <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
