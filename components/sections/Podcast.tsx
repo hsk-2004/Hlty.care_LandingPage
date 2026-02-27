@@ -7,15 +7,20 @@ import { useState } from "react";
 export default function Testimonials() {
   const [email, setEmail] = useState("");
 
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+  };
+
   return (
     <section className="relative bg-background pt-0 pb-12 md:pb-24 lg:pt-32 lg:pb-0 px-6 md:px-12 lg:px-24 overflow-hidden">
       <div className="max-w-xl lg:max-w-[1440px] w-full mx-auto relative z-10">
         {/* Desktop Header Decorative Image */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: -20, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 1, ease: "easeOut" }}
           className="hidden lg:block w-full mt-[-100px] mb-[70px] relative z-20"
         >
           <div className="relative w-full flex items-center justify-center">
@@ -42,10 +47,10 @@ export default function Testimonials() {
 
           {/* Left Column: Information Card */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.15, duration: 0.5 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="mx-auto lg:mx-0 relative z-10 bg-[#F5B82E] px-6 lg:px-12 pt-10 pb-8 lg:py-12 flex flex-col justify-between gap-4 overflow-hidden lg:!w-[760px] lg:!h-[420px] lg:rounded-[24px]"
             style={{
               width: "340px",
@@ -90,7 +95,8 @@ export default function Testimonials() {
                 className="flex-1 bg-transparent text-[13px] lg:text-[16px] text-[#1a3636] placeholder:text-[#1a3636]/50 outline-none font-sans min-w-0"
               />
               <motion.button
-                whileTap={{ scale: 0.97 }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 className="flex items-center bg-[#1a3636] text-[#F0EEE6] rounded-full font-sans text-[12px] lg:text-[15px] font-medium whitespace-nowrap hover:bg-[#1a3636]/90 transition-all px-4 py-2 lg:px-6 lg:py-3"
               >
                 Join Community
@@ -101,10 +107,10 @@ export default function Testimonials() {
 
           {/* Right Column: Image */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.97 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="order-first lg:order-last overflow-hidden mx-auto lg:mx-0 lg:w-[45%] lg:!w-[500px] lg:!h-auto lg:rounded-[24px]"
             style={{
               width: "340px",
@@ -121,12 +127,17 @@ export default function Testimonials() {
             />
           </motion.div>
 
-          {/* Mobile-only text footer (to match original text content) */}
-          <div className="lg:hidden px-2 text-center opacity-70">
+          {/* Mobile-only text footer */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 0.7 }}
+            viewport={{ once: true }}
+            className="lg:hidden px-2 text-center"
+          >
             <p className="font-serif text-[12px] text-[#1a3636]">
               For parents who want to participate with their child, not observe from the sidelines.
             </p>
-          </div>
+          </motion.div>
 
         </div>
       </div>

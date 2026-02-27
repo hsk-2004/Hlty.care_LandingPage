@@ -21,39 +21,49 @@ export default function Workshops() {
         },
     ];
 
+    const containerVariants = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1,
+                delayChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    };
+
     return (
         <section className="relative bg-background pt-0 pb-12 md:pb-24 lg:pt-8 lg:pb-32 px-6 md:px-12 lg:px-24 overflow-hidden">
             <div className="max-w-xl lg:max-w-[1440px] mx-auto relative z-10">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                <motion.div
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: "-100px" }}
+                    variants={containerVariants}
+                    className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center"
+                >
 
                     {/* Left Column: Heading & CTA */}
                     <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 lg:space-y-10">
-                        <div className="space-y-4 lg:space-y-4 pt-12 lg:pt-0">
-                            <motion.h2
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                className="font-serif text-[24px] lg:text-[32px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] lg:max-w-none mx-auto lg:mx-0"
-                            >
+                        <motion.div variants={itemVariants} className="space-y-4 lg:space-y-4 pt-12 lg:pt-0">
+                            <h2 className="font-serif text-[24px] lg:text-[32px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] lg:max-w-none mx-auto lg:mx-0">
                                 Employer Workshops
-                            </motion.h2>
-                            <motion.p
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.1 }}
-                                className="font-serif text-[12px] lg:text-[16px] lg:font-normal leading-tight lg:leading-none text-[#183A39] opacity-80 lg:opacity-100 max-w-sm lg:max-w-md mx-auto lg:mx-0"
-                            >
+                            </h2>
+                            <p className="font-serif text-[12px] lg:text-[16px] lg:font-normal leading-tight lg:leading-none text-[#183A39] opacity-80 lg:opacity-100 max-w-sm lg:max-w-md mx-auto lg:mx-0">
                                 Workshops designed for working parents — acknowledging limited time, cognitive load, and competing demands.
-                            </motion.p>
-                        </div>
+                            </p>
+                        </motion.div>
 
                         {/* CTA Button - Desktop */}
                         <motion.button
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.5 }}
+                            variants={itemVariants}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
                             className="hidden lg:flex group items-center justify-between gap-4 w-[320px] h-[40px] bg-[#1a3636] text-[#F0EEE6] px-[24px] py-[6px] rounded-[24px] font-sans font-medium text-[16px] hover:bg-[#1a3636]/90 transition-all shadow-xl"
                         >
                             <span>Book A Workshop</span>
@@ -64,10 +74,7 @@ export default function Workshops() {
                     {/* Center Column: Image */}
                     <div className="lg:col-span-4 flex justify-center">
                         <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.2 }}
+                            variants={itemVariants}
                             className="relative w-full max-w-[480px] rounded-[24px] overflow-hidden shadow-lg"
                         >
                             <img
@@ -83,10 +90,7 @@ export default function Workshops() {
                         {points.map((point, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.3 + index * 0.1 }}
+                                variants={itemVariants}
                                 className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-2 lg:space-y-4"
                             >
                                 <h3 className="font-sans text-[16px] lg:text-[20px] font-medium lg:font-medium uppercase leading-normal lg:leading-tight text-[#183A39]">
@@ -104,10 +108,9 @@ export default function Workshops() {
 
                         {/* Mobile CTA Button */}
                         <motion.button
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: 0.5 }}
+                            variants={itemVariants}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
                             className="lg:hidden group flex items-center justify-between gap-4 w-full max-w-[381px] h-[32px] bg-[#1a3636] text-[#F0EEE6] px-6 rounded-[24px] font-sans font-medium text-[14px] hover:bg-[#1a3636]/90 transition-all shadow-lg mx-auto"
                         >
                             <span>Book A Workshop</span>
@@ -115,7 +118,7 @@ export default function Workshops() {
                         </motion.button>
                     </div>
 
-                </div>
+                </motion.div>
             </div>
         </section>
     );

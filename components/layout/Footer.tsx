@@ -44,7 +44,13 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="w-full bg-[#183A39] text-[#F0EEE6] overflow-hidden">
+        <motion.footer
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="w-full bg-[#183A39] text-[#F0EEE6] overflow-hidden"
+        >
             {/* Mobile Top Decoration */}
             <div className="lg:hidden -mx-8 bg-[#F0EEE6]">
                 <img
@@ -55,7 +61,13 @@ export default function Footer() {
             </div>
 
             <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 py-12 lg:py-20">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start">
+                <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-start"
+                >
 
                     {/* Left Block: Logo, Disclaimer, Copyright, Socials */}
                     <div className="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left space-y-8">
@@ -84,14 +96,15 @@ export default function Footer() {
                         {/* Social Icons */}
                         <div className="flex items-center gap-6 lg:gap-8 pt-4">
                             {socialIcons.map((social) => (
-                                <a
+                                <motion.a
                                     key={social.name}
                                     href={social.href}
-                                    className="text-[#F0EEE6] opacity-80 hover:opacity-100 transition-opacity"
+                                    whileHover={{ y: -3, opacity: 1 }}
+                                    className="text-[#F0EEE6] opacity-80 transition-all font-sans"
                                     aria-label={social.name}
                                 >
                                     {social.icon}
-                                </a>
+                                </motion.a>
                             ))}
                         </div>
                     </div>
@@ -131,17 +144,23 @@ export default function Footer() {
                             </nav>
                         </div>
                     </div>
-                </div>
+                </motion.div>
             </div>
 
             {/* Mobile Bottom Decoration */}
-            <div className="lg:hidden flex justify-center pb-12">
+            <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1 }}
+                className="lg:hidden flex justify-center pb-12"
+            >
                 <img
                     src="/bottom.svg"
                     alt="Footer decoration"
                     className="w-[80%] h-auto"
                 />
-            </div>
-        </footer>
+            </motion.div>
+        </motion.footer>
     );
 }

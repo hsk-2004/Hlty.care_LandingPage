@@ -50,7 +50,12 @@ export default function Hero() {
       <div className="absolute inset-0 pointer-events-none">
 
         {/* Background SVG Container */}
-        <div className="absolute inset-0 flex items-start justify-center pt-20 md:pt-40 overflow-hidden">
+        <motion.div
+          initial={{ opacity: 0, scale: 1.1 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute inset-0 flex items-start justify-center pt-20 md:pt-40 overflow-hidden"
+        >
 
           {/* Mobile */}
           <div className="md:hidden">
@@ -78,15 +83,34 @@ export default function Hero() {
             />
           </div>
 
-        </div>
+        </motion.div>
 
         {/* Scattered Elements */}
         {scatteredElements.map((el, i) => (
           <motion.div
             key={i}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 0.6, scale: 1 }}
-            transition={{ delay: i * 0.1, duration: 0.5 }}
+            initial={{ opacity: 0, scale: 0, rotate: -45 }}
+            animate={{
+              opacity: 0.6,
+              scale: 1,
+              rotate: 0,
+              y: [0, -10, 0],
+              x: [0, 5, 0]
+            }}
+            transition={{
+              delay: i * 0.05,
+              duration: 0.8,
+              y: {
+                duration: 4 + Math.random() * 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              },
+              x: {
+                duration: 5 + Math.random() * 2,
+                repeat: Infinity,
+                ease: "easeInOut"
+              }
+            }}
             className="absolute"
             style={{ top: el.top, left: el.left }}
           >
@@ -100,10 +124,10 @@ export default function Hero() {
       <div className="relative z-10 max-w-4xl mx-auto space-y-4 md:mt-16">
 
         <motion.h1
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-serif text-[24px] leading-[100%] text-foreground"
+          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          className="font-serif text-[24px] md:text-[48px] leading-[100%] text-foreground"
         >
           Experiences for Children
         </motion.h1>
@@ -111,8 +135,8 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-serif text-[12px] leading-tight mx-auto text-foreground opacity-60 text-center"
+          transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+          className="font-serif text-[12px] md:text-[18px] leading-tight mx-auto text-foreground opacity-60 text-center"
         >
           <span className="block whitespace-nowrap">
             Designed for children to return to —

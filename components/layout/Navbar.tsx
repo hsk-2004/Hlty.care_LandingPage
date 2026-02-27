@@ -2,6 +2,7 @@
 
 import { ShoppingBag, Menu } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Navbar() {
     const navLinks = [
@@ -12,7 +13,12 @@ export default function Navbar() {
     ];
 
     return (
-        <nav className="fixed top-0 left-0 w-full z-50 p-8 md:py-6 md:px-12 flex justify-between items-center transition-all">
+        <motion.nav
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+            className="fixed top-0 left-0 w-full z-50 p-8 md:py-6 md:px-12 flex justify-between items-center transition-all"
+        >
             <div className="max-w-7xl mx-auto flex justify-between items-center w-full">
                 {/* Logo Section */}
                 <Link href="/" className="flex items-center gap-2 group">
@@ -52,6 +58,6 @@ export default function Navbar() {
                     </button>
                 </div>
             </div>
-        </nav>
+        </motion.nav>
     );
 }
