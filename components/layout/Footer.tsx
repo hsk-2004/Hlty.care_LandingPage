@@ -166,6 +166,22 @@ export default function Footer() {
                     className="w-[80%] h-auto"
                 />
             </motion.div>
+
+            {/* Desktop Bottom Decoration - Added */}
+            <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.2 }}
+                className="hidden lg:flex justify-center pb-20"
+            >
+                <img
+                    src="/bottom1.svg"
+                    alt="Footer desktop decoration"
+                    className="w-[60%] h-auto opacity-80"
+                    style={{ transform: "scaleY(-1)" }}
+                />
+            </motion.div>
         </motion.footer>
     );
 }
