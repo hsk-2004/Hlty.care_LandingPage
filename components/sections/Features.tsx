@@ -122,6 +122,21 @@ export default function Features() {
             </div>
           </div>
 
+          {/* Desktop Footer Decorative Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+            className="hidden lg:block lg:col-span-12 mt-12"
+          >
+            <img
+              src="/back4.png"
+              alt="Decorative Background"
+              className="w-full h-auto object-contain"
+            />
+          </motion.div>
+
         </div>
       </div>
     </section>
