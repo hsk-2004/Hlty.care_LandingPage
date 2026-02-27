@@ -1,7 +1,9 @@
 import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import Features from "@/components/sections/Features";
-import Workshops from "@/components/sections/Workshops";
+import Workshops from "@/components/sections/Playshops";
+import Testimonials from "@/components/sections/Podcast";
+import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
@@ -10,7 +12,8 @@ export default function Home() {
       <Hero />
       <Features />
       <Workshops />
-      {/* Other sections will go here */}
+      <Testimonials />
+      <Footer />
     </main>
   );
 }
