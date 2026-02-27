@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const scatteredElements = [
@@ -18,22 +19,24 @@ const scatteredElements = [
   { top: "85%", left: "88%", color: "green" },
 ];
 
-const DistressedSquare = ({ color }: { color: string }) => {
-  const colors: Record<string, string> = {
-    blue: "#4a6fa5",
-    green: "#82c09a",
-    red: "#d9534f",
-    orange: "#f0ad4e",
-  };
+const colorMap: Record<string, string> = {
+  blue: "#4a6fa5",
+  green: "#82c09a",
+  red: "#d9534f",
+  orange: "#f0ad4e",
+};
 
+const DistressedSquare = ({ color }: { color: string }) => {
   return (
     <div
-      className="w-10 h-10 opacity-70"
+      className="w-10 h-10 opacity-70 will-change-transform"
       style={{
-        backgroundColor: colors[color],
-        maskImage: 'url("https://www.transparenttextures.com/patterns/distressed-grid.png")',
-        WebkitMaskImage: 'url("https://www.transparenttextures.com/patterns/distressed-grid.png")',
-        clipPath: 'polygon(2% 2%, 98% 5%, 95% 95%, 5% 98%)' // Slightly irregular shape
+        backgroundColor: colorMap[color],
+        maskImage:
+          'url("https://www.transparenttextures.com/patterns/distressed-grid.png")',
+        WebkitMaskImage:
+          'url("https://www.transparenttextures.com/patterns/distressed-grid.png")',
+        clipPath: "polygon(2% 2%, 98% 5%, 95% 95%, 5% 98%)",
       }}
     />
   );
@@ -41,19 +44,43 @@ const DistressedSquare = ({ color }: { color: string }) => {
 
 export default function Hero() {
   return (
-    <section className="relative flex flex-col items-center pt-32 md:pt-40 pb-12 text-center px-4 overflow-hidden">
+    <section className="relative flex flex-col items-center pt-32 md:pt-40 pb-12 md:pb-32 text-center px-4 overflow-hidden">
+
       {/* Background Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        {/* Large Background SVG */}
-        <div className="absolute inset-0 flex items-start justify-center pt-20 md:pt-40 opacity-100 overflow-hidden">
-          <img
-            src="/back.svg"
-            alt=""
-            className="w-[337px] h-[200px] opacity-80 select-none pointer-events-none"
-            style={{ transform: "rotate(-180deg)" }}
-          />
+
+        {/* Background SVG Container */}
+        <div className="absolute inset-0 flex items-start justify-center pt-20 md:pt-40 overflow-hidden">
+
+          {/* Mobile */}
+          <div className="md:hidden">
+            <Image
+              src="/back.svg"
+              alt=""
+              width={337}
+              height={200}
+              priority
+              className="select-none pointer-events-none opacity-100"
+              style={{ transform: "scaleY(-1)", height: "auto" }}
+            />
+          </div>
+
+          {/* Desktop */}
+          <div className="hidden md:block">
+            <Image
+              src="/back1.png"
+              alt=""
+              width={1100}
+              height={190}
+              priority
+              className="select-none pointer-events-none opacity-100"
+              style={{ transform: "scaleY(-1)", height: "auto" }}
+            />
+          </div>
+
         </div>
 
+        {/* Scattered Elements */}
         {scatteredElements.map((el, i) => (
           <motion.div
             key={i}
@@ -66,10 +93,11 @@ export default function Hero() {
             <DistressedSquare color={el.color} />
           </motion.div>
         ))}
+
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 max-w-4xl mx-auto space-y-4">
+      <div className="relative z-10 max-w-4xl mx-auto space-y-4 md:mt-16">
 
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -84,11 +112,16 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="font-serif text-[12px] leading-tight mx-auto text-foreground opacity-60 text-center space-y-1"
+          className="font-serif text-[12px] leading-tight mx-auto text-foreground opacity-60 text-center"
         >
-          <span className="block whitespace-nowrap">Designed for children to return to —</span>
-          <span className="block whitespace-nowrap">across schools, camps, and shared spaces.</span>
+          <span className="block whitespace-nowrap">
+            Designed for children to return to —
+          </span>
+          <span className="block whitespace-nowrap">
+            across schools, camps, and shared spaces.
+          </span>
         </motion.p>
+
       </div>
     </section>
   );
