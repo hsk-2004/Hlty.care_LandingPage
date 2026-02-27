@@ -93,11 +93,11 @@ export default function Footer() {
                 </div>
 
                 {/* Bottom Image */}
-                <div className="-mx-8">
+                <div className="flex justify-center -mx-8">
                     <img
                         src="/bottom.svg"
                         alt="Footer decoration"
-                        className="w-full h-auto"
+                        className="w-[80%] max-w-[1200px] h-auto"
                     />
                 </div>
 
