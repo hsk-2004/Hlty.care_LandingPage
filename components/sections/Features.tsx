@@ -23,7 +23,7 @@ export default function Features() {
   ];
 
   return (
-    <section className="relative bg-background pt-0 pb-12 md:pb-24 lg:py-32 px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative bg-background pt-0 pb-12 md:pb-24 lg:pt-0 lg:pb-8 px-6 md:px-12 lg:px-24 overflow-hidden">
       <div className="max-w-xl lg:max-w-[1440px] mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-start">
 
@@ -128,12 +128,12 @@ export default function Features() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.6 }}
-            className="hidden lg:block lg:col-span-12 mt-12"
+            className="hidden lg:block lg:col-span-12 mt-[-25px] flex justify-center"
           >
             <img
               src="/back4.png"
               alt="Decorative Background"
-              className="w-full h-auto object-contain"
+              className="w-[80%] h-auto object-contain mx-auto"
             />
           </motion.div>
 
