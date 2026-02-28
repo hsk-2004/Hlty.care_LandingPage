@@ -60,7 +60,7 @@ export default function Footer() {
                 />
             </div>
 
-            <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 py-16 lg:py-20">
+            <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 pt-16 lg:pt-20 pb-12 lg:pb-24">
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -73,7 +73,7 @@ export default function Footer() {
                     <div className="lg:col-span-6 flex flex-col items-start text-left space-y-8">
                         {/* Logo */}
                         <div className="flex items-center gap-4">
-                            <img src="/logo.svg" alt="Hlty Beings" className="h-10 lg:h-12 w-auto" />
+                            <img src="/logo_.svg" alt="Hlty Beings" className="h-10 lg:h-12 w-auto" />
                             <div className="font-serif text-[28px] lg:text-[36px] leading-none flex items-baseline gap-2">
                                 <span>Hlty</span>
                                 <span className="italic font-normal opacity-90">Beings</span>
@@ -141,15 +141,7 @@ export default function Footer() {
                     </div>
                 </motion.div>
 
-                {/* Copyright - Repositioned for left alignment */}
-                <motion.p
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 0.9 }}
-                    viewport={{ once: true }}
-                    className="font-serif text-[14px] mt-16 md:mt-20 text-left border-t border-white/10 pt-8"
-                >
-                    © 2026 Hlty Beings
-                </motion.p>
+
             </div>
 
             {/* Mobile Bottom Decoration - Restored */}
@@ -158,7 +150,7 @@ export default function Footer() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1 }}
-                className="lg:hidden flex justify-center pb-12"
+                className="lg:hidden flex justify-center pb-0"
             >
                 <img
                     src="/bottom.svg"
@@ -173,12 +165,12 @@ export default function Footer() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1.2 }}
-                className="hidden lg:flex justify-center pb-20"
+                className="hidden lg:flex justify-center pb-0"
             >
                 <img
                     src="/bottom1.svg"
                     alt="Footer desktop decoration"
-                    className="w-[60%] h-auto opacity-80"
+                    className="w-[90%] h-auto opacity-80"
                     style={{ transform: "scaleY(-1)" }}
                 />
             </motion.div>
