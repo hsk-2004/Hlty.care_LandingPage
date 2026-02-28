@@ -54,8 +54,10 @@ export default function Playshops() {
               <h2 className="font-serif text-[24px] lg:text-[24px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] lg:max-w-none mx-auto lg:mx-0">
                 School Playshops
               </h2>
-              <p className="font-serif text-[12px] lg:text-[12px] lg:font-normal leading-tight lg:leading-none text-[#183A39] opacity-80 lg:opacity-100 max-w-sm lg:max-w-md mx-auto lg:mx-0">
-                Interactive sessions designed to fit into a child's existing school day — without turning health into another subject to study.
+              <p className="font-serif text-[12px] lg:text-[16px] lg:font-normal leading-tight lg:leading-relaxed text-[#183A39] opacity-80 lg:opacity-100 max-w-sm lg:max-w-none mx-auto lg:mx-0">
+                Interactive sessions designed to fit into a child's <br className="hidden lg:inline" />
+                existing school day — without turning health <br className="hidden lg:inline" />
+                into another subject to study.
               </p>
             </motion.div>
 
@@ -75,7 +77,7 @@ export default function Playshops() {
           <div className="lg:col-span-4 flex justify-center">
             <motion.div
               variants={itemVariants}
-              className="relative w-full max-w-[480px] rounded-[24px] overflow-hidden shadow-lg"
+              className="relative w-full max-w-[480px] rounded-[24px] overflow-hidden shadow-lg lg:left-2"
             >
               <img
                 src="/p1.svg"
