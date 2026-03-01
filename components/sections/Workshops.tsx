@@ -8,15 +8,15 @@ export default function Workshops() {
         {
             title: "WHAT PARENTS USUALLY TAKE HOME",
             description: [
-                "Not a list of things to do. But a way to simplify decisions and reduce",
-                "friction around everyday health moments.",
+                "Not a list of things to do. But a way to simplify decisions and",
+                "reduce friction around everyday health moments.",
             ],
         },
         {
             title: "WHY EMPLOYERS HOST THIS",
             description: [
-                "Supporting parents at home improves focus, wellbeing, and retention",
-                "at work — without adding pressure.",
+                "Because supporting parents at home often improves focus,",
+                "wellbeing, and retention at work — without adding pressure.",
             ],
         },
     ];
@@ -98,7 +98,7 @@ export default function Workshops() {
                                 </h3>
                                 <div className="space-y-2 lg:space-y-1">
                                     {point.description.map((desc, dIdx) => (
-                                        <p key={dIdx} className="font-sans lg:font-serif text-[15px] lg:text-[16px] lg:font-normal text-[#183A39]/70 lg:text-[#183A39] leading-relaxed lg:leading-none max-w-md mx-auto lg:mx-0">
+                                        <p key={dIdx} className="font-sans lg:font-serif text-[15px] lg:text-[16px] lg:font-normal text-[#183A39]/70 lg:text-[#183A39] leading-relaxed lg:leading-none max-w-md lg:max-w-none mx-auto lg:mx-0 lg:whitespace-nowrap">
                                             {desc}
                                         </p>
                                     ))}

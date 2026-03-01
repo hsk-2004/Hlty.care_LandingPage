@@ -60,6 +60,15 @@ export default function Footer() {
                 />
             </div>
 
+            {/* Desktop Top Decoration */}
+            <div className="hidden lg:block w-full bg-[#F0EEE6]">
+                <img
+                    src="/top.svg"
+                    alt="Footer top decoration"
+                    className="w-full h-auto block"
+                />
+            </div>
+
             <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 pt-16 lg:pt-20 pb-12 lg:pb-24">
                 <motion.div
                     initial={{ opacity: 0 }}
