@@ -49,12 +49,12 @@ export default function Workshops() {
                 >
 
                     {/* Left Column: Heading & CTA */}
-                    <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 lg:space-y-10">
+                    <div className="lg:col-span-4 flex flex-col items-start lg:items-start text-left lg:text-left space-y-8 lg:space-y-10">
                         <motion.div variants={itemVariants} className="space-y-4 lg:space-y-4 pt-12 lg:pt-0">
-                            <h2 className="font-serif text-[24px] lg:text-[32px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] lg:max-w-none mx-auto lg:mx-0">
+                            <h2 className="font-serif text-[24px] lg:text-[32px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] lg:max-w-none mx-0 lg:mx-0">
                                 Employer Workshops
                             </h2>
-                            <p className="font-serif text-[12px] lg:text-[16px] lg:font-normal leading-tight lg:leading-none text-[#183A39] opacity-80 lg:opacity-100 max-w-sm lg:max-w-md mx-auto lg:mx-0">
+                            <p className="font-serif text-[12px] lg:text-[16px] lg:font-normal leading-tight lg:leading-none text-[#183A39] opacity-80 lg:opacity-100 max-w-sm lg:max-w-md mx-0 lg:mx-0">
                                 Workshops designed for working parents — acknowledging limited time, cognitive load, and competing demands.
                             </p>
                         </motion.div>
@@ -91,14 +91,20 @@ export default function Workshops() {
                             <motion.div
                                 key={index}
                                 variants={itemVariants}
-                                className="flex flex-col items-center lg:items-start text-center lg:text-left space-y-2 lg:space-y-4"
+                                className="flex flex-col items-start lg:items-start text-left lg:text-left space-y-2 lg:space-y-4"
                             >
                                 <h3 className="font-sans text-[16px] lg:text-[20px] font-medium lg:font-medium uppercase leading-normal lg:leading-tight text-[#183A39]">
                                     {point.title}
                                 </h3>
-                                <div className="space-y-2 lg:space-y-1">
+                                <div className="lg:space-y-1">
+                                    {/* Mobile: Single wrapping paragraph */}
+                                    <p className="lg:hidden font-sans text-[15px] text-[#183A39]/70 leading-relaxed max-w-md">
+                                        {point.description.join(" ")}
+                                    </p>
+
+                                    {/* Desktop: Forced lines with no wrapping */}
                                     {point.description.map((desc, dIdx) => (
-                                        <p key={dIdx} className="font-sans lg:font-serif text-[15px] lg:text-[16px] lg:font-normal text-[#183A39]/70 lg:text-[#183A39] leading-relaxed lg:leading-none max-w-md lg:max-w-none mx-auto lg:mx-0 lg:whitespace-nowrap">
+                                        <p key={dIdx} className="hidden lg:block font-serif text-[16px] font-normal text-[#183A39] leading-none lg:max-w-none mx-0 lg:whitespace-nowrap">
                                             {desc}
                                         </p>
                                     ))}
@@ -111,7 +117,7 @@ export default function Workshops() {
                             variants={itemVariants}
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="lg:hidden group flex items-center justify-between gap-4 w-full max-w-[381px] h-[32px] bg-[#1a3636] text-[#F0EEE6] px-6 rounded-[24px] font-sans font-medium text-[14px] hover:bg-[#1a3636]/90 transition-all shadow-lg mx-auto"
+                            className="lg:hidden group flex items-center justify-between gap-4 w-full max-w-[381px] h-[32px] bg-[#1a3636] text-[#F0EEE6] px-6 rounded-[24px] font-sans font-medium text-[14px] hover:bg-[#1a3636]/90 transition-all shadow-lg"
                         >
                             <span>Book A Workshop</span>
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
