@@ -62,9 +62,9 @@ export default function Features() {
               <h2 className="font-serif text-[24px] lg:text-[32px] lg:font-normal leading-tight lg:leading-tight text-[#183A39] max-w-[330px] lg:max-w-none mx-0 lg:mx-0">
                 Summer Fun Camps
               </h2>
-              <p className="font-serif text-[12px] lg:text-[16px] lg:font-normal leading-tight lg:leading-relaxed text-[#183A39] opacity-80 lg:opacity-100 max-w-sm lg:max-w-none mx-0 lg:mx-0">
+              <p className="font-serif text-[10px] lg:text-[16px] lg:font-normal leading-tight lg:leading-relaxed text-[#183A39] opacity-80 lg:opacity-100 max-w-sm lg:max-w-none mx-0 lg:mx-0 whitespace-nowrap lg:whitespace-normal">
                 These are short-term, immersive camps where <br className="hidden lg:inline" />
-                health is woven into play, stories, rest, and <br className="hidden lg:inline" />
+                health is woven into <br className="block lg:hidden" /> play, stories, rest, and <br className="hidden lg:inline" />
                 movement — not scheduled as a separate activity.
               </p>
             </motion.div>
@@ -92,7 +92,7 @@ export default function Features() {
                   <h3 className="font-sans text-[16px] lg:text-[20px] font-medium lg:font-medium uppercase leading-normal lg:leading-tight text-[#183A39]">
                     {feature.title}
                   </h3>
-                  <p className="font-sans lg:font-serif text-[15px] lg:text-[16px] lg:font-normal text-[#183A39]/70 lg:text-[#183A39] leading-relaxed lg:leading-[1.5] max-w-md mx-0 lg:mx-0">
+                  <p className="font-sans lg:font-serif text-[11px] lg:text-[16px] lg:font-normal text-[#183A39]/70 lg:text-[#183A39] leading-relaxed lg:leading-[1.5] max-w-md mx-0 lg:mx-0">
                     {feature.description}
                   </p>
                 </motion.div>

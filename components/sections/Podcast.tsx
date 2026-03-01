@@ -67,7 +67,7 @@ export default function Testimonials() {
               </h2>
 
               {/* Body paragraphs */}
-              <div className="flex flex-col gap-3 font-serif text-[12px] lg:text-[15px] font-normal leading-relaxed lg:leading-tight text-[#1a3636]">
+              <div className="flex flex-col gap-3 font-serif text-[10px] lg:text-[15px] font-normal leading-relaxed lg:leading-tight text-[#1a3636]">
                 <p>
                   Shared experiences designed for children and the adults around
                   them. Families move, play, listen, and explore together — without
@@ -134,7 +134,7 @@ export default function Testimonials() {
             viewport={{ once: true }}
             className="lg:hidden px-2 text-center"
           >
-            <p className="font-serif text-[12px] text-[#1a3636]">
+            <p className="font-serif text-[10px] text-[#1a3636]">
               For parents who want to participate with their child, not observe from the sidelines.
             </p>
           </motion.div>

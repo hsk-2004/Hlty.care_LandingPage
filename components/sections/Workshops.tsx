@@ -54,7 +54,7 @@ export default function Workshops() {
                             <h2 className="font-serif text-[24px] lg:text-[32px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] lg:max-w-none mx-0 lg:mx-0">
                                 Employer Workshops
                             </h2>
-                            <p className="font-serif text-[12px] lg:text-[16px] lg:font-normal leading-tight lg:leading-none text-[#183A39] opacity-80 lg:opacity-100 max-w-sm lg:max-w-md mx-0 lg:mx-0">
+                            <p className="font-serif text-[10px] lg:text-[16px] lg:font-normal leading-tight lg:leading-none text-[#183A39] opacity-80 lg:opacity-100 max-w-sm lg:max-w-md mx-0 lg:mx-0">
                                 Workshops designed for working parents — acknowledging limited time, cognitive load, and competing demands.
                             </p>
                         </motion.div>
@@ -98,7 +98,7 @@ export default function Workshops() {
                                 </h3>
                                 <div className="lg:space-y-1">
                                     {/* Mobile: Single wrapping paragraph */}
-                                    <p className="lg:hidden font-sans text-[15px] text-[#183A39]/70 leading-relaxed max-w-md">
+                                    <p className="lg:hidden font-sans text-[11px] text-[#183A39]/70 leading-relaxed max-w-md">
                                         {point.description.join(" ")}
                                     </p>
 
