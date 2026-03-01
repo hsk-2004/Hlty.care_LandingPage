@@ -36,14 +36,14 @@ export default function Testimonials() {
               <h1 className="font-serif text-[48px] lg:text-[42px] text-[#183A39] leading-tight mb-4">
                 Experiences for Families
               </h1>
-              <p className="font-serif text-[16px] lg:text-[20px] text-[#183A39] opacity-90 max-w-2xl px-4">
+              <p className="font-serif text-[16px] lg:text-[20px] text-[#183A39] opacity-90 lg:whitespace-nowrap px-4">
                 Designed for the adults and environments that shape a child&apos;s everyday life.
               </p>
             </div>
           </div>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-10 items-stretch">
+        <div className="flex flex-col lg:flex-row gap-6 lg:gap-4 items-stretch justify-center transform lg:translate-x-2">
 
           {/* Left Column: Information Card */}
           <motion.div
@@ -51,7 +51,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mx-auto lg:mx-0 relative z-10 bg-[#F5B82E] px-6 lg:px-12 pt-10 pb-8 lg:py-12 flex flex-col justify-between gap-4 overflow-hidden lg:!w-[760px] lg:!h-[420px] lg:rounded-[24px]"
+            className="mx-auto lg:mx-0 relative z-10 bg-[#F5B82E] px-6 lg:px-12 pt-10 pb-8 lg:py-12 flex flex-col justify-between gap-4 overflow-hidden lg:!w-[860px] lg:!h-[420px] lg:rounded-[24px]"
             style={{
               width: "340px",
               height: "360px", // Increased height for mobile content
@@ -111,10 +111,10 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="order-first lg:order-last overflow-hidden mx-auto lg:mx-0 lg:w-[45%] lg:!w-[500px] lg:!h-auto lg:rounded-[24px]"
+            className="order-first lg:order-last overflow-hidden mx-auto lg:mx-0 lg:w-[45%] lg:!w-[380px] lg:!h-[420px] lg:rounded-[24px]"
             style={{
               width: "340px",
-              height: "278px",
+              height: "360px",
               borderRadius: "13px",
               maxWidth: "100%"
             }}
@@ -122,7 +122,7 @@ export default function Testimonials() {
             <img
               src="/t1.svg"
               alt="Being Hlty Club"
-              className="w-full h-full lg:aspect-square object-cover"
+              className="w-full h-full object-cover"
               style={{ borderRadius: "inherit" }}
             />
           </motion.div>

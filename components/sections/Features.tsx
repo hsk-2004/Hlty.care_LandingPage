@@ -7,18 +7,23 @@ export default function Features() {
   const features = [
     {
       title: "WHAT A DAY LOOKS LIKE",
-      description:
-        "A mix of play, stories, and movement breaks, designed to feel like a camp first and a program second.",
+      description: (
+        <>
+          A mix of guided play, free exploration, storytelling, movement breaks, and shared routines — <br className="hidden lg:inline" />
+          designed to feel like a camp first, and a program <br className="hidden lg:inline" />
+          second.
+        </>
+      ),
     },
     {
       title: "BODY GALAXY THEMES",
       description:
-        "Set in the Body Galaxy universe, children explore body systems through narrative and play.",
+        "Each camp draws from the Body Galaxy universe, helping children explore different body systems through narrative and play.",
     },
     {
       title: "WHAT PARENTS USUALLY NOTICE",
       description:
-        "Children focus on their feelings and activities rather than just what they \"learned.\"",
+        "Parents often tell us their children talk more about what they felt and did than what they \"learned.\"",
     },
   ];
 
@@ -53,12 +58,14 @@ export default function Features() {
           <div className="lg:col-span-4 flex flex-col items-center lg:items-start text-center lg:text-left space-y-8 lg:space-y-10">
 
             {/* Header Section */}
-            <motion.div variants={itemVariants} className="space-y-4 lg:space-y-4 pt-12 lg:pt-0">
-              <h2 className="font-serif text-[24px] lg:text-[32px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] lg:max-w-none mx-auto lg:mx-0">
+            <motion.div variants={itemVariants} className="space-y-4 lg:space-y-4 pt-12 lg:pt-5">
+              <h2 className="font-serif text-[24px] lg:text-[32px] lg:font-normal leading-tight lg:leading-tight text-[#183A39] max-w-[330px] lg:max-w-none mx-auto lg:mx-0">
                 Summer Fun Camps
               </h2>
-              <p className="font-serif text-[12px] lg:text-[16px] lg:font-normal leading-tight lg:leading-none text-[#183A39] opacity-80 lg:opacity-100 max-w-sm lg:max-w-md mx-auto lg:mx-0">
-                Short-term, immersive camps where health is woven into play, stories, and movement—naturally integrated, not scheduled.
+              <p className="font-serif text-[12px] lg:text-[16px] lg:font-normal leading-tight lg:leading-relaxed text-[#183A39] opacity-80 lg:opacity-100 max-w-sm lg:max-w-none mx-auto lg:mx-0">
+                These are short-term, immersive camps where <br className="hidden lg:inline" />
+                health is woven into play, stories, rest, and <br className="hidden lg:inline" />
+                movement — not scheduled as a separate activity.
               </p>
             </motion.div>
 
@@ -80,12 +87,12 @@ export default function Features() {
                 <motion.div
                   key={index}
                   variants={itemVariants}
-                  className="space-y-1 lg:space-y-2"
+                  className="space-y-1 lg:space-y-1"
                 >
                   <h3 className="font-sans text-[16px] lg:text-[20px] font-medium lg:font-medium uppercase leading-normal lg:leading-tight text-[#183A39]">
                     {feature.title}
                   </h3>
-                  <p className="font-sans lg:font-serif text-[15px] lg:text-[16px] lg:font-normal text-[#183A39]/70 lg:text-[#183A39] leading-relaxed lg:leading-none max-w-md mx-auto lg:mx-0">
+                  <p className="font-sans lg:font-serif text-[15px] lg:text-[16px] lg:font-normal text-[#183A39]/70 lg:text-[#183A39] leading-relaxed lg:leading-[1.5] max-w-md mx-auto lg:mx-0">
                     {feature.description}
                   </p>
                 </motion.div>
