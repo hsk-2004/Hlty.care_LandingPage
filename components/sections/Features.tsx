@@ -9,8 +9,10 @@ export default function Features() {
       title: "WHAT A DAY LOOKS LIKE",
       description: (
         <>
-          A mix of guided play, free exploration, storytelling, movement breaks, and shared routines — <br className="hidden lg:inline" />
-          designed to feel like a camp first, and a program <br className="hidden lg:inline" />
+          A mix of guided play, free exploration, storytelling, movement breaks, and shared routines —{" "}
+          <br className="hidden lg:inline" />
+          designed to feel like a camp first, and a program{" "}
+          <br className="hidden lg:inline" />
           second.
         </>
       ),
@@ -33,43 +35,51 @@ export default function Features() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
+        delayChildren: 0.2,
+      },
+    },
   };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
   };
 
   return (
-    <section className="relative bg-background pt-0 pb-12 md:pb-24 lg:pt-0 lg:pb-8 px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative bg-background pt-0 pb-12 md:pb-20 lg:pb-8 px-6 md:px-12 lg:px-24 overflow-hidden">
       <div className="max-w-xl lg:max-w-[1440px] mx-auto relative z-10">
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={containerVariants}
-          className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-12 items-start"
+          className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
         >
-
-          {/* Left Column (Desktop) / Main Column (Mobile) */}
-          <div className="lg:col-span-4 flex flex-col items-start lg:items-start text-left lg:text-left space-y-8 lg:space-y-10">
+          {/* Left Column */}
+          <div className="lg:col-span-4 flex flex-col items-start text-left space-y-8 md:space-y-14 lg:space-y-10 lg:-mt-3">
 
             {/* Header Section */}
-            <motion.div variants={itemVariants} className="space-y-4 lg:space-y-4 pt-12 lg:pt-5">
-              <h2 className="font-serif text-[24px] lg:text-[32px] lg:font-normal leading-tight lg:leading-tight text-[#183A39] max-w-[330px] lg:max-w-none mx-0 lg:mx-0">
+            <motion.div
+              variants={itemVariants}
+              className="space-y-4 pt-12 lg:pt-5"
+            >
+              {/* Slightly smaller on tablet, full desktop at lg */}
+              <h2 className="font-serif text-[24px] md:text-[40px] lg:text-[32px] leading-tight text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none">
                 Summer Fun Camps
               </h2>
-              <p className="font-serif text-[10px] lg:text-[16px] lg:font-normal leading-tight lg:leading-relaxed text-[#183A39] opacity-80 lg:opacity-100 max-w-sm lg:max-w-none mx-0 lg:mx-0 whitespace-nowrap lg:whitespace-normal">
-                These are short-term, immersive camps where <br className="hidden lg:inline" />
-                health is woven into <br className="block lg:hidden" /> play, stories, rest, and <br className="hidden lg:inline" />
+
+              <p className="font-serif text-[10px] md:text-[18px] lg:text-[14px] leading-tight md:leading-relaxed text-[#183A39] opacity-80 md:opacity-100 max-w-sm md:max-w-xl lg:max-w-none md:whitespace-nowrap lg:whitespace-normal">
+                These are short-term, immersive camps where{" "}
+                <br className="hidden lg:inline" />
+                health is woven into{" "}
+                <br className="block lg:hidden" />
+                play, stories, rest, and{" "}
+                <br className="hidden lg:inline" />
                 movement — not scheduled as a separate activity.
               </p>
             </motion.div>
 
-            {/* Mobile-only Image */}
+            {/* Mobile Image */}
             <motion.div
               variants={itemVariants}
               className="lg:hidden relative w-full rounded-[40px] overflow-hidden bg-white/5"
@@ -84,34 +94,31 @@ export default function Features() {
             {/* Feature Points */}
             <div className="space-y-10 lg:space-y-8 pt-4 lg:pt-0 w-full">
               {features.map((feature, index) => (
-                <motion.div
-                  key={index}
-                  variants={itemVariants}
-                  className="space-y-1 lg:space-y-1"
-                >
-                  <h3 className="font-sans text-[16px] lg:text-[20px] font-medium lg:font-medium uppercase leading-normal lg:leading-tight text-[#183A39]">
+                <motion.div key={index} variants={itemVariants} className="space-y-1">
+                  <h3 className="font-sans text-[16px] md:text-[24px] lg:text-[16px] font-medium uppercase leading-normal md:leading-tight text-[#183A39]">
                     {feature.title}
                   </h3>
-                  <p className="font-sans lg:font-serif text-[11px] lg:text-[16px] lg:font-normal text-[#183A39]/70 lg:text-[#183A39] leading-relaxed lg:leading-[1.5] max-w-md mx-0 lg:mx-0">
+
+                  <p className="font-sans lg:font-serif text-[11px] md:text-[18px] lg:text-[12px] text-[#183A39]/70 md:text-[#183A39] leading-relaxed md:leading-[1.6] max-w-md md:max-w-xl">
                     {feature.description}
                   </p>
                 </motion.div>
               ))}
             </div>
 
-            {/* CTA Button */}
+            {/* CTA */}
             <motion.button
               variants={itemVariants}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group flex items-center justify-between gap-4 max-w-[381px] lg:max-w-none w-full lg:w-[320px] h-[32px] lg:h-[40px] bg-[#183A39] text-[#F0EEE6] px-6 lg:px-[24px] lg:py-[6px] rounded-[24px] font-sans font-medium text-[14px] lg:text-[16px] hover:bg-[#183A39]/90 transition-all shadow-lg lg:shadow-xl"
+              className="group flex items-center justify-between gap-4 max-w-[381px] md:max-w-md lg:max-w-none w-full lg:w-[320px] h-[32px] md:h-[48px] lg:h-[30px] bg-[#183A39] text-[#F0EEE6] px-6 md:px-8 lg:px-[20px] md:py-4 lg:py-[4px] rounded-[24px] font-sans font-medium text-[14px] md:text-[18px] lg:text-[12px] hover:bg-[#183A39]/90 transition-all shadow-lg lg:shadow-xl"
             >
               <span>Register Interest</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </motion.button>
           </div>
 
-          {/* Right Column: Desktop Image Grid (Hidden on Mobile) */}
+          {/* Desktop / Tablet Image Grid */}
           <div className="hidden lg:block lg:col-span-8">
             <div className="grid grid-cols-2 gap-4 h-full content-center">
               {[1, 2, 3, 4].map((num) => (
@@ -130,7 +137,7 @@ export default function Features() {
             </div>
           </div>
 
-          {/* Desktop Footer Decorative Image */}
+          {/* Decorative Footer */}
           <motion.div
             variants={itemVariants}
             className="hidden lg:block lg:col-span-12 mt-[-25px] flex justify-center"

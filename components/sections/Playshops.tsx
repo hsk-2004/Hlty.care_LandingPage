@@ -38,7 +38,7 @@ export default function Playshops() {
   };
 
   return (
-    <section className="relative bg-background pt-0 pb-12 md:pb-24 lg:pt-0 lg:pb-0 px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative bg-background pt-0 pb-12 md:pb-20 lg:pb-0 px-6 md:px-12 lg:px-24 overflow-hidden">
       <div className="max-w-xl lg:max-w-[1440px] mx-auto relative z-10">
         <motion.div
           initial="hidden"
@@ -49,12 +49,12 @@ export default function Playshops() {
         >
 
           {/* Left Column: Heading & CTA */}
-          <div className="lg:col-span-4 flex flex-col items-start lg:items-start text-left lg:text-left space-y-8 lg:space-y-10">
+          <div className="lg:col-span-4 flex flex-col items-start lg:items-start text-left lg:text-left space-y-8 md:space-y-12 lg:space-y-10">
             <motion.div variants={itemVariants} className="space-y-4 lg:space-y-4 pt-0">
-              <h2 className="font-serif text-[24px] lg:text-[24px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] lg:max-w-none mx-0 lg:mx-0">
+              <h2 className="font-serif text-[24px] md:text-[40px] lg:text-[24px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                 School Playshops
               </h2>
-              <p className="font-serif text-[10px] lg:text-[16px] lg:font-normal leading-tight lg:leading-relaxed text-[#183A39] opacity-80 lg:opacity-100 max-w-sm lg:max-w-none mx-0 lg:mx-0">
+              <p className="font-serif text-[10px] md:text-[18px] lg:text-[16px] lg:font-normal leading-tight lg:leading-relaxed text-[#183A39] opacity-80 lg:opacity-100 max-w-sm md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                 Interactive sessions designed to fit into a child's <br className="hidden lg:inline" />
                 existing school day — without turning health <br className="hidden lg:inline" />
                 into another subject to study.
@@ -77,7 +77,7 @@ export default function Playshops() {
           <div className="lg:col-span-4 flex justify-center">
             <motion.div
               variants={itemVariants}
-              className="relative w-full max-w-[480px] rounded-[24px] overflow-hidden shadow-lg lg:left-2"
+              className="relative w-full max-w-[480px] md:max-w-[600px] rounded-[24px] overflow-hidden shadow-lg lg:left-2"
             >
               <img
                 src="/p1.svg"
@@ -95,12 +95,12 @@ export default function Playshops() {
                 variants={itemVariants}
                 className="flex flex-col items-start lg:items-start text-left lg:text-left space-y-2 lg:space-y-1"
               >
-                <h3 className="font-sans text-[16px] lg:text-[16px] font-medium lg:font-medium uppercase leading-normal lg:leading-tight text-[#183A39]">
+                <h3 className="font-sans text-[16px] md:text-[24px] lg:text-[16px] font-medium lg:font-medium uppercase leading-normal lg:leading-tight text-[#183A39]">
                   {point.title}
                 </h3>
                 <div className="space-y-2 lg:space-y-1">
                   {point.description.map((desc, dIdx) => (
-                    <p key={dIdx} className="font-sans lg:font-serif text-[10px] lg:text-[12px] lg:font-normal text-[#183A39]/70 lg:text-[#183A39] leading-relaxed lg:leading-none max-w-md mx-0 lg:mx-0">
+                    <p key={dIdx} className="font-sans lg:font-serif text-[10px] md:text-[18px] lg:text-[12px] lg:font-normal text-[#183A39]/70 lg:text-[#183A39] leading-relaxed lg:leading-none max-w-md md:max-w-xl mx-0 lg:mx-0">
                       {desc}
                     </p>
                   ))}
@@ -113,7 +113,7 @@ export default function Playshops() {
               variants={itemVariants}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="lg:hidden group flex items-center justify-between gap-4 w-full max-w-[381px] h-[32px] bg-[#1a3636] text-[#F0EEE6] px-6 rounded-[24px] font-sans font-medium text-[14px] hover:bg-[#1a3636]/90 transition-all shadow-lg"
+              className="lg:hidden group flex items-center justify-between gap-4 w-full max-w-[381px] md:max-w-md h-[32px] md:h-[48px] bg-[#1a3636] text-[#F0EEE6] px-6 md:px-8 rounded-[24px] font-sans font-medium text-[14px] md:text-[18px] hover:bg-[#1a3636]/90 transition-all shadow-lg"
             >
               <span>Book A Playshop</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

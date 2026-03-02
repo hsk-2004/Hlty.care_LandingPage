@@ -38,7 +38,7 @@ export default function Workshops() {
     };
 
     return (
-        <section className="relative bg-background pt-0 pb-12 md:pb-24 lg:pt-8 lg:pb-32 px-6 md:px-12 lg:px-24 overflow-hidden">
+        <section className="relative bg-background pt-0 pb-12 md:pb-20 lg:pt-8 lg:pb-32 px-6 md:px-12 lg:px-24 overflow-hidden">
             <div className="max-w-xl lg:max-w-[1440px] mx-auto relative z-10">
                 <motion.div
                     initial="hidden"
@@ -49,12 +49,12 @@ export default function Workshops() {
                 >
 
                     {/* Left Column: Heading & CTA */}
-                    <div className="lg:col-span-4 flex flex-col items-start lg:items-start text-left lg:text-left space-y-8 lg:space-y-10">
+                    <div className="lg:col-span-4 flex flex-col items-start lg:items-start text-left lg:text-left space-y-8 md:space-y-12 lg:space-y-10">
                         <motion.div variants={itemVariants} className="space-y-4 lg:space-y-4 pt-12 lg:pt-0">
-                            <h2 className="font-serif text-[24px] lg:text-[32px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] lg:max-w-none mx-0 lg:mx-0">
+                            <h2 className="font-serif text-[24px] md:text-[40px] lg:text-[32px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                                 Employer Workshops
                             </h2>
-                            <p className="font-serif text-[10px] lg:text-[16px] lg:font-normal leading-tight lg:leading-none text-[#183A39] opacity-80 lg:opacity-100 max-w-sm lg:max-w-md mx-0 lg:mx-0">
+                            <p className="font-serif text-[10px] md:text-[18px] lg:text-[16px] lg:font-normal leading-tight lg:leading-none text-[#183A39] opacity-80 lg:opacity-100 max-w-sm md:max-w-xl lg:max-w-md mx-0 lg:mx-0">
                                 Workshops designed for working parents — acknowledging limited time, cognitive load, and competing demands.
                             </p>
                         </motion.div>
@@ -75,7 +75,7 @@ export default function Workshops() {
                     <div className="lg:col-span-4 flex justify-center">
                         <motion.div
                             variants={itemVariants}
-                            className="relative w-full max-w-[480px] rounded-[24px] overflow-hidden shadow-lg"
+                            className="relative w-full max-w-[480px] md:max-w-[600px] rounded-[24px] overflow-hidden shadow-lg"
                         >
                             <img
                                 src="/e1.svg"
@@ -93,12 +93,12 @@ export default function Workshops() {
                                 variants={itemVariants}
                                 className="flex flex-col items-start lg:items-start text-left lg:text-left space-y-2 lg:space-y-4"
                             >
-                                <h3 className="font-sans text-[16px] lg:text-[20px] font-medium lg:font-medium uppercase leading-normal lg:leading-tight text-[#183A39]">
+                                <h3 className="font-sans text-[16px] md:text-[24px] lg:text-[20px] font-medium lg:font-medium uppercase leading-normal lg:leading-tight text-[#183A39]">
                                     {point.title}
                                 </h3>
                                 <div className="lg:space-y-1">
-                                    {/* Mobile: Single wrapping paragraph */}
-                                    <p className="lg:hidden font-sans text-[11px] text-[#183A39]/70 leading-relaxed max-w-md">
+                                    {/* Mobile & Tablet: Single wrapping paragraph */}
+                                    <p className="lg:hidden font-sans text-[11px] md:text-[18px] text-[#183A39]/70 leading-relaxed max-w-md md:max-w-xl">
                                         {point.description.join(" ")}
                                     </p>
 
@@ -117,7 +117,7 @@ export default function Workshops() {
                             variants={itemVariants}
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="lg:hidden group flex items-center justify-between gap-4 w-full max-w-[381px] h-[32px] bg-[#1a3636] text-[#F0EEE6] px-6 rounded-[24px] font-sans font-medium text-[14px] hover:bg-[#1a3636]/90 transition-all shadow-lg"
+                            className="lg:hidden group flex items-center justify-between gap-4 w-full max-w-[381px] md:max-w-md h-[32px] md:h-[48px] bg-[#1a3636] text-[#F0EEE6] px-6 md:px-8 rounded-[24px] font-sans font-medium text-[14px] md:text-[18px] hover:bg-[#1a3636]/90 transition-all shadow-lg"
                         >
                             <span>Book A Workshop</span>
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

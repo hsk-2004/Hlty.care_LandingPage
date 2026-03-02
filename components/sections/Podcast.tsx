@@ -43,7 +43,7 @@ export default function Testimonials() {
           </div>
         </motion.div>
 
-        <div className="flex flex-col lg:flex-row gap-6 lg:gap-4 items-stretch justify-center transform lg:translate-x-2">
+        <div className="flex flex-col lg:flex-row gap-6 md:gap-14 lg:gap-4 items-stretch justify-center transform lg:translate-x-2">
 
           {/* Left Column: Information Card */}
           <motion.div
@@ -51,23 +51,17 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mx-auto lg:mx-0 relative z-10 bg-[#F5B82E] px-6 lg:px-12 pt-10 pb-8 lg:py-12 flex flex-col justify-between gap-4 overflow-hidden lg:!w-[860px] lg:!h-[420px] lg:rounded-[24px]"
-            style={{
-              width: "340px",
-              height: "360px", // Increased height for mobile content
-              borderRadius: "16px",
-              maxWidth: "100%"
-            }}
+            className="mx-auto lg:mx-0 relative z-10 bg-[#F5B82E] px-6 md:px-10 lg:px-12 pt-10 pb-8 md:py-14 lg:py-12 flex flex-col justify-between gap-4 overflow-hidden w-[340px] h-[360px] md:w-[600px] md:h-[520px] lg:!w-[860px] lg:!h-[420px] lg:rounded-[24px] rounded-[16px] max-w-full"
           >
             <div className="space-y-6 lg:space-y-4">
               {/* Title */}
-              <h2 className="font-serif text-[22px] lg:text-[30px] font-normal leading-tight text-[#1a3636]">
+              <h2 className="font-serif text-[22px] md:text-[34px] lg:text-[30px] font-normal leading-tight text-[#1a3636]">
                 <span className="lg:hidden">Latest Podcast Episode</span>
                 <span className="hidden lg:inline">Being Hlty Club</span>
               </h2>
 
               {/* Body paragraphs */}
-              <div className="flex flex-col gap-3 font-serif text-[10px] lg:text-[15px] font-normal leading-relaxed lg:leading-tight text-[#1a3636]">
+              <div className="flex flex-col gap-3 font-serif text-[10px] md:text-[18px] lg:text-[15px] font-normal leading-relaxed lg:leading-tight text-[#1a3636]">
                 <p>
                   Shared experiences designed for children and the adults around
                   them. Families move, play, listen, and explore together — without
@@ -78,7 +72,7 @@ export default function Testimonials() {
                   where health shows up naturally through games, stories, and
                   everyday moments families already recognize.
                 </p>
-                <p className="hidden lg:block">
+                <p className="hidden md:block">
                   For parents who want to participate with their child, not observe
                   from the sidelines.
                 </p>
@@ -92,12 +86,12 @@ export default function Testimonials() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@email.com"
-                className="flex-1 bg-transparent text-[13px] lg:text-[16px] text-[#1a3636] placeholder:text-[#1a3636]/50 outline-none font-sans min-w-0"
+                className="flex-1 bg-transparent text-[13px] md:text-[18px] lg:text-[16px] text-[#1a3636] placeholder:text-[#1a3636]/50 outline-none font-sans min-w-0"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center bg-[#1a3636] text-[#F0EEE6] rounded-full font-sans text-[12px] lg:text-[15px] font-medium whitespace-nowrap hover:bg-[#1a3636]/90 transition-all px-4 py-2 lg:px-6 lg:py-3"
+                className="flex items-center bg-[#1a3636] text-[#F0EEE6] rounded-full font-sans text-[12px] md:text-[18px] lg:text-[15px] font-medium whitespace-nowrap hover:bg-[#1a3636]/90 transition-all px-4 py-2 md:px-8 md:py-4 lg:px-6 lg:py-3"
               >
                 Join Community
                 <ArrowRight size={16} className="ml-2 hidden lg:block" />
@@ -111,13 +105,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="order-first lg:order-last overflow-hidden mx-auto lg:mx-0 lg:w-[45%] lg:!w-[380px] lg:!h-[420px] lg:rounded-[24px]"
-            style={{
-              width: "340px",
-              height: "360px",
-              borderRadius: "13px",
-              maxWidth: "100%"
-            }}
+            className="order-first lg:order-last overflow-hidden mx-auto lg:mx-0 lg:w-[45%] w-[340px] h-[360px] md:w-[700px] md:h-[500px] lg:!w-[380px] lg:!h-[420px] lg:rounded-[24px] rounded-[13px] max-w-full"
           >
             <img
               src="/t1.svg"
@@ -134,7 +122,7 @@ export default function Testimonials() {
             viewport={{ once: true }}
             className="lg:hidden px-2 text-center"
           >
-            <p className="font-serif text-[10px] text-[#1a3636]">
+            <p className="font-serif text-[10px] md:text-[16px] text-[#1a3636]">
               For parents who want to participate with their child, not observe from the sidelines.
             </p>
           </motion.div>
