@@ -70,7 +70,7 @@ export default function Testimonials() {
                   <span className="lg:block lg:whitespace-nowrap">These events aren&apos;t workshops or talks. They&apos;re spaces where health shows up </span>
                   <span className="lg:block lg:whitespace-nowrap">naturally through games, stories, and everyday moments families already recognize.</span>
                 </p>
-                <p className="hidden md:block">
+                <p>
                   <span className="lg:block lg:whitespace-nowrap">For parents who want to participate with their child, not observe from the sidelines.</span>
                 </p>
               </div>
@@ -112,18 +112,7 @@ export default function Testimonials() {
             />
           </motion.div>
 
-          {/* Mobile-only text footer */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 0.7 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="lg:hidden px-2 text-center"
-          >
-            <p className="font-serif text-[10px] md:text-[16px] text-[#1a3636]">
-              For parents who want to participate with their child, not observe from the sidelines.
-            </p>
-          </motion.div>
+
 
         </div>
       </div>
