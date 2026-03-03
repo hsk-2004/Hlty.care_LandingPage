@@ -55,26 +55,23 @@ export default function Testimonials() {
           >
             <div className="space-y-6 lg:space-y-4">
               {/* Title */}
-              <h2 className="font-serif text-[22px] md:text-[34px] lg:text-[30px] font-normal leading-tight text-[#1a3636]">
+              <h2 className="font-serif text-[22px] md:text-[34px] lg:text-[40px] font-normal leading-tight text-[#1a3636]">
                 <span className="lg:hidden">Latest Podcast Episode</span>
                 <span className="hidden lg:inline">Being Hlty Club</span>
               </h2>
 
               {/* Body paragraphs */}
-              <div className="flex flex-col gap-3 font-serif text-[10px] md:text-[18px] lg:text-[15px] font-normal leading-relaxed lg:leading-tight text-[#1a3636]">
+              <div className="flex flex-col gap-3 font-serif text-[10px] md:text-[18px] lg:text-[18px] font-normal leading-relaxed lg:leading-tight text-[#1a3636]">
                 <p>
-                  Shared experiences designed for children and the adults around
-                  them. Families move, play, listen, and explore together — without
-                  schedules, outcomes, or &ldquo;doing it right.&rdquo;
+                  <span className="lg:block lg:whitespace-nowrap">Shared experiences designed for children and the adults around them. Families move, </span>
+                  <span className="lg:block lg:whitespace-nowrap">play, listen, and explore together — without schedules, outcomes, or &ldquo;doing it right.&rdquo;</span>
                 </p>
                 <p>
-                  These events aren&apos;t workshops or talks. They&apos;re spaces
-                  where health shows up naturally through games, stories, and
-                  everyday moments families already recognize.
+                  <span className="lg:block lg:whitespace-nowrap">These events aren&apos;t workshops or talks. They&apos;re spaces where health shows up </span>
+                  <span className="lg:block lg:whitespace-nowrap">naturally through games, stories, and everyday moments families already recognize.</span>
                 </p>
                 <p className="hidden md:block">
-                  For parents who want to participate with their child, not observe
-                  from the sidelines.
+                  <span className="lg:block lg:whitespace-nowrap">For parents who want to participate with their child, not observe from the sidelines.</span>
                 </p>
               </div>
             </div>

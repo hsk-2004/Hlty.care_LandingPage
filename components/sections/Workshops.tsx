@@ -51,11 +51,13 @@ export default function Workshops() {
                     {/* Left Column: Heading & CTA */}
                     <div className="lg:col-span-4 flex flex-col items-start lg:items-start text-left lg:text-left space-y-8 md:space-y-12 lg:space-y-10">
                         <motion.div variants={itemVariants} className="space-y-4 lg:space-y-4 pt-12 lg:pt-0">
-                            <h2 className="font-serif text-[24px] md:text-[40px] lg:text-[32px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
+                            <h2 className="font-serif text-[24px] md:text-[40px] lg:text-[34px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                                 Employer Workshops
                             </h2>
-                            <p className="font-serif text-[10px] md:text-[18px] lg:text-[16px] lg:font-normal leading-tight lg:leading-none text-[#183A39] opacity-80 lg:opacity-100 max-w-sm md:max-w-xl lg:max-w-md mx-0 lg:mx-0">
-                                Workshops designed for working parents — acknowledging limited time, cognitive load, and competing demands.
+                            <p className="font-serif text-[10px] md:text-[18px] lg:text-[15px] lg:font-normal leading-tight lg:leading-tight text-[#183A39] opacity-80 lg:opacity-100 max-w-sm md:max-w-xl lg:max-w-md mx-0 lg:mx-0">
+                                <span className="lg:block lg:whitespace-nowrap">These workshops are designed for working </span>
+                                <span className="lg:block lg:whitespace-nowrap">parents — acknowledging limited time, cognitive </span>
+                                <span className="lg:block lg:whitespace-nowrap">load, and competing demands.</span>
                             </p>
                         </motion.div>
 
