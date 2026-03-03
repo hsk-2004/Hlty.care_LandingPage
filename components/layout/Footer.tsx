@@ -48,7 +48,7 @@ export default function Footer() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="w-full bg-[#183A39] text-[#F0EEE6] overflow-hidden"
         >
             {/* Mobile Top Decoration - Restored */}
@@ -74,7 +74,7 @@ export default function Footer() {
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true, margin: "-50px" }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                     className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-start"
                 >
 
@@ -158,7 +158,7 @@ export default function Footer() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1 }}
+                transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
                 className="lg:hidden flex justify-center pb-0"
             >
                 <img
@@ -173,7 +173,7 @@ export default function Footer() {
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
-                transition={{ duration: 1.2 }}
+                transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
                 className="hidden lg:flex justify-center pb-0"
             >
                 <img

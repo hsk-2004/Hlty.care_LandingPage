@@ -34,11 +34,11 @@ export default function Playshops() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+    visible: { opacity: 1, y: 0 }
   };
 
   return (
-    <section className="relative bg-background pt-0 pb-12 md:pb-20 lg:pb-0 px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative bg-background pt-0 pb-12 md:pb-20 lg:pb-32 px-6 md:px-12 lg:px-24 overflow-hidden">
       <div className="max-w-xl lg:max-w-[1440px] mx-auto relative z-10">
         <motion.div
           initial="hidden"
@@ -49,8 +49,12 @@ export default function Playshops() {
         >
 
           {/* Left Column: Heading & CTA */}
-          <div className="lg:col-span-4 flex flex-col items-start lg:items-start text-left lg:text-left space-y-8 md:space-y-12 lg:space-y-10">
-            <motion.div variants={itemVariants} className="space-y-4 lg:space-y-4 pt-0">
+          <div className="lg:col-span-4 flex flex-col items-start lg:items-start text-left lg:text-left space-y-8 md:space-y-12 lg:space-y-12 lg:mt-10">
+            <motion.div
+              variants={itemVariants}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="space-y-4 lg:space-y-4 pt-0"
+            >
               <h2 className="font-serif text-[24px] md:text-[40px] lg:text-[34px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                 School Playshops
               </h2>
@@ -64,9 +68,10 @@ export default function Playshops() {
             {/* CTA Button - Desktop only here */}
             <motion.button
               variants={itemVariants}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="hidden lg:flex group items-center justify-between gap-4 w-[320px] h-[40px] bg-[#1a3636] text-[#F0EEE6] px-[24px] py-[6px] rounded-[24px] font-sans font-medium text-[15px] hover:bg-[#1a3636]/90 transition-all shadow-xl"
+              className="hidden lg:flex group items-center justify-between gap-4 w-[320px] h-[40px] bg-[#1a3636] text-[#F0EEE6] px-[24px] py-[6px] rounded-[24px] font-sans font-medium text-[15px] hover:bg-[#1a3636]/90 transition-all shadow-xl lg:!mt-[85px]"
             >
               <span>Book A Playshop</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -77,6 +82,7 @@ export default function Playshops() {
           <div className="lg:col-span-4 flex justify-center">
             <motion.div
               variants={itemVariants}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="relative w-full max-w-[480px] md:max-w-[600px] rounded-[24px] overflow-hidden shadow-lg lg:left-2"
             >
               <img
@@ -88,12 +94,13 @@ export default function Playshops() {
           </div>
 
           {/* Right Column: Feature Points */}
-          <div className="lg:col-span-4 space-y-10 lg:space-y-6 w-full lg:pt-0 lg:-mt-10">
+          <div className="lg:col-span-4 space-y-10 lg:space-y-6 w-full lg:pt-16 lg:-mt-10">
             {points.map((point, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
-                className={`flex flex-col items-start lg:items-start text-left lg:text-left space-y-2 lg:space-y-5 ${index === 1 ? 'lg:mt-[120px]' : ''}`}
+                transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+                className={`flex flex-col items-start lg:items-start text-left lg:text-left space-y-2 lg:space-y-5 ${index === 1 ? 'lg:!mt-[40px]' : ''}`}
               >
                 <h3 className="font-sans text-[16px] md:text-[24px] lg:text-[20px] font-medium lg:font-medium uppercase leading-normal lg:leading-tight text-[#183A39]">
                   {point.title}
@@ -111,6 +118,7 @@ export default function Playshops() {
             {/* Mobile CTA Button - stays at the bottom */}
             <motion.button
               variants={itemVariants}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="lg:hidden group flex items-center justify-between gap-4 w-full max-w-[381px] md:max-w-md h-[32px] md:h-[48px] bg-[#1a3636] text-[#F0EEE6] px-6 md:px-8 rounded-[24px] font-sans font-medium text-[14px] md:text-[18px] hover:bg-[#1a3636]/90 transition-all shadow-lg"

@@ -51,9 +51,9 @@ export default function Hero() {
 
         {/* Background SVG Container */}
         <motion.div
-          initial={{ opacity: 0, scale: 1.1 }}
+          initial={{ opacity: 0, scale: 1.05 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
           className="absolute inset-0 flex items-start justify-center pt-20 md:pt-40 overflow-hidden"
         >
 
@@ -99,7 +99,9 @@ export default function Hero() {
             }}
             transition={{
               delay: i * 0.05,
-              duration: 0.8,
+              type: "spring",
+              damping: 15,
+              stiffness: 100,
               y: {
                 duration: 4 + Math.random() * 2,
                 repeat: Infinity,
@@ -124,9 +126,9 @@ export default function Hero() {
       <div className="relative z-10 max-w-4xl mx-auto space-y-4 md:mt-16">
 
         <motion.h1
-          initial={{ opacity: 0, y: 30, filter: "blur(10px)" }}
+          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
           className="font-serif text-[24px] md:text-[48px] leading-[100%] text-foreground"
         >
           Experiences for Children
@@ -135,7 +137,7 @@ export default function Hero() {
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
           className="font-serif text-[12px] md:text-[18px] leading-tight mx-auto text-foreground opacity-60 text-center"
         >
           <span className="block whitespace-nowrap">

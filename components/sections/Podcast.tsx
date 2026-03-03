@@ -9,18 +9,18 @@ export default function Testimonials() {
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
+    visible: { opacity: 1, y: 0 }
   };
 
   return (
-    <section className="relative bg-background pt-0 pb-12 md:pb-24 lg:pt-32 lg:pb-0 px-6 md:px-12 lg:px-24 overflow-hidden">
+    <section className="relative bg-background pt-0 pb-12 md:pb-24 lg:pt-32 lg:pb-28 px-6 md:px-12 lg:px-24 overflow-hidden">
       <div className="max-w-xl lg:max-w-[1440px] w-full mx-auto relative z-10">
         {/* Desktop Header Decorative Image */}
         <motion.div
           initial={{ opacity: 0, y: -20, scale: 0.95 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
           className="hidden lg:block w-full mt-[-100px] mb-[70px] relative z-20"
         >
           <div className="relative w-full flex items-center justify-center">
@@ -50,10 +50,10 @@ export default function Testimonials() {
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="mx-auto lg:mx-0 relative z-10 bg-[#F5B82E] px-6 md:px-10 lg:px-12 pt-10 pb-8 md:py-14 lg:py-12 flex flex-col justify-between gap-4 overflow-hidden w-[340px] h-[360px] md:w-[600px] md:h-[520px] lg:!w-[860px] lg:!h-[420px] lg:rounded-[24px] rounded-[16px] max-w-full"
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="mx-auto lg:mx-0 relative z-10 bg-[#F5B82E] px-6 md:px-10 lg:px-12 pt-10 pb-8 md:py-14 lg:py-12 flex flex-col justify-between gap-4 overflow-hidden w-[340px] h-[360px] md:w-[600px] md:h-[520px] lg:!w-[950px] lg:!h-[465px] lg:rounded-[18px] rounded-[16px] max-w-full"
           >
-            <div className="space-y-6 lg:space-y-4">
+            <div className="space-y-6 lg:space-y-12">
               {/* Title */}
               <h2 className="font-serif text-[22px] md:text-[34px] lg:text-[40px] font-normal leading-tight text-[#1a3636]">
                 <span className="lg:hidden">Latest Podcast Episode</span>
@@ -61,7 +61,7 @@ export default function Testimonials() {
               </h2>
 
               {/* Body paragraphs */}
-              <div className="flex flex-col gap-3 font-serif text-[10px] md:text-[18px] lg:text-[18px] font-normal leading-relaxed lg:leading-tight text-[#1a3636]">
+              <div className="flex flex-col gap-3 lg:gap-8 font-serif text-[10px] md:text-[18px] lg:text-[18px] font-normal leading-relaxed lg:leading-tight text-[#1a3636]">
                 <p>
                   <span className="lg:block lg:whitespace-nowrap">Shared experiences designed for children and the adults around them. Families move, </span>
                   <span className="lg:block lg:whitespace-nowrap">play, listen, and explore together — without schedules, outcomes, or &ldquo;doing it right.&rdquo;</span>
@@ -101,8 +101,8 @@ export default function Testimonials() {
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="order-first lg:order-last overflow-hidden mx-auto lg:mx-0 lg:w-[45%] w-[340px] h-[360px] md:w-[700px] md:h-[500px] lg:!w-[380px] lg:!h-[420px] lg:rounded-[24px] rounded-[13px] max-w-full"
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="order-first lg:order-last overflow-hidden mx-auto lg:mx-0 lg:w-[45%] w-[340px] h-[360px] md:w-[700px] md:h-[500px] lg:!w-[420px] lg:!h-[465px] lg:rounded-[18px] rounded-[13px] max-w-full"
           >
             <img
               src="/t1.svg"
@@ -117,6 +117,7 @@ export default function Testimonials() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 0.7 }}
             viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
             className="lg:hidden px-2 text-center"
           >
             <p className="font-serif text-[10px] md:text-[16px] text-[#1a3636]">

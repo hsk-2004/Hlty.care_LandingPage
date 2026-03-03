@@ -40,7 +40,7 @@ export default function Navbar() {
                 hidden: { y: "-100%", opacity: 0 },
             }}
             animate={hidden ? "hidden" : "visible"}
-            transition={{ duration: 0.35, ease: "easeInOut" }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
             className={`fixed top-0 left-0 w-full z-50 p-6 lg:py-4 lg:px-12 flex justify-between items-center transition-all duration-300 ${scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"
                 }`}
         >
@@ -89,24 +89,47 @@ export default function Navbar() {
                 {isOpen && (
                     <motion.div
                         initial={{ opacity: 0, x: "100%" }}
-                        animate={{ opacity: 1, x: 0 }}
+                        animate={{
+                            opacity: 1,
+                            x: 0,
+                            transition: {
+                                type: "spring",
+                                damping: 25,
+                                stiffness: 200,
+                                staggerChildren: 0.1,
+                                delayChildren: 0.2
+                            }
+                        }}
                         exit={{ opacity: 0, x: "100%" }}
-                        transition={{ type: "spring", damping: 25, stiffness: 200 }}
                         className="fixed inset-0 bg-[#F0EEE6] z-40 flex flex-col justify-center items-center gap-8 lg:hidden"
                     >
                         {navLinks.map((link) => (
-                            <Link
+                            <motion.div
                                 key={link.name}
-                                href={link.href}
-                                onClick={() => setIsOpen(false)}
-                                className="font-sans text-[24px] font-medium tracking-[0.1em] text-[#183A39] hover:opacity-60 transition-opacity"
+                                variants={{
+                                    initial: { opacity: 0, y: 20 },
+                                    animate: { opacity: 1, y: 0 }
+                                }}
                             >
-                                {link.name}
-                            </Link>
+                                <Link
+                                    href={link.href}
+                                    onClick={() => setIsOpen(false)}
+                                    className="font-sans text-[24px] font-medium tracking-[0.1em] text-[#183A39] hover:opacity-60 transition-opacity"
+                                >
+                                    {link.name}
+                                </Link>
+                            </motion.div>
                         ))}
-                        <button className="bg-[#183A39] text-[#F0EEE6] px-10 py-4 rounded-full font-sans text-[14px] font-medium tracking-[0.05em] hover:bg-[#1a3636]/90 transition-all shadow-lg mt-4">
-                            GET STARTED
-                        </button>
+                        <motion.div
+                            variants={{
+                                initial: { opacity: 0, y: 20 },
+                                animate: { opacity: 1, y: 0 }
+                            }}
+                        >
+                            <button className="bg-[#183A39] text-[#F0EEE6] px-10 py-4 rounded-full font-sans text-[14px] font-medium tracking-[0.05em] hover:bg-[#1a3636]/90 transition-all shadow-lg mt-4">
+                                GET STARTED
+                            </button>
+                        </motion.div>
                     </motion.div>
                 )}
             </AnimatePresence>
