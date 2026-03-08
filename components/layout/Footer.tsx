@@ -121,13 +121,20 @@ export default function Footer() {
                                 Company
                             </h3>
                             <nav className="flex flex-col space-y-4 lg:space-y-5">
-                                {["Explore", "Body Galaxy", "Workshops", "Products", "For Parents", "Building Hlty Beings"].map((link) => (
+                                {[
+                                    { name: "Explore", href: "/explore" },
+                                    { name: "Body Galaxy", href: "#" },
+                                    { name: "Workshops", href: "/workshop" },
+                                    { name: "Products", href: "#" },
+                                    { name: "For Parents", href: "#" },
+                                    { name: "Building Hlty Beings", href: "#" }
+                                ].map((link) => (
                                     <a
-                                        key={link}
-                                        href="#"
+                                        key={link.name}
+                                        href={link.href}
                                         className="font-serif text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal"
                                     >
-                                        {link}
+                                        {link.name}
                                     </a>
                                 ))}
                             </nav>

@@ -27,7 +27,7 @@ export default function Navbar() {
     });
 
     const navLinks = [
-        { name: "EXPLORE", href: "#" },
+        { name: "EXPLORE", href: "/explore" },
         { name: "WORKSHOPS", href: "/workshop" },
         { name: "PRODUCTS", href: "#" },
         { name: "FOR PARENTS", href: "#" },
@@ -39,9 +39,9 @@ export default function Navbar() {
                 visible: { y: 0, opacity: 1 },
                 hidden: { y: "-100%", opacity: 0 },
             }}
-            animate={hidden ? "hidden" : "visible"}
+            animate={isOpen ? "visible" : (hidden ? "hidden" : "visible")}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className={`fixed top-0 left-0 w-full z-50 p-6 lg:py-4 lg:px-12 flex justify-between items-center transition-all duration-300 ${scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"
+            className={`fixed top-0 left-0 w-full z-50 p-6 lg:py-4 lg:px-12 flex justify-between items-center transition-all duration-300 ${isOpen ? "bg-[#183A39]" : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent")
                 }`}
         >
             <div className="max-w-7xl mx-auto flex justify-between items-center w-full">
@@ -88,48 +88,57 @@ export default function Navbar() {
             <AnimatePresence>
                 {isOpen && (
                     <motion.div
-                        initial={{ opacity: 0, x: "100%" }}
-                        animate={{
-                            opacity: 1,
-                            x: 0,
-                            transition: {
-                                type: "spring",
-                                damping: 25,
-                                stiffness: 200,
-                                staggerChildren: 0.1,
-                                delayChildren: 0.2
-                            }
-                        }}
-                        exit={{ opacity: 0, x: "100%" }}
-                        className="fixed inset-0 bg-[#F0EEE6] z-40 flex flex-col justify-center items-center gap-8 lg:hidden"
+                        className="fixed inset-0 bg-[#183A39] z-[60] flex flex-col px-6 py-8 lg:hidden"
                     >
-                        {navLinks.map((link) => (
-                            <motion.div
-                                key={link.name}
-                                variants={{
-                                    initial: { opacity: 0, y: 20 },
-                                    animate: { opacity: 1, y: 0 }
-                                }}
+                        {/* Top Header inside menu */}
+                        <div className="flex justify-between items-center mb-20">
+                            <Link href="/" onClick={() => setIsOpen(false)}>
+                                <img src="/logo.png" alt="Logo" className="h-12 w-auto" />
+                            </Link>
+                            <button
+                                className="text-[#F0EEE6] p-1"
+                                onClick={() => setIsOpen(false)}
                             >
-                                <Link
-                                    href={link.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="font-sans text-[24px] font-medium tracking-[0.1em] text-[#183A39] hover:opacity-60 transition-opacity"
-                                >
-                                    {link.name}
-                                </Link>
-                            </motion.div>
-                        ))}
-                        <motion.div
-                            variants={{
-                                initial: { opacity: 0, y: 20 },
-                                animate: { opacity: 1, y: 0 }
-                            }}
-                        >
-                            <button className="bg-[#183A39] text-[#F0EEE6] px-10 py-4 rounded-full font-sans text-[14px] font-medium tracking-[0.05em] hover:bg-[#1a3636]/90 transition-all shadow-lg mt-4">
-                                GET STARTED
+                                <X size={32} strokeWidth={1.5} />
                             </button>
-                        </motion.div>
+                        </div>
+
+                        {/* Nav Links */}
+                        <div className="flex flex-col gap-4 w-full items-center">
+                            {navLinks.map((link) => (
+                                <div
+                                    key={link.name}
+                                    className="flex justify-center w-full"
+                                >
+                                    <Link
+                                        href={link.href}
+                                        onClick={() => setIsOpen(false)}
+                                        className="flex items-center justify-center w-[382px] h-[40px] border border-[#5EE2A0]/40 rounded-full font-sans text-[14px] font-medium tracking-[0.15em] text-[#F0EEE6] hover:bg-[#F0EEE6]/5 transition-colors"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </div>
+                            ))}
+                        </div>
+
+                        {/* Bottom Actions */}
+                        <div className="mt-auto flex flex-col gap-4 items-center pb-12">
+                            <div
+                                className="flex justify-center w-full"
+                            >
+                                <button className="w-[382px] h-[40px] bg-[#F0EEE6] text-[#183A39] rounded-full font-serif italic text-[18px] tracking-wide shadow-lg flex items-center justify-center">
+                                    GET STARTED
+                                </button>
+                            </div>
+
+                            <div
+                                className="flex justify-center w-full"
+                            >
+                                <button className="w-[382px] h-[40px] bg-[#5EE2A0] text-[#183A39] rounded-full font-serif italic text-[18px] tracking-wide shadow-lg flex items-center justify-center">
+                                    CART
+                                </button>
+                            </div>
+                        </div>
                     </motion.div>
                 )}
             </AnimatePresence>
