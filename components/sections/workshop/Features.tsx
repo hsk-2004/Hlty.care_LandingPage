@@ -53,13 +53,13 @@ export default function Features() {
           className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start"
         >
           {/* Left Column */}
-          <div className="lg:col-span-4 flex flex-col items-start text-left space-y-8 md:space-y-14 lg:space-y-10 lg:-mt-3">
+          <div className="lg:col-span-4 flex flex-col items-start text-left space-y-8 md:space-y-14 lg:space-y-8 lg:-mt-3">
 
             {/* Header Section */}
             <motion.div
               variants={itemVariants}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="space-y-8 pt-12 lg:pt-5"
+              className="space-y-8 lg:space-y-4 pt-12 lg:pt-5"
             >
               {/* Slightly smaller on tablet, full desktop at lg */}
               <h2 className="font-serif text-[24px] md:text-[40px] lg:text-[36px] leading-tight text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none">
@@ -91,7 +91,7 @@ export default function Features() {
             </motion.div>
 
             {/* Feature Points */}
-            <div className="space-y-10 lg:space-y-11 pt-4 lg:pt-6 w-full">
+            <div className="space-y-10 lg:space-y-6 pt-4 lg:pt-6 w-full">
               {features.map((feature, index) => (
                 <motion.div
                   key={index}
