@@ -40,8 +40,7 @@ export default function Navbar() {
                 hidden: { y: "-100%", opacity: 0 },
             }}
             animate={isOpen ? "visible" : (hidden ? "hidden" : "visible")}
-            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className={`fixed top-0 left-0 w-full z-50 p-6 lg:py-4 lg:px-12 flex justify-between items-center transition-all duration-300 ${isOpen ? "bg-[#183A39]" : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent")
+            className={`fixed top-0 left-0 w-full z-50 p-6 lg:py-4 lg:px-12 flex justify-between items-center ${isOpen ? "bg-[#183A39]" : "transition-all duration-300 " + (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent")
                 }`}
         >
             <div className="max-w-7xl mx-auto flex justify-between items-center w-full">
@@ -85,63 +84,61 @@ export default function Navbar() {
             </div>
 
             {/* Mobile Menu Overlay */}
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        className="fixed inset-0 bg-[#183A39] z-[60] flex flex-col px-6 py-8 lg:hidden"
-                    >
-                        {/* Top Header inside menu */}
-                        <div className="flex justify-between items-center mb-20">
-                            <Link href="/" onClick={() => setIsOpen(false)}>
-                                <img src="/logo.png" alt="Logo" className="h-12 w-auto" />
-                            </Link>
-                            <button
-                                className="text-[#F0EEE6] p-1"
-                                onClick={() => setIsOpen(false)}
+            {isOpen && (
+                <div
+                    className="fixed inset-0 bg-[#183A39] z-[60] flex flex-col px-6 py-8 lg:hidden"
+                >
+                    {/* Top Header inside menu */}
+                    <div className="flex justify-between items-center mb-20">
+                        <Link href="/" onClick={() => setIsOpen(false)}>
+                            <img src="/logo.png" alt="Logo" className="h-12 w-auto" />
+                        </Link>
+                        <button
+                            className="text-[#F0EEE6] p-1"
+                            onClick={() => setIsOpen(false)}
+                        >
+                            <X size={32} strokeWidth={1.5} />
+                        </button>
+                    </div>
+
+                    {/* Nav Links */}
+                    <div className="flex flex-col gap-4 w-full items-center">
+                        {navLinks.map((link) => (
+                            <div
+                                key={link.name}
+                                className="flex justify-center w-full"
                             >
-                                <X size={32} strokeWidth={1.5} />
+                                <Link
+                                    href={link.href}
+                                    onClick={() => setIsOpen(false)}
+                                    className="flex items-center justify-center w-[382px] h-[40px] border border-[#5EE2A0]/40 rounded-full font-sans text-[14px] font-medium tracking-[0.15em] text-[#F0EEE6] hover:bg-[#F0EEE6]/5 transition-colors"
+                                >
+                                    {link.name}
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Bottom Actions */}
+                    <div className="mt-auto flex flex-col gap-4 items-center pb-12">
+                        <div
+                            className="flex justify-center w-full"
+                        >
+                            <button className="w-[382px] h-[40px] bg-[#F0EEE6] text-[#183A39] rounded-full font-serif italic text-[18px] tracking-wide shadow-lg flex items-center justify-center">
+                                GET STARTED
                             </button>
                         </div>
 
-                        {/* Nav Links */}
-                        <div className="flex flex-col gap-4 w-full items-center">
-                            {navLinks.map((link) => (
-                                <div
-                                    key={link.name}
-                                    className="flex justify-center w-full"
-                                >
-                                    <Link
-                                        href={link.href}
-                                        onClick={() => setIsOpen(false)}
-                                        className="flex items-center justify-center w-[382px] h-[40px] border border-[#5EE2A0]/40 rounded-full font-sans text-[14px] font-medium tracking-[0.15em] text-[#F0EEE6] hover:bg-[#F0EEE6]/5 transition-colors"
-                                    >
-                                        {link.name}
-                                    </Link>
-                                </div>
-                            ))}
+                        <div
+                            className="flex justify-center w-full"
+                        >
+                            <button className="w-[382px] h-[40px] bg-[#5EE2A0] text-[#183A39] rounded-full font-serif italic text-[18px] tracking-wide shadow-lg flex items-center justify-center">
+                                CART
+                            </button>
                         </div>
-
-                        {/* Bottom Actions */}
-                        <div className="mt-auto flex flex-col gap-4 items-center pb-12">
-                            <div
-                                className="flex justify-center w-full"
-                            >
-                                <button className="w-[382px] h-[40px] bg-[#F0EEE6] text-[#183A39] rounded-full font-serif italic text-[18px] tracking-wide shadow-lg flex items-center justify-center">
-                                    GET STARTED
-                                </button>
-                            </div>
-
-                            <div
-                                className="flex justify-center w-full"
-                            >
-                                <button className="w-[382px] h-[40px] bg-[#5EE2A0] text-[#183A39] rounded-full font-serif italic text-[18px] tracking-wide shadow-lg flex items-center justify-center">
-                                    CART
-                                </button>
-                            </div>
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
+                    </div>
+                </div>
+            )}
         </motion.nav>
     );
 }
