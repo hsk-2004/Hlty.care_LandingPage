@@ -8,10 +8,11 @@ export default function FounderLetter() {
             <Image
                 src="/explore/f1.svg"
                 alt="A letter from the Founder"
-                width={428}
-                height={827}
+                width={856}
+                height={1654}
                 priority
                 unoptimized
+                className="w-full max-w-[428px] h-auto"
             />
         </section>
     );
