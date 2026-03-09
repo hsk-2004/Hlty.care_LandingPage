@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function IntroStory() {
 
     return (
-        <section className="relative py-24 px-6 bg-[#F0EEE6] overflow-hidden">
+        <section className="relative py-12 px-6 bg-[#F0EEE6] overflow-hidden">
             <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
 
                 {/* Intro Text */}

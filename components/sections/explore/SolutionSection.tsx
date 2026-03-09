@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function SolutionSection() {
     return (
-        <section className="py-12 md:py-24 px-4 md:px-6 bg-[#F0EEE6]">
+        <section className="pt-0 pb-12 md:pb-24 px-4 md:px-6 bg-[#F0EEE6]">
             {/* Main Dark Teal Container */}
             <div className="max-w-[480px] md:max-w-3xl mx-auto bg-[#183A39] rounded-[32px] overflow-hidden shadow-2xl p-6 md:p-10">
 

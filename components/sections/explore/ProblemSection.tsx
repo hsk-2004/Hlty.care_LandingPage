@@ -1,78 +1,153 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 export default function ProblemSection() {
-    const listItems = [
-        "repeated",
-        "emotionally safe",
-        "part of daily life",
-        "shared with the adults around a child"
+    const scrollRef = useRef<HTMLDivElement>(null);
+    const sectionRef = useRef<HTMLDivElement>(null);
+    const [scrollX, setScrollX] = useState(0);
+
+    // Card index indicator tracking
+    const [activeIndex, setActiveIndex] = useState(0);
+
+    const problems = [
+        {
+            title: "THE PROBLEM",
+            image: "/explore/P1.svg",
+            text: "Today, health is often taught as information. Rules to remember. Advice to follow. Instructions to obey. But information doesn't become habit on its own.",
+            extraText: "Healthy behaviours stick when they are:",
+            list: ["repeated", "emotionally safe", "part of daily life", "shared with the adults around a child"],
+            subtitle: "Without this, even the best advice fades.",
+        },
+        {
+            title: "THE SHIFT",
+            image: "/explore/p2.svg",
+            color: "#214892",
+            text: "Hlty Beings approaches health as a system, not a lesson. A system that works across:",
+            list: ["children and parents", "homes and schools", "stories and real life"],
+            extraText: "We design playful, story-led experiences that help children practice healthy habits, again and again until they feel natural. Health becomes something they do.",
+            subtitle: "Not something they're told about.",
+        },
+        {
+            title: "HOW IT WORKS",
+            image: "/explore/p3.svg",
+            color: "#399F87",
+            text: "Our work sits at the intersection of three things:",
+            list: [
+                "Stories give children meaning, memory, and motivation.",
+                "Play creates engagement without pressure or fear.",
+                "Systems create consistency across time, places, and people.",
+            ],
+            subtitle: "Together, these help small daily actions turn into lasting habits.",
+        }
     ];
 
+    useEffect(() => {
+        const section = sectionRef.current;
+        const container = scrollRef.current;
+        if (!section || !container) return;
+
+        const handleWheel = (e: WheelEvent) => {
+            const maxScroll = container.scrollWidth - container.clientWidth;
+            const currentScroll = container.scrollLeft;
+
+            // If there's still horizontal scroll room, intercept vertical scroll
+            if (
+                (e.deltaY > 0 && currentScroll < maxScroll) ||
+                (e.deltaY < 0 && currentScroll > 0)
+            ) {
+                e.preventDefault();
+                const newScroll = Math.max(0, Math.min(maxScroll, currentScroll + e.deltaY * 2));
+                container.scrollLeft = newScroll;
+                setScrollX(newScroll);
+
+                // Update active indicator
+                const progress = newScroll / maxScroll;
+                setActiveIndex(Math.round(progress * (problems.length - 1)));
+            }
+        };
+
+        section.addEventListener("wheel", handleWheel, { passive: false });
+        return () => section.removeEventListener("wheel", handleWheel);
+    }, []);
+
+    const indicatorColor = (i: number) =>
+        i === activeIndex ? "#B22222" : "rgba(0,0,0,0.1)";
+
     return (
-        <section className="py-24 px-6 bg-[#F0EEE6]">
-            <div className="max-w-2xl mx-auto space-y-6">
+        <section ref={sectionRef} className="relative bg-[#F0EEE6] py-0">
 
-                {/* Decorative Indicator */}
-                <div className="flex gap-1.5 pb-2">
-                    <div className="w-[3px] h-[16px] bg-[#B22222] opacity-60"></div>
-                    <div className="w-[3px] h-[16px] bg-black/10"></div>
-                    <div className="w-[3px] h-[16px] bg-black/10"></div>
-                </div>
+            {/* Indicators */}
+            <div className="absolute top-4 left-12 md:left-24 z-50 flex gap-1.5 pointer-events-none">
+                {problems.map((_, i) => (
+                    <div
+                        key={i}
+                        className="w-[2.5px] h-[10px] blur-[0.2px] transition-colors duration-300"
+                        style={{ backgroundColor: indicatorColor(i) }}
+                    />
+                ))}
+            </div>
 
-                {/* Main Image Holder (Centered) */}
-                <div className="relative w-full">
-                    {/* Placeholder for the user's image */}
-                    <div className="w-full aspect-[16/9] bg-[#183A39]/10 rounded-[20px] overflow-hidden relative">
-                        <Image
-                            src="/explore/P1.svg"
-                            alt="The Problem Illustration"
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
-                </div>
+            {/* Horizontal scroll container */}
+            <div
+                ref={scrollRef}
+                className="flex gap-12 md:gap-24 px-[7.5vw] md:px-[27.5vw] pt-10 md:pt-12 pb-6 overflow-x-auto overflow-y-hidden"
+                style={{
+                    scrollbarWidth: "none",
+                    msOverflowStyle: "none",
+                }}
+            >
+                <style>{`div::-webkit-scrollbar { display: none; }`}</style>
 
-                {/* Text Content */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8 }}
-                    className="space-y-4"
-                >
-                    <h2 className="font-serif text-[12px] md:text-[20px] font-bold text-[#B22222] tracking-wide uppercase">
-                        THE PROBLEM
-                    </h2>
+                {problems.map((problem, index) => (
+                    <div key={index} className="w-[85vw] md:w-[45vw] flex-shrink-0 flex flex-col items-center space-y-2">
 
-                    <div className="space-y-4 font-serif text-[12px] md:text-[20px] leading-[1.4] text-[#B22222]">
-                        <p>
-                            Today, health is often taught as information.<br />
-                            Rules to remember. Advice to follow. Instructions to obey.<br />
-                            But information doesn&apos;t become habit on its own.
-                        </p>
-
-                        <div className="space-y-4">
-                            <p>Healthy behaviours stick when they are:</p>
-                            <ul className="space-y-2">
-                                {listItems.map((item, i) => (
-                                    <li key={i} className="flex items-center gap-3">
-                                        <div className="w-1.5 h-1.5 rounded-full bg-[#B22222]" />
-                                        <span>{item}</span>
-                                    </li>
-                                ))}
-                            </ul>
+                        {/* Image */}
+                        <div className="relative w-full">
+                            <div className="w-full aspect-[4/3] bg-[#183A39]/10 rounded-[20px] overflow-hidden relative shadow-lg">
+                                <Image
+                                    src={problem.image}
+                                    alt={problem.title}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
                         </div>
 
-                        <p className="pt-4 font-serif italic">
-                            Without this, even the best advice fades.
-                        </p>
-                    </div>
-                </motion.div>
+                        {/* Title */}
+                        <h2
+                            className="font-serif text-[12px] md:text-[20px] font-bold tracking-wide uppercase w-full"
+                            style={{ color: problem.color ?? "#B22222" }}
+                        >
+                            {problem.title}
+                        </h2>
 
+                        {/* Body Text */}
+                        {problem.text && (
+                            <div
+                                className="space-y-1 font-serif text-[11px] md:text-[16px] leading-[1.4] w-full"
+                                style={{ color: problem.color ?? "#B22222" }}
+                            >
+                                <p>{problem.text}</p>
+                                {problem.extraText && <p>{problem.extraText}</p>}
+                                {problem.list && (
+                                    <ul className="ml-5 list-disc space-y-0.5">
+                                        {problem.list.map((item, i) => (
+                                            <li key={i}>{item}</li>
+                                        ))}
+                                    </ul>
+                                )}
+                                {problem.subtitle && (
+                                    <p className="italic opacity-80">{problem.subtitle}</p>
+                                )}
+                            </div>
+                        )}
+
+                    </div>
+                ))}
             </div>
+
         </section>
     );
 }
