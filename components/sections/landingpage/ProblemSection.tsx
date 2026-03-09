@@ -2,7 +2,7 @@
 
 import { useRef, useState } from "react";
 import Image from "next/image";
-import { motion, useScroll, useTransform, useMotionValueEvent, useSpring } from "framer-motion";
+import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 
 export default function ProblemSection() {
     const sectionRef = useRef<HTMLDivElement>(null);
@@ -47,20 +47,12 @@ export default function ProblemSection() {
         offset: ["start start", "end end"]
     });
 
-    // Add mass and damping to the scroll so it isn't completely tied to the fast mouse-wheel tick events
-    // This makes the mobile and desktop scroll feel buttery smooth
-    const smoothProgress = useSpring(scrollYProgress, {
-        stiffness: 100,
-        damping: 30,
-        restDelta: 0.001
-    });
-
     // Translate 0 to 1 scroll progress into horizontal movement
     // Based on how many cards there are
-    const x = useTransform(smoothProgress, [0, 1], ["0%", "-66%"]);
+    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-66%"]);
 
     // Update the active dot indicator
-    useMotionValueEvent(smoothProgress, "change", (latest) => {
+    useMotionValueEvent(scrollYProgress, "change", (latest) => {
         // We have 3 cards, so 0 to 0.33 is card 1, 0.33 to 0.66 is card 2, etc.
         if (latest < 0.33) setActiveIndex(0);
         else if (latest < 0.66) setActiveIndex(1);
@@ -74,7 +66,7 @@ export default function ProblemSection() {
         <section ref={sectionRef} className="relative h-[300vh] bg-[#F0EEE6]">
 
             {/* Sticky Container */}
-            <div className="sticky top-0 h-screen w-full overflow-hidden flex flex-col justify-center">
+            <div className="sticky top-0 h-[100dvh] w-full overflow-hidden flex flex-col justify-center">
 
                 {/* Indicators */}
                 <div className="absolute top-[10vh] left-12 md:left-24 z-50 flex gap-1.5 pointer-events-none">
