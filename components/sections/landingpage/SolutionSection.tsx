@@ -13,7 +13,7 @@ export default function SolutionSection() {
                 {/* Solution Image (s1.svg) */}
                 <div className="relative w-full aspect-[1/1.1] md:aspect-[4/5] rounded-[24px] overflow-hidden">
                     <Image
-                        src="/explore/s1.svg"
+                        src="/landingpage/s1.svg"
                         alt="Solution Illustration"
                         fill
                         className="object-cover"

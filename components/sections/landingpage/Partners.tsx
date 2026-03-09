@@ -24,7 +24,7 @@ export default function Partners() {
                     {/* Top Left: Microsoft for Startups */}
                     <div className="w-full max-w-[280px] aspect-[2.2/1] flex items-center justify-center relative overflow-hidden p-6">
                         <Image
-                            src="/explore/microsoft.svg"
+                            src="/landingpage/microsoft.svg"
                             fill
                             className="object-contain p-4 md:p-6"
                             alt="Microsoft for Startups"
@@ -34,7 +34,7 @@ export default function Partners() {
                     {/* Top Right: IIM Kozhikode LIVE */}
                     <div className="w-full max-w-[280px] aspect-[2.2/1] flex items-center justify-center relative overflow-hidden p-6">
                         <Image
-                            src="/explore/live.svg"
+                            src="/landingpage/live.svg"
                             fill
                             className="object-contain p-4 md:p-6"
                             alt="IIM Kozhikode LIVE"
@@ -44,7 +44,7 @@ export default function Partners() {
                     {/* Bottom Left: #startupindia */}
                     <div className="w-full max-w-[280px] aspect-[2.2/1] flex items-center justify-center relative overflow-hidden p-6">
                         <Image
-                            src="/explore/startup.svg"
+                            src="/landingpage/startup.svg"
                             fill
                             className="object-contain p-2 md:p-4"
                             alt="Startup India"
@@ -54,7 +54,7 @@ export default function Partners() {
                     {/* Bottom Right: Atal Incubation Centre */}
                     <div className="w-full max-w-[280px] aspect-[2.2/1] flex items-center justify-center relative overflow-hidden p-6">
                         <Image
-                            src="/explore/atal.svg"
+                            src="/landingpage/atal.svg"
                             fill
                             className="object-contain p-2 md:p-4"
                             alt="Atal Incubation Centre"

@@ -14,7 +14,7 @@ export default function ProblemSection() {
     const problems = [
         {
             title: "THE PROBLEM",
-            image: "/explore/P1.svg",
+            image: "/landingpage/P1.svg",
             text: "Today, health is often taught as information. Rules to remember. Advice to follow. Instructions to obey. But information doesn't become habit on its own.",
             extraText: "Healthy behaviours stick when they are:",
             list: ["repeated", "emotionally safe", "part of daily life", "shared with the adults around a child"],
@@ -22,7 +22,7 @@ export default function ProblemSection() {
         },
         {
             title: "THE SHIFT",
-            image: "/explore/p2.svg",
+            image: "/landingpage/p2.svg",
             color: "#214892",
             text: "Hlty Beings approaches health as a system, not a lesson. A system that works across:",
             list: ["children and parents", "homes and schools", "stories and real life"],
@@ -31,7 +31,7 @@ export default function ProblemSection() {
         },
         {
             title: "HOW IT WORKS",
-            image: "/explore/p3.svg",
+            image: "/landingpage/p3.svg",
             color: "#399F87",
             text: "Our work sits at the intersection of three things:",
             list: [
@@ -54,22 +54,62 @@ export default function ProblemSection() {
 
             // If there's still horizontal scroll room, intercept vertical scroll
             if (
-                (e.deltaY > 0 && currentScroll < maxScroll) ||
-                (e.deltaY < 0 && currentScroll > 0)
+                Math.abs(e.deltaY) > Math.abs(e.deltaX) &&
+                ((e.deltaY > 0 && currentScroll < maxScroll) ||
+                    (e.deltaY < 0 && currentScroll > 0))
             ) {
                 e.preventDefault();
                 const newScroll = Math.max(0, Math.min(maxScroll, currentScroll + e.deltaY * 2));
                 container.scrollLeft = newScroll;
                 setScrollX(newScroll);
+            }
+        };
 
-                // Update active indicator
-                const progress = newScroll / maxScroll;
-                setActiveIndex(Math.round(progress * (problems.length - 1)));
+        let touchStartY = 0;
+        let touchStartX = 0;
+
+        const handleTouchStart = (e: TouchEvent) => {
+            touchStartY = e.touches[0].clientY;
+            touchStartX = e.touches[0].clientX;
+        };
+
+        const handleTouchMove = (e: TouchEvent) => {
+            const currentY = e.touches[0].clientY;
+            const currentX = e.touches[0].clientX;
+            const deltaY = touchStartY - currentY;
+            const deltaX = touchStartX - currentX;
+
+            const maxScroll = container.scrollWidth - container.clientWidth;
+            const currentScroll = container.scrollLeft;
+
+            // Intercept if it's primarily a vertical scroll AND we have room to scroll horizontally
+            if (
+                Math.abs(deltaY) > Math.abs(deltaX) &&
+                ((deltaY > 0 && currentScroll < maxScroll) ||
+                    (deltaY < 0 && currentScroll > 0))
+            ) {
+                e.preventDefault(); // Stop native vertical scroll
+
+                // Keep movement feeling natural
+                const newScroll = Math.max(0, Math.min(maxScroll, currentScroll + deltaY * 2));
+                container.scrollLeft = newScroll;
+                setScrollX(newScroll);
+
+                // Re-center touch start to make constant swiping feel right
+                touchStartY = currentY;
+                touchStartX = currentX;
             }
         };
 
         section.addEventListener("wheel", handleWheel, { passive: false });
-        return () => section.removeEventListener("wheel", handleWheel);
+        section.addEventListener("touchstart", handleTouchStart, { passive: false });
+        section.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+        return () => {
+            section.removeEventListener("wheel", handleWheel);
+            section.removeEventListener("touchstart", handleTouchStart);
+            section.removeEventListener("touchmove", handleTouchMove);
+        };
     }, []);
 
     const indicatorColor = (i: number) =>
@@ -92,10 +132,19 @@ export default function ProblemSection() {
             {/* Horizontal scroll container */}
             <div
                 ref={scrollRef}
-                className="flex gap-12 md:gap-24 px-[7.5vw] md:px-[27.5vw] pt-10 md:pt-12 pb-6 overflow-x-auto overflow-y-hidden"
+                onScroll={(e) => {
+                    const container = e.currentTarget;
+                    const maxScroll = container.scrollWidth - container.clientWidth;
+                    if (maxScroll > 0) {
+                        const progress = container.scrollLeft / maxScroll;
+                        setActiveIndex(Math.round(progress * (problems.length - 1)));
+                    }
+                }}
+                className="flex gap-12 md:gap-24 px-[7.5vw] md:px-[27.5vw] pt-10 md:pt-12 pb-6 overflow-x-auto overflow-y-hidden touch-pan-x"
                 style={{
                     scrollbarWidth: "none",
                     msOverflowStyle: "none",
+                    WebkitOverflowScrolling: "touch",
                 }}
             >
                 <style>{`div::-webkit-scrollbar { display: none; }`}</style>

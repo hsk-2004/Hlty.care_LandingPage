@@ -59,7 +59,7 @@ export default function IntroStory() {
                     className="mt-20 md:mt-32 w-full max-w-4xl mx-auto"
                 >
                     <Image
-                        src="/explore/intro-image.svg"
+                        src="/landingpage/intro-image.svg"
                         alt="Intro Story Illustration"
                         width={600}
                         height={400}

@@ -16,7 +16,7 @@ export default function Hero() {
         className="absolute inset-0 z-0 overflow-hidden"
       >
         <Image
-          src="/explore/hero image.svg"
+          src="/landingpage/hero image.svg"
           alt="Explore Hero Background"
           fill
           priority
@@ -67,7 +67,7 @@ export default function Hero() {
         className="absolute -bottom-5 md:-bottom-20 left-0 w-full z-10"
       >
         <Image
-          src="/explore/hero down.svg"
+          src="/landingpage/hero down.svg"
           alt="Decoration"
           width={1440}
           height={100}

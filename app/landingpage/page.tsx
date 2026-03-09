@@ -7,17 +7,17 @@ import SolutionSection from "@/components/sections/landingpage/SolutionSection";
 import FounderLetter from "@/components/sections/landingpage/FounderLetter";
 import Partners from "@/components/sections/landingpage/Partners";
 
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-[#F0EEE6]">
-      <Navbar />
-      <Hero />
-      <IntroStory />
-      <ProblemSection />
-      <SolutionSection />
-      <FounderLetter />
-      <Partners />
-      <Footer />
-    </main>
-  );
+export default function LandingPage() {
+    return (
+        <main className="min-h-screen bg-[#F0EEE6]">
+            <Navbar />
+            <Hero />
+            <IntroStory />
+            <ProblemSection />
+            <SolutionSection />
+            <FounderLetter />
+            <Partners />
+            <Footer />
+        </main>
+    );
 }

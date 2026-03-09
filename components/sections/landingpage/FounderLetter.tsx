@@ -17,7 +17,7 @@ export default function FounderLetter() {
                         className="w-full"
                     >
                         <Image
-                            src="/explore/f1.png"
+                            src="/landingpage/f1.png"
                             alt="A letter from the Founder"
                             width={727}
                             height={820}
@@ -40,7 +40,7 @@ export default function FounderLetter() {
                     <div className="absolute -top-[-4px] -right-[-15px] w-[78.83px] h-[96.14px] transform rotate-[3.8deg] z-20">
                         <div className="w-full h-full bg-[#FCB11F] rounded-[7.69px] border-[2.88px] border-[#E4DBCD] shadow-md overflow-hidden relative">
                             <Image
-                                src="/explore/founder.png"
+                                src="/landingpage/founder.png"
                                 alt="Founder"
                                 fill
                                 className="object-cover"
@@ -49,7 +49,7 @@ export default function FounderLetter() {
                         {/* Pin - Moved outside overflow-hidden */}
                         <div className="absolute -top-4 -right-1 w-8 h-8 z-30">
                             <Image
-                                src="/explore/pin.svg"
+                                src="/landingpage/pin.svg"
                                 alt="Pin"
                                 width={16.91}
                                 height={59.63}

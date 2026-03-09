@@ -27,7 +27,7 @@ export default function Navbar() {
     });
 
     const navLinks = [
-        { name: "EXPLORE", href: "/explore" },
+        { name: "EXPLORE", href: "/" },
         { name: "WORKSHOPS", href: "/workshop" },
         { name: "PRODUCTS", href: "#" },
         { name: "FOR PARENTS", href: "#" },
