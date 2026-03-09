@@ -1,10 +1,14 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 
 export default function ProblemSection() {
+    const scrollRef = useRef<HTMLDivElement>(null);
     const sectionRef = useRef<HTMLDivElement>(null);
+    const [scrollX, setScrollX] = useState(0);
+
+    // Card index indicator tracking
     const [activeIndex, setActiveIndex] = useState(0);
 
     const problems = [
@@ -22,8 +26,7 @@ export default function ProblemSection() {
             color: "#214892",
             text: "Hlty Beings approaches health as a system, not a lesson. A system that works across:",
             list: ["children and parents", "homes and schools", "stories and real life"],
-            extraText:
-                "We design playful, story-led experiences that help children practice healthy habits, again and again until they feel natural. Health becomes something they do.",
+            extraText: "We design playful, story-led experiences that help children practice healthy habits, again and again until they feel natural. Health becomes something they do.",
             subtitle: "Not something they're told about.",
         },
         {
@@ -37,105 +40,163 @@ export default function ProblemSection() {
                 "Systems create consistency across time, places, and people.",
             ],
             subtitle: "Together, these help small daily actions turn into lasting habits.",
-        },
+        }
     ];
 
-    const { scrollYProgress } = useScroll({
-        target: sectionRef,
-        offset: ["start start", "end end"],
-    });
+    useEffect(() => {
+        const section = sectionRef.current;
+        const container = scrollRef.current;
+        if (!section || !container) return;
 
-    const x = useTransform(scrollYProgress, [0, 1], ["0%", "-66%"]);
+        const handleWheel = (e: WheelEvent) => {
+            const maxScroll = container.scrollWidth - container.clientWidth;
+            const currentScroll = container.scrollLeft;
 
-    useMotionValueEvent(scrollYProgress, "change", (latest) => {
-        const index = latest < 0.33 ? 0 : latest < 0.66 ? 1 : 2;
-        setActiveIndex((prev) => (prev !== index ? index : prev));
-    });
+            // If there's still horizontal scroll room, intercept vertical scroll
+            if (
+                Math.abs(e.deltaY) > Math.abs(e.deltaX) &&
+                ((e.deltaY > 0 && currentScroll < maxScroll) ||
+                    (e.deltaY < 0 && currentScroll > 0))
+            ) {
+                e.preventDefault();
+                const newScroll = Math.max(0, Math.min(maxScroll, currentScroll + e.deltaY * 2));
+                container.scrollLeft = newScroll;
+                setScrollX(newScroll);
+            }
+        };
+
+        let touchStartY = 0;
+        let touchStartX = 0;
+
+        const handleTouchStart = (e: TouchEvent) => {
+            touchStartY = e.touches[0].clientY;
+            touchStartX = e.touches[0].clientX;
+        };
+
+        const handleTouchMove = (e: TouchEvent) => {
+            const currentY = e.touches[0].clientY;
+            const currentX = e.touches[0].clientX;
+            const deltaY = touchStartY - currentY;
+            const deltaX = touchStartX - currentX;
+
+            const maxScroll = container.scrollWidth - container.clientWidth;
+            const currentScroll = container.scrollLeft;
+
+            // Intercept if it's primarily a vertical scroll AND we have room to scroll horizontally
+            if (
+                Math.abs(deltaY) > Math.abs(deltaX) &&
+                ((deltaY > 0 && currentScroll < maxScroll) ||
+                    (deltaY < 0 && currentScroll > 0))
+            ) {
+                e.preventDefault(); // Stop native vertical scroll
+
+                // Keep movement feeling natural
+                const newScroll = Math.max(0, Math.min(maxScroll, currentScroll + deltaY * 2));
+                container.scrollLeft = newScroll;
+                setScrollX(newScroll);
+
+                // Re-center touch start to make constant swiping feel right
+                touchStartY = currentY;
+                touchStartX = currentX;
+            }
+        };
+
+        section.addEventListener("wheel", handleWheel, { passive: false });
+        section.addEventListener("touchstart", handleTouchStart, { passive: false });
+        section.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+        return () => {
+            section.removeEventListener("wheel", handleWheel);
+            section.removeEventListener("touchstart", handleTouchStart);
+            section.removeEventListener("touchmove", handleTouchMove);
+        };
+    }, []);
 
     const indicatorColor = (i: number) =>
-        i === activeIndex ? "#B22222" : "rgba(0,0,0,0.15)";
+        i === activeIndex ? "#B22222" : "rgba(0,0,0,0.1)";
 
     return (
-        <section ref={sectionRef} className="relative h-[250vh] bg-[#F0EEE6]">
+        <section ref={sectionRef} className="relative bg-[#F0EEE6] py-0">
 
-            {/* Sticky container */}
-            <div className="sticky top-0 h-[100dvh] w-full overflow-hidden flex flex-col justify-center">
+            {/* Indicators */}
+            <div className="absolute top-4 left-12 md:left-24 z-50 flex gap-1.5 pointer-events-none">
+                {problems.map((_, i) => (
+                    <div
+                        key={i}
+                        className="w-[2.5px] h-[10px] blur-[0.2px] transition-colors duration-300"
+                        style={{ backgroundColor: indicatorColor(i) }}
+                    />
+                ))}
+            </div>
 
-                {/* Indicators */}
-                <div className="absolute top-[10vh] left-12 md:left-24 z-50 flex gap-1.5 pointer-events-none">
-                    {problems.map((_, i) => (
-                        <div
-                            key={i}
-                            className="w-[2.5px] h-[10px] transition-colors duration-300"
-                            style={{ backgroundColor: indicatorColor(i) }}
-                        />
-                    ))}
-                </div>
+            {/* Horizontal scroll container */}
+            <div
+                ref={scrollRef}
+                onScroll={(e) => {
+                    const container = e.currentTarget;
+                    const maxScroll = container.scrollWidth - container.clientWidth;
+                    if (maxScroll > 0) {
+                        const progress = container.scrollLeft / maxScroll;
+                        setActiveIndex(Math.round(progress * (problems.length - 1)));
+                    }
+                }}
+                className="flex gap-12 md:gap-24 px-[7.5vw] md:px-[27.5vw] pt-10 md:pt-12 pb-6 overflow-x-auto overflow-y-hidden touch-pan-x"
+                style={{
+                    scrollbarWidth: "none",
+                    msOverflowStyle: "none",
+                    WebkitOverflowScrolling: "touch",
+                }}
+            >
+                <style>{`div::-webkit-scrollbar { display: none; }`}</style>
 
-                {/* Horizontal scroll */}
-                <motion.div
-                    className="flex gap-12 md:gap-24 px-[7.5vw] md:px-[27.5vw] w-fit will-change-transform"
-                    style={{ x }}
-                >
-                    {problems.map((problem, index) => (
-                        <div
-                            key={index}
-                            className="w-[85vw] md:w-[45vw] flex-shrink-0 flex flex-col items-center space-y-2"
-                        >
+                {problems.map((problem, index) => (
+                    <div key={index} className="w-[85vw] md:w-[45vw] flex-shrink-0 flex flex-col items-center space-y-2">
 
-                            {/* Image */}
-                            <div className="relative w-full">
-                                <div className="w-full aspect-[4/3] bg-[#183A39]/10 rounded-[20px] overflow-hidden relative">
-
-                                    <img
-                                        src={problem.image}
-                                        alt={problem.title}
-                                        className="w-full h-full object-cover"
-                                        draggable={false}
-                                    />
-
-                                </div>
+                        {/* Image */}
+                        <div className="relative w-full">
+                            <div className="w-full aspect-[4/3] bg-[#183A39]/10 rounded-[20px] overflow-hidden relative shadow-lg">
+                                <Image
+                                    src={problem.image}
+                                    alt={problem.title}
+                                    fill
+                                    className="object-cover"
+                                />
                             </div>
+                        </div>
 
-                            {/* Title */}
-                            <h2
-                                className="font-serif text-[12px] md:text-[20px] font-bold tracking-wide uppercase w-full"
+                        {/* Title */}
+                        <h2
+                            className="font-serif text-[12px] md:text-[20px] font-bold tracking-wide uppercase w-full"
+                            style={{ color: problem.color ?? "#B22222" }}
+                        >
+                            {problem.title}
+                        </h2>
+
+                        {/* Body Text */}
+                        {problem.text && (
+                            <div
+                                className="space-y-1 font-serif text-[11px] md:text-[16px] leading-[1.4] w-full"
                                 style={{ color: problem.color ?? "#B22222" }}
                             >
-                                {problem.title}
-                            </h2>
+                                <p>{problem.text}</p>
+                                {problem.extraText && <p>{problem.extraText}</p>}
+                                {problem.list && (
+                                    <ul className="ml-5 list-disc space-y-0.5">
+                                        {problem.list.map((item, i) => (
+                                            <li key={i}>{item}</li>
+                                        ))}
+                                    </ul>
+                                )}
+                                {problem.subtitle && (
+                                    <p className="italic opacity-80">{problem.subtitle}</p>
+                                )}
+                            </div>
+                        )}
 
-                            {/* Body */}
-                            {problem.text && (
-                                <div
-                                    className="space-y-1 font-serif text-[11px] md:text-[16px] leading-[1.4] w-full"
-                                    style={{ color: problem.color ?? "#B22222" }}
-                                >
-                                    <p>{problem.text}</p>
-
-                                    {problem.extraText && <p>{problem.extraText}</p>}
-
-                                    {problem.list && (
-                                        <ul className="ml-5 list-disc space-y-0.5">
-                                            {problem.list.map((item, i) => (
-                                                <li key={i}>{item}</li>
-                                            ))}
-                                        </ul>
-                                    )}
-
-                                    {problem.subtitle && (
-                                        <p className="italic opacity-80">
-                                            {problem.subtitle}
-                                        </p>
-                                    )}
-                                </div>
-                            )}
-
-                        </div>
-                    ))}
-                </motion.div>
-
+                    </div>
+                ))}
             </div>
+
         </section>
     );
 }
