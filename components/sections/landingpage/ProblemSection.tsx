@@ -89,7 +89,7 @@ export default function ProblemSection() {
 
                 {/* Horizontal slider */}
                 <motion.div
-                    className="flex gap-12 md:gap-24 px-[7.5vw] md:px-[27.5vw] w-fit"
+                    className="flex gap-12 md:gap-24 px-[7.5vw] md:px-[27.5vw] w-fit will-change-transform transform-gpu antialiased"
                     style={{ x }}
                 >
                     {problems.map((problem, index) => (
