@@ -38,9 +38,9 @@ export default function FounderLetter() {
                 >
                     {/* Founder Photo & Paperclip */}
                     <div className="absolute -top-[-4px] -right-[-15px] w-[78.83px] h-[96.14px] transform rotate-[3.8deg] z-20">
-                        <div className="relative w-full h-full rounded-xl shadow-lg border-[3px] border-white overflow-hidden">
+                        <div className="w-full h-full bg-[#FCB11F] rounded-[7.69px] border-[2.88px] border-[#E4DBCD] shadow-md overflow-hidden relative">
                             <Image
-                                src="/explore/founder.svg"
+                                src="/explore/founder.png"
                                 alt="Founder"
                                 fill
                                 className="object-cover"
