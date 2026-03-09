@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Image from "next/image";
 import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
 
 export default function ProblemSection() {
@@ -23,7 +22,8 @@ export default function ProblemSection() {
             color: "#214892",
             text: "Hlty Beings approaches health as a system, not a lesson. A system that works across:",
             list: ["children and parents", "homes and schools", "stories and real life"],
-            extraText: "We design playful, story-led experiences that help children practice healthy habits, again and again until they feel natural. Health becomes something they do.",
+            extraText:
+                "We design playful, story-led experiences that help children practice healthy habits, again and again until they feel natural. Health becomes something they do.",
             subtitle: "Not something they're told about.",
         },
         {
@@ -37,35 +37,28 @@ export default function ProblemSection() {
                 "Systems create consistency across time, places, and people.",
             ],
             subtitle: "Together, these help small daily actions turn into lasting habits.",
-        }
+        },
     ];
 
-    // Create a tall section so the user can scroll normally down the page
-    // The inner container will stick to the screen and slide horizontally
     const { scrollYProgress } = useScroll({
         target: sectionRef,
-        offset: ["start start", "end end"]
+        offset: ["start start", "end end"],
     });
 
-    // Translate 0 to 1 scroll progress into horizontal movement
-    // Based on how many cards there are
     const x = useTransform(scrollYProgress, [0, 1], ["0%", "-66%"]);
 
-    // Update the active dot indicator
     useMotionValueEvent(scrollYProgress, "change", (latest) => {
-        // We have 3 cards, so 0 to 0.33 is card 1, 0.33 to 0.66 is card 2, etc.
-        if (latest < 0.33) setActiveIndex(0);
-        else if (latest < 0.66) setActiveIndex(1);
-        else setActiveIndex(2);
+        const index = latest < 0.33 ? 0 : latest < 0.66 ? 1 : 2;
+        setActiveIndex((prev) => (prev !== index ? index : prev));
     });
 
     const indicatorColor = (i: number) =>
-        i === activeIndex ? "#B22222" : "rgba(0,0,0,0.1)";
+        i === activeIndex ? "#B22222" : "rgba(0,0,0,0.15)";
 
     return (
-        <section ref={sectionRef} className="relative h-[300vh] bg-[#F0EEE6]">
+        <section ref={sectionRef} className="relative h-[250vh] bg-[#F0EEE6]">
 
-            {/* Sticky Container */}
+            {/* Sticky container */}
             <div className="sticky top-0 h-[100dvh] w-full overflow-hidden flex flex-col justify-center">
 
                 {/* Indicators */}
@@ -73,29 +66,34 @@ export default function ProblemSection() {
                     {problems.map((_, i) => (
                         <div
                             key={i}
-                            className="w-[2.5px] h-[10px] blur-[0.2px] transition-colors duration-300"
+                            className="w-[2.5px] h-[10px] transition-colors duration-300"
                             style={{ backgroundColor: indicatorColor(i) }}
                         />
                     ))}
                 </div>
 
-                {/* Horizontal slider */}
+                {/* Horizontal scroll */}
                 <motion.div
-                    className="flex gap-12 md:gap-24 px-[7.5vw] md:px-[27.5vw] w-fit will-change-transform transform-gpu antialiased"
+                    className="flex gap-12 md:gap-24 px-[7.5vw] md:px-[27.5vw] w-fit will-change-transform"
                     style={{ x }}
                 >
                     {problems.map((problem, index) => (
-                        <div key={index} className="w-[85vw] md:w-[45vw] flex-shrink-0 flex flex-col items-center space-y-2">
+                        <div
+                            key={index}
+                            className="w-[85vw] md:w-[45vw] flex-shrink-0 flex flex-col items-center space-y-2"
+                        >
 
                             {/* Image */}
                             <div className="relative w-full">
-                                <div className="w-full aspect-[4/3] bg-[#183A39]/10 rounded-[20px] overflow-hidden relative shadow-lg">
-                                    <Image
+                                <div className="w-full aspect-[4/3] bg-[#183A39]/10 rounded-[20px] overflow-hidden relative">
+
+                                    <img
                                         src={problem.image}
                                         alt={problem.title}
-                                        fill
-                                        className="object-cover"
+                                        className="w-full h-full object-cover"
+                                        draggable={false}
                                     />
+
                                 </div>
                             </div>
 
@@ -107,14 +105,16 @@ export default function ProblemSection() {
                                 {problem.title}
                             </h2>
 
-                            {/* Body Text */}
+                            {/* Body */}
                             {problem.text && (
                                 <div
                                     className="space-y-1 font-serif text-[11px] md:text-[16px] leading-[1.4] w-full"
                                     style={{ color: problem.color ?? "#B22222" }}
                                 >
                                     <p>{problem.text}</p>
+
                                     {problem.extraText && <p>{problem.extraText}</p>}
+
                                     {problem.list && (
                                         <ul className="ml-5 list-disc space-y-0.5">
                                             {problem.list.map((item, i) => (
@@ -122,8 +122,11 @@ export default function ProblemSection() {
                                             ))}
                                         </ul>
                                     )}
+
                                     {problem.subtitle && (
-                                        <p className="italic opacity-80">{problem.subtitle}</p>
+                                        <p className="italic opacity-80">
+                                            {problem.subtitle}
+                                        </p>
                                     )}
                                 </div>
                             )}
