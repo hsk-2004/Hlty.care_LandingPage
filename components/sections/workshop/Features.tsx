@@ -66,7 +66,7 @@ export default function Features() {
                 Summer Fun Camps
               </h2>
 
-              <p className="font-serif text-[10px] md:text-[18px] lg:text-[16px] leading-tight md:leading-relaxed text-[#183A39] opacity-80 md:opacity-100 max-w-sm md:max-w-xl lg:max-w-none md:whitespace-nowrap lg:whitespace-normal">
+              <p className="font-serif text-[12px] md:text-[18px] lg:text-[16px] leading-tight md:leading-relaxed text-[#183A39] max-w-sm md:max-w-xl lg:max-w-none md:whitespace-nowrap lg:whitespace-normal">
                 These are short-term, immersive camps where{" "}
                 <br className="hidden lg:inline" />
                 health is woven into{" "}
@@ -103,7 +103,7 @@ export default function Features() {
                     {feature.title}
                   </h3>
 
-                  <p className="font-sans lg:font-serif text-[11px] md:text-[18px] lg:text-[16px] text-[#183A39]/70 md:text-[#183A39] leading-relaxed md:leading-[1.6] max-w-md md:max-w-xl">
+                  <p className="font-serif text-[12px] md:text-[18px] lg:text-[16px] text-[#183A39] leading-relaxed md:leading-[1.6] max-w-md md:max-w-xl">
                     {feature.description}
                   </p>
                 </motion.div>

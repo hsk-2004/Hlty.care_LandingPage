@@ -54,7 +54,7 @@ export default function Workshops() {
                             <h2 className="font-serif text-[24px] md:text-[40px] lg:text-[34px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                                 Employer Workshops
                             </h2>
-                            <p className="font-serif text-[10px] md:text-[18px] lg:text-[15px] lg:font-normal leading-tight lg:leading-tight text-[#183A39] opacity-80 lg:opacity-100 max-w-sm md:max-w-xl lg:max-w-md mx-0 lg:mx-0">
+                            <p className="font-serif text-[12px] md:text-[18px] lg:text-[15px] lg:font-normal leading-tight lg:leading-tight text-[#183A39] max-w-sm md:max-w-xl lg:max-w-md mx-0 lg:mx-0">
                                 <span className="lg:block lg:whitespace-nowrap">These workshops are designed for working </span>
                                 <span className="lg:block lg:whitespace-nowrap">parents — acknowledging limited time, cognitive </span>
                                 <span className="lg:block lg:whitespace-nowrap">load, and competing demands.</span>
@@ -103,7 +103,7 @@ export default function Workshops() {
                                 </h3>
                                 <div className="lg:space-y-1">
                                     {/* Mobile & Tablet: Single wrapping paragraph */}
-                                    <p className="lg:hidden font-sans text-[11px] md:text-[18px] text-[#183A39]/70 leading-relaxed max-w-md md:max-w-xl">
+                                    <p className="lg:hidden font-serif text-[12px] md:text-[18px] text-[#183A39] leading-relaxed max-w-md md:max-w-xl">
                                         {point.description.join(" ")}
                                     </p>
 

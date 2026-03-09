@@ -82,11 +82,7 @@ export default function Footer() {
                     <div className="lg:col-span-6 flex flex-col items-start text-left space-y-8">
                         {/* Logo */}
                         <div className="flex items-center gap-4">
-                            <img src="/logo_.svg" alt="Hlty Beings" className="h-10 lg:h-12 w-auto" />
-                            <div className="font-serif text-[28px] lg:text-[36px] leading-none flex items-baseline gap-2">
-                                <span>Hlty</span>
-                                <span className="italic font-normal opacity-90">Beings</span>
-                            </div>
+                            <img src="/footer-logo.svg" alt="Hlty Beings logo" className="h-[32px] lg:h-[40px] w-auto" />
                         </div>
 
                         {/* Disclaimer */}

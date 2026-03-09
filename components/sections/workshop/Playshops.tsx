@@ -58,7 +58,7 @@ export default function Playshops() {
               <h2 className="font-serif text-[24px] md:text-[40px] lg:text-[34px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                 School Playshops
               </h2>
-              <p className="font-serif text-[10px] md:text-[18px] lg:text-[15px] lg:font-normal leading-tight lg:leading-relaxed text-[#183A39] opacity-80 lg:opacity-100 max-w-sm md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
+              <p className="font-serif text-[12px] md:text-[18px] lg:text-[15px] lg:font-normal leading-tight lg:leading-relaxed text-[#183A39] max-w-sm md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                 Interactive sessions designed to fit into a child's <br className="hidden lg:inline" />
                 existing school day — without turning health <br className="hidden lg:inline" />
                 into another subject to study.
@@ -107,7 +107,7 @@ export default function Playshops() {
                 </h3>
                 <div className="space-y-2 lg:space-y-1">
                   {point.description.map((desc, dIdx) => (
-                    <p key={dIdx} className="font-sans lg:font-serif text-[10px] md:text-[18px] lg:text-[16px] lg:font-normal text-[#183A39]/70 lg:text-[#183A39] leading-relaxed lg:leading-none max-w-md md:max-w-xl mx-0 lg:mx-0">
+                    <p key={dIdx} className="font-serif text-[12px] md:text-[18px] lg:text-[16px] lg:font-normal text-[#183A39] leading-relaxed lg:leading-none max-w-md md:max-w-xl mx-0 lg:mx-0">
                       {desc}
                     </p>
                   ))}
