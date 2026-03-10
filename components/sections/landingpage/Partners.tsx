@@ -13,7 +13,7 @@ export default function Partners() {
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
-                    className="font-serif text-[20px] md:text-[36px] text-[#183A39] text-center font-bold tracking-tight"
+                    className="font-serif text-[20px] md:text-[20px] text-[#183A39] text-center font-bold tracking-tight"
                 >
                     BACKED BY
                 </motion.h2>

@@ -122,7 +122,7 @@ export default function ProblemSection() {
         i === activeIndex ? "#B22222" : "rgba(0,0,0,0.1)";
 
     return (
-        <section ref={sectionRef} className="relative bg-[#F0EEE6] py-0">
+        <section ref={sectionRef} className="relative bg-[#F0EEE6] pt-12 md:pt-24 lg:pt-32 pb-0">
 
             {/* Indicators */}
             <div className="absolute top-4 left-12 md:left-24 z-50 flex gap-1.5 pointer-events-none">
