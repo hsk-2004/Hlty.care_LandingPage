@@ -86,7 +86,7 @@ export default function Footer() {
                         </div>
 
                         {/* Disclaimer */}
-                        <p className="font-serif text-[14px] lg:text-[14px] leading-relaxed opacity-90 lg:opacity-80 max-w-sm lg:max-w-md">
+                        <p className="font-jubilat text-[14px] lg:text-[14px] leading-relaxed opacity-90 lg:opacity-80 max-w-sm lg:max-w-md">
                             Hlty Beings&apos; products and services are not intended to
                             substitute for professional medical guidance.
                             Our content, products and experiential offerings do not
@@ -113,7 +113,7 @@ export default function Footer() {
                     <div className="lg:col-span-6 flex flex-col gap-12 lg:grid lg:grid-cols-2 lg:gap-24 w-full">
                         {/* Company Section */}
                         <div className="flex flex-col space-y-6 lg:space-y-8">
-                            <h3 className="font-sans text-[16px] lg:text-[16px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
+                            <h3 className="font-jubilat text-[16px] lg:text-[16px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
                                 Company
                             </h3>
                             <nav className="flex flex-col space-y-4 lg:space-y-5">
@@ -128,7 +128,7 @@ export default function Footer() {
                                     <a
                                         key={link.name}
                                         href={link.href}
-                                        className="font-serif text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal"
+                                        className="font-jubilat text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal"
                                     >
                                         {link.name}
                                     </a>
@@ -138,13 +138,13 @@ export default function Footer() {
 
                         {/* Legal Section */}
                         <div className="flex flex-col space-y-6 lg:space-y-8">
-                            <h3 className="font-sans text-[16px] lg:text-[16px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
+                            <h3 className="font-jubilat text-[16px] lg:text-[16px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
                                 Legal
                             </h3>
                             <nav className="flex flex-col space-y-4 lg:space-y-5">
-                                <a href="#" className="font-serif text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">Privacy</a>
-                                <a href="#" className="font-serif text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">Terms</a>
-                                <a href="#" className="flex items-center gap-3 font-serif text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">
+                                <a href="#" className="font-jubilat text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">Privacy</a>
+                                <a href="#" className="font-jubilat text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">Terms</a>
+                                <a href="#" className="flex items-center gap-3 font-jubilat text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">
                                     <Mail size={18} />
                                     Contact Us
                                 </a>
@@ -153,6 +153,10 @@ export default function Footer() {
                     </div>
                 </motion.div>
 
+                {/* Icon Attribution */}
+                <div className="mt-12 pt-8 border-t border-[#F0EEE6]/10 text-[10px] opacity-40 font-jubilat">
+                    Icons made from <a href="https://www.onlinewebfonts.com/icon" className="hover:underline">svg icons</a> is licensed by CC BY 4.0
+                </div>
 
             </div>
 

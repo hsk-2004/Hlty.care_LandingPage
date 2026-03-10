@@ -62,11 +62,11 @@ export default function Features() {
               className="space-y-8 lg:space-y-4 pt-12 lg:pt-5"
             >
               {/* Slightly smaller on tablet, full desktop at lg */}
-              <h2 className="font-serif text-[24px] md:text-[40px] lg:text-[36px] leading-tight text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none">
+              <h2 className="font-jubilat text-[24px] md:text-[40px] lg:text-[36px] leading-tight text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none">
                 Summer Fun Camps
               </h2>
 
-              <p className="font-serif text-[12px] md:text-[18px] lg:text-[16px] leading-tight md:leading-relaxed text-[#183A39] max-w-sm md:max-w-xl lg:max-w-none md:whitespace-nowrap lg:whitespace-normal">
+              <p className="font-jubilat font-normal not-italic text-[16px] leading-normal text-[#183A39] max-w-sm md:max-w-xl lg:max-w-none md:whitespace-nowrap lg:whitespace-normal">
                 These are short-term, immersive camps where{" "}
                 <br className="hidden lg:inline" />
                 health is woven into{" "}
@@ -99,11 +99,11 @@ export default function Features() {
                   transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                   className="space-y-2"
                 >
-                  <h3 className="font-sans text-[16px] md:text-[24px] lg:text-[20px] font-medium uppercase leading-normal md:leading-tight text-[#183A39]">
+                  <h3 className="font-haptik text-[16px] md:text-[24px] lg:text-[20px] font-medium uppercase leading-normal md:leading-tight text-[#183A39]">
                     {feature.title}
                   </h3>
 
-                  <p className="font-serif text-[12px] md:text-[18px] lg:text-[16px] text-[#183A39] leading-relaxed md:leading-[1.6] max-w-md md:max-w-xl">
+                  <p className="font-jubilat font-normal not-italic text-[16px] leading-normal text-[#183A39] max-w-md md:max-w-xl">
                     {feature.description}
                   </p>
                 </motion.div>

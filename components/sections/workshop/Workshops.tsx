@@ -51,10 +51,10 @@ export default function Workshops() {
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                             className="space-y-4 lg:space-y-4 pt-12 lg:pt-0"
                         >
-                            <h2 className="font-serif text-[24px] md:text-[40px] lg:text-[34px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
+                            <h2 className="font-jubilat text-[24px] md:text-[40px] lg:text-[34px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                                 Employer Workshops
                             </h2>
-                            <p className="font-serif text-[12px] md:text-[18px] lg:text-[15px] lg:font-normal leading-tight lg:leading-tight text-[#183A39] max-w-sm md:max-w-xl lg:max-w-md mx-0 lg:mx-0">
+                            <p className="font-jubilat font-normal not-italic text-[12px] md:text-[18px] lg:text-[15px] leading-tight lg:leading-tight text-[#183A39] max-w-sm md:max-w-xl lg:max-w-md mx-0 lg:mx-0">
                                 <span className="lg:block lg:whitespace-nowrap">These workshops are designed for working </span>
                                 <span className="lg:block lg:whitespace-nowrap">parents — acknowledging limited time, cognitive </span>
                                 <span className="lg:block lg:whitespace-nowrap">load, and competing demands.</span>
@@ -98,18 +98,18 @@ export default function Workshops() {
                                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                                 className="flex flex-col items-start lg:items-start text-left lg:text-left space-y-2 lg:space-y-4"
                             >
-                                <h3 className="font-sans text-[16px] md:text-[24px] lg:text-[20px] font-medium lg:font-medium uppercase leading-normal lg:leading-tight text-[#183A39]">
+                                <h3 className="font-haptik text-[16px] md:text-[24px] lg:text-[20px] font-medium lg:font-medium uppercase leading-normal lg:leading-tight text-[#183A39]">
                                     {point.title}
                                 </h3>
                                 <div className="lg:space-y-1">
                                     {/* Mobile & Tablet: Single wrapping paragraph */}
-                                    <p className="lg:hidden font-serif text-[12px] md:text-[18px] text-[#183A39] leading-relaxed max-w-md md:max-w-xl">
+                                    <p className="lg:hidden font-jubilat font-normal not-italic text-[12px] md:text-[18px] text-[#183A39] leading-relaxed max-w-md md:max-w-xl">
                                         {point.description.join(" ")}
                                     </p>
 
                                     {/* Desktop: Forced lines with no wrapping */}
                                     {point.description.map((desc, dIdx) => (
-                                        <p key={dIdx} className="hidden lg:block font-serif text-[16px] font-normal text-[#183A39] leading-none lg:max-w-none mx-0 lg:whitespace-nowrap">
+                                        <p key={dIdx} className="hidden lg:block font-jubilat font-normal not-italic text-[16px] text-[#183A39] leading-none lg:max-w-none mx-0 lg:whitespace-nowrap">
                                             {desc}
                                         </p>
                                     ))}

@@ -33,10 +33,10 @@ export default function Testimonials() {
 
             {/* Text Overlay */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center pt-0 mt-[50px]">
-              <h1 className="font-serif text-[48px] lg:text-[42px] text-[#183A39] leading-tight mb-4">
+              <h1 className="font-jubilat text-[48px] lg:text-[42px] text-[#183A39] leading-tight mb-4">
                 Experiences for Families
               </h1>
-              <p className="font-serif text-[16px] lg:text-[20px] text-[#183A39] opacity-90 lg:whitespace-nowrap px-4">
+              <p className="font-jubilat font-normal not-italic text-[16px] lg:text-[20px] text-[#183A39] opacity-90 lg:whitespace-nowrap px-4">
                 Designed for the adults and environments that shape a child&apos;s everyday life.
               </p>
             </div>
@@ -55,13 +55,13 @@ export default function Testimonials() {
           >
             <div className="space-y-6 lg:space-y-12">
               {/* Title */}
-              <h2 className="font-serif text-[22px] md:text-[34px] lg:text-[40px] font-normal leading-tight text-[#1a3636]">
+              <h2 className="font-jubilat text-[22px] md:text-[34px] lg:text-[40px] font-normal leading-tight text-[#183A39]">
                 <span className="lg:hidden">Latest Podcast Episode</span>
                 <span className="hidden lg:inline">Being Hlty Club</span>
               </h2>
 
               {/* Body paragraphs */}
-              <div className="flex flex-col gap-3 lg:gap-8 font-serif text-[10px] md:text-[18px] lg:text-[18px] font-normal leading-relaxed lg:leading-tight text-[#1a3636]">
+              <div className="flex flex-col gap-3 lg:gap-8 font-jubilat text-[10px] md:text-[18px] lg:text-[18px] font-normal not-italic leading-relaxed lg:leading-tight text-[#1a3636]">
                 <p>
                   <span className="lg:block lg:whitespace-nowrap">Shared experiences designed for children and the adults around them. Families move, </span>
                   <span className="lg:block lg:whitespace-nowrap">play, listen, and explore together — without schedules, outcomes, or &ldquo;doing it right.&rdquo;</span>

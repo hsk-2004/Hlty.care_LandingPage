@@ -55,10 +55,10 @@ export default function Playshops() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="space-y-4 lg:space-y-4 pt-0"
             >
-              <h2 className="font-serif text-[24px] md:text-[40px] lg:text-[34px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
+              <h2 className="font-jubilat text-[24px] md:text-[40px] lg:text-[34px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                 School Playshops
               </h2>
-              <p className="font-serif text-[12px] md:text-[18px] lg:text-[15px] lg:font-normal leading-tight lg:leading-relaxed text-[#183A39] max-w-sm md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
+              <p className="font-jubilat font-normal not-italic text-[12px] md:text-[18px] lg:text-[15px] leading-tight lg:leading-relaxed text-[#183A39] max-w-sm md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                 Interactive sessions designed to fit into a child's <br className="hidden lg:inline" />
                 existing school day — without turning health <br className="hidden lg:inline" />
                 into another subject to study.
@@ -102,12 +102,12 @@ export default function Playshops() {
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                 className={`flex flex-col items-start lg:items-start text-left lg:text-left space-y-2 lg:space-y-5 ${index === 1 ? 'lg:!mt-[40px]' : ''}`}
               >
-                <h3 className="font-sans text-[16px] md:text-[24px] lg:text-[20px] font-medium lg:font-medium uppercase leading-normal lg:leading-tight text-[#183A39]">
+                <h3 className="font-haptik text-[16px] md:text-[24px] lg:text-[20px] font-medium lg:font-medium uppercase leading-normal lg:leading-tight text-[#183A39]">
                   {point.title}
                 </h3>
                 <div className="space-y-2 lg:space-y-1">
                   {point.description.map((desc, dIdx) => (
-                    <p key={dIdx} className="font-serif text-[12px] md:text-[18px] lg:text-[16px] lg:font-normal text-[#183A39] leading-relaxed lg:leading-none max-w-md md:max-w-xl mx-0 lg:mx-0">
+                    <p key={dIdx} className="font-jubilat font-normal not-italic text-[12px] md:text-[18px] lg:text-[16px] text-[#183A39] leading-relaxed lg:leading-none max-w-md md:max-w-xl mx-0 lg:mx-0">
                       {desc}
                     </p>
                   ))}

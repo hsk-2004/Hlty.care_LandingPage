@@ -26,6 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${serifFont.variable} ${sansFont.variable}`}>
+      <head>
+        <link rel="stylesheet" href="https://use.typekit.net/rzh5lap.css" />
+      </head>
       <body className="font-sans antialiased text-foreground bg-background">
         {children}
       </body>

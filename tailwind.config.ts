@@ -19,7 +19,9 @@ const config: Config = {
             },
             fontFamily: {
                 serif: ["var(--font-serif)", "serif"],
-                sans: ["GT Haptik", "GT-Haptik-Medium", "GT-Haptik-Bold", "var(--font-sans)", "Inter", "sans-serif"],
+                sans: ["jubilat", "GT Haptik", "GT-Haptik-Medium", "GT-Haptik-Bold", "var(--font-sans)", "Inter", "sans-serif"],
+                haptik: ["'GT Haptik Medium'", "sans-serif"],
+                jubilat: ["jubilat", "serif"],
             },
         },
     },

@@ -1,3 +1,35 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: 'GT Haptik Medium';
+    src: url('/GT-Haptik-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@layer base {
+
+    html,
+    body {
+        font-family: "jubilat", serif !important;
+    }
+
+    /* Selectively preserve the serif font (Fraunces) for headings */
+    h1,
+    h2,
+    h3,
+    .font-serif {
+        font-family: var(--font-serif), serif !important;
+    }
+
+    /* Optional: Keep GT Haptik for the specific class if you still need it */
+    .font-haptik {
+        font-family: 'GT Haptik Medium', sans-serif !important;
+    }
+
+    .font-jubilat {
+        font-family: "jubilat", serif !important;
+    }
+}
