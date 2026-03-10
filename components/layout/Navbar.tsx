@@ -55,7 +55,7 @@ export default function Navbar() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="font-sans text-[15px] font-medium tracking-[0.1em] text-[#183A39] hover:opacity-60 transition-opacity"
+                            className="font-haptik text-[15px] font-medium tracking-[0.1em] text-[#183A39] hover:opacity-60 transition-opacity"
                         >
                             {link.name}
                         </Link>
@@ -65,7 +65,7 @@ export default function Navbar() {
                 {/* Action Buttons & Menu */}
                 <div className="flex items-center gap-4">
                     {/* Desktop Only Actions */}
-                    <button className="hidden lg:block bg-[#183A39] text-[#F0EEE6] px-10 py-3 rounded-full font-sans text-[14px] font-medium tracking-[0.05em] hover:bg-[#1a3636]/90 transition-all shadow-md">
+                    <button className="hidden lg:block bg-[#183A39] text-[#F0EEE6] px-10 py-3 rounded-full font-haptik text-[14px] font-medium tracking-[0.05em] hover:bg-[#1a3636]/90 transition-all shadow-md">
                         GET STARTED
                     </button>
 
@@ -111,7 +111,7 @@ export default function Navbar() {
                                 <Link
                                     href={link.href}
                                     onClick={() => setIsOpen(false)}
-                                    className="flex items-center justify-center w-[382px] h-[40px] border border-[#5EE2A0]/40 rounded-full font-sans text-[14px] font-medium tracking-[0.15em] text-[#F0EEE6] hover:bg-[#F0EEE6]/5 transition-colors"
+                                    className="flex items-center justify-center w-[382px] h-[40px] border border-[#5EE2A0]/40 rounded-full font-haptik text-[14px] font-medium tracking-[0.15em] text-[#F0EEE6] hover:bg-[#F0EEE6]/5 transition-colors"
                                 >
                                     {link.name}
                                 </Link>
@@ -124,7 +124,7 @@ export default function Navbar() {
                         <div
                             className="flex justify-center w-full"
                         >
-                            <button className="w-[382px] h-[40px] bg-[#F0EEE6] text-[#183A39] rounded-full font-serif italic text-[18px] tracking-wide shadow-lg flex items-center justify-center">
+                            <button className="w-[382px] h-[40px] bg-[#F0EEE6] text-[#183A39] rounded-full font-haptik text-[18px] tracking-wide shadow-lg flex items-center justify-center">
                                 GET STARTED
                             </button>
                         </div>
@@ -132,7 +132,7 @@ export default function Navbar() {
                         <div
                             className="flex justify-center w-full"
                         >
-                            <button className="w-[382px] h-[40px] bg-[#5EE2A0] text-[#183A39] rounded-full font-serif italic text-[18px] tracking-wide shadow-lg flex items-center justify-center">
+                            <button className="w-[382px] h-[40px] bg-[#5EE2A0] text-[#183A39] rounded-full font-haptik text-[18px] tracking-wide shadow-lg flex items-center justify-center">
                                 CART
                             </button>
                         </div>

@@ -129,7 +129,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif text-[24px] md:text-[48px] leading-[100%] text-[#183A39]"
+          className="font-jubilat text-[24px] md:text-[48px] leading-[100%] text-[#183A39]"
         >
           Experiences for Children
         </motion.h1>
@@ -138,7 +138,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif text-[12px] md:text-[18px] leading-tight mx-auto text-[#183A39] opacity-60 text-center"
+          className="font-jubilat text-[12px] md:text-[18px] leading-tight mx-auto text-[#183A39] opacity-60 text-center"
         >
           <span className="block whitespace-nowrap">
             Designed for children to return to —
