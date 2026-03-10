@@ -21,6 +21,7 @@ const config: Config = {
                 serif: ["var(--font-serif)", "serif"],
                 sans: ["jubilat", "GT Haptik", "GT-Haptik-Medium", "GT-Haptik-Bold", "var(--font-sans)", "Inter", "sans-serif"],
                 haptik: ["'GT Haptik Medium'", "sans-serif"],
+                haptikRotalic: ["'GT Haptik Medium Rotalic'", "sans-serif"],
                 jubilat: ["jubilat", "serif"],
             },
         },

@@ -55,10 +55,10 @@ export default function Playshops() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="space-y-4 lg:space-y-4 pt-0"
             >
-              <h2 className="font-jubilat text-[24px] md:text-[40px] lg:text-[34px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
+              <h2 className="font-jubilat text-[24px] md:text-[40px] lg:text-[36px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                 School Playshops
               </h2>
-              <p className="font-jubilat font-normal not-italic text-[12px] md:text-[18px] lg:text-[15px] leading-tight lg:leading-relaxed text-[#183A39] max-w-sm md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
+              <p className="font-jubilat font-normal not-italic text-[12px] md:text-[18px] lg:text-[16px] leading-tight lg:leading-relaxed text-[#183A39] max-w-sm md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                 Interactive sessions designed to fit into a child's <br className="hidden lg:inline" />
                 existing school day — without turning health <br className="hidden lg:inline" />
                 into another subject to study.
@@ -71,7 +71,7 @@ export default function Playshops() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="hidden lg:flex group items-center justify-between gap-4 w-[320px] h-[40px] bg-[#1a3636] text-[#F0EEE6] px-[24px] py-[6px] rounded-[24px] font-sans font-medium text-[15px] hover:bg-[#1a3636]/90 transition-all shadow-xl lg:!mt-[85px]"
+              className="hidden lg:flex group items-center justify-between gap-4 w-[320px] h-[40px] bg-[#1a3636] text-[#F0EEE6] px-[24px] py-[6px] rounded-[24px] font-haptik font-medium text-[16px] hover:bg-[#1a3636]/90 transition-all shadow-xl lg:!mt-[85px]"
             >
               <span>Book A Playshop</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -121,7 +121,7 @@ export default function Playshops() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="lg:hidden group flex items-center justify-between gap-4 w-full max-w-[381px] md:max-w-md h-[32px] md:h-[48px] bg-[#1a3636] text-[#F0EEE6] px-6 md:px-8 rounded-[24px] font-sans font-medium text-[14px] md:text-[18px] hover:bg-[#1a3636]/90 transition-all shadow-lg"
+              className="lg:hidden group flex items-center justify-between gap-4 w-full max-w-[381px] md:max-w-md h-[32px] md:h-[48px] bg-[#1a3636] text-[#F0EEE6] px-6 md:px-8 rounded-[24px] font-haptik font-medium text-[12px] md:text-[16px] hover:bg-[#1a3636]/90 transition-all shadow-lg"
             >
               <span>Book A Playshop</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

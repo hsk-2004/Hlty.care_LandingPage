@@ -113,7 +113,7 @@ export default function Footer() {
                     <div className="lg:col-span-6 flex flex-col gap-12 lg:grid lg:grid-cols-2 lg:gap-24 w-full">
                         {/* Company Section */}
                         <div className="flex flex-col space-y-6 lg:space-y-8">
-                            <h3 className="font-jubilat text-[16px] lg:text-[16px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
+                            <h3 className="font-haptik text-[16px] lg:text-[16px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
                                 Company
                             </h3>
                             <nav className="flex flex-col space-y-4 lg:space-y-5">
@@ -138,7 +138,7 @@ export default function Footer() {
 
                         {/* Legal Section */}
                         <div className="flex flex-col space-y-6 lg:space-y-8">
-                            <h3 className="font-jubilat text-[16px] lg:text-[16px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
+                            <h3 className="font-haptik text-[16px] lg:text-[16px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
                                 Legal
                             </h3>
                             <nav className="flex flex-col space-y-4 lg:space-y-5">
@@ -153,10 +153,7 @@ export default function Footer() {
                     </div>
                 </motion.div>
 
-                {/* Icon Attribution */}
-                <div className="mt-12 pt-8 border-t border-[#F0EEE6]/10 text-[10px] opacity-40 font-jubilat">
-                    Icons made from <a href="https://www.onlinewebfonts.com/icon" className="hover:underline">svg icons</a> is licensed by CC BY 4.0
-                </div>
+
 
             </div>
 

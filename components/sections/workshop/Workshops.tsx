@@ -51,10 +51,10 @@ export default function Workshops() {
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                             className="space-y-4 lg:space-y-4 pt-12 lg:pt-0"
                         >
-                            <h2 className="font-jubilat text-[24px] md:text-[40px] lg:text-[34px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
+                            <h2 className="font-jubilat text-[24px] md:text-[40px] lg:text-[36px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                                 Employer Workshops
                             </h2>
-                            <p className="font-jubilat font-normal not-italic text-[12px] md:text-[18px] lg:text-[15px] leading-tight lg:leading-tight text-[#183A39] max-w-sm md:max-w-xl lg:max-w-md mx-0 lg:mx-0">
+                            <p className="font-jubilat font-normal not-italic text-[12px] md:text-[16px] lg:text-[16px] leading-tight lg:leading-tight text-[#183A39] max-w-sm md:max-w-xl lg:max-w-md mx-0 lg:mx-0">
                                 <span className="lg:block lg:whitespace-nowrap">These workshops are designed for working </span>
                                 <span className="lg:block lg:whitespace-nowrap">parents — acknowledging limited time, cognitive </span>
                                 <span className="lg:block lg:whitespace-nowrap">load, and competing demands.</span>
@@ -67,7 +67,7 @@ export default function Workshops() {
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="hidden lg:flex group items-center justify-between gap-4 w-[320px] h-[40px] bg-[#1a3636] text-[#F0EEE6] px-[24px] py-[6px] rounded-[24px] font-sans font-medium text-[16px] hover:bg-[#1a3636]/90 transition-all shadow-xl lg:!mt-[53px]"
+                            className="hidden lg:flex group items-center justify-between gap-4 w-[320px] h-[40px] bg-[#1a3636] text-[#F0EEE6] px-[24px] py-[6px] rounded-[24px] font-haptik font-normal text-[16px] hover:bg-[#1a3636]/90 transition-all shadow-xl lg:!mt-[53px]"
                         >
                             <span>Book A Workshop</span>
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
@@ -103,7 +103,7 @@ export default function Workshops() {
                                 </h3>
                                 <div className="lg:space-y-1">
                                     {/* Mobile & Tablet: Single wrapping paragraph */}
-                                    <p className="lg:hidden font-jubilat font-normal not-italic text-[12px] md:text-[18px] text-[#183A39] leading-relaxed max-w-md md:max-w-xl">
+                                    <p className="lg:hidden font-jubilat font-normal not-italic text-[12px] md:text-[16px] text-[#183A39] leading-relaxed max-w-md md:max-w-xl">
                                         {point.description.join(" ")}
                                     </p>
 
@@ -123,7 +123,7 @@ export default function Workshops() {
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
-                            className="lg:hidden group flex items-center justify-between gap-4 w-full max-w-[381px] md:max-w-md h-[32px] md:h-[48px] bg-[#1a3636] text-[#F0EEE6] px-6 md:px-8 rounded-[24px] font-sans font-medium text-[14px] md:text-[18px] hover:bg-[#1a3636]/90 transition-all shadow-lg"
+                            className="lg:hidden group flex items-center justify-between gap-4 w-full max-w-[381px] md:max-w-md h-[32px] md:h-[48px] bg-[#1a3636] text-[#F0EEE6] px-6 md:px-8 rounded-[24px] font-haptik font-medium text-[12px] md:text-[16px] hover:bg-[#1a3636]/90 transition-all shadow-lg"
                         >
                             <span>Book A Workshop</span>
                             <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

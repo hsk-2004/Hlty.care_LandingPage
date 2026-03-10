@@ -66,7 +66,7 @@ export default function Features() {
                 Summer Fun Camps
               </h2>
 
-              <p className="font-jubilat font-normal not-italic text-[12px] leading-normal text-[#183A39] max-w-sm md:max-w-xl lg:max-w-none md:whitespace-nowrap lg:whitespace-normal">
+              <p className="font-jubilat font-normal not-italic text-[12px] md:text-[16px] lg:text-[16px] leading-normal text-[#183A39] max-w-sm md:max-w-xl lg:max-w-none md:whitespace-nowrap lg:whitespace-normal">
                 These are short-term, immersive camps where{" "}
                 <br className="hidden lg:inline" />
                 health is woven{" "}
@@ -103,7 +103,7 @@ export default function Features() {
                     {feature.title}
                   </h3>
 
-                  <p className="font-jubilat font-normal not-italic text-[12px] leading-normal text-[#183A39] max-w-md md:max-w-xl">
+                  <p className="font-jubilat font-normal not-italic text-[12px] md:text-[16px] lg:text-[16px] leading-normal text-[#183A39] max-w-md md:max-w-xl">
                     {feature.description}
                   </p>
                 </motion.div>
@@ -116,7 +116,7 @@ export default function Features() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group flex items-center justify-between gap-4 w-full max-w-[381px] md:max-w-md lg:max-w-none lg:w-[320px] h-[32px] md:h-[48px] lg:h-[40px] bg-[#1a3636] text-[#F0EEE6] px-6 md:px-8 lg:px-[24px] py-2 md:py-4 lg:py-[6px] rounded-[24px] font-sans font-medium text-[14px] md:text-[18px] lg:text-[15px] hover:bg-[#1a3636]/90 transition-all shadow-lg lg:shadow-xl"
+              className="group flex items-center justify-between gap-4 w-full max-w-[381px] md:max-w-md lg:max-w-none lg:w-[320px] h-[32px] md:h-[48px] lg:h-[40px] bg-[#1a3636] text-[#F0EEE6] px-6 md:px-8 lg:px-[24px] py-2 md:py-4 lg:py-[6px] rounded-[24px] font-haptik font-medium text-[12px] md:text-[16px] lg:text-[16px] hover:bg-[#1a3636]/90 transition-all shadow-lg lg:shadow-xl"
             >
               <span>Register interest</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />

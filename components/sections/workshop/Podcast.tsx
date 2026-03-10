@@ -55,13 +55,13 @@ export default function Testimonials() {
           >
             <div className="space-y-6 lg:space-y-12">
               {/* Title */}
-              <h2 className="font-jubilat text-[22px] md:text-[34px] lg:text-[40px] font-normal leading-tight text-[#183A39]">
+              <h2 className="font-jubilat text-[22px] md:text-[34px] lg:text-[42px] font-normal leading-tight text-[#183A39]">
                 <span className="lg:hidden">Latest Podcast Episode</span>
                 <span className="hidden lg:inline">Being Hlty Club</span>
               </h2>
 
               {/* Body paragraphs */}
-              <div className="flex flex-col gap-3 lg:gap-8 font-jubilat text-[10px] md:text-[18px] lg:text-[18px] font-normal not-italic leading-relaxed lg:leading-tight text-[#1a3636]">
+              <div className="flex flex-col gap-3 lg:gap-8 font-jubilat text-[10px] md:text-[18px] lg:text-[20px] font-normal not-italic leading-relaxed lg:leading-tight text-[#1a3636]">
                 <p>
                   <span className="lg:block lg:whitespace-nowrap">Shared experiences designed for children and the adults around them. Families move, </span>
                   <span className="lg:block lg:whitespace-nowrap">play, listen, and explore together — without schedules, outcomes, or &ldquo;doing it right.&rdquo;</span>
@@ -88,7 +88,7 @@ export default function Testimonials() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center bg-[#1a3636] text-[#F0EEE6] rounded-full font-sans text-[12px] md:text-[18px] lg:text-[15px] font-medium whitespace-nowrap hover:bg-[#1a3636]/90 transition-all px-4 py-2 md:px-8 md:py-4 lg:px-6 lg:py-3"
+                className="flex items-center bg-[#1a3636] text-[#F0EEE6] rounded-full font-haptik text-[12px] md:text-[18px] lg:text-[15px] font-medium whitespace-nowrap hover:bg-[#1a3636]/90 transition-all px-4 py-2 md:px-8 md:py-4 lg:px-6 lg:py-3"
               >
                 Join Community
                 <ArrowRight size={16} className="ml-2 hidden lg:block" />

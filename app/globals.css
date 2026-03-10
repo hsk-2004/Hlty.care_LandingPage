@@ -9,6 +9,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'GT Haptik Medium Rotalic';
+    src: url('/GT-Haptik-Medium-Rotalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+}
+
 @layer base {
 
     html,
@@ -31,5 +38,10 @@
 
     .font-jubilat {
         font-family: "jubilat", serif !important;
+    }
+
+    .font-haptik-rotalic {
+        font-family: 'GT Haptik Medium Rotalic', sans-serif !important;
+        font-style: italic;
     }
 }

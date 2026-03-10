@@ -40,7 +40,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.0, ease: [0.22, 1, 0.36, 1] }}
-          className="font-jubilat text-[12px] md:text-[16px] lg:text-[24px] text-[#183A39] opacity-90 max-w-[260px] md:max-w-lg lg:max-w-xl mx-auto leading-relaxed"
+          className="font-haptikRotalic italic text-[12px] md:text-[16px] lg:text-[24px] text-[#183A39] opacity-90 max-w-[260px] md:max-w-lg lg:max-w-xl mx-auto leading-relaxed"
         >
           We are building a playground of stories, play and daily routines for health and nutrition.
         </motion.p>
