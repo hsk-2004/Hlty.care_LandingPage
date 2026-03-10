@@ -55,7 +55,7 @@ export default function Navbar() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="font-sans text-[13px] font-medium tracking-[0.1em] text-[#183A39] hover:opacity-60 transition-opacity"
+                            className="font-sans text-[15px] font-medium tracking-[0.1em] text-[#183A39] hover:opacity-60 transition-opacity"
                         >
                             {link.name}
                         </Link>
@@ -65,12 +65,12 @@ export default function Navbar() {
                 {/* Action Buttons & Menu */}
                 <div className="flex items-center gap-4">
                     {/* Desktop Only Actions */}
-                    <button className="hidden lg:block bg-[#183A39] text-[#F0EEE6] px-8 py-2.5 rounded-full font-sans text-[12px] font-medium tracking-[0.05em] hover:bg-[#1a3636]/90 transition-all shadow-md">
+                    <button className="hidden lg:block bg-[#183A39] text-[#F0EEE6] px-10 py-3 rounded-full font-sans text-[14px] font-medium tracking-[0.05em] hover:bg-[#1a3636]/90 transition-all shadow-md">
                         GET STARTED
                     </button>
 
-                    <button className="hidden lg:flex w-10 h-10 items-center justify-center bg-[#183A39] text-[#F0EEE6] rounded-full hover:bg-[#1a3636]/90 transition-all shadow-md">
-                        <ShoppingBag size={18} />
+                    <button className="hidden lg:flex w-11 h-11 items-center justify-center bg-[#183A39] text-[#F0EEE6] rounded-full hover:bg-[#1a3636]/90 transition-all shadow-md">
+                        <ShoppingBag size={20} />
                     </button>
 
                     {/* Original Mobile Menu Icon */}

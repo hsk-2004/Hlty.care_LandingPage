@@ -49,6 +49,9 @@ export default function ProblemSection() {
         if (!section || !container) return;
 
         const handleWheel = (e: WheelEvent) => {
+            // Only intercept scroll on mobile/tablet (less than md breakpoint)
+            if (window.innerWidth >= 768) return;
+
             const maxScroll = container.scrollWidth - container.clientWidth;
             const currentScroll = container.scrollLeft;
 
@@ -74,6 +77,9 @@ export default function ProblemSection() {
         };
 
         const handleTouchMove = (e: TouchEvent) => {
+            // Only intercept touch on mobile/tablet (less than md breakpoint)
+            if (window.innerWidth >= 768) return;
+
             const currentY = e.touches[0].clientY;
             const currentX = e.touches[0].clientX;
             const deltaY = touchStartY - currentY;
@@ -140,7 +146,7 @@ export default function ProblemSection() {
                         setActiveIndex(Math.round(progress * (problems.length - 1)));
                     }
                 }}
-                className="flex gap-12 md:gap-24 px-[7.5vw] md:px-[27.5vw] pt-10 md:pt-12 pb-6 overflow-x-auto overflow-y-hidden touch-pan-x"
+                className="flex gap-12 md:gap-40 px-[7.5vw] pt-10 md:pt-12 pb-6 overflow-x-auto overflow-y-hidden touch-pan-x snap-x snap-mandatory"
                 style={{
                     scrollbarWidth: "none",
                     msOverflowStyle: "none",
@@ -150,11 +156,13 @@ export default function ProblemSection() {
                 <style>{`div::-webkit-scrollbar { display: none; }`}</style>
 
                 {problems.map((problem, index) => (
-                    <div key={index} className="w-[85vw] md:w-[45vw] flex-shrink-0 flex flex-col items-center space-y-2">
-
+                    <div
+                        key={index}
+                        className={`w-[85vw] md:w-[85vw] flex-shrink-0 flex flex-col md:flex-row-reverse items-center md:justify-between space-y-2 md:space-y-0 md:gap-16 snap-center transition-opacity duration-500 ${activeIndex === index ? "opacity-100" : "md:opacity-0"}`}
+                    >
                         {/* Image */}
-                        <div className="relative w-full">
-                            <div className="w-full aspect-[4/3] bg-[#183A39]/10 rounded-[20px] overflow-hidden relative shadow-lg">
+                        <div className="relative w-full md:w-[663px] flex justify-center">
+                            <div className="w-full aspect-[4/3] md:w-[663px] md:h-[401px] md:aspect-auto bg-[#183A39]/10 rounded-[20px] overflow-hidden relative shadow-lg">
                                 <Image
                                     src={problem.image}
                                     alt={problem.title}
@@ -164,35 +172,37 @@ export default function ProblemSection() {
                             </div>
                         </div>
 
-                        {/* Title */}
-                        <h2
-                            className="font-serif text-[12px] md:text-[20px] font-bold tracking-wide uppercase w-full"
-                            style={{ color: problem.color ?? "#B22222" }}
-                        >
-                            {problem.title}
-                        </h2>
-
-                        {/* Body Text */}
-                        {problem.text && (
-                            <div
-                                className="space-y-1 font-serif text-[11px] md:text-[16px] leading-[1.4] w-full"
+                        {/* Text Content wrapper */}
+                        <div className="w-full md:flex-1 flex flex-col items-start md:text-left">
+                            {/* Title */}
+                            <h2
+                                className="font-serif text-[12px] md:text-[20px] lg:text-[24px] font-bold tracking-wide uppercase w-full"
                                 style={{ color: problem.color ?? "#B22222" }}
                             >
-                                <p>{problem.text}</p>
-                                {problem.extraText && <p>{problem.extraText}</p>}
-                                {problem.list && (
-                                    <ul className="ml-5 list-disc space-y-0.5">
-                                        {problem.list.map((item, i) => (
-                                            <li key={i}>{item}</li>
-                                        ))}
-                                    </ul>
-                                )}
-                                {problem.subtitle && (
-                                    <p className="italic opacity-80">{problem.subtitle}</p>
-                                )}
-                            </div>
-                        )}
+                                {problem.title}
+                            </h2>
 
+                            {/* Body Text */}
+                            {problem.text && (
+                                <div
+                                    className="space-y-1 font-serif text-[11px] md:text-[16px] lg:text-[20px] leading-[1.4] w-full"
+                                    style={{ color: problem.color ?? "#B22222" }}
+                                >
+                                    <p>{problem.text}</p>
+                                    {problem.extraText && <p>{problem.extraText}</p>}
+                                    {problem.list && (
+                                        <ul className="ml-5 list-disc space-y-0.5">
+                                            {problem.list.map((item, i) => (
+                                                <li key={i}>{item}</li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                    {problem.subtitle && (
+                                        <p className="italic opacity-80">{problem.subtitle}</p>
+                                    )}
+                                </div>
+                            )}
+                        </div>
                     </div>
                 ))}
             </div>

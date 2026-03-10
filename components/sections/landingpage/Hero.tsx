@@ -6,11 +6,11 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[100dvh] flex flex-col items-center justify-start text-center px-4 pt-36 md:pt-60">
+    <section className="relative w-full h-[100dvh] flex flex-col items-center justify-start text-center px-4 pt-36 md:pt-48 lg:pt-60">
 
       {/* Background Image with Zoom Effect */}
       <motion.div
-        initial={{ scale: 1.1, opacity: 0 }}
+        initial={{ scale: 1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
         className="absolute inset-0 z-0 overflow-hidden"
@@ -32,7 +32,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
           animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
           transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="font-serif text-[28px] md:text-[64px] leading-[1.1] text-[#183A39] drop-shadow-sm px-4"
+          className="font-serif text-[28px] md:text-[48px] lg:text-[52px] leading-[1.1] text-[#183A39] drop-shadow-sm px-4"
         >
           A new way for children <br className="hidden md:block" /> to grow up healthier
         </motion.h1>
@@ -40,7 +40,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 1.0, ease: [0.22, 1, 0.36, 1] }}
-          className="font-sans italic text-[12px] md:text-[18px] text-[#183A39] opacity-90 max-w-[260px] md:max-w-xl mx-auto leading-relaxed"
+          className="font-sans italic text-[12px] md:text-[16px] lg:text-[24px] text-[#183A39] opacity-90 max-w-[260px] md:max-w-lg lg:max-w-xl mx-auto leading-relaxed"
         >
           We are building a playground of stories, play and daily routines for health and nutrition.
         </motion.p>
@@ -52,22 +52,38 @@ export default function Hero() {
           transition={{ delay: 1.2, duration: 0.8 }}
           className="pt-2 flex justify-center"
         >
-          <button className="bg-[#183A39] text-[#F0EEE6] w-[175px] h-[32px] md:w-auto md:h-auto md:px-8 md:py-4 rounded-full flex items-center justify-center gap-3 font-sans text-[10px] md:text-[14px] font-medium tracking-[0.2em] group hover:bg-[#1a3636] transition-all shadow-lg">
+          <button className="bg-[#183A39] text-[#F0EEE6] w-[215px] h-[40px] md:w-auto md:h-auto md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-full flex items-center justify-center gap-3 font-sans text-[10px] md:text-[12px] lg:text-[16px] font-medium tracking-[0.2em] group hover:bg-[#1a3636] transition-all shadow-lg">
             GET STARTED
-            <ArrowRight className="w-3 h-3 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform" />
+            <ArrowRight className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 group-hover:translate-x-2 transition-transform" />
           </button>
         </motion.div>
       </div>
 
-      {/* Hero Down Image at the bottom */}
+      {/* Hero Down Image at the bottom (Mobile) */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.5, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute -bottom-5 md:-bottom-20 left-0 w-full z-10"
+        className="absolute -bottom-5 md:hidden left-0 w-full z-10"
       >
         <Image
           src="/landingpage/hero down.svg"
+          alt="Decoration"
+          width={1440}
+          height={100}
+          className="w-full h-auto"
+        />
+      </motion.div>
+
+      {/* Hero Bottom Image at the bottom (Desktop) */}
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 1.5, ease: [0.22, 1, 0.36, 1] }}
+        className="absolute -bottom-8 hidden md:block left-0 w-full z-10"
+      >
+        <Image
+          src="/landingpage/hero bottom.svg"
           alt="Decoration"
           width={1440}
           height={100}

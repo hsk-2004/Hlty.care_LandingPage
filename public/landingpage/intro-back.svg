@@ -1,0 +1,49 @@
+<svg width="1303" height="587" viewBox="0 0 1303 587" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_n_2066_7097)">
+<rect x="1057" y="4" width="15" height="15" fill="#FCB11F"/>
+<rect x="1279.25" y="216" width="15" height="15" fill="#BB0B0B"/>
+<rect x="969.25" y="436" width="15" height="15" fill="#BB0B0B"/>
+<rect x="269.25" y="566" width="15" height="15" fill="#BB0B0B"/>
+<rect x="1111.25" y="328" width="15" height="15" fill="#214892"/>
+<rect x="1221.25" y="68" width="15" height="15" fill="#214892"/>
+<rect x="1021.25" y="568" width="15" height="15" fill="#214892"/>
+<rect x="1119" y="480" width="15" height="15" fill="#BEB4A5"/>
+<rect x="188" y="462" width="15" height="15" fill="#BEB4A5"/>
+<rect x="429" y="540" width="15" height="15" fill="#BEB4A5"/>
+<rect x="59" y="260" width="15" height="15" fill="#BEB4A5"/>
+<rect x="149" y="90" width="15" height="15" fill="#BEB4A5"/>
+<rect x="529" width="15" height="15" fill="#BEB4A5"/>
+<rect x="1211" y="375" width="15" height="15" fill="#BEB4A5"/>
+<rect x="1141" y="165" width="15" height="15" fill="#BEB4A5"/>
+<rect x="1287.25" y="522" width="15" height="15" fill="#51D2A2"/>
+<rect x="927.25" y="292" width="15" height="15" fill="#51D2A2"/>
+<rect x="647.25" y="572" width="15" height="15" fill="#51D2A2"/>
+<rect x="337.25" y="262" width="15" height="15" fill="#51D2A2"/>
+<rect x="28" y="416" width="15" height="15" fill="#FCB11F"/>
+<rect x="48" y="6" width="15" height="15" fill="#FCB11F"/>
+<rect x="867.25" y="569" width="15" height="15" fill="#FCB11F"/>
+<rect x="267.25" y="20" width="15" height="15" fill="#BB0B0B"/>
+<rect y="112" width="15" height="15" fill="#51D2A2"/>
+<rect x="771" y="22" width="15" height="15" fill="#51D2A2"/>
+<rect x="230.25" y="324" width="15" height="15" fill="#214892"/>
+<rect x="68" y="533" width="15" height="15" fill="#214892"/>
+</g>
+<defs>
+<filter id="filter0_n_2066_7097" x="0" y="0" width="1302.25" height="587" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.76923078298568726 0.76923078298568726" stitchTiles="stitch" numOctaves="3" result="noise" seed="6528" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="#E4DBCD" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect1_noise_2066_7097">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+</defs>
+</svg>
