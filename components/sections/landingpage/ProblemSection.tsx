@@ -141,7 +141,7 @@ export default function ProblemSection() {
                             {problems.map((_, i) => (
                                 <div
                                     key={i}
-                                    className="w-[2.5px] h-[10px] blur-[0.2px] transition-colors duration-300"
+                                    className="w-[3px] h-[10px] xl:w-[4px] xl:h-[14px] transition-colors duration-300"
                                     style={{ backgroundColor: indicatorColor(i) }}
                                 />
                             ))}
