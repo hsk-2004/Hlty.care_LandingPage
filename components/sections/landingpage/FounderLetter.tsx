@@ -136,14 +136,14 @@ export default function FounderLetter() {
                                 <span className="text-[#DA9100] font-jubilat italic text-[10px] md:text-[14px] lg:text-[16px] relative z-10">
                                     A playground for practice.
                                 </span>
-                                <div className="absolute -left-6 md:-left-9 lg:-left-12 top-1/2 -translate-y-1/2 flex flex-col space-y-1 md:space-y-1.5 lg:space-y-2 opacity-80">
-                                    <div className="w-4 md:w-6 lg:w-8 h-[3px] md:h-[4px] lg:h-[5px] bg-[#DA9100] rounded-full transform -rotate-[20deg]"></div>
-                                    <div className="w-5 md:w-7.5 lg:w-10 h-[3px] md:h-[4px] lg:h-[5px] bg-[#DA9100] rounded-full transform rotate-[10deg]"></div>
-                                </div>
-                                <div className="absolute -right-10 md:-right-15 lg:-right-20 -top-2 md:-top-3 lg:-top-4 w-10 md:w-15 lg:w-20 h-10 md:h-15 lg:h-20 text-[#DA9100] opacity-80 pointer-events-none">
-                                    <svg viewBox="0 0 100 100" fill="none" stroke="currentColor" strokeWidth="10" strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M20,60 L40,40 L50,70 L70,30 L85,60" />
-                                    </svg>
+                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-auto md:hidden pointer-events-none">
+                                    <Image
+                                        src="/landingpage/text-cover.svg"
+                                        alt="highlight"
+                                        width={148}
+                                        height={31}
+                                        className="w-full h-auto"
+                                    />
                                 </div>
                             </div>
                         </div>
