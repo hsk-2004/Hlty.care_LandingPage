@@ -118,7 +118,7 @@ export default function Footer() {
                             </h3>
                             <nav className="flex flex-col space-y-4 lg:space-y-5">
                                 {[
-                                    { name: "Explore", href: "/" },
+                                    { name: "Explore", href: "/explore" },
                                     { name: "Body Galaxy", href: "#" },
                                     { name: "Workshops", href: "/workshop" },
                                     { name: "Products", href: "#" },
