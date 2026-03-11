@@ -79,7 +79,7 @@ export default function Footer() {
                 >
 
                     {/* Left Block: Logo, Disclaimer, Socials */}
-                    <div className="flex flex-col items-start text-left space-y-8">
+                    <div className="flex flex-col items-start text-left space-y-8 lg:ml-8 xl:ml-16">
                         {/* Logo */}
                         <div className="flex items-center gap-4">
                             <img src="/footer-logo.svg" alt="Hlty Beings logo" className="h-[32px] lg:h-[40px] w-auto" />
