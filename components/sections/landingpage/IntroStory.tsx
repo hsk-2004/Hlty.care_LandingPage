@@ -88,7 +88,7 @@ export default function IntroStory() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, delay: 0.4 }}
-                className="relative z-10 mt-20 lg:block hidden w-full max-w-7xl mx-auto"
+                className="relative z-10 mt-32 lg:mt-40 translate-y-20 lg:block hidden w-full max-w-7xl mx-auto"
             >
                 <Image
                     src="/landingpage/intro-down.svg"
