@@ -58,7 +58,7 @@ export default function FounderLetter() {
                     className="bg-white rounded-[7.69px] md:rounded-[12px] lg:rounded-[16px] border-[10px] md:border-[15px] lg:border-[20px] border-[#E5E2D9] shadow-2xl p-6 md:p-10 lg:p-14 relative w-[336px] md:w-[500px] lg:w-[699px] h-[668px] md:h-[850px] lg:h-[1054px] overflow-visible"
                 >
                     {/* Founder Photo & Paperclip */}
-                    <div className="absolute -top-[-4px] -right-[-15px] md:-right-[25px] md:-top-[25px] lg:-right-[40px] lg:-top-[40px] w-[78.83px] md:w-[120px] lg:w-[165px] h-[96.14px] md:h-[150px] lg:h-[200px] transform rotate-[3.8deg] z-20">
+                    <div className="absolute -top-[-4px] -right-[-15px] md:-right-[25px] md:-top-[25px] lg:right-[50px] lg:top-[10px] w-[78.83px] md:w-[120px] lg:w-[165px] h-[96.14px] md:h-[150px] lg:h-[200px] transform rotate-[3.8deg] z-20">
                         <div className="w-full h-full bg-[#FCB11F] rounded-[7.69px] md:rounded-[12px] lg:rounded-[16px] border-[2.88px] md:border-[4.5px] lg:border-[6px] border-[#E4DBCD] shadow-md overflow-hidden relative">
                             <Image
                                 src="/landingpage/founder.png"
@@ -68,7 +68,7 @@ export default function FounderLetter() {
                             />
                         </div>
                         {/* Pin - Moved outside overflow-hidden */}
-                        <div className="absolute -top-4 -right-1 md:-top-7 md:-right-3 lg:-top-10 lg:-right-4 w-8 md:w-12 lg:w-16 h-8 md:h-12 lg:h-16 z-30">
+                        <div className="absolute -top-4 -right-1 md:-top-7 md:-right-3 lg:-top-8 lg:-right-1 w-8 md:w-12 lg:w-16 h-8 md:h-12 lg:h-16 z-30">
                             <Image
                                 src="/landingpage/pin.svg"
                                 alt="Pin"
