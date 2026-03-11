@@ -95,7 +95,7 @@ export default function ProblemSection() {
     }, [handleScroll]);
 
     const indicatorColor = (i: number) =>
-        i === activeIndex ? "#B22222" : "rgba(0,0,0,0.1)";
+        i === activeIndex ? (problems[i].color ?? "#B22222") : "rgba(0,0,0,0.1)";
 
     return (
         <div
@@ -141,7 +141,7 @@ export default function ProblemSection() {
                             {problems.map((_, i) => (
                                 <div
                                     key={i}
-                                    className="w-[2.5px] h-[10px] blur-[0.2px] transition-colors duration-300"
+                                    className="w-[3px] h-[10px] blur-[0.2px] transition-colors duration-300 rounded-full"
                                     style={{ backgroundColor: indicatorColor(i) }}
                                 />
                             ))}
