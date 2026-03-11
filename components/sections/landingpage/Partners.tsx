@@ -18,8 +18,8 @@ export default function Partners() {
                     BACKED BY
                 </motion.h2>
 
-                {/* Partners Grid - 2 columns on all screens with tighter spacing */}
-                <div className="grid grid-cols-2 gap-x-2 md:gap-x-4 gap-y-4 md:gap-y-6 items-center justify-items-center max-w-2xl mx-auto">
+                {/* Partners Grid - 2 columns on mobile, 4 columns on desktop */}
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-x-2 md:gap-x-4 gap-y-4 md:gap-y-6 items-center justify-items-center max-w-4xl mx-auto">
 
                     {/* Top Left: Microsoft for Startups */}
                     <div className="w-full max-w-[280px] aspect-[2.2/1] flex items-center justify-center relative overflow-hidden p-6">

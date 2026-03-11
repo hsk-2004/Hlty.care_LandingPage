@@ -80,8 +80,8 @@ export default function FounderLetter() {
                     </div>
 
                     {/* Text Content - Scaling text for the smaller container */}
-                    <div className="max-w-[85%] font-serif text-[#2D4341] space-y-1.5 md:space-y-3 lg:space-y-2 pt-1 md:pt-3 lg:pt-4">
-                        <h1 className="text-[24px] md:text-[36px] lg:text-[48px] font-medium leading-[1.1] mb-2 md:mb-6 lg:mb-8 text-[#1A2E2C]">
+                    <div className="max-w-[85%] font-jubilat text-[#2D4341] space-y-1.5 md:space-y-3 lg:space-y-2 pt-1 md:pt-3 lg:pt-4">
+                        <h1 className="font-jubilat text-[24px] md:text-[36px] lg:text-[48px] font-medium leading-[1.1] mb-2 md:mb-6 lg:mb-8 text-[#1A2E2C]">
                             A letter from <br /> the Founder
                         </h1>
 
@@ -133,7 +133,7 @@ export default function FounderLetter() {
                             <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">Not another set of rules.</p>
 
                             <div className="relative inline-block mt-0.5 md:mt-1.5 lg:mt-2">
-                                <span className="text-[#DA9100] font-haptikRotalic text-[10px] md:text-[14px] lg:text-[16px] relative z-10">
+                                <span className="text-[#DA9100] font-jubilat italic text-[10px] md:text-[14px] lg:text-[16px] relative z-10">
                                     A playground for practice.
                                 </span>
                                 <div className="absolute -left-6 md:-left-9 lg:-left-12 top-1/2 -translate-y-1/2 flex flex-col space-y-1 md:space-y-1.5 lg:space-y-2 opacity-80">

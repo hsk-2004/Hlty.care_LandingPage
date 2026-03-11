@@ -14,10 +14,12 @@ export default function LandingPage() {
             <Hero />
             <IntroStory />
             <ProblemSection />
-            <SolutionSection />
-            <FounderLetter />
-            <Partners />
-            <Footer />
+            <div className="relative z-10 bg-[#F0EEE6]">
+                <SolutionSection />
+                <FounderLetter />
+                <Partners />
+                <Footer />
+            </div>
         </main>
     );
 }

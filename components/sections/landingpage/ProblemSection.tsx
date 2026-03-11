@@ -1,14 +1,11 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import Image from "next/image";
 
 export default function ProblemSection() {
-    const scrollRef = useRef<HTMLDivElement>(null);
-    const sectionRef = useRef<HTMLDivElement>(null);
-    const [scrollX, setScrollX] = useState(0);
-
-    // Card index indicator tracking
+    const wrapperRef = useRef<HTMLDivElement>(null);
+    const [progress, setProgress] = useState(0);
     const [activeIndex, setActiveIndex] = useState(0);
 
     const problems = [
@@ -43,170 +40,165 @@ export default function ProblemSection() {
         }
     ];
 
+    const numCards = problems.length;
+
+    // Calculate opacity for each card based on scroll progress
+    const getCardOpacity = useCallback((index: number, prog: number) => {
+        // Each card gets an equal segment of the total progress
+        const segmentSize = 1 / numCards;
+        const cardStart = index * segmentSize;
+        const cardEnd = (index + 1) * segmentSize;
+
+        // Fade zone is 20% of a segment for smooth crossfade
+        const fadeZone = segmentSize * 0.25;
+
+        if (prog < cardStart - fadeZone) return 0;
+        if (prog > cardEnd + fadeZone) return 0;
+
+        // Fade in
+        if (prog < cardStart + fadeZone && index > 0) {
+            const fadeProgress = (prog - (cardStart - fadeZone)) / (fadeZone * 2);
+            return Math.max(0, Math.min(1, fadeProgress));
+        }
+
+        // Fade out
+        if (prog > cardEnd - fadeZone && index < numCards - 1) {
+            const fadeProgress = (cardEnd + fadeZone - prog) / (fadeZone * 2);
+            return Math.max(0, Math.min(1, fadeProgress));
+        }
+
+        return 1;
+    }, [numCards]);
+
+    const handleScroll = useCallback(() => {
+        const wrapper = wrapperRef.current;
+        if (!wrapper) return;
+
+        const wrapperRect = wrapper.getBoundingClientRect();
+        const scrolled = -wrapperRect.top;
+        const totalScroll = wrapper.scrollHeight - window.innerHeight;
+
+        if (totalScroll <= 0) return;
+
+        const prog = Math.max(0, Math.min(1, scrolled / totalScroll));
+        setProgress(prog);
+
+        // Determine active card index
+        const idx = Math.min(numCards - 1, Math.floor(prog * numCards));
+        setActiveIndex(Math.max(0, idx));
+    }, [numCards]);
+
     useEffect(() => {
-        const section = sectionRef.current;
-        const container = scrollRef.current;
-        if (!section || !container) return;
-
-        const handleWheel = (e: WheelEvent) => {
-            // Only intercept scroll on mobile/tablet (less than md breakpoint)
-            if (window.innerWidth >= 768) return;
-
-            const maxScroll = container.scrollWidth - container.clientWidth;
-            const currentScroll = container.scrollLeft;
-
-            // If there's still horizontal scroll room, intercept vertical scroll
-            if (
-                Math.abs(e.deltaY) > Math.abs(e.deltaX) &&
-                ((e.deltaY > 0 && currentScroll < maxScroll) ||
-                    (e.deltaY < 0 && currentScroll > 0))
-            ) {
-                e.preventDefault();
-                const newScroll = Math.max(0, Math.min(maxScroll, currentScroll + e.deltaY * 2));
-                container.scrollLeft = newScroll;
-                setScrollX(newScroll);
-            }
-        };
-
-        let touchStartY = 0;
-        let touchStartX = 0;
-
-        const handleTouchStart = (e: TouchEvent) => {
-            touchStartY = e.touches[0].clientY;
-            touchStartX = e.touches[0].clientX;
-        };
-
-        const handleTouchMove = (e: TouchEvent) => {
-            // Only intercept touch on mobile/tablet (less than md breakpoint)
-            if (window.innerWidth >= 768) return;
-
-            const currentY = e.touches[0].clientY;
-            const currentX = e.touches[0].clientX;
-            const deltaY = touchStartY - currentY;
-            const deltaX = touchStartX - currentX;
-
-            const maxScroll = container.scrollWidth - container.clientWidth;
-            const currentScroll = container.scrollLeft;
-
-            // Intercept if it's primarily a vertical scroll AND we have room to scroll horizontally
-            if (
-                Math.abs(deltaY) > Math.abs(deltaX) &&
-                ((deltaY > 0 && currentScroll < maxScroll) ||
-                    (deltaY < 0 && currentScroll > 0))
-            ) {
-                e.preventDefault(); // Stop native vertical scroll
-
-                // Keep movement feeling natural
-                const newScroll = Math.max(0, Math.min(maxScroll, currentScroll + deltaY * 2));
-                container.scrollLeft = newScroll;
-                setScrollX(newScroll);
-
-                // Re-center touch start to make constant swiping feel right
-                touchStartY = currentY;
-                touchStartX = currentX;
-            }
-        };
-
-        section.addEventListener("wheel", handleWheel, { passive: false });
-        section.addEventListener("touchstart", handleTouchStart, { passive: false });
-        section.addEventListener("touchmove", handleTouchMove, { passive: false });
-
-        return () => {
-            section.removeEventListener("wheel", handleWheel);
-            section.removeEventListener("touchstart", handleTouchStart);
-            section.removeEventListener("touchmove", handleTouchMove);
-        };
-    }, []);
+        window.addEventListener("scroll", handleScroll, { passive: true });
+        handleScroll();
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [handleScroll]);
 
     const indicatorColor = (i: number) =>
         i === activeIndex ? "#B22222" : "rgba(0,0,0,0.1)";
 
     return (
-        <section ref={sectionRef} className="relative bg-[#F0EEE6] pt-12 md:pt-24 lg:pt-32 pb-0">
+        <div
+            ref={wrapperRef}
+            className="relative bg-[#F0EEE6]"
+            style={{ height: `${numCards * 100}vh` }}
+        >
+            {/* Sticky container – stays pinned while user scrolls through the wrapper */}
+            <div className="sticky top-0 h-screen w-full overflow-hidden">
 
-            {/* Indicators */}
-            <div className="absolute top-4 left-12 md:left-24 z-50 flex gap-1.5 pointer-events-none">
-                {problems.map((_, i) => (
-                    <div
-                        key={i}
-                        className="w-[2.5px] h-[10px] blur-[0.2px] transition-colors duration-300"
-                        style={{ backgroundColor: indicatorColor(i) }}
-                    />
-                ))}
-            </div>
 
-            {/* Horizontal scroll container */}
-            <div
-                ref={scrollRef}
-                onScroll={(e) => {
-                    const container = e.currentTarget;
-                    const maxScroll = container.scrollWidth - container.clientWidth;
-                    if (maxScroll > 0) {
-                        const progress = container.scrollLeft / maxScroll;
-                        setActiveIndex(Math.round(progress * (problems.length - 1)));
-                    }
-                }}
-                className="flex gap-12 md:gap-40 px-[7.5vw] pt-10 md:pt-12 pb-6 overflow-x-auto overflow-y-hidden touch-pan-x snap-x snap-mandatory"
-                style={{
-                    scrollbarWidth: "none",
-                    msOverflowStyle: "none",
-                    WebkitOverflowScrolling: "touch",
-                }}
-            >
-                <style>{`div::-webkit-scrollbar { display: none; }`}</style>
-
-                {problems.map((problem, index) => (
-                    <div
-                        key={index}
-                        className={`w-[85vw] md:w-[85vw] flex-shrink-0 flex flex-col md:flex-row-reverse items-center md:justify-between space-y-2 md:space-y-0 md:gap-16 snap-center transition-opacity duration-500 ${activeIndex === index ? "opacity-100" : "md:opacity-0"}`}
-                    >
-                        {/* Image */}
-                        <div className="relative w-full md:w-[663px] flex justify-center">
-                            <div className="w-full aspect-[4/3] md:w-[663px] md:h-[401px] md:aspect-auto bg-[#183A39]/10 rounded-[20px] overflow-hidden relative shadow-lg">
-                                <Image
-                                    src={problem.image}
-                                    alt={problem.title}
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
-                        </div>
-
-                        {/* Text Content wrapper */}
-                        <div className="w-full md:flex-1 flex flex-col items-start md:text-left">
-                            {/* Title */}
-                            <h2
-                                className="font-serif text-[12px] md:text-[20px] lg:text-[24px] font-bold tracking-wide uppercase w-full"
-                                style={{ color: problem.color ?? "#B22222" }}
-                            >
-                                {problem.title}
-                            </h2>
-
-                            {/* Body Text */}
-                            {problem.text && (
-                                <div
-                                    className="space-y-1 font-serif text-[11px] md:text-[16px] lg:text-[20px] leading-[1.4] w-full"
-                                    style={{ color: problem.color ?? "#B22222" }}
-                                >
-                                    <p>{problem.text}</p>
-                                    {problem.extraText && <p>{problem.extraText}</p>}
-                                    {problem.list && (
-                                        <ul className="ml-5 list-disc space-y-0.5">
-                                            {problem.list.map((item, i) => (
-                                                <li key={i}>{item}</li>
-                                            ))}
-                                        </ul>
-                                    )}
-                                    {problem.subtitle && (
-                                        <p className="italic opacity-80">{problem.subtitle}</p>
-                                    )}
-                                </div>
-                            )}
+                {/* Fixed Layout with Crossfading Inner Content */}
+                <div className="relative w-full h-full flex flex-col justify-center md:flex-row-reverse md:items-start items-center md:justify-between px-[7.5vw] md:pt-40 lg:pt-48 pb-0 md:pb-12 md:gap-16">
+                    {/* Image Area */}
+                    <div className="relative w-full md:w-[663px] flex justify-center">
+                        <div className="w-full aspect-[4/3] md:w-[663px] md:h-[401px] md:aspect-auto bg-[#183A39]/10 rounded-[20px] overflow-hidden relative shadow-lg">
+                            {problems.map((problem, index) => {
+                                const opacity = getCardOpacity(index, progress);
+                                const isVisible = opacity > 0;
+                                return (
+                                    <Image
+                                        key={index}
+                                        src={problem.image}
+                                        alt={problem.title}
+                                        fill
+                                        className="object-cover"
+                                        style={{
+                                            opacity,
+                                            visibility: isVisible ? "visible" : "hidden",
+                                            transition: "opacity 0.15s ease-out",
+                                            zIndex: index === activeIndex ? 10 : 1,
+                                        }}
+                                    />
+                                );
+                            })}
                         </div>
                     </div>
-                ))}
-            </div>
 
-        </section>
+                    {/* Text Area */}
+                    <div className="w-full md:flex-1 flex flex-col items-start text-left mt-8 md:mt-0">
+                        {/* Indicators – fixed in one position across all cards */}
+                        <div className="flex gap-1.5 mb-2 pointer-events-none">
+                            {problems.map((_, i) => (
+                                <div
+                                    key={i}
+                                    className="w-[2.5px] h-[10px] blur-[0.2px] transition-colors duration-300"
+                                    style={{ backgroundColor: indicatorColor(i) }}
+                                />
+                            ))}
+                        </div>
+
+                        {/* Crossfading Texts Container */}
+                        <div className="relative w-full min-h-[220px] sm:min-h-[240px] md:min-h-[350px] lg:min-h-[400px]">
+                            {problems.map((problem, index) => {
+                                const opacity = getCardOpacity(index, progress);
+                                const isVisible = opacity > 0;
+                                return (
+                                    <div
+                                        key={index}
+                                        className="absolute inset-x-0 top-0 flex flex-col items-start"
+                                        style={{
+                                            opacity,
+                                            visibility: isVisible ? "visible" : "hidden",
+                                            transition: "opacity 0.15s ease-out",
+                                            zIndex: index === activeIndex ? 10 : 1,
+                                            pointerEvents: isVisible ? "auto" : "none",
+                                        }}
+                                    >
+                                        {/* Title */}
+                                        <h2
+                                            className="font-jubilat text-[12px] md:text-[20px] lg:text-[24px] font-bold tracking-wide uppercase w-full"
+                                            style={{ color: problem.color ?? "#B22222" }}
+                                        >
+                                            {problem.title}
+                                        </h2>
+
+                                        {/* Body Text */}
+                                        {problem.text && (
+                                            <div
+                                                className="space-y-1 font-jubilat text-[11px] md:text-[16px] lg:text-[20px] leading-[1.4] w-full"
+                                                style={{ color: problem.color ?? "#B22222" }}
+                                            >
+                                                <p>{problem.text}</p>
+                                                {problem.extraText && <p>{problem.extraText}</p>}
+                                                {problem.list && (
+                                                    <ul className="ml-5 list-disc space-y-0.5">
+                                                        {problem.list.map((item, i) => (
+                                                            <li key={i}>{item}</li>
+                                                        ))}
+                                                    </ul>
+                                                )}
+                                                {problem.subtitle && (
+                                                    <p className="italic">{problem.subtitle}</p>
+                                                )}
+                                            </div>
+                                        )}
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     );
 }

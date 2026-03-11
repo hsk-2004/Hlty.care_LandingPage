@@ -34,7 +34,7 @@ export default function SolutionSection() {
                 <div className="mt-8 md:mt-0 flex-1 space-y-8 md:space-y-12 lg:translate-x-12">
 
                     {/* Main Highlighting Heading */}
-                    <h2 className="font-serif text-[24px] md:text-[32px] lg:text-[42px] leading-[1.2] text-[#5EE2A0] max-w-[95%] lg:max-w-[85%] lg:mt-18">
+                    <h2 className="font-jubilat text-[24px] md:text-[32px] lg:text-[42px] leading-[1.2] text-[#5EE2A0] max-w-[95%] lg:max-w-[85%] lg:mt-18">
                         <span className="lg:block lg:whitespace-nowrap">A single preventive health </span>
                         <span className="lg:block lg:whitespace-nowrap">system, designed to adapt to </span>
                         <span className="lg:block lg:whitespace-nowrap">the spaces children grow in.</span>
@@ -51,14 +51,14 @@ export default function SolutionSection() {
                             transition={{ duration: 0.6 }}
                             className="space-y-4"
                         >
-                            <h3 className="font-sans text-[12px] md:text-[14px] lg:text-[20px] font-bold text-[#F0EEE6] tracking-wider uppercase">
+                            <h3 className="font-haptik text-[12px] md:text-[14px] lg:text-[20px] font-medium text-[#F0EEE6] tracking-wider uppercase">
                                 FOR PARENTS
                             </h3>
                             <p className="font-jubilat font-normal not-italic text-[10px] md:text-[16px] lg:text-[16px] leading-[1.5] text-[#F0EEE6] opacity-80 decoration-0">
                                 Hlty Beings offers a calmer way to support children&apos;s health without guilt, pressure, or constant correction. It fits into everyday routines, stories, and play at home.
                             </p>
                             <button className="group flex items-center gap-2 lg:justify-between lg:w-full text-[#F0EEE6] font-serif italic text-[14px] md:text-[16px] hover:opacity-100 transition-opacity border-b border-[#F0EEE6]/20 pb-0.5">
-                                <span className="uppercase not-italic text-[10px] md:text-[15px] lg:text-[14px] tracking-[0.1em] font-haptik font-bold">SEE HOW THIS WORKS</span>
+                                <span className="uppercase text-[10px] md:text-[15px] lg:text-[14px] tracking-[0.1em] font-haptik-rotalic">SEE HOW THIS WORKS</span>
                                 <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
                             </button>
                         </motion.div>
@@ -74,14 +74,14 @@ export default function SolutionSection() {
                             transition={{ duration: 0.6, delay: 0.2 }}
                             className="space-y-4"
                         >
-                            <h3 className="font-sans text-[12px] md:text-[14px] lg:text-[20px] font-bold text-[#F0EEE6] tracking-wider uppercase">
+                            <h3 className="font-haptik text-[12px] md:text-[14px] lg:text-[20px] font-medium text-[#F0EEE6] tracking-wider uppercase">
                                 FOR SCHOOLS & EMPLOYERS
                             </h3>
                             <p className="font-jubilat font-normal not-italic text-[10px] md:text-[16px] lg:text-[16px] leading-[1.5] text-[#F0EEE6] opacity-80">
                                 Hlty Beings provides structured, age-appropriate experiences that support wellbeing — without adding to curriculum load or administrative burden.
                             </p>
                             <button className="group flex items-center gap-2 lg:justify-between lg:w-full text-[#F0EEE6] font-serif italic text-[14px] md:text-[16px] hover:opacity-100 transition-opacity border-b border-[#F0EEE6]/20 pb-0.5">
-                                <span className="uppercase not-italic text-[10px] md:text-[15px] lg:text-[14px] tracking-[0.1em] font-haptik font-bold">EXPLORE PROGRAMS</span>
+                                <span className="uppercase text-[10px] md:text-[15px] lg:text-[14px] tracking-[0.1em] font-haptik-rotalic">EXPLORE PROGRAMS</span>
                                 <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
                             </button>
                         </motion.div>
