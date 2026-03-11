@@ -69,24 +69,24 @@ export default function Footer() {
                 />
             </div>
 
-            <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-24 pt-16 lg:pt-20 pb-12 lg:pb-24">
+            <div className="w-full mx-auto px-6 md:px-12 lg:px-16 pt-16 lg:pt-20 pb-12 lg:pb-24">
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                    className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-8 items-start"
+                    className="flex flex-col lg:flex-row lg:justify-between items-start gap-16 lg:gap-12"
                 >
 
                     {/* Left Block: Logo, Disclaimer, Socials */}
-                    <div className="lg:col-span-6 flex flex-col items-start text-left space-y-8">
+                    <div className="flex flex-col items-start text-left space-y-8">
                         {/* Logo */}
                         <div className="flex items-center gap-4">
                             <img src="/footer-logo.svg" alt="Hlty Beings logo" className="h-[32px] lg:h-[40px] w-auto" />
                         </div>
 
                         {/* Disclaimer */}
-                        <p className="font-jubilat text-[14px] lg:text-[14px] leading-relaxed opacity-90 lg:opacity-80 max-w-sm lg:max-w-md">
+                        <p className="font-jubilat text-[14px] lg:text-[20px] leading-relaxed opacity-90 lg:opacity-80 max-w-sm lg:max-w-md">
                             Hlty Beings&apos; products and services are not intended to
                             substitute for professional medical guidance.
                             Our content, products and experiential offerings do not
@@ -110,10 +110,10 @@ export default function Footer() {
                     </div>
 
                     {/* Right Blocks: Navigation Sections */}
-                    <div className="lg:col-span-6 flex flex-col gap-12 lg:grid lg:grid-cols-2 lg:gap-24 w-full">
+                    <div className="flex flex-col gap-12 lg:grid lg:grid-cols-2 lg:gap-24">
                         {/* Company Section */}
                         <div className="flex flex-col space-y-6 lg:space-y-8">
-                            <h3 className="font-haptik text-[16px] lg:text-[16px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
+                            <h3 className="font-haptik text-[16px] lg:text-[20px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
                                 Company
                             </h3>
                             <nav className="flex flex-col space-y-4 lg:space-y-5">
@@ -138,7 +138,7 @@ export default function Footer() {
 
                         {/* Legal Section */}
                         <div className="flex flex-col space-y-6 lg:space-y-8">
-                            <h3 className="font-haptik text-[16px] lg:text-[16px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
+                            <h3 className="font-haptik text-[16px] lg:text-[20px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
                                 Legal
                             </h3>
                             <nav className="flex flex-col space-y-4 lg:space-y-5">

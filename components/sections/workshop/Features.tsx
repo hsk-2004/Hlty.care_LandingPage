@@ -9,11 +9,9 @@ export default function Features() {
       title: "WHAT A DAY LOOKS LIKE",
       description: (
         <>
-          A mix of guided play, free exploration, storytelling, movement breaks, and shared routines —{" "}
+          A mix of guided play, free exploration, storytelling, movement breaks, and shared routines — designed{" "}
           <br className="hidden lg:inline" />
-          designed to feel like a camp first, and a program{" "}
-          <br className="hidden lg:inline" />
-          second.
+          to feel like a camp first, and a program second.
         </>
       ),
     },

@@ -8,15 +8,15 @@ export default function Playshops() {
     {
       title: "WHAT CHILDREN EXPERIENCE",
       description: [
-        "Children move, play, listen to stories, solve small challenges, and work together.",
-        'There are no tests, no lectures, and no "right answers." The focus is on participation and familiarity.',
+        <>Children move, play, listen to stories, solve small challenges, <br className="hidden lg:inline" /> and work together.</>,
+        <>There are no tests, no lectures, and no "right answers." The <br className="hidden lg:inline" /> focus is on participation and familiarity.</>,
       ],
     },
     {
       title: "WHAT STAYS WITH THEM",
       description: [
         "The goal isn't recall.",
-        "It's recognition of their bodies, their signals, and everyday choices.",
+        <>It's recognition of their bodies, their signals, and everyday <br className="hidden lg:inline" />choices.</>,
       ],
     },
   ];
@@ -53,12 +53,12 @@ export default function Playshops() {
             <motion.div
               variants={itemVariants}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="space-y-4 lg:space-y-4 pt-0"
+              className="space-y-1 lg:space-y-4 pt-0"
             >
               <h2 className="font-jubilat text-[24px] md:text-[40px] lg:text-[36px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                 School Playshops
               </h2>
-              <p className="font-jubilat font-normal not-italic text-[12px] md:text-[18px] lg:text-[16px] leading-tight lg:leading-relaxed text-[#183A39] max-w-sm md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
+              <p className="font-jubilat font-normal not-italic text-[12px] md:text-[18px] lg:text-[16px] leading-tight mx-0 lg:mx-0 text-[#183A39] max-w-sm md:max-w-xl lg:max-w-none" style={{ lineHeight: '20px' }}>
                 Interactive sessions designed to fit into a child's <br className="hidden lg:inline" />
                 existing school day — without turning health <br className="hidden lg:inline" />
                 into another subject to study.
@@ -94,20 +94,20 @@ export default function Playshops() {
           </div>
 
           {/* Right Column: Feature Points */}
-          <div className="lg:col-span-4 space-y-10 lg:space-y-6 w-full lg:pt-16 lg:-mt-10">
+          <div className="lg:col-span-4 space-y-10 lg:space-y-6 w-full lg:pt-10 lg:-mt-10">
             {points.map((point, index) => (
               <motion.div
                 key={index}
                 variants={itemVariants}
                 transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className={`flex flex-col items-start lg:items-start text-left lg:text-left space-y-2 lg:space-y-5 ${index === 1 ? 'lg:!mt-[40px]' : ''}`}
+                className={`flex flex-col items-start lg:items-start text-left lg:text-left space-y-2 lg:space-y-4 ${index === 1 ? 'lg:!mt-[28px]' : ''}`}
               >
                 <h3 className="font-haptik text-[16px] md:text-[24px] lg:text-[20px] font-medium lg:font-medium uppercase leading-normal lg:leading-tight text-[#183A39]">
                   {point.title}
                 </h3>
-                <div className="space-y-2 lg:space-y-1">
+                <div className="space-y-0 lg:space-y-1">
                   {point.description.map((desc, dIdx) => (
-                    <p key={dIdx} className="font-jubilat font-normal not-italic text-[12px] md:text-[18px] lg:text-[16px] text-[#183A39] leading-relaxed lg:leading-none max-w-md md:max-w-xl mx-0 lg:mx-0">
+                    <p key={dIdx} className="font-jubilat font-normal not-italic text-[12px] md:text-[18px] lg:text-[16px] text-[#183A39] leading-[14px] lg:leading-[20px] max-w-md md:max-w-xl lg:max-w-none lg:whitespace-nowrap mx-0 lg:mx-0">
                       {desc}
                     </p>
                   ))}
