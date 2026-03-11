@@ -39,8 +39,10 @@ export default function Navbar() {
                 visible: { y: 0, opacity: 1 },
                 hidden: { y: "-100%", opacity: 0 },
             }}
+            initial="visible"
             animate={isOpen ? "visible" : (hidden ? "hidden" : "visible")}
-            className={`fixed top-0 left-0 w-full z-50 p-6 lg:py-4 lg:px-12 flex justify-between items-center ${isOpen ? "bg-[#183A39]" : "transition-all duration-300 " + (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent")
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className={`fixed top-0 left-0 w-full z-50 p-6 lg:py-4 lg:px-12 flex justify-between items-center ${isOpen ? "bg-[#183A39]" : "transition-colors duration-300 " + (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent")
                 }`}
         >
             <div className="max-w-7xl mx-auto flex justify-between items-center w-full">

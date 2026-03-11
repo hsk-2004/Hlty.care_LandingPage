@@ -52,7 +52,7 @@ export default function Hero() {
           transition={{ delay: 1.2, duration: 0.8 }}
           className="pt-2 flex justify-center"
         >
-          <button className="bg-[#183A39] text-[#F0EEE6] w-[215px] h-[40px] md:w-auto md:h-auto md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-full flex items-center justify-center gap-3 font-jubilat text-[10px] md:text-[12px] lg:text-[16px] font-medium tracking-[0.2em] group hover:bg-[#1a3636] transition-all shadow-lg">
+          <button className="bg-[#183A39] text-[#F0EEE6] w-[215px] h-[40px] md:w-auto md:h-auto md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-full flex items-center justify-center gap-3 font-haptik text-[10px] md:text-[12px] lg:text-[16px] font-medium tracking-[0.2em] group hover:bg-[#1a3636] transition-all shadow-lg">
             GET STARTED
             <ArrowRight className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 group-hover:translate-x-2 transition-transform" />
           </button>

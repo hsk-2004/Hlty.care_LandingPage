@@ -49,8 +49,8 @@ export default function ProblemSection() {
         const cardStart = index * segmentSize;
         const cardEnd = (index + 1) * segmentSize;
 
-        // Fade zone is 20% of a segment for smooth crossfade
-        const fadeZone = segmentSize * 0.25;
+        // Tight fade zone to prevent elements from overlapping too long
+        const fadeZone = segmentSize * 0;
 
         if (prog < cardStart - fadeZone) return 0;
         if (prog > cardEnd + fadeZone) return 0;
@@ -108,7 +108,7 @@ export default function ProblemSection() {
 
 
                 {/* Fixed Layout with Crossfading Inner Content */}
-                <div className="relative w-full h-full flex flex-col justify-center md:flex-row-reverse md:items-start items-center md:justify-between px-[7.5vw] md:pt-40 lg:pt-48 pb-0 md:pb-12 md:gap-16">
+                <div className="relative w-full h-full flex flex-col justify-center md:flex-row-reverse md:items-center items-center md:justify-between px-[7.5vw] md:gap-16">
                     {/* Image Area */}
                     <div className="relative w-full md:w-[663px] flex justify-center">
                         <div className="w-full aspect-[4/3] md:w-[663px] md:h-[401px] md:aspect-auto bg-[#183A39]/10 rounded-[20px] overflow-hidden relative shadow-lg">
@@ -125,7 +125,7 @@ export default function ProblemSection() {
                                         style={{
                                             opacity,
                                             visibility: isVisible ? "visible" : "hidden",
-                                            transition: "opacity 0.15s ease-out",
+                                            transition: "opacity 50ms ease-out",
                                             zIndex: index === activeIndex ? 10 : 1,
                                         }}
                                     />
@@ -159,7 +159,7 @@ export default function ProblemSection() {
                                         style={{
                                             opacity,
                                             visibility: isVisible ? "visible" : "hidden",
-                                            transition: "opacity 0.15s ease-out",
+                                            transition: "opacity 50ms ease-out",
                                             zIndex: index === activeIndex ? 10 : 1,
                                             pointerEvents: isVisible ? "auto" : "none",
                                         }}
