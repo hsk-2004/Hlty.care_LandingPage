@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function Episode() {
     return (
         <section className="py-12 md:py-24 px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
-            <div className="flex flex-col lg:flex-row gap-8 items-stretch h-full">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-6 items-stretch">
 
                 {/* Image Section */}
                 <motion.div
@@ -14,7 +14,7 @@ export default function Episode() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="w-full lg:w-1/2 relative aspect-square rounded-[24px] overflow-hidden"
+                    className="w-full md:w-[35%] lg:w-[30%] relative aspect-square rounded-[16px] overflow-hidden"
                 >
                     <Image
                         src="/explore/e1.svg"
@@ -30,21 +30,25 @@ export default function Episode() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-                    className="w-full lg:w-1/2 bg-[#FCB11F] rounded-[24px] p-8 md:p-12 lg:p-16 flex flex-col justify-center items-start text-left"
+                    className="w-full md:flex-1 bg-[#FCB11F] rounded-[16px] p-6 md:p-8 lg:p-10 flex flex-col justify-center items-start text-left"
                 >
-                    <h2 className="font-jubilat text-[24px] md:text-[32px] lg:text-[42px] text-[#183A39] mb-6 leading-tight font-medium">
+                    <h2 className="font-jubilat text-[22px] md:text-[24px] lg:text-[42px] text-[#183A39] mb-4 leading-tight font-medium">
                         Latest Podcast Episode
                     </h2>
 
-                    <p className="font-jubilat text-[12px] md:text-[18px] text-[#183A39] leading-relaxed mb-10 opacity-90">
-                        Each episode is a guided conversation shaped by research, lived experiences, and real-world contexts. We explore how health weaves into daily life &mdash; through routines, food, movement, rest, and the choices families make without always noticing.
+                    <p className="font-jubilat text-[12px] md:text-[14px] lg:text-[15px] text-[#183A39] leading-relaxed mb-6 opacity-90">
+                        <span className="whitespace-nowrap">Each episode is a guided conversation shaped by</span><br />
+                        <span className="whitespace-nowrap">research, lived experience, and real-world contexts.</span><br />
+                        <span className="whitespace-nowrap">We explore how health weaves into daily life —</span><br />
+                        <span className="whitespace-nowrap">through routines, food, movement, rest, and the choices</span><br />
+                        <span className="whitespace-nowrap">families make without always noticing.</span>
                     </p>
 
-                    <button className="bg-[#183A39] text-[#F0EEE6] px-8 py-3 rounded-full font-haptik text-[12px] md:text-[16px] font-medium tracking-wide hover:bg-[#1a3636] transition-all shadow-md">
+                    <button className="bg-[#183A39] text-[#F0EEE6] px-6 py-2.5 rounded-full font-haptik text-[12px] md:text-[14px] font-medium tracking-wide hover:bg-[#1a3636] transition-all shadow-md">
                         Listen Now
                     </button>
                 </motion.div>
             </div>
-        </section >
+        </section>
     );
 }

@@ -34,7 +34,7 @@ export default function BlogHero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="font-jubilat text-[24px] md:text-[44px] lg:text-[52px] leading-[1.2] text-[#183A39]"
+                    className="font-jubilat font-normal text-[24px] md:text-[44px] lg:text-[52px] leading-[1.2] text-[#183A39]"
                 >
                     <span className="whitespace-nowrap">Blogs, stories, and research</span> <br />
                     <span className="whitespace-nowrap">from the Hlty Beings playground.</span>
@@ -44,7 +44,7 @@ export default function BlogHero() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-                    className="font-jubilat text-[12px] md:text-[18px] lg:text-[20px] text-[#183A39] max-w-2xl mx-auto leading-relaxed"
+                    className="font-jubilat font-normal text-[12px] md:text-[18px] lg:text-[20px] text-[#183A39] max-w-2xl mx-auto leading-relaxed"
                 >
                     <span className="whitespace-nowrap">Writings about food, play, routines, and how habits form in real life - </span> <br className="hidden md:block" />
                     <span className="whitespace-nowrap">for parents, educators, and anyone shaping childhood environments.</span>

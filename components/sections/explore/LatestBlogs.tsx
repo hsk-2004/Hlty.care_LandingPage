@@ -38,8 +38,8 @@ export default function LatestBlogs() {
                 <div className="h-[1px] w-full bg-[#183A39]/20" />
             </div>
 
-            {/* Blog Posts List/Grid */}
-            <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-8 lg:gap-x-12 lg:gap-y-16">
+            {/* Blog Posts Grid */}
+            <div className="flex flex-col md:grid md:grid-cols-3 gap-12 md:gap-6 lg:gap-8">
                 {blogs.map((blog, index) => (
                     <motion.div
                         key={index}
@@ -50,7 +50,7 @@ export default function LatestBlogs() {
                         className="group cursor-pointer"
                     >
                         {/* Image Container with Rounded Corners */}
-                        <div className="relative aspect-[16/10] w-full rounded-[16px] overflow-hidden mb-6 shadow-sm group-hover:shadow-md transition-shadow">
+                        <div className="relative aspect-[16/10] w-full rounded-[16px] overflow-hidden mb-4 shadow-sm group-hover:shadow-md transition-shadow">
                             <Image
                                 src={blog.image}
                                 alt={blog.title}
@@ -60,7 +60,7 @@ export default function LatestBlogs() {
                         </div>
 
                         {/* Category and Date Row */}
-                        <div className="flex justify-between items-center mb-4">
+                        <div className="flex justify-between items-center mb-3">
                             <span className="bg-[#399F87] text-[#F0EEE6] px-3 py-1 rounded-sm font-haptik text-[10px] md:text-[12px] font-medium tracking-wide">
                                 {blog.category}
                             </span>
@@ -70,12 +70,12 @@ export default function LatestBlogs() {
                         </div>
 
                         {/* Title */}
-                        <h3 className="font-jubilat text-[18px] md:text-[22px] text-[#183A39] leading-[1.3] mb-3 group-hover:opacity-80 transition-opacity">
+                        <h3 className="font-jubilat text-[18px] md:text-[20px] text-[#183A39] leading-[1.3] mb-2 group-hover:opacity-80 transition-opacity">
                             {blog.title}
                         </h3>
 
                         {/* Subtitle */}
-                        <p className="font-jubilat text-[12px] md:text-[14px] text-[#183A39]/70 leading-relaxed line-clamp-2 italic">
+                        <p className="font-jubilat text-[12px] md:text-[13px] text-[#183A39]/70 leading-relaxed line-clamp-3 italic">
                             {blog.subtitle}
                         </p>
                     </motion.div>
