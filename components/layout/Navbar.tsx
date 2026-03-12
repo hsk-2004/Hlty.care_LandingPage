@@ -5,11 +5,17 @@ import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 
-export default function Navbar() {
+interface NavbarProps {
+    variant?: "light" | "dark";
+}
+
+export default function Navbar({ variant = "light" }: NavbarProps) {
     const [hidden, setHidden] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
     const { scrollY } = useScroll();
+
+    const isDark = variant === "dark";
 
     useMotionValueEvent(scrollY, "change", (latest) => {
         const previous = scrollY.getPrevious() ?? 0;
@@ -42,13 +48,13 @@ export default function Navbar() {
             initial="visible"
             animate={isOpen ? "visible" : (hidden ? "hidden" : "visible")}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className={`fixed top-0 left-0 w-full z-50 p-6 lg:py-4 lg:px-12 flex justify-between items-center ${isOpen ? "bg-[#183A39]" : "transition-colors duration-300 " + (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent")
+            className={`fixed top-0 left-0 w-full z-50 flex justify-center items-center p-6 lg:py-4 lg:px-6 ${isOpen ? "bg-[#183A39]" : "transition-colors duration-300 " + (isDark ? "bg-[#183A39] lg:bg-transparent" : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"))
                 }`}
         >
-            <div className="max-w-7xl mx-auto flex justify-between items-center w-full">
+            <div className={`flex justify-between items-center w-full max-w-7xl ${isDark ? "lg:max-w-[1292px] lg:h-[68px] lg:bg-[#E4DBCD] lg:rounded-[32px] lg:px-2 lg:py-1.5" : ""}`}>
                 {/* Logo Section */}
                 <Link href="/" className="flex items-center gap-2 group">
-                    <img src="/logo.png" alt="Logo" className="h-14 lg:h-20 w-auto" />
+                    <img src="/logo.png" alt="Logo" className={`w-auto h-14 lg:h-20 ${isDark ? "lg:ml-2" : ""}`} />
                 </Link>
 
                 {/* Desktop Navigation Links (Hidden on Mobile) */}
@@ -57,7 +63,7 @@ export default function Navbar() {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="font-haptik text-[15px] font-medium tracking-[0.1em] text-[#183A39] hover:opacity-60 transition-opacity"
+                            className="font-haptik text-[15px] font-medium tracking-[0.1em] hover:opacity-60 transition-opacity text-[#183A39]"
                         >
                             {link.name}
                         </Link>
@@ -67,17 +73,19 @@ export default function Navbar() {
                 {/* Action Buttons & Menu */}
                 <div className="flex items-center gap-4">
                     {/* Desktop Only Actions */}
-                    <button className="hidden lg:block bg-[#183A39] text-[#F0EEE6] px-10 py-3 rounded-full font-haptik text-[14px] font-medium tracking-[0.05em] hover:bg-[#1a3636]/90 transition-all shadow-md">
-                        GET STARTED
-                    </button>
+                    {!isDark && (
+                        <Link href="/get-started" className="hidden lg:block bg-[#183A39] text-[#F0EEE6] px-10 py-3 rounded-full font-haptik text-[14px] font-medium tracking-[0.05em] hover:bg-[#1a3636]/90 transition-all shadow-md">
+                            GET STARTED
+                        </Link>
+                    )}
 
-                    <button className="hidden lg:flex w-11 h-11 items-center justify-center bg-[#183A39] text-[#F0EEE6] rounded-full hover:bg-[#1a3636]/90 transition-all shadow-md">
+                    <button className={`hidden lg:flex w-11 h-11 items-center justify-center rounded-full transition-all ${isDark ? "bg-[#183A39] text-[#F0EEE6] hover:bg-[#183A39]/90" : "bg-[#183A39] text-[#F0EEE6] hover:bg-[#1a3636]/90 shadow-md"}`}>
                         <ShoppingBag size={20} />
                     </button>
 
                     {/* Original Mobile Menu Icon */}
                     <button
-                        className="lg:hidden text-[#183A39] p-1 hover:opacity-70 transition-opacity z-50"
+                        className={`lg:hidden p-1 hover:opacity-70 transition-opacity z-50 ${isDark ? "text-[#F0EEE6]" : "text-[#183A39]"}`}
                         onClick={() => setIsOpen(!isOpen)}
                     >
                         {isOpen ? <X size={32} strokeWidth={2.5} /> : <Menu size={32} strokeWidth={2.5} />}
@@ -126,9 +134,9 @@ export default function Navbar() {
                         <div
                             className="flex justify-center w-full"
                         >
-                            <button className="w-[382px] h-[40px] bg-[#F0EEE6] text-[#183A39] rounded-full font-haptik text-[18px] tracking-wide shadow-lg flex items-center justify-center">
+                            <Link href="/get-started" onClick={() => setIsOpen(false)} className="w-[382px] h-[40px] bg-[#F0EEE6] text-[#183A39] rounded-full font-haptik text-[18px] tracking-wide shadow-lg flex items-center justify-center">
                                 GET STARTED
-                            </button>
+                            </Link>
                         </div>
 
                         <div

@@ -3,7 +3,11 @@
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 
-export default function Footer() {
+interface FooterProps {
+    hideTopDecoration?: boolean;
+}
+
+export default function Footer({ hideTopDecoration = false }: FooterProps) {
     const socialIcons = [
         {
             name: "WhatsApp",
@@ -52,22 +56,26 @@ export default function Footer() {
             className="w-full bg-[#183A39] text-[#F0EEE6] overflow-hidden"
         >
             {/* Mobile Top Decoration - Restored */}
-            <div className="lg:hidden -mx-8 bg-[#F0EEE6]">
-                <img
-                    src="/f1 copy.svg"
-                    alt="Footer top decoration"
-                    className="w-full h-auto block"
-                />
-            </div>
+            {!hideTopDecoration && (
+                <div className="lg:hidden -mx-8 bg-[#F0EEE6]">
+                    <img
+                        src="/f1 copy.svg"
+                        alt="Footer top decoration"
+                        className="w-full h-auto block"
+                    />
+                </div>
+            )}
 
             {/* Desktop Top Decoration */}
-            <div className="hidden lg:block w-full bg-[#F0EEE6]">
-                <img
-                    src="/top.svg"
-                    alt="Footer top decoration"
-                    className="w-full h-auto block"
-                />
-            </div>
+            {!hideTopDecoration && (
+                <div className="hidden lg:block w-full bg-[#F0EEE6]">
+                    <img
+                        src="/top.svg"
+                        alt="Footer top decoration"
+                        className="w-full h-auto block"
+                    />
+                </div>
+            )}
 
             <div className="w-full mx-auto px-6 md:px-12 lg:px-16 pt-16 lg:pt-20 pb-12 lg:pb-24">
                 <motion.div

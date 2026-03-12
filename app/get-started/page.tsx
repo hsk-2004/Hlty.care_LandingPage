@@ -5,13 +5,13 @@ import ConversationSection from "@/components/sections/get-started/ConversationS
 
 export default function GetStartedPage() {
     return (
-        <main className="min-h-screen bg-[#F0EEE6]">
-            <Navbar />
+        <main className="min-h-screen bg-[#183A39]">
+            <Navbar variant="dark" />
             <div className="pt-24 lg:pt-32">
                 <AudienceCards />
                 <ConversationSection />
             </div>
-            <Footer />
+            <Footer hideTopDecoration />
         </main>
     );
 }
