@@ -36,7 +36,7 @@ export default function Navbar({ variant = "light" }: NavbarProps) {
         { name: "EXPLORE", href: "/explore" },
         { name: "WORKSHOPS", href: "/workshop" },
         { name: "PRODUCTS", href: "/products" },
-        { name: "FOR PARENTS", href: "#" },
+        { name: "FOR PARENTS", href: "/parents" },
     ];
 
     return (
@@ -79,9 +79,9 @@ export default function Navbar({ variant = "light" }: NavbarProps) {
                         </Link>
                     )}
 
-                    <button className={`hidden lg:flex w-11 h-11 items-center justify-center rounded-full transition-all ${isDark ? "bg-[#183A39] text-[#F0EEE6] hover:bg-[#183A39]/90" : "bg-[#183A39] text-[#F0EEE6] hover:bg-[#1a3636]/90 shadow-md"}`}>
+                    <Link href="/cart" className={`hidden lg:flex w-11 h-11 items-center justify-center rounded-full transition-all ${isDark ? "bg-[#183A39] text-[#F0EEE6] hover:bg-[#183A39]/90" : "bg-[#183A39] text-[#F0EEE6] hover:bg-[#1a3636]/90 shadow-md"}`}>
                         <ShoppingBag size={20} />
-                    </button>
+                    </Link>
 
                     {/* Original Mobile Menu Icon */}
                     <button
@@ -142,9 +142,9 @@ export default function Navbar({ variant = "light" }: NavbarProps) {
                         <div
                             className="flex justify-center w-full"
                         >
-                            <button className="w-[382px] h-[40px] bg-[#5EE2A0] text-[#183A39] rounded-full font-haptik text-[18px] tracking-wide shadow-lg flex items-center justify-center">
+                            <Link href="/cart" onClick={() => setIsOpen(false)} className="w-[382px] h-[40px] bg-[#5EE2A0] text-[#183A39] rounded-full font-haptik text-[18px] tracking-wide shadow-lg flex items-center justify-center">
                                 CART
-                            </button>
+                            </Link>
                         </div>
                     </div>
                 </div>
