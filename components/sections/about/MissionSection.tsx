@@ -5,9 +5,9 @@ import Image from "next/image";
 
 export default function MissionSection() {
   return (
-    <section className="relative min-h-screen md:min-h-[120vh] lg:min-h-[140vh] pb-24 md:pb-32 lg:pb-40 pt-0 px-4 flex justify-center items-start overflow-hidden bg-[#F0EEE6]">
+    <section className="relative min-h-screen md:min-h-[120vh] lg:min-h-[140vh] pb-24 md:pb-32 lg:pb-40 pt-6 md:pt-20 lg:pt-32 xl:pt-40 px-4 flex justify-center items-start overflow-hidden bg-[#F0EEE6]">
       {/* Background Image Container - Desktop (Full) */}
-      <div className="absolute inset-0 z-0 hidden lg:flex justify-center items-start pointer-events-none">
+      <div className="absolute inset-0 z-0 hidden lg:flex justify-center items-start pointer-events-none pt-24 lg:pt-52 xl:pt-40">
         <div className="w-full max-w-[1330.225px] h-[1347px] relative">
           <motion.div
             initial={{ opacity: 0, y: 0, scale: 1 }}
@@ -60,11 +60,11 @@ export default function MissionSection() {
           {/* Text Content */}
           <div className="p-6 md:p-10 lg:p-14 pb-32 md:pb-40">
             <div className="max-w-[90%] font-jubilat text-[#2D4341] space-y-4 md:space-y-6 lg:space-y-4 pt-1 md:pt-3 lg:pt-4">
-              <h1 className="font-jubilat text-[24px] md:text-[36px] lg:text-[48px] font-medium leading-[1.2] mb-6 md:mb-8 lg:mb-10 text-[#1A2E2C]">
+              <h1 className="font-jubilat text-[24px] md:text-[36px] lg:text-[48px] font-normal leading-[1.2] mb-6 md:mb-8 lg:mb-10 text-[#1A2E2C]">
                 Building Hlty Beings
               </h1>
 
-              <div className="space-y-1 text-[12px] md:text-[14px] lg:text-[16px] leading-tight text-[#2D4341]/90">
+              <div className="space-y-1 font-normal text-[10px] md:text-[14px] lg:text-[16px] leading-tight text-[#2D4341]/90">
                 <p>
                   Healthcare matters deeply.<br />
                   But often, we meet it late.
@@ -111,7 +111,7 @@ export default function MissionSection() {
                   But by designing experiences they want to return to.
                 </p>
 
-                <p className="pt-2 text-[12px] md:text-[14px] lg:text-[16px] opacity-100">
+                <p className="pt-2 font-normal text-[12px] md:text-[14px] lg:text-[16px] opacity-100">
                   We bring together science, storytelling, and a little humor to create small wins that last.<br />
                   We are a team of clinicians, designers, educators, technologists, and parents on a shared mission: to save childhood and secure the future of health.
                 </p>
@@ -119,27 +119,27 @@ export default function MissionSection() {
             </div>
           </div>
 
-          {/* Bottom Illustration - Pinned to absolute bottom of fixed-height card */}
-          <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden">
-            <div className="w-full relative aspect-[400/260] md:aspect-[500/420] lg:aspect-[808/600] xl:aspect-[808/700]">
-              {/* Mobile Image */}
-              <div className="md:hidden">
-                <Image
-                  src="/about/about6.png"
-                  alt="Mission Illustration Mobile"
-                  fill
-                  className="object-contain object-bottom"
-                />
-              </div>
-              {/* Desktop Image */}
-              <div className="hidden md:block">
-                <Image
-                  src="/about/about5.svg"
-                  alt="Mission Illustration Desktop"
-                  fill
-                  className="object-contain object-bottom"
-                />
-              </div>
+          {/* Mobile Illustration - Pinned to absolute bottom of fixed-height card */}
+          <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden transform translate-y-6 md:hidden">
+            <div className="w-full relative aspect-[400/260]">
+              <Image
+                src="/about/about6.png"
+                alt="Mission Illustration Mobile"
+                fill
+                className="object-contain object-bottom"
+              />
+            </div>
+          </div>
+
+          {/* Desktop Illustration - Original layout (right aligned) */}
+          <div className="hidden md:flex justify-end pr-14 pb-14">
+            <div className="w-[372px] h-[161px] relative">
+              <Image
+                src="/about/about5.svg"
+                alt="Mission Illustration Desktop"
+                fill
+                className="object-contain"
+              />
             </div>
           </div>
         </motion.div>
