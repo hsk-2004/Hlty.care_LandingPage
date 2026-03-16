@@ -131,7 +131,7 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                                     { name: "Workshops", href: "/workshop" },
                                     { name: "Products", href: "#" },
                                     { name: "For Parents", href: "#" },
-                                    { name: "Building Hlty Beings", href: "#" }
+                                    { name: "About Us", href: "/about" }
                                 ].map((link) => (
                                     <a
                                         key={link.name}
