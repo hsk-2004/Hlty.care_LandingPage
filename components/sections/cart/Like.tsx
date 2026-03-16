@@ -46,7 +46,7 @@ export default function Like() {
       </div>
 
       <div className="flex justify-end mt-12">
-        <button className="px-8 py-3 rounded-full border border-[#183A39] text-[#183A39] font-haptik font-medium hover:bg-[#183A39] hover:text-[#F0EEE6] transition-all">
+        <button className="w-[83.75px] h-[24px] md:w-auto md:h-auto md:px-8 md:py-3 flex items-center justify-center text-[10px] md:text-base rounded-full border border-[#183A39] text-[#183A39] font-haptik font-medium hover:bg-[#183A39] hover:text-[#F0EEE6] transition-all">
           Show more
         </button>
       </div>
