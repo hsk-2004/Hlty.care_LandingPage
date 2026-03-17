@@ -48,13 +48,18 @@ export default function Navbar({ variant = "light" }: NavbarProps) {
             initial="visible"
             animate={isOpen ? "visible" : (hidden ? "hidden" : "visible")}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className={`fixed top-0 left-0 w-full z-50 flex justify-center items-center p-6 lg:py-4 lg:px-6 ${isOpen ? "bg-[#183A39]" : "transition-colors duration-300 " + (isDark ? "bg-[#183A39] lg:bg-transparent" : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"))
+            className={`fixed top-0 left-0 w-full z-50 flex justify-center items-center p-4 lg:py-4 lg:px-6 ${isOpen ? "bg-[#183A39]" : "transition-colors duration-300 " + (isDark ? "bg-[#183A39] lg:bg-transparent" : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"))
                 }`}
         >
             <div className={`flex justify-between items-center w-full max-w-7xl ${isDark ? "lg:max-w-[1292px] lg:h-[68px] lg:bg-[#E4DBCD] lg:rounded-[32px] lg:px-2 lg:py-1.5" : ""}`}>
                 {/* Logo Section */}
                 <Link href="/" className="flex items-center gap-2 group">
-                    <img src="/logo.png" alt="Logo" className={`w-auto h-14 lg:h-20 ${isDark ? "lg:ml-2" : ""}`} />
+                    <img 
+                        src={isOpen ? "/logo_.svg" : "/logo.png"} 
+                        alt="Logo" 
+                        className={isOpen ? "" : `w-auto h-14 lg:h-20 ${isDark ? "lg:ml-2" : ""}`} 
+                        style={isOpen ? { width: '46px', height: '35.86px' } : {}}
+                    />
                 </Link>
 
                 {/* Desktop Navigation Links (Hidden on Mobile) */}
@@ -101,7 +106,7 @@ export default function Navbar({ variant = "light" }: NavbarProps) {
                     {/* Top Header inside menu */}
                     <div className="flex justify-between items-center mb-20">
                         <Link href="/" onClick={() => setIsOpen(false)}>
-                            <img src="/logo.png" alt="Logo" className="h-12 w-auto" />
+                            <img src="/logo_.svg" alt="Logo" style={{ width: '46px', height: '35.86px' }} />
                         </Link>
                         <button
                             className="text-[#F0EEE6] p-1"

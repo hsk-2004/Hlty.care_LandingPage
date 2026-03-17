@@ -118,7 +118,7 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                     </div>
 
                     {/* Right Blocks: Navigation Sections */}
-                    <div className="flex flex-col gap-12 lg:grid lg:grid-cols-2 lg:gap-24">
+                    <div className="flex flex-col gap-12 lg:grid lg:grid-cols-2 lg:gap-24 lg:mr-12 xl:mr-20">
                         {/* Company Section */}
                         <div className="flex flex-col space-y-6 lg:space-y-8">
                             <h3 className="font-haptik text-[16px] lg:text-[20px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">

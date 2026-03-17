@@ -45,7 +45,7 @@ export default function Workshops() {
                 >
 
                     {/* Left Column: Heading & CTA */}
-                    <div className="lg:col-span-4 flex flex-col items-start lg:items-start text-left lg:text-left space-y-8 md:space-y-12 lg:space-y-10">
+                    <div className="lg:col-span-4 flex flex-col items-start lg:items-start text-left lg:text-left space-y-8 md:space-y-12 lg:space-y-10 lg:pl-8">
                         <motion.div
                             variants={itemVariants}
                             transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
