@@ -66,12 +66,17 @@ export default function AudienceCards() {
                         className="relative shrink-0 rounded-[16px] overflow-hidden xl:min-w-[307px] w-[307px] sm:w-auto sm:min-w-0 h-[448px] group cursor-pointer hover:shadow-lg transition-shadow snap-center xl:w-[307px]"
                     >
                         {/* Background Image */}
-                        <Image
+                        {/* Background Image Container */}
+                        <div className="absolute inset-0">
+                            <Image
                             src={card.image}
                             alt={card.label}
                             fill
-                            className={`object-cover scale-110 ${index === 0 || index === 1 || index === 3 ? 'xl:scale-125 xl:origin-top xl:translate-y-[15%]' : 'xl:object-top'} xl:rounded-t-[80px] xl:rounded-b-[80px]`}
+                            className={`object-cover scale-110 xl:scale-125 xl:origin-top ${index === 2 ? 'xl:-translate-y-[5%]' : 'xl:translate-y-[15%]'} xl:rounded-t-[80px] xl:rounded-b-[80px]`}
                         />
+                        </div>
+                        {/* White Gradient Overlay */}
+                        <div className="absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-white via-white/90 to-transparent z-[5]" />
 
                         {/* Content */}
                         <div className="relative z-10 p-3 h-full flex flex-col items-center">
