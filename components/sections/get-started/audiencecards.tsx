@@ -44,7 +44,7 @@ export default function AudienceCards() {
         <section className="py-12 md:py-24 bg-[#183A39]">
             {/* Header */}
             <div className="px-6 md:px-12 lg:px-20 max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start mb-10 md:mb-16 gap-4 text-center md:text-left items-center md:items-start">
-                <h2 className="font-jubilat italic text-[24px] md:text-[32px] lg:text-[40px] text-[#399F87] leading-tight">
+                <h2 className="mt-2 md:mt-4 xl:-ml-2 font-jubilat italic text-[24px] md:text-[32px] lg:text-[40px] text-[#399F87] leading-tight">
                     Start where you are.<br />
                     We'll take it from there.
                 </h2>
@@ -55,7 +55,7 @@ export default function AudienceCards() {
 
             {/* Cards Grid */}
             <div className="px-0 sm:px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
-                <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory scrollbar-hide pl-[calc(50%-140px)] pr-[calc(50%-140px)] sm:pl-0 sm:pr-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-4 md:gap-8 xl:flex xl:justify-center xl:gap-8">
+                <div className="flex overflow-x-auto touch-pan-x gap-4 pb-4 snap-x snap-mandatory scrollbar-hide pl-[calc(50%-140px)] pr-[calc(50%-140px)] sm:pl-0 sm:pr-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-4 md:gap-8 xl:flex xl:justify-center xl:gap-8">
                 {audienceData.map((card, index) => (
                     <motion.div
                         key={index}
@@ -63,7 +63,7 @@ export default function AudienceCards() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6, delay: index * 0.1 }}
-                        className="relative rounded-[16px] overflow-hidden xl:min-w-[307px] w-[307px] sm:w-auto sm:min-w-0 h-[448px] group cursor-pointer hover:shadow-lg transition-shadow snap-center xl:w-[307px]"
+                        className="relative shrink-0 rounded-[16px] overflow-hidden xl:min-w-[307px] w-[307px] sm:w-auto sm:min-w-0 h-[448px] group cursor-pointer hover:shadow-lg transition-shadow snap-center xl:w-[307px]"
                     >
                         {/* Background Image */}
                         <Image
