@@ -131,14 +131,16 @@ export default function MissionSection() {
             </div>
           </div>
 
-          {/* Desktop Illustration - Original layout (right aligned) */}
-          <div className="hidden md:flex justify-end pr-14 pb-14">
-            <div className="w-[372px] h-[161px] relative">
+
+
+          {/* Desktop About6 Illustration - Pinned to absolute bottom */}
+          <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden hidden md:block">
+            <div className="w-full h-[400px] relative">
               <Image
-                src="/about/about5.svg"
-                alt="Mission Illustration Desktop"
+                src="/about/about6.png"
+                alt="Mission Illustration Bottom Desktop"
                 fill
-                className="object-contain"
+                className="object-contain object-bottom"
               />
             </div>
           </div>
