@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[100dvh] flex flex-col items-center justify-start text-center px-4 pt-36 md:pt-48 lg:pt-60">
+    <section className="relative w-full h-[867px] xl:h-[1131px] flex flex-col items-center justify-start text-center px-4 pt-32 sm:pt-56 md:pt-48 lg:pt-60 xl:pt-[335px]">
 
       {/* Background Image with Zoom Effect */}
       <motion.div
@@ -16,45 +16,125 @@ export default function Hero() {
         className="absolute inset-0 z-0 overflow-hidden"
       >
         <Image
-          src="/landingpage/hero image.svg"
+          src="/landingpage/hero-image.png"
           alt="Explore Hero Background"
           fill
           priority
-          className="object-cover object-[75%_center] md:object-center"
+          className="object-cover object-left-top md:object-bottom scale-110 md:scale-110 lg:scale-110 xl:scale-100 -translate-y-[40px] md:translate-y-0"
         />
         {/* Subtle overlay to ensure text is readable */}
         <div className="absolute inset-0 bg-[#183A39]/10" />
+
+        {/* Decorative Overlay Image (Added layer with specific size) - Hidden on Mobile */}
+        <div className="absolute hidden md:block left-[65%] top-[35%] -translate-x-1/2 -translate-y-1/2 z-[1] pointer-events-none">
+          <div className="relative w-[300px] h-[350px] md:w-[827.5px] md:h-[940.5px]">
+            <Image
+              src="/landingpage/hero-image1.svg"
+              alt="Hero decorative overlay"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
       </motion.div>
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-4xl mx-auto space-y-4">
-        <motion.h1
-          initial={{ opacity: 0, y: 30, filter: "blur(8px)" }}
-          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="font-jubilat text-[28px] md:text-[48px] lg:text-[52px] leading-[1.1] text-[#183A39] drop-shadow-sm px-4"
-        >
-          A new way for children <br className="hidden md:block" /> to grow up healthier
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 1.0, ease: [0.22, 1, 0.36, 1] }}
-          className="font-haptikRotalic italic text-[12px] md:text-[16px] lg:text-[24px] text-[#183A39] opacity-90 max-w-[260px] md:max-w-lg lg:max-w-xl mx-auto leading-relaxed"
-        >
-          We are building a playground of stories, play and daily routines for health and nutrition.
-        </motion.p>
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 lg:px-8 space-y-10 -translate-x-[20px] md:-translate-x-0 xl:-translate-x-[60px]">
 
-        {/* Optional: Add a call to action or scroll indicator */}
+        {/* Top Trust Badges - Forced Single Line */}
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="flex flex-nowrap items-center justify-start gap-x-4 md:gap-x-8 font-jubilat text-[9px] md:text-[18px] text-[#183A39]/80 whitespace-nowrap overflow-x-visible"
+        >
+          <div className="flex items-center gap-1.5 md:gap-2">
+            <span className="text-[10px] md:text-base">🏛️</span>
+            <span>DPIIT Registered</span>
+          </div>
+          <div className="flex items-center gap-1.5 md:gap-2">
+            <span className="text-[10px] md:text-base">🎓</span>
+            <span>IIM ALUMNI</span>
+          </div>
+          <div className="flex items-center gap-1.5 md:gap-2">
+            <span className="text-[10px] md:text-base">👥</span>
+            <span>100+ Families</span>
+          </div>
+          <div className="flex items-center gap-1.5 md:gap-2">
+            <span className="text-[10px] md:text-base">🏫</span>
+            <span>12 Schools</span>
+          </div>
+        </motion.div>
+
+        {/* Glassmorphism Main Card */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="bg-white/5 md:bg-white/20 backdrop-blur-sm md:backdrop-blur-xl border border-white/20 md:border-white/50 rounded-[12px] md:rounded-[40px] p-4 md:p-14 lg:p-20 text-left space-y-4 md:space-y-8 shadow-2xl relative overflow-hidden w-[332px] h-[182px] md:w-auto mx-0"
+        >
+          {/* Decorative Blur and Ring (Subtle) */}
+          <div className="absolute top-0 right-0 w-64 h-64 bg-green-200/20 blur-3xl -z-10 rounded-full" />
+
+          {/* Main Title */}
+          <div className="space-y-3 md:space-y-6">
+            <h1 className="font-jubilat text-[24px] md:text-[60px] lg:text-[76px] xl:text-[84px] leading-tight md:leading-[1.1] text-[#183A39] max-w-5xl">
+              A world where <span className="font-bold">health feels like home.</span>
+            </h1>
+
+            {/* Subheading */}
+            <p className="font-jubilat text-[14px] md:text-[28px] lg:text-[32px] text-[#183A39]/90 max-w-4xl leading-normal md:leading-snug">
+              Your child builds <span className="font-bold">healthy habits</span> here. Through <br className="hidden md:block" /> <span className="font-bold">stories, play & games.</span> Because lectures don&apos;t work.
+            </p>
+          </div>
+
+          {/* Process Flow */}
+          <div className="flex flex-wrap items-center gap-3 md:gap-6 pt-2 md:pt-6">
+            <div className="flex items-center gap-3 md:gap-6">
+              {/* Stories */}
+              <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full px-4 md:px-6 py-2 md:py-3 flex items-center gap-2 md:gap-3 shadow-sm hover:scale-105 transition-transform cursor-default">
+                <span className="text-sm md:text-xl">📖</span>
+                <span className="font-jubilat text-[12px] md:text-[22px] text-[#183A39]">Stories</span>
+              </div>
+              <ArrowRight className="w-3 h-3 md:w-5 md:h-5 text-[#183A39]/40" />
+
+              {/* Play */}
+              <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full px-4 md:px-6 py-2 md:py-3 flex items-center gap-2 md:gap-3 shadow-sm hover:scale-105 transition-transform cursor-default">
+                <span className="text-sm md:text-xl">🛝</span>
+                <span className="font-jubilat text-[12px] md:text-[22px] text-[#183A39]">Play</span>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-3 md:gap-6">
+              <ArrowRight className="w-3 h-3 md:w-5 md:h-5 text-[#183A39]/40" />
+              {/* Routine */}
+              <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full px-4 md:px-6 py-2 md:py-3 flex items-center gap-2 md:gap-3 shadow-sm hover:scale-105 transition-transform cursor-default">
+                <span className="text-sm md:text-xl">🔄</span>
+                <span className="font-jubilat text-[12px] md:text-[22px] text-[#183A39]">Routine</span>
+              </div>
+              <ArrowRight className="w-3 h-3 md:w-5 md:h-5 text-[#183A39]/40" />
+
+              {/* Habit */}
+              <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full px-4 md:px-6 py-2 md:py-3 flex items-center gap-2 md:gap-3 shadow-sm hover:scale-105 transition-transform cursor-default">
+                <span className="text-sm md:text-xl">💪</span>
+                <span className="font-jubilat text-[12px] md:text-[22px] text-[#183A39]">Habit</span>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Mobile-only CTA Button - Fixed Size */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-          className="pt-2 flex justify-center"
+          transition={{ duration: 0.8, delay: 1.2 }}
+          className="md:hidden flex justify-start pt-3"
         >
-          <button className="bg-[#183A39] text-[#F0EEE6] w-[215px] h-[40px] md:w-auto md:h-auto md:px-6 md:py-3 lg:px-8 lg:py-4 rounded-full flex items-center justify-center gap-3 font-haptik text-[10px] md:text-[12px] lg:text-[16px] font-medium tracking-[0.2em] group hover:bg-[#1a3636] transition-all shadow-lg">
-            GET STARTED
-            <ArrowRight className="w-3 h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 group-hover:translate-x-2 transition-transform" />
+          <button
+            className="bg-[#183A39] text-white rounded-full flex items-center justify-between px-4 w-[149px] h-[24px] group hover:bg-[#183A39]/90 transition-colors"
+          >
+            <span className="font-jubilat text-[8px] font-bold tracking-widest whitespace-nowrap">DISCOVER HOW</span>
+            <ArrowRight className="w-[10px] h-[10px] group-hover:translate-x-0.5 transition-transform" />
           </button>
         </motion.div>
       </div>
@@ -67,7 +147,7 @@ export default function Hero() {
         className="absolute -bottom-5 md:hidden left-0 w-full z-10"
       >
         <Image
-          src="/landingpage/hero down.svg"
+          src="/landingpage/hero-down.svg"
           alt="Decoration"
           width={1440}
           height={100}
@@ -83,7 +163,7 @@ export default function Hero() {
         className="absolute -bottom-8 hidden md:block left-0 w-full z-10"
       >
         <Image
-          src="/landingpage/hero bottom.svg"
+          src="/landingpage/hero-bottom.svg"
           alt="Decoration"
           width={1440}
           height={100}
