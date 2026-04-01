@@ -41,22 +41,6 @@ export default function Hero() {
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 lg:px-8 space-y-10 -translate-x-[20px] md:-translate-x-0 xl:-translate-x-[60px]">
 
-        {/* Public Badge - Mobile Only */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.3 }}
-          className="md:hidden flex justify-start -mb-6"
-        >
-          <div className="w-[120px] h-auto">
-            <img
-              src="/landingpage/public.svg"
-              alt=""
-              className="w-full h-auto object-contain"
-            />
-          </div>
-        </motion.div>
-
         {/* Top Trust Badges - Forced Single Line */}
         <div className="translate-y-[30px] md:translate-y-0">
           <motion.div
@@ -113,19 +97,19 @@ export default function Hero() {
               <span className="font-jubilat text-[8px] font-bold text-[#183A39]">Stories</span>
             </div>
             <ArrowRight className="w-2 h-2 text-[#183A39]/40" />
-            
+
             <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[64px] h-[19px] flex items-center justify-center gap-1 shadow-sm">
               <span className="text-[10px]">🛝</span>
               <span className="font-jubilat text-[8px] font-bold text-[#183A39]">Play</span>
             </div>
             <ArrowRight className="w-2 h-2 text-[#183A39]/40" />
-            
+
             <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[64px] h-[19px] flex items-center justify-center gap-1 shadow-sm">
               <span className="text-[10px]">🔄</span>
               <span className="font-jubilat text-[8px] font-bold text-[#183A39]">Routine</span>
             </div>
             <ArrowRight className="w-2 h-2 text-[#183A39]/40" />
-            
+
             <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[64px] h-[19px] flex items-center justify-center gap-1 shadow-sm">
               <span className="text-[10px]">💪</span>
               <span className="font-jubilat text-[8px] font-bold text-[#183A39]">Habit</span>
@@ -154,30 +138,28 @@ export default function Hero() {
       </div>
 
       {/* Hero Down Image at the bottom (Mobile) */}
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1.5, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute -bottom-5 md:hidden left-0 w-full z-10 flex flex-col items-center"
-      >
-        <div className="relative w-full">
-          <Image
-            src="/landingpage/hero-down.svg"
-            alt="Decoration"
-            width={1440}
-            height={100}
-            className="w-full h-auto"
-          />
-        </div>
+      <div className="absolute bottom-[-15px] md:hidden left-0 w-full z-[40] pointer-events-none">
+        <Image
+          src="/landingpage/hero-down.svg"
+          alt="Decoration"
+          width={1440}
+          height={100}
+          className="w-full h-auto"
+        />
+      </div>
 
-        {/* Category Graphic at bottom */}
-        <div className="w-[120px] h-auto ml-auto mr-8 -translate-y-10">
-          <img
-            src="/landingpage/category.svg"
-            alt="Categories"
-            className="w-full h-auto object-contain"
-          />
-        </div>
+      {/* Category Graphic - Separate Mobile Asset */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1.8 }}
+        className="md:hidden absolute bottom-[60px] right-8 w-[120px] h-auto z-[50] pointer-events-none"
+      >
+        <img
+          src="/landingpage/category.svg"
+          alt="Categories"
+          className="w-full h-auto object-contain"
+        />
       </motion.div>
 
       {/* Hero Bottom Image at the bottom (Desktop) */}
