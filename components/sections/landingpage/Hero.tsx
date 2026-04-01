@@ -89,54 +89,46 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-white/5 md:bg-white/20 backdrop-blur-sm md:backdrop-blur-xl border border-white/20 md:border-white/50 rounded-[12px] md:rounded-[40px] p-4 md:p-14 lg:p-20 text-left space-y-4 md:space-y-8 shadow-2xl relative overflow-hidden w-[332px] h-[182px] md:w-auto mx-0"
+          className="bg-white/5 md:bg-white/20 backdrop-blur-sm md:backdrop-blur-xl border border-white/20 md:border-white/50 rounded-[12px] md:rounded-[40px] pt-1 px-4 pb-4 md:p-14 lg:p-20 text-left space-y-4 md:space-y-8 shadow-2xl relative overflow-hidden w-[332px] h-[182px] md:w-auto mx-0"
         >
           {/* Decorative Blur and Ring (Subtle) */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-green-200/20 blur-3xl -z-10 rounded-full" />
 
           {/* Main Title */}
           <div className="space-y-3 md:space-y-6">
-            <h1 className="font-jubilat text-[24px] md:text-[60px] lg:text-[76px] xl:text-[84px] leading-tight md:leading-[1.1] text-[#183A39] max-w-5xl">
+            <h1 className="font-jubilat text-[28px] md:text-[60px] lg:text-[76px] xl:text-[84px] leading-tight md:leading-[1.1] text-[#183A39] max-w-5xl">
               A world where <span className="font-bold">health feels like home.</span>
             </h1>
 
             {/* Subheading */}
-            <p className="font-jubilat text-[14px] md:text-[28px] lg:text-[32px] text-[#183A39]/90 max-w-4xl leading-normal md:leading-snug">
+            <p className="font-jubilat text-[12px] md:text-[28px] lg:text-[32px] text-[#183A39]/90 max-w-4xl leading-normal md:leading-snug">
               Your child builds <span className="font-bold">healthy habits</span> here. Through <br className="hidden md:block" /> <span className="font-bold">stories, play & games.</span> Because lectures don&apos;t work.
             </p>
           </div>
 
-          {/* Process Flow */}
-          <div className="flex flex-wrap items-center gap-3 md:gap-6 pt-2 md:pt-6">
-            <div className="flex items-center gap-3 md:gap-6">
-              {/* Stories */}
-              <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full px-4 md:px-6 py-2 md:py-3 flex items-center gap-2 md:gap-3 shadow-sm hover:scale-105 transition-transform cursor-default">
-                <span className="text-sm md:text-xl">📖</span>
-                <span className="font-jubilat text-[12px] md:text-[22px] text-[#183A39]">Stories</span>
-              </div>
-              <ArrowRight className="w-3 h-3 md:w-5 md:h-5 text-[#183A39]/40" />
-
-              {/* Play */}
-              <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full px-4 md:px-6 py-2 md:py-3 flex items-center gap-2 md:gap-3 shadow-sm hover:scale-105 transition-transform cursor-default">
-                <span className="text-sm md:text-xl">🛝</span>
-                <span className="font-jubilat text-[12px] md:text-[22px] text-[#183A39]">Play</span>
-              </div>
+          {/* Process Flow - Mobile Only */}
+          <div className="flex md:hidden items-center justify-between gap-1 mt-[-6px] overflow-x-visible">
+            <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[64px] h-[19px] flex items-center justify-center gap-1 shadow-sm">
+              <span className="text-[10px]">📖</span>
+              <span className="font-jubilat text-[8px] font-bold text-[#183A39]">Stories</span>
             </div>
-
-            <div className="flex items-center gap-3 md:gap-6">
-              <ArrowRight className="w-3 h-3 md:w-5 md:h-5 text-[#183A39]/40" />
-              {/* Routine */}
-              <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full px-4 md:px-6 py-2 md:py-3 flex items-center gap-2 md:gap-3 shadow-sm hover:scale-105 transition-transform cursor-default">
-                <span className="text-sm md:text-xl">🔄</span>
-                <span className="font-jubilat text-[12px] md:text-[22px] text-[#183A39]">Routine</span>
-              </div>
-              <ArrowRight className="w-3 h-3 md:w-5 md:h-5 text-[#183A39]/40" />
-
-              {/* Habit */}
-              <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full px-4 md:px-6 py-2 md:py-3 flex items-center gap-2 md:gap-3 shadow-sm hover:scale-105 transition-transform cursor-default">
-                <span className="text-sm md:text-xl">💪</span>
-                <span className="font-jubilat text-[12px] md:text-[22px] text-[#183A39]">Habit</span>
-              </div>
+            <ArrowRight className="w-2 h-2 text-[#183A39]/40" />
+            
+            <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[64px] h-[19px] flex items-center justify-center gap-1 shadow-sm">
+              <span className="text-[10px]">🛝</span>
+              <span className="font-jubilat text-[8px] font-bold text-[#183A39]">Play</span>
+            </div>
+            <ArrowRight className="w-2 h-2 text-[#183A39]/40" />
+            
+            <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[64px] h-[19px] flex items-center justify-center gap-1 shadow-sm">
+              <span className="text-[10px]">🔄</span>
+              <span className="font-jubilat text-[8px] font-bold text-[#183A39]">Routine</span>
+            </div>
+            <ArrowRight className="w-2 h-2 text-[#183A39]/40" />
+            
+            <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[64px] h-[19px] flex items-center justify-center gap-1 shadow-sm">
+              <span className="text-[10px]">💪</span>
+              <span className="font-jubilat text-[8px] font-bold text-[#183A39]">Habit</span>
             </div>
           </div>
         </motion.div>
