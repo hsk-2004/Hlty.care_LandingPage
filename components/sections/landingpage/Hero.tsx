@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[867px] xl:h-[1300px] flex flex-col items-center justify-start text-center px-4 pt-[clamp(128px,24vh,220px)]">
+    <section className="relative w-full h-[867px] lg:h-[clamp(900px,68vw,1300px)] flex flex-col items-center justify-start text-center px-4 pt-[clamp(128px,24vh,220px)]">
 
       {/* Background Image with Zoom Effect */}
       <motion.div
@@ -20,14 +20,14 @@ export default function Hero() {
           alt="Explore Hero Background"
           fill
           priority
-          className="object-cover object-left-top md:object-bottom scale-110 md:scale-110 lg:scale-110 xl:scale-100 -translate-y-[40px] md:translate-y-0"
+          className="object-cover object-left-top md:object-bottom scale-110 md:scale-110 lg:scale-100 -translate-y-[40px] md:translate-y-0"
         />
         {/* Subtle overlay to ensure text is readable */}
         <div className="absolute inset-0 bg-[#183A39]/10" />
 
         {/* Decorative Overlay Image (Added layer with specific size) - Hidden on Mobile & Tablet */}
-        <div className="absolute hidden xl:block left-[65%] top-[35%] -translate-x-1/2 -translate-y-1/2 z-[1] pointer-events-none">
-          <div className="relative w-[300px] h-[350px] md:w-[827.5px] md:h-[940.5px] xl:w-[1050px] xl:h-[1150px]">
+        <div className="absolute hidden lg:block left-[65%] top-[35%] -translate-x-1/2 -translate-y-1/2 z-[5] pointer-events-none">
+          <div className="relative w-[300px] h-[350px] md:w-[827.5px] md:h-[940.5px] lg:w-[clamp(827.5px,55vw,1050px)] lg:h-[clamp(940.5px,60vw,1150px)]">
             <Image
               src="/landingpage/hero-image1.svg"
               alt="Hero decorative overlay"
@@ -36,10 +36,22 @@ export default function Hero() {
             />
           </div>
         </div>
+
+        {/* Hero Text SVG - Desktop Only */}
+        <div className="absolute hidden lg:block left-[71%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-[6] pointer-events-none">
+          <div className="relative w-[clamp(952px,60vw,1052px)] h-[clamp(650px,55vw,1002px)]">
+            <Image
+              src="/landingpage/hero-text.svg"
+              alt="Hero stylized text"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
       </motion.div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 lg:px-8 space-y-10 -translate-x-[20px] md:-translate-x-0 xl:-translate-x-[80px]">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 lg:px-8 space-y-10 -translate-x-[20px] md:-translate-x-0 lg:-translate-x-[clamp(0px,6vw,80px)]">
 
         {/* Top Trust Badges - Forced Single Line */}
         <div className="translate-y-[30px] md:translate-y-0">
@@ -73,25 +85,25 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-white/5 md:bg-white/20 backdrop-blur-sm md:backdrop-blur-xl border border-white/20 md:border-white/50 rounded-[clamp(12px,3vw,40px)] pt-1 px-4 pb-4 md:p-[clamp(16px,4vw,32px)] xl:py-10 xl:px-4 text-left space-y-[clamp(12px,2vw,18px)] md:space-y-[clamp(16px,3vw,24px)] xl:space-y-4 shadow-2xl relative w-[clamp(332px,52vw,673px)] h-auto min-h-[182px] xl:h-[230px] mx-0"
+          className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-[clamp(12px,3vw,40px)] pt-1 px-4 pb-4 md:p-[clamp(16px,4vw,32px)] text-left space-y-[clamp(12px,2vw,18px)] md:space-y-[clamp(16px,3vw,24px)] shadow-2xl relative w-[clamp(332px,52vw,673px)] h-auto min-h-[182px] mx-0"
         >
           {/* Decorative Blur and Ring (Subtle) */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-green-200/20 blur-3xl -z-10 rounded-full" />
 
           {/* Main Title */}
           <div className="space-y-3 md:space-y-6">
-            <h1 className="font-jubilat text-[clamp(28px,3.5vw,36px)] leading-tight text-[#183A39] xl:max-w-none xl:whitespace-nowrap">
+            <h1 className="font-jubilat text-[clamp(28px,3.5vw,36px)] leading-tight text-[#183A39] lg:max-w-none lg:whitespace-nowrap">
               A world where <span className="font-bold">health feels like home.</span>
             </h1>
 
             {/* Subheading */}
             <p className="font-jubilat text-[clamp(12px,1.5vw,20px)] text-[#183A39]/90 max-w-4xl leading-normal md:leading-snug">
-              Your child builds <span className="font-bold">healthy habits</span> here. Through <br className="hidden xl:block" /> <span className="font-bold">stories, play & games.</span> Because lectures don&apos;t work.
+              Your child builds <span className="font-bold">healthy habits</span> here. Through <br className="hidden lg:block" /> <span className="font-bold">stories, play & games.</span> Because lectures don&apos;t work.
             </p>
           </div>
 
           {/* Process Flow - Unified for Mobile/Tablet */}
-          <div className="flex xl:hidden items-center justify-between gap-1 mt-[-6px] overflow-x-visible">
+          <div className="flex items-center justify-between gap-1 mt-[-6px] overflow-x-visible">
             <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm">
               <span className="text-[clamp(10px,1.2vw,14px)]">📖</span>
               <span className="font-jubilat text-[clamp(8px,1vw,12px)] font-bold text-[#183A39]">Stories</span>
@@ -123,7 +135,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.2 }}
-            className="xl:hidden flex justify-start pt-3"
+            className="flex justify-start pt-3"
           >
             <motion.button
               whileHover={{ scale: 1.05 }}
@@ -131,14 +143,14 @@ export default function Hero() {
               className="bg-[#183A39] text-white flex items-center justify-between px-4 w-[clamp(149px,20vw,240px)] h-[clamp(24px,4vw,48px)] rounded-full font-jubilat text-[clamp(10px,1.5vw,16px)] font-normal shadow-xl hover:bg-[#183A39]/90 transition-all group"
             >
               <span className="flex-1 text-left whitespace-nowrap">Discover Now</span>
-              <ArrowRight className="w-[clamp(12px,1.5vw,20px)] h-[clamp(12px,1.5vw,20px)] xl:hidden group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-[clamp(12px,1.5vw,20px)] h-[clamp(12px,1.5vw,20px)] group-hover:translate-x-1 transition-transform" />
             </motion.button>
           </motion.div>
         </div>
       </div>
 
       {/* Hero Down Image at the bottom (Mobile/Tablet) */}
-      <div className="absolute bottom-[-15px] xl:hidden left-0 w-full z-[40] pointer-events-none">
+      <div className="absolute bottom-[-15px] lg:hidden left-0 w-full z-[40] pointer-events-none">
         <Image
           src="/landingpage/hero-down.svg"
           alt="Decoration"
@@ -153,7 +165,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.8 }}
-        className="xl:hidden absolute bottom-[60px] right-8 w-[clamp(120px,15vw,200px)] h-auto z-[50] pointer-events-none"
+        className="lg:hidden absolute bottom-[60px] right-8 w-[clamp(120px,15vw,200px)] h-auto z-[50] pointer-events-none"
       >
         <img
           src="/landingpage/category.svg"

@@ -40,7 +40,7 @@ export default function IntroStory() {
       <div className="max-w-7xl mx-auto">
         {/* Header Title */}
         <div className="text-center mb-10 md:mb-16">
-          <h2 className="font-jubilat text-[20px] md:text-[36px] lg:text-[44px] text-[#183A39] leading-tight">
+          <h2 className="font-jubilat text-[20px] md:text-[36px] lg:text-[32px] text-[#183A39] leading-tight">
             Everything your family needs to<br />
             <span className="font-bold">stay healthy in one world</span>
           </h2>
@@ -51,9 +51,9 @@ export default function IntroStory() {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[280px] h-[380px] md:w-[450px] md:h-auto bg-[#E4DBCD] border border-[#BEB4A5] rounded-[24px] md:rounded-[32px] pt-1 px-4 pb-4 md:p-8 lg:p-10 flex flex-col justify-between snap-start overflow-hidden"
+              className="flex-shrink-0 w-[280px] h-[380px] md:w-[450px] md:h-auto lg:w-[280px] lg:h-[380px] bg-[#E4DBCD] border border-[#BEB4A5] rounded-[24px] md:rounded-[32px] pt-1 px-4 pb-4 md:p-8 lg:p-6 flex flex-col justify-between snap-start overflow-hidden"
             >
-              <div className="space-y-1 md:space-y-6">
+              <div className="space-y-1 md:space-y-6 lg:space-y-2">
                 {/* Feature Image */}
                 <div className="relative w-[235px] h-[151px] md:w-full md:h-auto md:aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden mb-0 md:mb-4 mx-auto">
                   <Image
@@ -67,25 +67,25 @@ export default function IntroStory() {
 
                 {/* Badge */}
                 <div className={`flex items-center justify-center bg-[#FAF9F6] border border-[#183A39]/10 rounded-full h-[19px] md:w-fit md:h-auto md:px-4 md:py-1 md:bg-white translate-y-0 md:translate-y-0 ${card.category === 'Activity Bundles' ? 'w-[106px]' : 'w-[82px]'}`}>
-                  <span className="font-jubilat text-[12px] md:text-[14px] text-[#183A39] whitespace-nowrap">
+                  <span className="font-jubilat text-[12px] md:text-[14px] lg:text-[12px] text-[#183A39] whitespace-nowrap">
                     {card.category}
                   </span>
                 </div>
 
                 {/* Content */}
-                <div className="space-y-1.5 md:space-y-3 translate-y-0 md:translate-y-0">
-                  <h3 className="font-jubilat text-[16px] md:text-[24px] font-bold text-[#183A39] leading-tight">
+                <div className="space-y-1.5 md:space-y-3 lg:space-y-1 translate-y-0 md:translate-y-0">
+                  <h3 className="font-jubilat text-[16px] md:text-[24px] lg:text-[16px] font-bold text-[#183A39] leading-tight">
                     {card.title}
                   </h3>
-                  <p className="font-jubilat text-[14px] md:text-[16px] text-[#183A39]/80 leading-relaxed line-clamp-3 md:line-clamp-none">
+                  <p className="font-jubilat text-[14px] md:text-[16px] lg:text-[14px] text-[#183A39]/80 leading-relaxed line-clamp-3 md:line-clamp-none">
                     {card.description}
                   </p>
                 </div>
               </div>
 
               {/* Button */}
-              <div className="mt-4 md:mt-8">
-                <button className="bg-[#183A39] text-white rounded-full flex items-center justify-center w-[74px] h-[32px] md:w-fit md:px-8 md:py-2.5 font-jubilat text-[12px] md:text-[16px] font-medium hover:bg-[#183A39]/90 transition-colors shadow-sm whitespace-nowrap">
+              <div className="mt-4 md:mt-8 lg:mt-4">
+                <button className="bg-[#183A39] text-white rounded-full flex items-center justify-center w-[74px] h-[32px] md:w-fit md:px-8 md:py-2.5 font-jubilat text-[12px] md:text-[16px] lg:text-[12px]  font-medium hover:bg-[#183A39]/90 transition-colors shadow-sm whitespace-nowrap">
                   {card.buttonText}
                 </button>
               </div>
@@ -95,7 +95,7 @@ export default function IntroStory() {
 
         {/* Secondary Scrollable Illustration Container */}
         <div className="mt-16 md:mt-24 text-center">
-          <h3 className="font-jubilat text-[20px] md:text-[32px] text-[#183A39] mb-8">
+          <h3 className="font-jubilat text-[20px] md:text-[32px] lg:text-[32px] text-[#183A39] mb-8">
             Families are noticing the difference
           </h3>
         </div>
