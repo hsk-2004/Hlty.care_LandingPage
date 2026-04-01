@@ -41,30 +41,48 @@ export default function Hero() {
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 lg:px-8 space-y-10 -translate-x-[20px] md:-translate-x-0 xl:-translate-x-[60px]">
 
-        {/* Top Trust Badges - Forced Single Line */}
+        {/* Public Badge - Mobile Only */}
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-          className="flex flex-nowrap items-center justify-start gap-x-4 md:gap-x-8 font-jubilat text-[9px] md:text-[18px] text-[#183A39]/80 whitespace-nowrap overflow-x-visible"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="md:hidden flex justify-start -mb-6"
         >
-          <div className="flex items-center gap-1.5 md:gap-2">
-            <span className="text-[10px] md:text-base">🏛️</span>
-            <span>DPIIT Registered</span>
-          </div>
-          <div className="flex items-center gap-1.5 md:gap-2">
-            <span className="text-[10px] md:text-base">🎓</span>
-            <span>IIM ALUMNI</span>
-          </div>
-          <div className="flex items-center gap-1.5 md:gap-2">
-            <span className="text-[10px] md:text-base">👥</span>
-            <span>100+ Families</span>
-          </div>
-          <div className="flex items-center gap-1.5 md:gap-2">
-            <span className="text-[10px] md:text-base">🏫</span>
-            <span>12 Schools</span>
+          <div className="w-[120px] h-auto">
+            <img
+              src="/landingpage/public.svg"
+              alt=""
+              className="w-full h-auto object-contain"
+            />
           </div>
         </motion.div>
+
+        {/* Top Trust Badges - Forced Single Line */}
+        <div className="translate-y-[30px] md:translate-y-0">
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="flex flex-nowrap items-center justify-start gap-x-2.5 md:gap-x-8 font-jubilat text-[10px] md:text-[18px] text-[#183A39]/80 whitespace-nowrap overflow-x-visible mb-0 md:mb-0"
+          >
+            <div className="flex items-center gap-1.5 md:gap-2">
+              <span className="text-[10px] md:text-base">🏛️</span>
+              <span>DPIIT Registered</span>
+            </div>
+            <div className="flex items-center gap-1.5 md:gap-2">
+              <span className="text-[10px] md:text-base">🎓</span>
+              <span>IIM ALUMNI</span>
+            </div>
+            <div className="flex items-center gap-1.5 md:gap-2">
+              <span className="text-[10px] md:text-base">👥</span>
+              <span>100+ Families</span>
+            </div>
+            <div className="flex items-center gap-1.5 md:gap-2">
+              <span className="text-[10px] md:text-base">🏫</span>
+              <span>12 Schools</span>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Glassmorphism Main Card */}
         <motion.div
@@ -124,19 +142,23 @@ export default function Hero() {
         </motion.div>
 
         {/* Mobile-only CTA Button - Fixed Size */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.2 }}
-          className="md:hidden flex justify-start pt-3"
-        >
-          <button
-            className="bg-[#183A39] text-white rounded-full flex items-center justify-between px-4 w-[149px] h-[24px] group hover:bg-[#183A39]/90 transition-colors"
+        <div className="-translate-y-[40px] md:translate-y-0">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="md:hidden flex justify-start pt-3"
           >
-            <span className="font-jubilat text-[8px] font-bold tracking-widest whitespace-nowrap">DISCOVER HOW</span>
-            <ArrowRight className="w-[10px] h-[10px] group-hover:translate-x-0.5 transition-transform" />
-          </button>
-        </motion.div>
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="bg-[#183A39] text-white flex items-center justify-between px-4 md:justify-center w-[149px] h-[24px] md:w-fit md:px-10 md:py-4 rounded-full font-jubilat text-[10px] md:text-[20px] font-normal md:font-bold shadow-xl hover:bg-[#183A39]/90 transition-all group"
+            >
+              <span className="flex-1 text-left md:text-center whitespace-nowrap">Discover Now</span>
+              <ArrowRight className="w-3 h-3 md:hidden group-hover:translate-x-1 transition-transform" />
+            </motion.button>
+          </motion.div>
+        </div>
       </div>
 
       {/* Hero Down Image at the bottom (Mobile) */}
@@ -144,15 +166,26 @@ export default function Hero() {
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1.5, ease: [0.22, 1, 0.36, 1] }}
-        className="absolute -bottom-5 md:hidden left-0 w-full z-10"
+        className="absolute -bottom-5 md:hidden left-0 w-full z-10 flex flex-col items-center"
       >
-        <Image
-          src="/landingpage/hero-down.svg"
-          alt="Decoration"
-          width={1440}
-          height={100}
-          className="w-full h-auto"
-        />
+        <div className="relative w-full">
+          <Image
+            src="/landingpage/hero-down.svg"
+            alt="Decoration"
+            width={1440}
+            height={100}
+            className="w-full h-auto"
+          />
+        </div>
+
+        {/* Category Graphic at bottom */}
+        <div className="w-[120px] h-auto ml-auto mr-8 -translate-y-10">
+          <img
+            src="/landingpage/category.svg"
+            alt="Categories"
+            className="w-full h-auto object-contain"
+          />
+        </div>
       </motion.div>
 
       {/* Hero Bottom Image at the bottom (Desktop) */}

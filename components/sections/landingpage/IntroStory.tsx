@@ -9,28 +9,28 @@ const cards = [
     title: "The Hlty Adventures",
     description: "Illustrated storybooks where children become the hero, making healthy choices feel natural and cool.",
     buttonText: "Explore",
-    image: "/landingpage/story-card.png" // Placeholder - User will import
+    image: "/landingpage/intro1.png" // Placeholder - User will import
   },
   {
     category: "Workshops",
     title: "Playshops + Camps",
     description: "Live 2-hour sessions disguised as escape rooms and creative labs attended by 100+ children so far.",
     buttonText: "Book Session",
-    image: "/landingpage/workshop-card.png" // Placeholder - User will import
+    image: "/landingpage/intro2.png" // Placeholder - User will import
   },
   {
     category: "Games",
     title: "Uh-oh & Boing",
     description: "A snakes and ladder game with added fun elements that builds healthy habits, facilitates conversations in families.",
     buttonText: "Explore",
-    image: "/landingpage/game-card.png" // Placeholder - User will import
+    image: "/landingpage/intro3.png" // Placeholder - User will import
   },
   {
     category: "Activity Bundles",
     title: "Free Digital Downloads",
     description: "Activities and guides to keep your kids active and engaged, all in one place.",
     buttonText: "Explore",
-    image: "/landingpage/activity-card.png" // Placeholder - User will import
+    image: "/landingpage/intro4.png" // Placeholder - User will import
   }
 ];
 
@@ -40,7 +40,7 @@ export default function IntroStory() {
       <div className="max-w-7xl mx-auto">
         {/* Header Title */}
         <div className="text-center mb-10 md:mb-16">
-          <h2 className="font-jubilat text-[22px] md:text-[36px] lg:text-[44px] text-[#183A39] leading-tight">
+          <h2 className="font-jubilat text-[20px] md:text-[36px] lg:text-[44px] text-[#183A39] leading-tight">
             Everything your family needs to<br />
             <span className="font-bold">stay healthy in one world</span>
           </h2>
@@ -49,48 +49,47 @@ export default function IntroStory() {
         {/* Horizontal Scroll Container */}
         <div className="flex overflow-x-auto pb-8 gap-4 md:gap-6 no-scrollbar snap-x snap-mandatory">
           {cards.map((card, index) => (
-            <motion.div
+            <div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex-shrink-0 w-[300px] md:w-[350px] bg-[#E5E0D5] rounded-[32px] p-6 md:p-8 flex flex-col justify-between snap-start"
+              className="flex-shrink-0 w-[280px] h-[380px] md:w-[450px] md:h-auto bg-[#E4DBCD] border border-[#BEB4A5] rounded-[24px] md:rounded-[32px] pt-1 px-4 pb-4 md:p-8 lg:p-10 flex flex-col justify-between snap-start overflow-hidden"
             >
-              <div className="space-y-6">
-                {/* Image Placeholder */}
-                <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-4">
-                  {/* Empty space for user to import images as requested */}
-                  <div className="w-full h-full flex items-center justify-center text-[#183A39]/30 italic text-sm">
-                    Image Placeholder
-                  </div>
+              <div className="space-y-1 md:space-y-6">
+                {/* Feature Image */}
+                <div className="relative w-[235px] h-[151px] md:w-full md:h-auto md:aspect-[4/3] rounded-xl md:rounded-2xl overflow-hidden mb-0 md:mb-4 mx-auto">
+                  <Image
+                    src={card.image}
+                    alt={card.title}
+                    fill
+                    className="object-contain"
+                    priority
+                  />
                 </div>
 
                 {/* Badge */}
-                <div className="inline-block bg-white border border-[#183A39]/10 rounded-full px-4 py-1">
-                  <span className="font-jubilat text-[12px] md:text-[14px] text-[#183A39]">
+                <div className={`flex items-center justify-center bg-[#FAF9F6] border border-[#183A39]/10 rounded-full h-[19px] md:w-fit md:h-auto md:px-4 md:py-1 md:bg-white translate-y-0 md:translate-y-0 ${card.category === 'Activity Bundles' ? 'w-[106px]' : 'w-[82px]'}`}>
+                  <span className="font-jubilat text-[12px] md:text-[14px] text-[#183A39] whitespace-nowrap">
                     {card.category}
                   </span>
                 </div>
 
                 {/* Content */}
-                <div className="space-y-3">
-                  <h3 className="font-jubilat text-[20px] md:text-[24px] font-bold text-[#183A39] leading-tight">
+                <div className="space-y-1.5 md:space-y-3 translate-y-0 md:translate-y-0">
+                  <h3 className="font-jubilat text-[16px] md:text-[24px] font-bold text-[#183A39] leading-tight">
                     {card.title}
                   </h3>
-                  <p className="font-jubilat text-[14px] md:text-[16px] text-[#183A39]/80 leading-relaxed">
+                  <p className="font-jubilat text-[14px] md:text-[16px] text-[#183A39]/80 leading-relaxed line-clamp-3 md:line-clamp-none">
                     {card.description}
                   </p>
                 </div>
               </div>
 
               {/* Button */}
-              <div className="mt-8">
-                <button className="bg-[#183A39] text-white rounded-full px-8 py-2.5 font-jubilat text-[14px] md:text-[16px] font-medium hover:bg-[#183A39]/90 transition-colors shadow-sm">
+              <div className="mt-4 md:mt-8">
+                <button className="bg-[#183A39] text-white rounded-full flex items-center justify-center w-[74px] h-[32px] md:w-fit md:px-8 md:py-2.5 font-jubilat text-[12px] md:text-[16px] font-medium hover:bg-[#183A39]/90 transition-colors shadow-sm whitespace-nowrap">
                   {card.buttonText}
                 </button>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
 
