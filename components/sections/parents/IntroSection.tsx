@@ -17,19 +17,19 @@ export default function IntroSection() {
         </div>
 
         {/* Dark Green Card */}
-        <div className="bg-[#183A39] rounded-[32px] md:rounded-[40px] overflow-hidden p-6 md:p-10 lg:p-12 flex flex-col md:flex-row gap-8 items-center xl:w-[1234px] xl:h-[531px] mx-auto w-full">
+        <div className="bg-[#183A39] rounded-[32px] md:rounded-[40px] lg:rounded-[16px] overflow-hidden p-6 md:p-10 lg:p-10 flex flex-col md:flex-row gap-8 items-center lg:w-[1234px] lg:h-[531px] mx-auto w-full">
           {/* Left Column: Content */}
-          <div className="flex-1 space-y-8 text-[#F0EEE6] xl:pt-4">
-            <h2 className="font-jubilat text-3xl md:text-[42px] leading-[1.1] text-[#61D0A1]">
+          <div className="flex-1 space-y-6 text-[#F0EEE6] lg:pl-4">
+            <h2 className="font-jubilat text-3xl md:text-[36px] lg:text-[42px] leading-[1.1] text-[#61D0A1] lg:-translate-y-5">
               Health lives in small, <br /> repeatable moments.
             </h2>
 
-            <div className="space-y-4 font-haptik text-[16px] opacity-90 leading-relaxed max-w-md">
-              <p>Most habits aren&apos;t built during &quot;health time.&quot;</p>
+            <div className="space-y-4 lg:space-y-3 font-haptik text-[16px] leading-relaxed lg:leading-tight max-w-md lg:translate-y-5">
+              <p className="font-normal">Most habits aren&apos;t built during &quot;health time.&quot;</p>
 
-              <div className="space-y-1">
-                <p>They form in between everything else:</p>
-                <ul className="list-disc pl-5 space-y-1">
+              <div className="space-y-1 lg:space-y-0.5">
+                <p className="font-normal">They form in between everything else:</p>
+                <ul className="list-disc pl-5 space-y-1 lg:space-y-0 text-[15px] lg:text-[16px] font-normal">
                   <li>before the school rush</li>
                   <li>at the table</li>
                   <li>during play</li>
@@ -37,17 +37,17 @@ export default function IntroSection() {
                 </ul>
               </div>
 
-              <p>These moments are easy to miss — and easy to overthink. We design for them instead.</p>
+              <p className="font-normal">These moments are easy to miss — and easy to overthink. We design for them instead.</p>
             </div>
 
-            <button className="bg-[#61D0A1] text-[#183A39] xl:w-[412px] xl:h-[40px] px-6 py-2 rounded-full flex items-center justify-between font-haptik font-medium text-[16px] group hover:opacity-90 transition-all">
+            <button className="bg-[#61D0A1] text-[#183A39] lg:w-[412px] h-[32px] lg:h-[40px] px-6 py-2 rounded-full flex items-center justify-between font-haptik font-medium text-[16px] group hover:opacity-90 transition-all lg:translate-y-5">
               <span>Check Out Our Summer Camp</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
           {/* Right Column: Image */}
-          <div className="flex-1 xl:flex-none w-full xl:w-[667px] xl:h-[491px] relative aspect-[4/5] md:aspect-auto md:h-[500px] lg:h-[600px] rounded-[24px] overflow-hidden">
+          <div className="flex-1 lg:flex-none w-full lg:w-[667px] lg:h-[491px] relative aspect-[4/5] md:aspect-auto md:h-[400px] lg:h-[491px] rounded-[16px] overflow-hidden lg:translate-x-5">
             <Image
               src="/parents/parent3.png"
               alt="Family lifestyle"
