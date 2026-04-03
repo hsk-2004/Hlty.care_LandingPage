@@ -77,7 +77,7 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                 </div>
             )}
 
-            <div className="w-full mx-auto px-6 md:px-12 lg:px-16 pt-16 lg:pt-20 pb-12 lg:pb-24">
+            <div className="max-w-[1340px] mx-auto px-6 md:px-12 lg:pl-16 lg:pr-12 pt-16 lg:pt-20 pb-12 lg:pb-24">
                 <motion.div
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -87,82 +87,140 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                 >
 
                     {/* Left Block: Logo, Disclaimer, Socials */}
-                    <div className="flex flex-col items-start text-left space-y-8 lg:ml-8 xl:ml-16">
-                        {/* Logo */}
-                        <div className="flex items-center gap-4">
-                            <img src="/footer-logo.svg" alt="Hlty Beings logo" className="h-[32px] lg:h-[40px] w-auto" />
+                    <div className="flex flex-col items-start text-left space-y-12 max-w-lg">
+                        {/* Newsletter Header */}
+                        <div className="space-y-4">
+                            <div className="flex flex-col gap-2">
+                                <span className="font-jubilat text-[10px] lg:text-[12px] uppercase tracking-[0.2em] opacity-80">
+                                    Newsletter From
+                                </span>
+                                <div className="flex items-center gap-2">
+                                    <img src="/footer-logo.svg" alt="Hlty Beings logo" className="h-[20px] lg:h-[24px] w-auto" />
+                                </div>
+                            </div>
+
+                            <h2 className="font-haptik font-black text-[32px] md:text-[42px] lg:text-[48px] text-[#61D0A1] leading-none uppercase tracking-tight">
+                                Hlty Bites
+                            </h2>
+
+                            <p className="font-jubilat text-[14px] lg:text-[16px] leading-relaxed opacity-90 max-w-sm">
+                                Writings about food, play, routines, and how habits form in real life for parents, educators, and anyone shaping childhood environments.
+                            </p>
                         </div>
 
-                        {/* Disclaimer */}
-                        <p className="font-jubilat text-[14px] lg:text-[20px] leading-relaxed opacity-90 lg:opacity-80 max-w-sm lg:max-w-md">
-                            Hlty Beings&apos; products and services are not intended to
-                            substitute for professional medical guidance.
-                            Our content, products and experiential offerings do not
-                            aim to diagnose, cure, or address any medical issues.
-                        </p>
+                        {/* Subscription Input */}
+                        <div className="relative w-full max-w-[400px]">
+                            <div className="flex items-center bg-[#F0EEE6] rounded-full p-1 border border-[#F0EEE6]">
+                                <input
+                                    type="email"
+                                    placeholder="name@email.com"
+                                    className="bg-transparent px-6 py-2 w-full text-[#183A39] placeholder-[#183A39]/50 focus:outline-none font-jubilat text-[14px]"
+                                />
+                                <button className="bg-[#183A39] text-[#F0EEE6] px-8 py-2 rounded-full font-jubilat font-bold text-[14px] hover:opacity-90 transition-opacity whitespace-nowrap">
+                                    Subscribe
+                                </button>
+                            </div>
+                        </div>
 
-                        {/* Social Icons */}
-                        <div className="flex items-center gap-6 lg:gap-8 pt-2">
-                            {socialIcons.map((social) => (
-                                <motion.a
-                                    key={social.name}
-                                    href={social.href}
-                                    whileHover={{ y: -3, opacity: 1 }}
-                                    className="text-[#F0EEE6] opacity-90 hover:opacity-100 transition-opacity"
-                                    aria-label={social.name}
-                                >
-                                    {social.icon}
-                                </motion.a>
-                            ))}
+                        <div className="pt-8 space-y-8">
+                            {/* Disclaimer & Copyright */}
+                            <div className="space-y-4">
+                                <p className="font-jubilat text-[12px] lg:text-[14px] leading-relaxed opacity-90 max-w-sm">
+                                    Hlty Beings&apos; products and services are not intended to
+                                    substitute for professional medical guidance.
+                                    Our content, products and experiential offerings do not
+                                    aim to diagnose, cure, or address any medical issues.
+                                </p>
+                                <p className="font-jubilat text-[12px] lg:text-[14px] opacity-90">
+                                    © 2026 Hlty Beings
+                                </p>
+                            </div>
+
+                            {/* Social Icons */}
+                            <div className="flex items-center gap-6 lg:gap-8 pt-2">
+                                {socialIcons.map((social) => (
+                                    <motion.a
+                                        key={social.name}
+                                        href={social.href}
+                                        whileHover={{ y: -3, opacity: 1 }}
+                                        className="text-[#F0EEE6] opacity-90 hover:opacity-100 transition-opacity"
+                                        aria-label={social.name}
+                                    >
+                                        {social.icon}
+                                    </motion.a>
+                                ))}
+                            </div>
                         </div>
                     </div>
 
                     {/* Right Blocks: Navigation Sections */}
-                    <div className="flex flex-col gap-12 lg:grid lg:grid-cols-2 lg:gap-24 lg:mr-12 xl:mr-20">
-                        {/* Company Section */}
-                        <div className="flex flex-col space-y-6 lg:space-y-8">
-                            <h3 className="font-haptik text-[16px] lg:text-[20px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
-                                Company
-                            </h3>
-                            <nav className="flex flex-col space-y-4 lg:space-y-5">
-                                {[
-                                    { name: "Explore", href: "/explore" },
-                                    { name: "Body Galaxy", href: "#" },
-                                    { name: "Workshops", href: "/workshop" },
-                                    { name: "Products", href: "#" },
-                                    { name: "For Parents", href: "#" },
-                                    { name: "About Us", href: "/about" }
-                                ].map((link) => (
-                                    <a
-                                        key={link.name}
-                                        href={link.href}
-                                        className="font-jubilat text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal"
-                                    >
-                                        {link.name}
+                    <div className="grid grid-cols-2 gap-x-12 lg:gap-x-24 gap-y-12">
+                        {/* Column 1: Explore & Company */}
+                        <div className="flex flex-col space-y-12 lg:space-y-20">
+                            {/* Explore Section */}
+                            <div className="flex flex-col space-y-6 lg:space-y-8">
+                                <h3 className="font-haptik text-[16px] lg:text-[20px] font-bold uppercase tracking-[0.05em] text-[#F0EEE6]">
+                                    Explore
+                                </h3>
+                                <nav className="flex flex-col space-y-4 lg:space-y-5">
+                                    {[
+                                        { name: "Hlty Bites", href: "#" },
+                                        { name: "Building Hlty Beings", href: "#" },
+                                        { name: "Events", href: "#" },
+                                        { name: "Hlty Universe", href: "#" },
+                                        { name: "Research Report", href: "#" }
+                                    ].map((link) => (
+                                        <a
+                                            key={link.name}
+                                            href={link.href}
+                                            className="font-jubilat text-[14px] lg:text-[16px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal"
+                                        >
+                                            {link.name}
+                                        </a>
+                                    ))}
+                                </nav>
+                            </div>
+
+                            {/* Company Section */}
+                            <div className="flex flex-col space-y-6 lg:space-y-8">
+                                <h3 className="font-haptik text-[16px] lg:text-[20px] font-bold uppercase tracking-[0.05em] text-[#F0EEE6]">
+                                    Company
+                                </h3>
+                                <nav className="flex flex-col space-y-4 lg:space-y-5">
+                                    {[
+                                        { name: "Workshops", href: "#" },
+                                        { name: "For Parents", href: "#" },
+                                        { name: "WHO Letter", href: "#" },
+                                        { name: "Get Started", href: "#" }
+                                    ].map((link) => (
+                                        <a
+                                            key={link.name}
+                                            href={link.href}
+                                            className="font-jubilat text-[14px] lg:text-[16px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal"
+                                        >
+                                            {link.name}
+                                        </a>
+                                    ))}
+                                    <a href="#" className="flex items-center gap-2 font-jubilat text-[14px] lg:text-[16px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">
+                                        <Mail size={16} className="text-[#F0EEE6]" strokeWidth={1.5} />
+                                        Contact Us
                                     </a>
-                                ))}
-                            </nav>
+                                </nav>
+                            </div>
                         </div>
 
-                        {/* Legal Section */}
+                        {/* Column 2: Legal */}
                         <div className="flex flex-col space-y-6 lg:space-y-8">
-                            <h3 className="font-haptik text-[16px] lg:text-[20px] font-medium uppercase tracking-[0.05em] text-[#F0EEE6]">
+                            <h3 className="font-haptik text-[16px] lg:text-[20px] font-bold uppercase tracking-[0.05em] text-[#F0EEE6]">
                                 Legal
                             </h3>
                             <nav className="flex flex-col space-y-4 lg:space-y-5">
-                                <a href="#" className="font-jubilat text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">Privacy</a>
-                                <a href="#" className="font-jubilat text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">Terms</a>
-                                <a href="#" className="flex items-center gap-3 font-jubilat text-[16px] lg:text-[18px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">
-                                    <Mail size={18} />
-                                    Contact Us
-                                </a>
+                                <a href="#" className="font-jubilat text-[14px] lg:text-[16px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">Privacy</a>
+                                <a href="#" className="font-jubilat text-[14px] lg:text-[16px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">Terms</a>
                             </nav>
                         </div>
                     </div>
                 </motion.div>
-
-
-
             </div>
 
             {/* Mobile Bottom Decoration - Restored */}
