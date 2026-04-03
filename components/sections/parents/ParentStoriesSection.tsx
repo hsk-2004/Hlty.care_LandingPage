@@ -14,9 +14,9 @@ export default function ParentStoriesSection() {
             alt="Decoration"
             width={1208}
             height={207}
-            className="hidden md:block w-full h-auto"
+            className="hidden lg:block w-full h-auto"
           />
-          <h2 className="md:absolute font-jubilat text-[32px] md:text-[48px] lg:text-[56px] xl:text-[42px] text-[#183A39] text-center">
+          <h2 className="lg:absolute font-jubilat text-[clamp(28px,7vw,42px)] md:text-[42px] lg:text-[56px] xl:text-[42px] text-[#183A39] text-center">
             Parent stories
           </h2>
         </div>
@@ -31,7 +31,7 @@ export default function ParentStoriesSection() {
               alt="Green Adventure Box"
               width={740}
               height={371}
-              className="hidden md:block w-full h-auto object-contain"
+              className="hidden lg:block w-full h-auto object-contain"
             />
             {/* Mobile Box */}
             <Image
@@ -39,17 +39,17 @@ export default function ParentStoriesSection() {
               alt="Green Adventure Box Mobile"
               width={388}
               height={346}
-              className="md:hidden w-full h-auto object-contain"
+              className="lg:hidden w-full h-auto object-contain"
             />
             {/* Story Content Overlay */}
             <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-14 lg:px-16 text-[#183A39] text-left pointer-events-none overflow-hidden">
-              <h3 className="font-haptik font-bold text-[12px] md:text-[15px] lg:text-[16px] tracking-wider mb-0.5 md:mb-2">
+              <h3 className="font-haptik font-bold text-[clamp(11px,2vw,14px)] md:text-[15px] lg:text-[16px] tracking-wider mb-0.5 md:mb-2">
                 AROUND SLEEP
               </h3>
-              <p className="font-haptik italic text-[11px] md:text-[16px] lg:text-[19px] leading-tight mb-1 md:mb-4">
+              <p className="font-haptik italic text-[clamp(10px,2.5vw,16px)] md:text-[16px] lg:text-[19px] leading-tight mb-1 md:mb-4">
                 "Bedtime wasn't the problem, stimulation was."
               </p>
-              <div className="font-haptik text-[9.5px] md:text-[13px] lg:text-[14px] leading-[1.3] space-y-1.5 md:space-y-3">
+              <div className="font-haptik text-[clamp(9px,2vw,13px)] md:text-[13px] lg:text-[14px] leading-[1.3] space-y-1.5 md:space-y-3">
                 <p>
                   We used to think our kids just “weren’t sleepy.” Nights felt like a battle of reminders, delays, and sudden bursts of energy right when lights were supposed to go off. What changed wasn’t the bedtime, it was the environment before it.
                 </p>
@@ -95,7 +95,7 @@ export default function ParentStoriesSection() {
               alt="Red Adventure Box"
               width={740}
               height={411}
-              className="hidden md:block w-full h-auto object-contain"
+              className="hidden lg:block w-full h-auto object-contain"
             />
             {/* Mobile Box */}
             <Image
@@ -103,17 +103,17 @@ export default function ParentStoriesSection() {
               alt="Red Adventure Box Mobile"
               width={388}
               height={406}
-              className="md:hidden w-full h-auto object-contain"
+              className="lg:hidden w-full h-auto object-contain"
             />
             {/* Story Content Overlay */}
             <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-14 lg:px-16 text-[#183A39] text-left pointer-events-none overflow-hidden">
-              <h3 className="font-haptik font-bold text-[12px] md:text-[15px] lg:text-[16px] tracking-wider mb-0.5 md:mb-2">
+              <h3 className="font-haptik font-bold text-[clamp(11px,2vw,14px)] md:text-[15px] lg:text-[16px] tracking-wider mb-0.5 md:mb-2">
                 AROUND JUNK FOOD
               </h3>
-              <p className="font-haptik italic text-[11px] md:text-[16px] lg:text-[19px] leading-tight mb-1 md:mb-4">
+              <p className="font-haptik italic text-[clamp(10px,2.5vw,16px)] md:text-[16px] lg:text-[19px] leading-tight mb-1 md:mb-4">
                 "Cravings weren't the problem, availability was."
               </p>
-              <div className="font-haptik text-[9.5px] md:text-[13px] lg:text-[14px] leading-[1.3] space-y-1.5 md:space-y-3">
+              <div className="font-haptik text-[clamp(9px,2vw,13px)] md:text-[13px] lg:text-[14px] leading-[1.3] space-y-1.5 md:space-y-3">
                 <p>
                   We used to worry constantly about how much junk food the kids were eating. Whenever they were hungry, chips, sweets, or packaged snacks were the first things they asked for even when homemade food was right there.
                 </p>
@@ -162,7 +162,7 @@ export default function ParentStoriesSection() {
               alt="Yellow Adventure Box"
               width={740}
               height={451}
-              className="hidden md:block w-full h-auto object-contain"
+              className="hidden lg:block w-full h-auto object-contain"
             />
             {/* Mobile Box */}
             <Image
@@ -170,17 +170,17 @@ export default function ParentStoriesSection() {
               alt="Yellow Adventure Box Mobile"
               width={388}
               height={451}
-              className="md:hidden w-full h-auto object-contain"
+              className="lg:hidden w-full h-auto object-contain"
             />
             {/* Story Content Overlay */}
             <div className="absolute inset-0 flex flex-col justify-center px-8 md:px-14 lg:px-16 text-[#183A39] text-left pointer-events-none overflow-hidden">
-              <h3 className="font-haptik font-bold text-[12px] md:text-[15px] lg:text-[16px] tracking-wider mb-0.5 md:mb-2">
+              <h3 className="font-haptik font-bold text-[clamp(11px,2vw,14px)] md:text-[15px] lg:text-[16px] tracking-wider mb-0.5 md:mb-2">
                 AROUND SPORTS
               </h3>
-              <p className="font-haptik italic text-[11px] md:text-[16px] lg:text-[19px] leading-tight mb-1 md:mb-4">
+              <p className="font-haptik italic text-[clamp(10px,2.5vw,16px)] md:text-[16px] lg:text-[19px] leading-tight mb-1 md:mb-4">
                 "Participation wasn't the problem enjoyment was."
               </p>
-              <div className="font-haptik text-[9.5px] md:text-[13px] lg:text-[14px] leading-[1.3] space-y-1.5 md:space-y-3">
+              <div className="font-haptik text-[clamp(9px,2vw,13px)] md:text-[13px] lg:text-[14px] leading-[1.3] space-y-1.5 md:space-y-3">
                 <p>
                   We worried that the kids were becoming inactive, full of energy, yet reluctant to play or stick with sports. So we did what most parents do: researched the "best" options and enrolled them in classes we believed would be good for them. But attendance was irregular, enthusiasm was low, and it often felt like we were pushing more than they were choosing.
                 </p>
