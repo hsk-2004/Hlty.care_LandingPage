@@ -5,8 +5,8 @@ import Image from "next/image";
 
 export default function HeroSection() {
   return (
-    <section className="w-full px-4 md:px-6 lg:px-8 pt-24 pb-12">
-      <div className="relative w-full max-w-[1290px] mx-auto aspect-[1290/322] overflow-hidden rounded-[16px] shadow-sm">
+    <section className="w-full px-0 md:px-6 lg:px-8 pt-0 md:pt-24 pb-12">
+      <div className="relative w-full max-w-[1290px] mx-auto h-[258px] md:aspect-[1290/322] md:h-auto overflow-hidden md:rounded-[16px] shadow-sm">
         {/* Background Image Container */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -20,21 +20,23 @@ export default function HeroSection() {
 
         {/* Content Overlay */}
         <div className="relative z-10 h-full w-full flex flex-col items-center justify-center text-center px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-            className="relative z-20 flex flex-col items-center gap-2 md:gap-4 pointer-events-none"
-          >
-            <h1 className="font-jubilat font-normal text-[20px] md:text-[32px] lg:text-[42px] leading-[1.4] text-[#183A39] flex flex-col items-center gap-0">
-              <span className="bg-[#F0EEE6]/80 backdrop-blur-sm px-2 h-[40px] flex items-center justify-center whitespace-nowrap">
-                Health doesn&apos;t need extra time.
-              </span>
-              <span className="bg-[#F0EEE6]/80 backdrop-blur-sm px-2 h-[40px] hidden md:flex items-center justify-center whitespace-nowrap">
-                It needs better defaults inside the day you already have.
-              </span>
-            </h1>
-          </motion.div>
+          <div className="translate-y-20 md:translate-y-0 w-full flex flex-col items-center">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="relative z-20 flex flex-col items-center gap-2 md:gap-4 pointer-events-none"
+            >
+              <h1 className="font-jubilat font-normal text-[14px] md:text-[32px] lg:text-[42px] leading-[1.4] text-[#183A39] flex flex-col items-center gap-0">
+                <span className="bg-[#F0EEE6]/80 backdrop-blur-sm px-4 h-[22px] md:h-[40px] flex items-center justify-center whitespace-nowrap">
+                  Health doesn&apos;t need extra time.
+                </span>
+                <span className="bg-[#F0EEE6]/80 backdrop-blur-sm px-4 h-[22px] md:h-[40px] flex items-center justify-center whitespace-nowrap">
+                  It needs better defaults inside the day you already have.
+                </span>
+              </h1>
+            </motion.div>
+          </div>
         </div>
       </div>
 

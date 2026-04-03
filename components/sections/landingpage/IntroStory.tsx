@@ -51,7 +51,7 @@ export default function IntroStory() {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[280px] h-[380px] md:w-[450px] md:h-auto lg:w-[280px] lg:h-[380px] bg-[#E4DBCD] border border-[#BEB4A5] rounded-[24px] md:rounded-[32px] pt-1 px-4 pb-4 md:p-8 lg:p-6 flex flex-col justify-between snap-start overflow-hidden"
+              className="flex-shrink-0 w-[280px] min-h-[420px] md:w-[450px] md:h-auto lg:w-[280px] lg:min-h-[420px] bg-[#E4DBCD] border border-[#BEB4A5] rounded-[24px] md:rounded-[32px] pt-1 px-4 pb-4 md:p-8 lg:p-6 flex flex-col justify-between snap-start"
             >
               <div className="space-y-1 md:space-y-6 lg:space-y-2">
                 {/* Feature Image */}
@@ -77,7 +77,7 @@ export default function IntroStory() {
                   <h3 className="font-jubilat text-[16px] md:text-[24px] lg:text-[16px] font-bold text-[#183A39] leading-tight">
                     {card.title}
                   </h3>
-                  <p className="font-jubilat text-[14px] md:text-[16px] lg:text-[14px] text-[#183A39]/80 leading-relaxed line-clamp-3 md:line-clamp-none">
+                  <p className="font-jubilat text-[14px] md:text-[16px] lg:text-[14px] text-[#183A39]/80 leading-relaxed">
                     {card.description}
                   </p>
                 </div>

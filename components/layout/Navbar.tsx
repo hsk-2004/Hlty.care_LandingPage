@@ -33,9 +33,8 @@ export default function Navbar({ variant = "light" }: NavbarProps) {
     });
 
     const navLinks = [
-        { name: "EXPLORE", href: "/explore" },
-        { name: "WORKSHOPS", href: "/workshop" },
-        { name: "PRODUCTS", href: "/products" },
+        { name: "+ EXPLORE", href: "/explore" },
+        { name: "+ OFFERINGS", href: "/offerings" },
         { name: "FOR PARENTS", href: "/parents" },
     ];
 

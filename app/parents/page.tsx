@@ -9,7 +9,7 @@ export default function ParentsPage() {
     return (
         <main className="min-h-screen bg-[#F0EEE6]">
             <Navbar />
-            <div className="pt-24 lg:pt-32">
+            <div className="pt-0 md:pt-24 lg:pt-32">
                 <HeroSection />
                 <IntroSection />
                 <FeaturesSection />

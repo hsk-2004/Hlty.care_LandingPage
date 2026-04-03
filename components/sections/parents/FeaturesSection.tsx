@@ -39,14 +39,24 @@ export default function FeaturesSection() {
             <p className="pt-2">
               That&apos;s how small choices become familiar.
             </p>
+
+            {/* Mobile-only Image (Integrated) */}
+            <div className="lg:hidden relative w-[376px] h-[426px] max-w-full rounded-[16px] overflow-hidden shadow-sm mx-auto mt-6">
+              <Image
+                src="/parents/parent5.png"
+                alt="Feature overview mobile"
+                fill
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
 
-        {/* Middle Column: Large Feature Image */}
-        <div className="lg:col-span-5 relative aspect-square xl:aspect-auto xl:w-[496px] xl:h-[521px] rounded-[24px] overflow-hidden shadow-sm mx-auto">
+        {/* Middle Column: Large Feature Image (Desktop Only) */}
+        <div className="hidden lg:block lg:col-span-5 relative xl:w-[496px] xl:h-[521px] rounded-[24px] overflow-hidden shadow-sm mx-auto">
           <Image
             src="/parents/parent5.png"
-            alt="Feature overview"
+            alt="Feature overview desktop"
             fill
             className="object-cover"
           />
