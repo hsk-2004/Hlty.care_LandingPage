@@ -10,7 +10,7 @@ export default function IntroSection() {
       <div className="max-w-[1290px] mx-auto">
         {/* Top Centered Text */}
         <div className="text-center mb-12 md:mb-16 max-w-4xl mx-auto">
-          <p className="font-jubilat text-lg md:text-2xl xl:text-[20px] text-[#183A39] leading-relaxed">
+          <p className="font-jubilat text-[12px] md:text-2xl xl:text-[20px] text-[#183A39] leading-relaxed">
             Hlty Beings works alongside everyday family life — mornings, meals, play, and wind-down. <br className="hidden md:block" />
             Not with rules to follow, but with systems that make healthier choices easier to return to.
           </p>

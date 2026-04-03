@@ -45,7 +45,7 @@ export default function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1, duration: 0.8 }}
-        className="w-full max-w-[1164px] mx-auto mt-4 md:mt-8 flex justify-center"
+        className="w-full max-w-[1164px] mx-auto mt-4 md:mt-8 hidden md:flex justify-center"
       >
         <Image
           src="/parents/parent2.svg"
