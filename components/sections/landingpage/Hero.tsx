@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[867px] lg:h-[clamp(900px,68vw,1300px)] flex flex-col items-center justify-start text-center px-4 pt-[clamp(128px,24vh,220px)]">
+    <section className="relative w-full h-[867px] lg:h-[1100px] flex flex-col items-center justify-start text-center px-4 pt-[clamp(128px,24vh,220px)]">
 
       {/* Background Image with Zoom Effect */}
       <motion.div
@@ -26,8 +26,8 @@ export default function Hero() {
         <div className="absolute inset-0 bg-[#183A39]/10" />
 
         {/* Decorative Overlay Image (Added layer with specific size) - Hidden on Mobile & Tablet */}
-        <div className="absolute hidden lg:block left-[65%] top-[35%] -translate-x-1/2 -translate-y-1/2 z-[5] pointer-events-none">
-          <div className="relative w-[300px] h-[350px] md:w-[827.5px] md:h-[940.5px] lg:w-[clamp(827.5px,55vw,1050px)] lg:h-[clamp(940.5px,60vw,1150px)]">
+        <div className="absolute hidden lg:block left-[65%] top-[30%] -translate-x-1/2 -translate-y-1/2 z-[5] pointer-events-none">
+          <div className="relative w-[300px] h-[350px] md:w-[827.5px] md:h-[940.5px] lg:w-[clamp(750px,48vw,950px)] lg:h-[clamp(750px,48vw,950px)]">
             <Image
               src="/landingpage/hero-image1.svg"
               alt="Hero decorative overlay"
@@ -38,8 +38,8 @@ export default function Hero() {
         </div>
 
         {/* Hero Text SVG - Desktop Only */}
-        <div className="absolute hidden lg:block left-[71%] top-[50%] -translate-x-1/2 -translate-y-1/2 z-[6] pointer-events-none">
-          <div className="relative w-[clamp(952px,60vw,1052px)] h-[clamp(650px,55vw,1002px)]">
+        <div className="absolute hidden lg:block left-[70%] top-[41.5%] min-[1680px]:top-[42%] min-[1850px]:top-[44.5%] -translate-x-1/2 -translate-y-1/2 z-[6] pointer-events-none">
+          <div className="relative w-[680px] h-[680px] min-[1680px]:w-[740px] min-[1680px]:h-[740px] min-[1850px]:w-[850px] min-[1850px]:h-[850px]">
             <Image
               src="/landingpage/hero-text.svg"
               alt="Hero stylized text"
