@@ -99,7 +99,7 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                                 </div>
                             </div>
 
-                            <h2 className="font-bitcountink font-semibold text-[58px] md:text-[64px] lg:text-[85.81px] text-[#51D2A2] leading-none tracking-[-0.03em] whitespace-nowrap">
+                            <h2 className="font-bitcountink text-[58px] md:text-[64px] lg:text-[85.81px] leading-none tracking-[-0.03em] whitespace-nowrap">
                                 Hlty Bites
                             </h2>
 

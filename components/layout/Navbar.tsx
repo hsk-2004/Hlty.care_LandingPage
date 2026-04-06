@@ -36,6 +36,7 @@ export default function Navbar({ variant = "light" }: NavbarProps) {
         { name: "+ EXPLORE", href: "/explore" },
         { name: "+ OFFERINGS", href: "/offerings" },
         { name: "FOR PARENTS", href: "/parents" },
+        { name: "FOR EDUCATORS", href: "/educators" },
     ];
 
     return (

@@ -30,6 +30,13 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'BitcountSemiBold';
+    src: url('/Bitcount-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
 @layer base {
     html,
     body {
@@ -69,8 +76,7 @@
     }
 
     .font-bitcountink {
-        font-family: 'BitcountGridDouble', sans-serif !important;
-        font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0, "wght" 600 !important;
+        font-family: 'BitcountSemiBold', sans-serif !important;
         color: #51D2A2 !important;
     }
 }
