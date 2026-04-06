@@ -99,11 +99,11 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                                 </div>
                             </div>
 
-                            <h2 className="font-bitcountink font-semibold text-[42px] md:text-[64px] lg:text-[85.81px] text-[#51D2A2] leading-none tracking-[-0.03em]">
+                            <h2 className="font-bitcountink font-semibold text-[58px] md:text-[64px] lg:text-[85.81px] text-[#51D2A2] leading-none tracking-[-0.03em] whitespace-nowrap">
                                 Hlty Bites
                             </h2>
 
-                            <p className="font-jubilat text-[14px] lg:text-[16px] leading-relaxed opacity-90 max-w-sm">
+                            <p className="font-jubilat text-[12px] lg:text-[16px] leading-relaxed opacity-90 max-w-sm">
                                 Writings about food, play, routines, and how habits form in real life for parents, educators, and anyone shaping childhood environments.
                             </p>
                         </div>

@@ -80,87 +80,87 @@ export default function FounderLetter() {
                     </div>
 
                     {/* Text Content - Scaling text for the smaller container */}
-                    <div className="max-w-[85%] font-jubilat text-[#2D4341] space-y-1.5 md:space-y-3 lg:space-y-2 pt-1 md:pt-3 lg:pt-4">
+                    <div className="max-w-[95%] font-jubilat text-[#2D4341] space-y-1 md:space-y-2 lg:space-y-1.5 pt-1 md:pt-3 lg:pt-4">
                         <h1 className="font-jubilat text-[24px] md:text-[36px] lg:text-[48px] font-medium leading-[1.1] mb-2 md:mb-6 lg:mb-8 text-[#1A2E2C]">
                             A letter from <br /> the Founder
                         </h1>
 
                         <p className="italic text-[10px] md:text-[14px] lg:text-[16px] opacity-90">
-                            Health lives in the everyday.
-                        </p>
-
-                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-relaxed">
-                            I&apos;m building Hlty Beings because I learned the hard way <br className="hidden lg:block" />
-                            that knowing isn&apos;t the same as living.
+                            Dear parent,
                         </p>
 
                         <div className="space-y-0.5 md:space-y-1.5 lg:space-y-1">
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">I knew the facts.</p>
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">I knew what to eat, what to avoid, what &ldquo;should&rdquo; work.</p>
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug lg:whitespace-nowrap">
-                                But knowledge didn&apos;t become habit. And habit didn&apos;t become default.
-                            </p>
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">Some lessons arrive too late.</p>
-                        </div>
-
-                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-relaxed">
-                            And some losses change the way you see everything.
-                        </p>
-
-                        <div className="space-y-0.5 md:space-y-1.5 lg:space-y-1">
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug lg:whitespace-nowrap">
-                                When I watch children being warned about &ldquo;lifestyle diseases,&rdquo;
-                            </p>
+                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">The World Is Designed to Make Us Sick</p>
                             <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
-                                I often wonder if we&apos;ve misunderstood the order of things.
+                                The world is designed to keep you fat.<br />
+                                That might sound dramatic, but look closely and it becomes hard to<br />
+                                ignore. Our cities encourage sitting. Our food is engineered to be<br />
+                                irresistible. Our technology keeps us staring at screens for hours.
                             </p>
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">Fear is not a foundation.</p>
                         </div>
+
+                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
+                            I weighed 130 kilograms at my heaviest.
+                        </p>
 
                         <div className="space-y-0.5 md:space-y-1.5 lg:space-y-1">
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">Willpower is not a system.</p>
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">Children don&apos;t need to worry about the future.</p>
+                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">I knew everything I was supposed to do.</p>
+                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">Eat better. Move more. Sleep properly.</p>
                         </div>
 
-                        <div className="space-y-0.5 md:space-y-1.5 lg:space-y-1">
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">They need safe spaces to practice today.</p>
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">That&apos;s what Hlty Beings is building.</p>
-                        </div>
+                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
+                            None of it was new information. But knowing something and<br />
+                            actually living it, those are completely different things.<br />
+                            That gap between knowing and doing is what I kept thinking about.
+                        </p>
 
-                        <div className="space-y-0.5 md:space-y-1.5 lg:space-y-1 relative">
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">Not a program.</p>
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">Not a lecture.</p>
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">Not another set of rules.</p>
+                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
+                            If it&apos;s this hard for an adult who understands the problem, what<br />
+                            chance do our kids have? They&apos;re growing up in the most<br />
+                            distraction-filled, ultra-processed, sit-still-and-stare-at-a-screen<br />
+                            environment in human history. And our answer to that is usually<br />
+                            &ldquo;eat your vegetables.&rdquo;
+                        </p>
 
-                            <div className="relative inline-block mt-0.5 md:mt-1.5 lg:mt-2">
-                                <span className="text-[#DA9100] font-jubilat italic text-[10px] md:text-[14px] lg:text-[16px] relative z-10">
-                                    A playground for practice.
-                                </span>
-                                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-auto md:hidden pointer-events-none">
-                                    <Image
-                                        src="/landingpage/text-cover.svg"
-                                        alt="highlight"
-                                        width={148}
-                                        height={31}
-                                        className="w-full h-auto"
-                                    />
-                                </div>
+                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
+                            We treat health like homework.
+                        </p>
+
+                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
+                            I started Hlty Beings because I believe we can do better. Not with<br />
+                            lectures. Not with rules. But with stories, play, and experiences that<br />
+                            make healthy feel like the obvious, natural, fun choice so by the time<br />
+                            a child grows up, good habits aren&apos;t a discipline. They&apos;re just who<br />
+                            they are.
+                        </p>
+
+                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
+                            My own journey isn&apos;t finished. I&apos;m in my 90s now, working toward<br />
+                            the 80s. That unfinished road is exactly why this matters to me.
+                        </p>
+
+                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
+                            If adults fight this hard to stay healthy, the least we can do is build a<br />
+                            world where children never have to fight that same battle uphill.<br />
+                            That&apos;s what we&apos;re building.
+                        </p>
+
+                        <div className="relative inline-block mt-0.5 md:mt-1.5 lg:mt-2">
+                            <span className="text-[#2D4341] font-jubilat italic text-[10px] md:text-[14px] lg:text-[16px] relative z-10">
+                                Welcome to the playground.
+                            </span>
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-auto md:hidden pointer-events-none">
+                                <Image
+                                    src="/landingpage/text-cover.svg"
+                                    alt="highlight"
+                                    width={148}
+                                    height={31}
+                                    className="w-full h-auto"
+                                />
                             </div>
                         </div>
 
-                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
-                            <span className="lg:whitespace-nowrap">A space where health becomes familiar through stories, repetition, and small</span>
-                            <br className="hidden lg:block" />
-                            <span className="lg:whitespace-nowrap">daily actions until it feels less like effort and more like environment.</span>
-                        </p>
-
-                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
-                            <span>We&apos;re starting in Bangalore &mdash;</span>
-                            <br className="hidden lg:block" />
-                            <span className="lg:whitespace-nowrap">to shape this close to the ground, where we can listen, learn, and build it well.</span>
-                        </p>
-
-                        <div className="pt-3 md:pt-6 lg:pt-8 opacity-90">
+                        <div className="pt-1 md:pt-2 lg:pt-3 opacity-90">
                             <p className="text-[10px] md:text-[14px] lg:text-[16px] italic">Warmly,</p>
                             <p className="text-[10px] md:text-[14px] lg:text-[16px] font-bold mt-0.5 md:mt-1.5 lg:mt-2">Suraj Prasad</p>
                         </div>
