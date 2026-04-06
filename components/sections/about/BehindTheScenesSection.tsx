@@ -20,36 +20,45 @@ export default function BehindTheScenesSection() {
           </h2>
         </div>
 
-        {/* Scrollable Container */}
-        <div className="relative w-full">
-          <div className="flex overflow-x-auto gap-4 md:gap-12 pt-2 pb-12 md:py-4 px-4 md:px-12 no-scrollbar cursor-grab active:cursor-grabbing overflow-y-visible">
-            {[
-              { id: 1, rot: -4.55 },
-              { id: 2, rot: 4.05 },
-              { id: 3, rot: 3.65 },
-              { id: 4, rot: -4.55 }
-            ].map((card, idx) => (
-              <motion.div
-                key={card.id}
-                initial={{ opacity: 0, x: 50, rotate: 0 }}
-                whileInView={{ opacity: 1, x: 0, rotate: card.rot }}
-                transition={{ duration: 0.6, delay: idx * 0.1 }}
-                viewport={{ once: true }}
-                style={{ rotate: `${card.rot}deg` }}
-                className="flex-shrink-0 w-[161px] md:w-[320px] lg:w-[353px] h-[158px] md:h-[320px] lg:h-[346px] bg-[#E5E2D9] rounded-[12px] md:rounded-[16px] shadow-sm overflow-hidden relative"
-              >
-                <Image
-                  src={`/about/bts${card.id}.jpg`}
-                  alt={`Behind the scenes photo ${card.id}`}
-                  fill
-                  className="object-cover"
-                />
-
-                {/* Subtle overlay */}
-                <div className="absolute inset-0 bg-black/5" />
-              </motion.div>
+        {/* Auto-scrolling Marquee Container */}
+        <div className="relative w-full overflow-hidden">
+          <motion.div
+            className="flex gap-4 md:gap-12 py-8 md:py-14 px-4 no-scrollbar cursor-default"
+            animate={{
+              x: ["0%", "-50%"]
+            }}
+            transition={{
+              duration: 20,
+              ease: "linear",
+              repeat: Infinity
+            }}
+          >
+            {/* Double the cards for infinite scroll effect */}
+            {[...Array(2)].map((_, listIdx) => (
+              <div key={listIdx} className="flex gap-4 md:gap-12">
+                {[
+                  { id: 1, rot: -4.55 },
+                  { id: 2, rot: 4.05 },
+                  { id: 3, rot: 3.65 },
+                  { id: 4, rot: -4.55 }
+                ].map((card) => (
+                  <div
+                    key={`${listIdx}-${card.id}`}
+                    style={{ rotate: `${card.rot}deg` }}
+                    className="flex-shrink-0 w-[161px] md:w-[353px] h-[158px] md:h-[346px] bg-[#E5E2D9] rounded-[12px] md:rounded-[16px] shadow-sm overflow-hidden relative"
+                  >
+                    <Image
+                      src={`/about/bts${card.id}.jpg`}
+                      alt={`Behind the scenes photo ${card.id}`}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/5" />
+                  </div>
+                ))}
+              </div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </div>
 

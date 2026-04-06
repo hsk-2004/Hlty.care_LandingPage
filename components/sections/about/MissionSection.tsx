@@ -64,7 +64,7 @@ export default function MissionSection() {
                 Building Hlty Beings
               </h1>
 
-              <div className="space-y-1 md:space-y-2 font-normal text-[12px] md:text-[18px] lg:text-[22px] leading-[1.3] text-[#2D4341] opacity-90">
+              <div className="space-y-1 md:space-y-2 font-normal text-[12px] md:text-[18px] lg:text-[20px] leading-[1.3] text-[#2D4341] opacity-90">
                 <p>
                   The world is quietly designed to make staying healthy hard.
                 </p>
