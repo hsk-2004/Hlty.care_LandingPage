@@ -22,32 +22,31 @@ export default function BehindTheScenesSection() {
 
         {/* Scrollable Container */}
         <div className="relative w-full">
-          <div className="flex overflow-x-auto gap-4 md:gap-8 pb-12 md:pb-12 px-4 no-scrollbar cursor-grab active:cursor-grabbing">
+          <div className="flex overflow-x-auto gap-4 md:gap-12 pt-2 pb-12 md:py-4 px-4 md:px-12 no-scrollbar cursor-grab active:cursor-grabbing overflow-y-visible">
             {[
-              { id: 1, rot: "-rotate-[3.24deg] md:-rotate-[4.05deg]" },
-              { id: 2, rot: "rotate-[2.15deg] md:rotate-[4.05deg]" },
-              { id: 3, rot: "-rotate-[2.5deg] md:-rotate-[4.15deg]" },
-              { id: 4, rot: "rotate-[3.05deg] md:rotate-[4.05deg]" },
-              { id: 5, rot: "-rotate-[1.85deg] md:-rotate-[4.05deg]" }
+              { id: 1, rot: -4.55 },
+              { id: 2, rot: 4.05 },
+              { id: 3, rot: 3.65 },
+              { id: 4, rot: -4.55 }
             ].map((card, idx) => (
               <motion.div
                 key={card.id}
-                initial={{ opacity: 0, x: 50 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, x: 50, rotate: 0 }}
+                whileInView={{ opacity: 1, x: 0, rotate: card.rot }}
                 transition={{ duration: 0.6, delay: idx * 0.1 }}
                 viewport={{ once: true }}
-                className={`flex-shrink-0 w-[133.6px] md:w-[320px] lg:w-[353px] h-[130.95px] md:h-[320px] lg:h-[346px] bg-[#E5E2D9] rounded-[12px] md:rounded-[16px] ${card.rot} shadow-sm overflow-hidden relative`}
+                style={{ rotate: `${card.rot}deg` }}
+                className="flex-shrink-0 w-[161px] md:w-[320px] lg:w-[353px] h-[158px] md:h-[320px] lg:h-[346px] bg-[#E5E2D9] rounded-[12px] md:rounded-[16px] shadow-sm overflow-hidden relative"
               >
-                {/* Image placeholder - User can add specific images here */}
                 <Image
-                  src={`/about/bts.png`}
-                  alt={`Behind the scenes ${card.id}`}
+                  src={`/about/bts${card.id}.jpg`}
+                  alt={`Behind the scenes photo ${card.id}`}
                   fill
-                  className="object-cover opacity-80 mix-blend-multiply"
+                  className="object-cover"
                 />
 
-                {/* Subtle overlay if needed */}
-                <div className="absolute inset-0 bg-[#E5E2D9]/20" />
+                {/* Subtle overlay */}
+                <div className="absolute inset-0 bg-black/5" />
               </motion.div>
             ))}
           </div>

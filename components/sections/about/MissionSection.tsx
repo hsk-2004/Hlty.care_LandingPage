@@ -64,56 +64,42 @@ export default function MissionSection() {
                 Building Hlty Beings
               </h1>
 
-              <div className="space-y-1 font-normal text-[10px] md:text-[14px] lg:text-[16px] leading-tight text-[#2D4341]/90">
+              <div className="space-y-1 md:space-y-2 font-normal text-[12px] md:text-[18px] lg:text-[22px] leading-[1.3] text-[#2D4341] opacity-90">
                 <p>
-                  Healthcare matters deeply.<br />
-                  But often, we meet it late.
+                  The world is quietly designed to make staying healthy hard.
                 </p>
 
                 <p>
-                  In India we&apos;ve become strong at treating illness. But we&apos;re still learning how to build the everyday foundations that make health easier to sustain.
+                  Scientists call it an obesogenic environment, cities built for sitting, food engineered to be irresistible, technology competing for every moment of attention. The system doesn&apos;t plot against anyone. But the result is the same: the easier life gets, the harder health becomes.
                 </p>
 
                 <p>
-                  By the time a diagnosis appears, habits are already in formed.<br />
-                  We believe prevention can begin earlier &mdash; not with warnings, but with familiarity.
+                  This isn&apos;t abstract for us. We have looked at many such stories, including Suraj losing over 35 kilograms and still going, not through willpower alone, but by learning to understand the environment he was fighting against.
                 </p>
 
                 <p>
-                  Hlty Beings is building a preventive health ecosystem for children and families, starting where habits are still forming.<br />
-                  We design research-informed books, games, workshops, and tools that help children explore movement, nutrition, emotional regulation, rest, and technology balance through stories, play, and repetition.
-                </p>
-
-                <p>No fear. No moralising.</p>
-
-                <p>
-                  Just experiences that make healthy choices easier to return to.<br />
-                  We&apos;ve learned that health behaviours aren&apos;t prescribed they&apos;re practiced.<br />
-                  So instead of building content that competes for attention, we create tangible systems families can engage with repeatedly at home, in classrooms, and in shared spaces.
+                  That understanding led to one uncomfortable question:<br />
+                  If staying healthy is this hard for adults, what chance do our children have?
                 </p>
 
                 <p>
-                  Because repetition builds familiarity.<br />
-                  And familiarity builds confidence.
+                  Today&apos;s kids are growing up in the most obesogenic moment in human history. And the standard response are warnings, lectures, rules. Habits shouldn&apos;t be built on fear and aren&apos;t built through information. They&apos;re built through experience, repetition, and environments that make the right choices feel natural.
                 </p>
 
                 <p>
-                  Today, we are testing our first physical products and live workshops.<br />
-                  Over time, this work has the potential to grow into a larger, curriculum-aligned system that integrates into the environments shaping childhood.
+                  So we stopped asking how do we teach children to be healthy and started asking how do we build the environment that makes healthy feel obvious?
                 </p>
 
                 <p>
-                  Our ambition is simple:<br />
-                  to make healthier defaults feel natural early in life<br />
-                  so fewer decisions later feel urgent.<br />
-                  Not by telling children what to do.<br />
-                  <br />
-                  But by designing experiences they want to return to.
+                  That question became Hlty Beings.
                 </p>
 
-                <p className="pt-2 font-normal text-[12px] md:text-[14px] lg:text-[16px] opacity-100">
-                  We bring together science, storytelling, and a little humor to create small wins that last.<br />
-                  We are a team of clinicians, designers, educators, technologists, and parents on a shared mission: to save childhood and secure the future of health.
+                <p>
+                  We&apos;re not a diet program. We&apos;re not another nutrition lecture. We&apos;re building a preventive health ecosystem for children and families&mdash;one built on stories, play, games, and experiences that make healthy behaviours feel joyful, not forced.
+                </p>
+
+                <p className="pt-2 italic">
+                  Because habits learned through joy tend to stay for life.
                 </p>
               </div>
             </div>
