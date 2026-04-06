@@ -3,6 +3,20 @@
 @tailwind utilities;
 
 @font-face {
+    font-family: 'BitcountInk';
+    src: url('/BitcountInk-VariableFont_CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BitcountGridDouble';
+    src: url('/BitcountGridDouble-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
     font-family: 'GT Haptik Medium';
     src: url('/GT-Haptik-Medium.otf') format('opentype');
     font-weight: 500;
@@ -27,7 +41,7 @@
     h2,
     h3,
     .font-serif {
-        font-family: var(--font-serif), serif !important;
+        font-family: var(--font-serif), serif;
     }
 
     /* Optional: Keep GT Haptik for the specific class if you still need it */
@@ -52,5 +66,11 @@
     }
     .scrollbar-hide::-webkit-scrollbar {
         display: none;
+    }
+
+    .font-bitcountink {
+        font-family: 'BitcountGridDouble', sans-serif !important;
+        font-variation-settings: "slnt" 0, "CRSV" 0.5, "ELSH" 0, "ELXP" 0 !important;
+        color: #51D2A2 !important;
     }
 }
