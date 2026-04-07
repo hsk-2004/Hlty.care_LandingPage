@@ -18,7 +18,7 @@ export default function HeroSection() {
   return (
     <section className="relative w-full bg-[#F0EEE6] overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-8 lg:px-16 xl:px-24">
-        <div className="flex flex-col lg:flex-row items-center min-h-[520px] lg:min-h-[600px] gap-8 lg:gap-0">
+        <div className="flex flex-col lg:flex-row items-center min-h-[480px] lg:min-h-[600px] gap-8 lg:gap-0">
 
           {/* ── LEFT COLUMN ── */}
           <motion.div
@@ -28,8 +28,8 @@ export default function HeroSection() {
             className="flex-1 flex flex-col justify-center gap-6 pt-32 lg:pt-40 pb-12 lg:pb-16 lg:pr-12 xl:pr-20"
           >
             {/* Badge pill */}
-            <div className="inline-flex w-fit items-center px-5 py-2 rounded-full border border-[#183A39]/20 bg-[#F0EEE6]">
-              <span className="font-jubilat text-[13px] text-[#183A39]/70 leading-none">
+            <div className="inline-flex w-[333px] h-[32px] items-center justify-center px-0 py-0 rounded-full border border-[#BEB4A5] bg-[#E4DBCD]">
+              <span className="font-jubilat text-[13px] text-[#183A39]/70 leading-none text-center">
                 Reviewed by pediatric dietitians &amp; general physicians
               </span>
             </div>
@@ -49,10 +49,10 @@ export default function HeroSection() {
             <div className="pt-2">
               <button
                 id="clinician-hero-download-btn"
-                className="inline-flex items-center gap-5 px-8 py-4 bg-[#183A39] text-[#F0EEE6] rounded-full font-haptik font-bold text-[13px] uppercase tracking-[0.12em] hover:bg-[#0f2827] transition-colors duration-200 shadow-md"
+                className="inline-flex items-center justify-between w-[339px] h-[40px] gap-5 px-6 py-0 bg-[#183A39] text-[#F0EEE6] rounded-full font-haptik font-bold text-[13px] uppercase tracking-[0.12em] hover:bg-[#0f2827] transition-colors duration-200 shadow-md"
               >
-                DOWNLOAD SAMPLE POSTERS
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-[#F0EEE6]/15">
+                <span>DOWNLOAD SAMPLE POSTERS</span>
+                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-[#F0EEE6]/15 shrink-0">
                   <ArrowDown size={15} strokeWidth={2.5} />
                 </span>
               </button>
@@ -64,14 +64,14 @@ export default function HeroSection() {
             initial={{ opacity: 0, x: 32 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.85, ease: "easeOut", delay: 0.15 }}
-            className="flex-1 flex flex-col md:flex-row items-center justify-center lg:justify-end gap-6 pt-24 lg:pt-32 h-auto"
+            className="flex-1 flex flex-col md:flex-row items-center justify-center lg:justify-end gap-2 lg:gap-6 pt-4 lg:pt-32 h-auto"
           >
             {/* chero1 - 285 x 228 (2.33 tilt) */}
             <motion.div
               initial={{ opacity: 0, y: 20, x: 0, rotate: 0 }}
               animate={{
                 opacity: 1,
-                y: isMobile ? -15 : -45,
+                y: isMobile ? 0 : -45,
                 x: isMobile ? -65 : 65,
                 rotate: 2.33
               }}
@@ -92,7 +92,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20, x: 0, rotate: 0 }}
               animate={{
                 opacity: 1,
-                y: isMobile ? -80 : 0,
+                y: isMobile ? -50 : 0,
                 x: isMobile ? 50 : 0,
                 rotate: 2.01
               }}
