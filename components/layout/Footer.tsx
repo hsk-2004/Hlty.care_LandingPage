@@ -191,6 +191,7 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                                         { name: "Workshops", href: "#" },
                                         { name: "For Parents", href: "/parents" },
                                         { name: "For Clinicians", href: "/clinician" },
+                                        { name: "For Employers", href: "/employers" },
                                         { name: "WHO Letter", href: "#" },
                                         { name: "Get Started", href: "#" }
                                     ].map((link) => (

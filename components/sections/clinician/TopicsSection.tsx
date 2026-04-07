@@ -52,13 +52,14 @@ const topics = [
 
 export default function TopicsSection() {
   return (
-    <section className="w-full bg-[#f2efe4] py-16 md:py-24">
-      <div className="max-w-[1240px] mx-auto px-6">
-        <h2 className="font-jubilat text-3xl md:text-5xl text-center text-[#183A39] mb-16 md:mb-20">
+    <section className="w-full bg-[#F0EEE6] py-16 md:py-24 lg:py-32">
+      <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16">
+        <h2 className="font-jubilat text-[32px] md:text-[44px] lg:text-[56px] text-center text-[#183A39] mb-16 md:mb-24 lg:mb-32">
           Topics of Intervention
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        {/* Grid Container with dashed borders wrapper */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 border-t border-[#5EE2A0]/40 border-dashed">
           {topics.map((topic, index) => (
             <motion.div
               key={index}
@@ -66,27 +67,33 @@ export default function TopicsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.05 }}
-              className="bg-[#f2efe4] p-8 md:p-10 border-2 border-dashed border-[#5EE2A0]/30 rounded-none relative flex flex-col justify-between group hover:border-[#5EE2A0]/60 transition-colors"
+              className={`
+                p-8 md:p-10 lg:p-12 border-b border-[#5EE2A0]/40 border-dashed
+                ${(index % 3 !== 2) ? 'lg:border-r' : ''}
+                ${(index % 2 !== 1) ? 'md:border-r' : ''}
+                ${(index % 2 === 1) ? 'md:border-r-0 lg:border-r' : ''}
+                ${(index % 3 === 2) ? 'lg:border-r-0' : ''}
+              `}
             >
-              <div>
-                <h3 className="font-jubilat text-2xl md:text-3xl text-[#183A39] font-bold mb-6">
+              <div className="flex flex-col h-full">
+                <h3 className="font-jubilat text-[22px] md:text-[24px] lg:text-[28px] text-[#183A39] font-bold mb-6 lg:mb-8">
                   {topic.title}
                 </h3>
                 
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 mb-8 lg:mb-10">
                   {topic.items.map((item, i) => (
-                    <li key={i} className="font-jubilat text-[15px] md:text-[17px] text-[#183A39]/80 flex items-start gap-2">
-                      <span className="mt-2 w-1.5 h-0.5 bg-[#183A39]/30 rounded-full flex-shrink-0" />
+                    <li key={i} className="font-jubilat text-[15px] md:text-[16px] lg:text-[18px] text-[#183A39]/80 flex items-start gap-3">
+                      <span className="mt-2.5 w-1.5 h-1.5 bg-[#183A39]/40 rounded-full flex-shrink-0" />
                       {item}
                     </li>
                   ))}
                 </ul>
-              </div>
 
-              <div>
-                <p className="font-jubilat text-sm md:text-base text-[#183A39]/90">
-                  <span className="font-bold">Used for:</span> {topic.usedFor}
-                </p>
+                <div className="mt-auto">
+                  <p className="font-jubilat text-[14px] md:text-[15px] lg:text-[17px] text-[#183A39]/90">
+                    <span className="font-bold">Used for:</span> {topic.usedFor}
+                  </p>
+                </div>
               </div>
             </motion.div>
           ))}

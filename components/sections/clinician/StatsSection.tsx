@@ -23,11 +23,12 @@ const stats = [
 
 export default function StatsSection() {
   return (
-    <section className="w-full bg-[#F0EEE6] py-16 md:py-24">
-      <div className="max-w-[1240px] mx-auto px-6">
+    <section className="w-full bg-[#F0EEE6] py-12 md:py-20 lg:py-24">
+      <div className="max-w-[1440px] mx-auto px-6 lg:px-16">
+        
         {/* Intro Text */}
-        <div className="max-w-3xl mx-auto text-center mb-16 px-4">
-          <p className="font-jubilat text-[#183A39] text-base md:text-xl leading-relaxed">
+        <div className="max-w-[900px] mx-auto text-center mb-12 md:mb-16 lg:mb-20">
+          <p className="font-jubilat text-[#183A39] text-[20px] md:text-[24px] lg:text-[28px] leading-[1.4] tracking-tight">
             The average pediatric consultation is <span className="text-[#51D2A2] font-semibold">under 12 minutes.</span> Yet families 
             arrive with months of accumulated confusion about food, screen time, 
             sleep, and growth. You can&apos;t fix that in the room alone.
@@ -35,22 +36,22 @@ export default function StatsSection() {
         </div>
 
         {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-2 gap-4 md:gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="bg-[#183A39] p-6 md:p-12 rounded-[32px] md:rounded-[48px] flex flex-col justify-center min-h-[180px] md:min-h-[280px]"
+              transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
+              className="bg-[#183A39] px-6 py-10 md:px-8 md:py-12 lg:px-10 lg:py-14 rounded-[32px] lg:rounded-[40px] flex flex-col items-center text-center justify-center min-h-[220px] md:min-h-[260px] lg:min-h-[300px]"
             >
-              <div className="mb-4">
-                <span className="font-haptik text-[40px] md:text-[80px] text-[#51D2A2] font-bold leading-none tracking-tighter">
+              <div className="mb-5 md:mb-6">
+                <span className="font-jubilat text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-[#51D2A2] font-semibold leading-none tracking-tight">
                   {stat.value}
                 </span>
               </div>
-              <p className="font-jubilat text-xs md:text-lg text-[#F0EEE6]/80 leading-relaxed font-normal">
+              <p className="font-jubilat text-[14px] md:text-[16px] lg:text-[18px] text-[#51D2A2] leading-[1.5] max-w-[240px] opacity-90">
                 {stat.description}
               </p>
             </motion.div>

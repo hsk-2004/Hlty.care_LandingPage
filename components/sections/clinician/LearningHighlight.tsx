@@ -2,72 +2,83 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 
 export default function LearningHighlight() {
   return (
-    <section className="w-full py-16 md:py-24 flex justify-center bg-[#F0EEE6]">
-      <div className="w-[380px] h-[632px] md:w-full md:h-auto md:max-w-4xl px-8 py-10 bg-[#183A39] rounded-[8px] flex flex-col justify-between overflow-hidden">
-        <motion.div
-           initial={{ opacity: 0, y: 30 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           transition={{ duration: 0.8 }}
-           className="bg-[#1c3f3f] rounded-[16px] p-2 relative border border-[#F0EEE6]/5 mb-6"
-        >
-          {/* Main Visual - Compact Size */}
-          <div className="aspect-[16/10] rounded-[12px] overflow-hidden relative shadow-inner bg-[#e2dcc8]">
-            <img 
-               src="/about/bts4.jpg" 
-               alt="How children learn visual" 
-               className="w-full h-full object-cover opacity-90"
-            />
-            {/* Takeaways Badge - Compact */}
-            <div className="absolute top-2 left-2 px-3 py-1 bg-[#183A39] rounded-full border border-[#51D2A2]/20">
-              <span className="font-jubilat text-[10px] text-[#51D2A2] font-medium leading-none">Takeaways</span>
-            </div>
-          </div>
-        </motion.div>
-
-        <div className="flex flex-col flex-1 space-y-6">
+    <section className="w-full bg-[#F0EEE6] py-16 md:py-24 px-6 md:px-12 lg:px-16">
+      <div className="max-w-[1440px] mx-auto overflow-hidden bg-[#183A39] rounded-[32px] md:rounded-[40px] lg:rounded-[48px] p-8 md:p-12 lg:p-16 flex flex-col lg:flex-row gap-12 lg:gap-20 items-center justify-between">
+        
+        {/* Left Side: Content */}
+        <div className="flex-1 space-y-8 lg:space-y-12">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="font-jubilat text-[30px] md:text-[44px] text-[#F0EEE6] leading-tight font-medium"
+            transition={{ duration: 0.6 }}
+            className="font-jubilat text-[36px] md:text-[52px] lg:text-[64px] text-[#51D2A2] leading-[1.1] font-medium"
           >
-            Grounded in how children <span className="italic text-[#51D2A2]">learn</span>.
+            Grounded in how <br className="hidden md:block" /> children learn.
           </motion.h2>
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="space-y-4"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="space-y-6 max-w-[600px]"
           >
-            <p className="font-jubilat text-sm md:text-lg text-[#F0EEE6]/90 leading-relaxed font-normal">
-              Every Hlty Beings poster is built on a simple insight: <span className="text-[#51D2A2] font-semibold italic">children retain health information better through illustration than instruction.</span>
+            <p className="font-jubilat text-[16px] md:text-[20px] text-[#F0EEE6] leading-relaxed">
+              Every Hlty Beings poster is built on a simple insight: <br />
+              <span className="text-[#51D2A2] font-semibold italic">children retain health information better through illustration than instruction.</span>
             </p>
 
-            <p className="font-jubilat text-[13px] md:text-base text-[#F0EEE6]/60 leading-relaxed font-normal">
-              Our materials use age-appropriate visual metaphors designed for ages 6–16 with development consultants and are clinician-reviewed. They are intentionally co-readable — so caregivers and children engage together.
+            <p className="font-jubilat text-[14px] md:text-[17px] text-[#F0EEE6]/80 leading-relaxed">
+              Our materials use age-appropriate visual metaphors (designed for ages 6–16 with child development consultants), are clinician-reviewed before print, and are intentionally co-readable — so caregivers and children engage together, building a shared language that extends well beyond the consultation room.
             </p>
           </motion.div>
 
+          {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-auto pt-4"
+            transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <button className="w-full flex items-center justify-between px-6 py-4 bg-[#51D2A2] text-[#183A39] rounded-full font-jubilat font-bold text-base md:text-lg hover:bg-[#45b78d] transition-all group">
+            <button id="learning-highlight-cta" className="inline-flex items-center gap-6 px-10 py-4 lg:py-5 bg-[#51D2A2] text-[#183A39] rounded-full font-jubilat font-bold text-[16px] md:text-[18px] hover:bg-[#45b78d] transition-all group shadow-lg">
               Request Walkthrough
-              <ArrowRight size={18} className="group-hover:translate-x-2 transition-transform" />
+              <ArrowRight size={20} className="group-hover:translate-x-2 transition-transform" />
             </button>
           </motion.div>
         </div>
+
+        {/* Right Side: Image with Badge */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="flex-1 relative aspect-[4/3] w-full max-w-[650px] lg:max-w-none"
+        >
+          {/* Badge */}
+          <div className="absolute top-[40%] -left-6 z-20 hidden lg:block">
+             <div className="relative bg-[#112d2d] border border-[#51D2A2]/30 px-6 py-3 rounded-full shadow-2xl">
+                <span className="font-jubilat text-[#51D2A2] text-lg font-medium">Takeaways</span>
+                {/* Pointer tail */}
+                <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-4 h-4 bg-[#112d2d] border-b border-r border-[#51D2A2]/30 rotate-45" />
+             </div>
+          </div>
+
+          {/* Main Image */}
+          <div className="w-full h-full rounded-[24px] lg:rounded-[32px] overflow-hidden shadow-2xl">
+            <Image 
+              src="/about/bts4.jpg" // Keeping the existing source for now, user can update the image file itself
+              alt="Workbook illustration with stickers"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </motion.div>
       </div>
     </section>
   );
