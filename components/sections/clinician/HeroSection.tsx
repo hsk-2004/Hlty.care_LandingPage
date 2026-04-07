@@ -3,8 +3,18 @@
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function HeroSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 1024);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <section className="relative w-full bg-[#F0EEE6] overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-8 lg:px-16 xl:px-24">
@@ -49,40 +59,54 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* ── RIGHT COLUMN — Image slot ── */}
-          {/*
-           * Import your poster-cards image here.
-           * Replace the src below with your actual image path, e.g.:
-           *   src="/images/clinician-hero-cards.png"
-           * Recommended size: ~780 × 520 px, transparent or matching bg.
-           */}
+          {/* ── RIGHT COLUMN ── */}
           <motion.div
             initial={{ opacity: 0, x: 32 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.85, ease: "easeOut", delay: 0.15 }}
-            className="flex-1 flex items-end justify-center lg:justify-end relative pt-24 lg:pt-32 h-[360px] md:h-[460px] lg:h-[600px]"
+            className="flex-1 flex flex-col md:flex-row items-center justify-center lg:justify-end gap-6 pt-24 lg:pt-32 h-auto"
           >
-            {/* ── SWAP THIS with your <Image> once ready ── */}
-            <div className="relative w-full h-full flex items-end justify-center">
-              {/* Placeholder until image is imported */}
-              <div className="absolute inset-0 flex items-center justify-center opacity-20 select-none pointer-events-none">
-                <span className="font-jubilat text-[#183A39] text-lg">
-                  [ poster cards image ]
-                </span>
-              </div>
+            {/* chero1 - 285 x 228 (2.33 tilt) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20, x: 0, rotate: 0 }}
+              animate={{
+                opacity: 1,
+                y: isMobile ? -15 : -45,
+                x: isMobile ? -65 : 65,
+                rotate: 2.33
+              }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="relative w-[211px] h-[167px] lg:w-[285px] lg:h-[228px] shrink-0 transform-gpu"
+            >
+              <Image
+                src="/clinician/chero1.svg"
+                alt="Hlty Beings health education card 1"
+                fill
+                className="object-contain"
+                priority
+              />
+            </motion.div>
 
-              {/*
-                UNCOMMENT and update src when you have the image:
-
-                <Image
-                  src="/images/clinician-hero-cards.png"
-                  alt="Hlty Beings health education poster cards"
-                  fill
-                  className="object-contain object-bottom"
-                  priority
-                />
-              */}
-            </div>
+            {/* chero2 - 295 x 228 (2.01 tilt) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20, x: 0, rotate: 0 }}
+              animate={{
+                opacity: 1,
+                y: isMobile ? -80 : 0,
+                x: isMobile ? 50 : 0,
+                rotate: 2.01
+              }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="relative w-[219px] h-[167px] lg:w-[295px] lg:h-[228px] shrink-0 transform-gpu"
+            >
+              <Image
+                src="/clinician/chero2.svg"
+                alt="Hlty Beings health education card 2"
+                fill
+                className="object-contain"
+                priority
+              />
+            </motion.div>
           </motion.div>
 
         </div>
