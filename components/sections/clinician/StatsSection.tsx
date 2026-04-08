@@ -36,7 +36,7 @@ export default function StatsSection() {
         </div>
 
         {/* Stats Grid - 2x2 on mobile, 4 in a row on desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 max-w-[1400px] mx-auto justify-items-center">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 lg:gap-6 max-w-[1400px] lg:max-w-5xl mx-auto justify-items-center">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
@@ -44,14 +44,14 @@ export default function StatsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6, ease: "easeOut" }}
-              className="bg-[#183A39] px-4 py-6 md:px-8 md:py-12 lg:px-10 lg:py-14 rounded-[15px] flex flex-col items-center text-center justify-center w-[175px] h-[133px] md:w-full md:h-auto md:min-h-[260px] lg:min-h-[300px]"
+              className="bg-[#183A39] px-4 py-6 md:px-8 md:py-12 lg:px-6 lg:py-8 rounded-[15px] flex flex-col items-center text-center justify-center w-[175px] h-[133px] md:w-full md:h-auto md:min-h-[260px] lg:w-[232px] lg:h-[176px] lg:min-h-0"
             >
-              <div className="mb-2 md:mb-6">
-                <span className="font-jubilat text-3xl md:text-6xl lg:text-7xl xl:text-8xl text-[#51D2A2] font-semibold leading-none tracking-tight">
+              <div className="mb-2 md:mb-6 lg:mb-4">
+                <span className="font-haptik text-3xl md:text-6xl lg:text-[64px] text-[#51D2A2] font-medium leading-none tracking-tight">
                   {stat.value}
                 </span>
               </div>
-              <p className="font-jubilat text-[10px] md:text-[16px] lg:text-[18px] text-[#51D2A2] leading-[1.3] max-w-[140px] md:max-w-[240px] opacity-90">
+              <p className="font-jubilat text-[10px] md:text-[16px] lg:text-[14px] text-[#51D2A2] leading-[1.3] max-w-[140px] md:max-w-[240px] lg:max-w-[180px] opacity-90">
                 {stat.description}
               </p>
             </motion.div>

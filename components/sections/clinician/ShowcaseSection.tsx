@@ -39,7 +39,7 @@ export default function ShowcaseSection() {
             ].map((tag, i) => (
               <div
                 key={i}
-                className="w-[70px] h-[14px] md:w-auto md:h-auto px-0 md:px-6 py-0 md:py-3 rounded-full bg-[#183A39]/5 border border-[#183A39]/10 text-[#51D2A2] font-jubilat italic text-[8px] md:text-base whitespace-nowrap hover:bg-[#183A39]/10 transition-colors cursor-default flex items-center justify-center flex-shrink-0"
+                className="w-[70px] h-[14px] md:w-auto md:h-auto px-0 md:px-6 py-0 md:py-3 rounded-full bg-[#183A39]/5 border border-[#183A39]/10 text-[#51D2A2] font-haptikRotalic text-[8px] md:text-base whitespace-nowrap hover:bg-[#183A39]/10 transition-colors cursor-default flex items-center justify-center flex-shrink-0"
               >
                 {tag}
               </div>
