@@ -28,10 +28,10 @@ export default function ProblemSection() {
       <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 xl:px-24">
         
         {/* Desktop View: Three-Column Layout (H1 | Image | List) */}
-        <div className="hidden lg:grid lg:grid-cols-[1.2fr_1.5fr_1.2fr] items-center gap-12 xl:gap-20">
+        <div className="hidden lg:grid lg:grid-cols-[1fr_auto_1fr] items-center gap-6 xl:gap-10">
           
           {/* Left Column: Headlines */}
-          <div className="space-y-10">
+          <div className="space-y-10 lg:pr-4">
             <motion.h2 
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -60,16 +60,14 @@ export default function ProblemSection() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="relative aspect-square w-full rounded-[48px] overflow-hidden shadow-2xl"
+            className="relative lg:w-[554px] lg:h-[478px] rounded-[32px] lg:rounded-[16px] overflow-hidden shrink-0"
           >
-             <div className="absolute inset-0 bg-[#D4CEBA] flex items-center justify-center border-2 border-dashed border-[#183A39]/10">
-                <span className="font-jubilat text-[#183A39]/30 text-center px-12">[ stressed parent illustration ]</span>
-             </div>
-             
-             {/* 
-              * Update with your pixel-art:
-              * <Image src="/employers/stressed-parent.png" alt="Stressed parent illustration" fill className="object-cover" />
-              */}
+             <Image 
+               src="/employer/p11.png" 
+               alt="Stressed parent illustration" 
+               fill 
+               className="object-cover" 
+             />
           </motion.div>
 
           {/* Right Column: Key Problems List */}
@@ -125,9 +123,12 @@ export default function ProblemSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="w-full relative aspect-[4/3] rounded-[24px] overflow-hidden"
           >
-             <div className="absolute inset-0 bg-[#D4CEBA] flex items-center justify-center border-2 border-dashed border-[#183A39]/10">
-                <span className="font-jubilat text-[#183A39]/30 text-center px-8">[ pixel art stressed parent ]</span>
-             </div>
+             <Image 
+               src="/employer/p11.png" 
+               alt="Stressed parent illustration" 
+               fill 
+               className="object-cover" 
+             />
           </motion.div>
 
           <div className="space-y-10">
