@@ -60,7 +60,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                 {/* Logo Section */}
                 <Link href="/" className="flex items-center gap-2 group">
                     <img 
-                        src={isOpen ? "/logo_.svg" : (logo || (isDark ? "/logo_.svg" : "/logo.png"))} 
+                        src={isOpen ? "/logo_.svg" : (logo || "/logo.png")} 
                         alt="Logo" 
                         className={isOpen ? "" : (logo ? "w-auto h-8 lg:w-[180px] lg:h-[28px]" : `w-auto h-14 lg:h-20 ${isDark ? "lg:ml-2" : ""}`)} 
                         style={isOpen ? { width: '46px', height: '35.86px' } : {}}
