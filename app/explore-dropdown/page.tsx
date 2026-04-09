@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ExploreDropdownPage() {
     const exploreLinks = [
@@ -60,17 +61,19 @@ export default function ExploreDropdownPage() {
                         {/* Navigation Links */}
                         <div className="space-y-0 text-[#F0EEE6]">
                             {[
-                                "BUILDING HLTY BEINGS",
-                                "EVENTS",
-                                "HLTY UNIVERSE"
+                                { name: "BUILDING HLTY BEINGS", href: "/about" },
+                                { name: "EVENTS", href: "#" },
+                                { name: "HLTY UNIVERSE", href: "#" }
                             ].map((link, i) => (
                                 <div key={i}>
                                     <div className="h-[1px] w-full bg-[#F0EEE6]/10" />
-                                    <button className="w-full py-8 flex items-center justify-between group">
-                                        <span className="font-haptik text-[16px] tracking-[0.1em] font-medium group-hover:translate-x-2 transition-transform">
-                                            {link}
-                                        </span>
-                                    </button>
+                                    <Link href={link.href} className="block group">
+                                        <div className="w-full py-8 flex items-center justify-between">
+                                            <span className="font-haptik text-[16px] tracking-[0.1em] font-medium group-hover:translate-x-2 transition-transform uppercase">
+                                                {link.name}
+                                            </span>
+                                        </div>
+                                    </Link>
                                     {i === 2 && <div className="h-[1px] w-full bg-[#F0EEE6]/10" />}
                                 </div>
                             ))}
