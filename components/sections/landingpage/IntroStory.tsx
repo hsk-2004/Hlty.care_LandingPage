@@ -105,14 +105,14 @@ export default function IntroStory() {
             Families are noticing the difference
           </h3>
         </div>
-        <div className="overflow-x-auto no-scrollbar snap-x snap-mandatory">
-          <div className="min-w-[1048px] md:min-w-0 md:max-w-7xl mx-auto px-4">
+        <div className="overflow-x-auto no-scrollbar snap-x snap-mandatory -mx-6 md:mx-0">
+          <div className="min-w-[1048px] md:min-w-0 md:max-w-7xl md:mx-auto lg:mx-auto md:px-4 pl-0">
             <div className="relative w-[1048px] h-[265px] md:w-full md:h-auto md:aspect-[1048/265] lg:w-[1017px] lg:h-[340px] lg:mx-auto">
               <Image
                 src="/landingpage/intro-cards1.svg"
                 alt="Feature Illustration Row"
                 fill
-                className="object-contain"
+                className="object-contain object-left md:object-center"
                 priority
               />
             </div>
