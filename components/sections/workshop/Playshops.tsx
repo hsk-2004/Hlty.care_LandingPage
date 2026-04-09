@@ -66,16 +66,19 @@ export default function Playshops() {
             </motion.div>
 
             {/* CTA Button - Desktop only here */}
-            <motion.button
+            <motion.a
+              href="https://tally.so/r/7RD5R2"
+              target="_blank"
+              rel="noopener noreferrer"
               variants={itemVariants}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="hidden lg:flex group items-center justify-between gap-4 w-[320px] h-[40px] bg-[#1a3636] text-[#F0EEE6] px-[24px] py-[6px] rounded-[24px] font-haptik font-medium text-[16px] hover:bg-[#1a3636]/90 transition-all shadow-xl lg:!mt-[85px]"
+              className="hidden lg:flex group items-center justify-between gap-4 w-[320px] h-[40px] bg-[#1a3636] text-[#F0EEE6] px-[24px] py-[6px] rounded-[24px] font-haptik font-medium text-[16px] hover:bg-[#1a3636]/90 transition-all shadow-xl lg:!mt-[85px] cursor-pointer"
             >
               <span>Book A Playshop</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* Center Column: Image */}
@@ -116,16 +119,19 @@ export default function Playshops() {
             ))}
 
             {/* Mobile CTA Button - stays at the bottom */}
-            <motion.button
+            <motion.a
+              href="https://tally.so/r/7RD5R2"
+              target="_blank"
+              rel="noopener noreferrer"
               variants={itemVariants}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="lg:hidden group flex items-center justify-between gap-4 w-full max-w-[381px] md:max-w-md h-[32px] md:h-[48px] bg-[#1a3636] text-[#F0EEE6] px-6 md:px-8 rounded-[24px] font-haptik font-medium text-[12px] md:text-[16px] hover:bg-[#1a3636]/90 transition-all shadow-lg"
+              className="lg:hidden group flex items-center justify-between gap-4 w-full max-w-[381px] md:max-w-md h-[32px] md:h-[48px] bg-[#1a3636] text-[#F0EEE6] px-6 md:px-8 rounded-[24px] font-haptik font-medium text-[12px] md:text-[16px] hover:bg-[#1a3636]/90 transition-all shadow-lg cursor-pointer"
             >
               <span>Book A Playshop</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            </motion.a>
           </div>
 
         </motion.div>

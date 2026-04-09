@@ -109,16 +109,19 @@ export default function Features() {
             </div>
 
             {/* CTA */}
-            <motion.button
+            <motion.a
+              href="https://tally.so/r/7RD5R2"
+              target="_blank"
+              rel="noopener noreferrer"
               variants={itemVariants}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="group flex items-center justify-between gap-4 w-full max-w-[381px] md:max-w-md lg:max-w-none lg:w-[320px] h-[32px] md:h-[48px] lg:h-[40px] bg-[#1a3636] text-[#F0EEE6] px-6 md:px-8 lg:px-[24px] py-2 md:py-4 lg:py-[6px] rounded-[24px] font-haptik font-medium text-[12px] md:text-[16px] lg:text-[16px] hover:bg-[#1a3636]/90 transition-all shadow-lg lg:shadow-xl"
+              className="group flex items-center justify-between gap-4 w-full max-w-[381px] md:max-w-md lg:max-w-none lg:w-[320px] h-[32px] md:h-[48px] lg:h-[40px] bg-[#1a3636] text-[#F0EEE6] px-6 md:px-8 lg:px-[24px] py-2 md:py-4 lg:py-[6px] rounded-[24px] font-haptik font-medium text-[12px] md:text-[16px] lg:text-[16px] hover:bg-[#1a3636]/90 transition-all shadow-lg lg:shadow-xl cursor-pointer"
             >
               <span>Register interest</span>
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
-            </motion.button>
+            </motion.a>
           </div>
 
           {/* Desktop / Tablet Image Grid */}
