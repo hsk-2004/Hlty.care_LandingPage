@@ -47,7 +47,7 @@ export default function IntroStory() {
         </div>
 
         {/* Horizontal Scroll Container */}
-        <div className="flex overflow-x-auto pb-8 gap-4 md:gap-6 no-scrollbar snap-x snap-mandatory">
+        <div className="flex overflow-x-auto pb-8 gap-4 md:gap-6 lg:justify-center no-scrollbar snap-x snap-mandatory">
           {cards.map((card, index) => (
             <div
               key={index}
@@ -85,9 +85,15 @@ export default function IntroStory() {
 
               {/* Button */}
               <div className="mt-4 md:mt-6 lg:mt-4">
-                <button className="bg-[#183A39] text-white rounded-full flex items-center justify-center w-[clamp(74px,15vw,100px)] h-[clamp(32px,5vw,40px)] md:w-fit md:px-8 md:py-2.5 font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[12px] font-medium hover:bg-[#183A39]/90 transition-colors shadow-sm whitespace-nowrap">
-                  {card.buttonText}
-                </button>
+                {index === 1 ? (
+                  <button className="bg-[#183A39] text-white rounded-full flex items-center justify-center w-[clamp(74px,15vw,100px)] h-[clamp(32px,5vw,40px)] md:w-fit md:px-8 md:py-2.5 font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[12px] font-medium hover:bg-[#183A39]/90 transition-colors shadow-sm whitespace-nowrap">
+                    {card.buttonText}
+                  </button>
+                ) : (
+                  <button className="border-2 border-[#183A39]/40 text-[#183A39] rounded-full flex items-center justify-center w-[clamp(110px,25vw,140px)] h-[clamp(32px,5vw,40px)] md:px-8 md:py-2.5 font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[13px] font-bold cursor-default whitespace-nowrap">
+                    Coming Soon
+                  </button>
+                )}
               </div>
             </div>
           ))}
@@ -101,9 +107,9 @@ export default function IntroStory() {
         </div>
         <div className="overflow-x-auto no-scrollbar snap-x snap-mandatory">
           <div className="min-w-[1048px] md:min-w-0 md:max-w-7xl mx-auto px-4">
-            <div className="relative w-[1048px] h-[265px] md:w-full md:h-auto md:aspect-[1048/265]">
+            <div className="relative w-[1048px] h-[265px] md:w-full md:h-auto md:aspect-[1048/265] lg:w-[1017px] lg:h-[340px] lg:mx-auto">
               <Image
-                src="/landingpage/intro-cards.svg"
+                src="/landingpage/intro-cards1.svg"
                 alt="Feature Illustration Row"
                 fill
                 className="object-contain"

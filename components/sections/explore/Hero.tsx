@@ -3,12 +3,12 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
     <section className="relative w-full h-[100dvh] flex flex-col items-center justify-start text-center px-4 pt-36 md:pt-60">
-
-      {/* Background Image with Zoom Effect */}
+      {/* ... existing code ... */}
       <motion.div
         initial={{ scale: 1.1, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -52,10 +52,12 @@ export default function Hero() {
           transition={{ delay: 1.2, duration: 0.8 }}
           className="pt-2 flex justify-center"
         >
-          <button className="bg-[#183A39] text-[#F0EEE6] w-[175px] h-[32px] md:w-auto md:h-auto md:px-8 md:py-4 rounded-full flex items-center justify-center gap-3 font-sans text-[10px] md:text-[14px] font-medium tracking-[0.2em] group hover:bg-[#1a3636] transition-all shadow-lg">
-            GET STARTED
-            <ArrowRight className="w-3 h-3 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform" />
-          </button>
+          <Link href="/get-started">
+            <button className="bg-[#183A39] text-[#F0EEE6] w-[175px] h-[32px] md:w-auto md:h-auto md:px-8 md:py-4 rounded-full flex items-center justify-center gap-3 font-sans text-[10px] md:text-[14px] font-medium tracking-[0.2em] group hover:bg-[#1a3636] transition-all shadow-lg">
+              GET STARTED
+              <ArrowRight className="w-3 h-3 md:w-5 md:h-5 group-hover:translate-x-2 transition-transform" />
+            </button>
+          </Link>
         </motion.div>
       </div>
 

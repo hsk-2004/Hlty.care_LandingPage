@@ -80,82 +80,72 @@ export default function FounderLetter() {
                     </div>
 
                     {/* Text Content - Scaling text for the smaller container */}
-                    <div className="max-w-[95%] font-jubilat text-[#2D4341] space-y-1.5 md:space-y-2 lg:space-y-1.5 pt-1 md:pt-3 lg:pt-4">
+                    <div className="max-w-[95%] font-jubilat text-[#2D4341] space-y-0.5 md:space-y-2 lg:space-y-1.5 -mt-[4px] md:mt-0 pt-0 md:pt-[4px] lg:pt-[8px]">
                         <h1 className="font-jubilat text-[24px] md:text-[36px] lg:text-[48px] font-medium leading-[1.1] mb-3 md:mb-6 lg:mb-8 text-[#1A2E2C]">
                             A letter from <br className="hidden md:block" /> the Founder
                         </h1>
 
-                        <p className="italic text-[10px] md:text-[14px] lg:text-[16px] opacity-90">
+                        <p className="font-jubilat text-[10px] md:text-[14px] lg:text-[16px]">
                             Dear parent,
                         </p>
+                        <div className="h-[3px] md:h-1" />
 
-                        <div className="space-y-0.5 md:space-y-1.5 lg:space-y-1">
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-[1.35] md:leading-normal lg:leading-snug font-bold">The World Is Designed to Make Us Sick</p>
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-[1.35] md:leading-normal lg:leading-snug">
-                                The world is designed to keep you fat.
-                                That might sound dramatic, but look closely and it becomes hard to
-                                ignore. Our cities encourage sitting. Our food is engineered to be
-                                irresistible. Our technology keeps us staring at screens for hours.
+                        <div className="space-y-0">
+                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">The World Is Designed to Make Us Sick</p>
+                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">The world is designed to keep you fat.</p>
+                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
+                                That might sound dramatic, but look closely and it becomes hard to ignore. Our cities encourage sitting. Our food is engineered to be irresistible. Our technology keeps us staring at screens for hours.
                             </p>
                         </div>
-
-                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-[1.35] md:leading-normal lg:leading-snug">
+                        <div className="h-[3px] md:h-1" />
+                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
                             I weighed 130 kilograms at my heaviest.
                         </p>
 
-                        <div className="space-y-0.5 md:space-y-1.5 lg:space-y-1">
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-[1.35] md:leading-normal lg:leading-snug">I knew everything I was supposed to do.</p>
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-[1.35] md:leading-normal lg:leading-snug">Eat better. Move more. Sleep properly.</p>
+                        <div className="h-[3px] md:h-1" />
+                        <div className="space-y-0">
+                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">I knew everything I was supposed to do.</p>
+                            <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">Eat better. Move more. Sleep properly.</p>
                         </div>
 
-                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-[1.35] md:leading-normal lg:leading-snug">
-                            None of it was new information. But knowing something and
-                            actually living it, those are completely different things.
+                        <div className="h-[3px] md:h-1" />
+                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
+                            None of it was new information. But knowing something and actually living it, those are completely different things.<br />
                             That gap between knowing and doing is what I kept thinking about.
                         </p>
 
-                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-[1.35] md:leading-normal lg:leading-snug">
-                            If it&apos;s this hard for an adult who understands the problem, what
-                            chance do our kids have? They&apos;re growing up in the most
-                            distraction-filled, ultra-processed, sit-still-and-stare-at-a-screen
-                            environment in human history. And our answer to that is usually
-                            &ldquo;eat your vegetables.&rdquo;
+                        <div className="h-[3px] md:h-1" />
+                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
+                            If it&apos;s this hard for an adult who understands the problem, what chance do our kids have? They&apos;re growing up in the most distraction-filled, ultra-processed, sit-still-and-stare-at-a-screen environment in human history. And our answer to that is usually &ldquo;eat your vegetables.&rdquo;
                         </p>
 
-                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-[1.35] md:leading-normal lg:leading-snug">
+                        <div className="h-[3px] md:h-1" />
+                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
                             We treat health like homework.
                         </p>
 
-                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-[1.35] md:leading-normal lg:leading-snug">
-                            I started Hlty Beings because I believe we can do better. Not with
-                            lectures. Not with rules. But with stories, play, and experiences that
-                            make healthy feel like the obvious, natural, fun choice so by the time
-                            a child grows up, good habits aren&apos;t a discipline. They&apos;re just who
-                            they are.
+                        <div className="h-[3px] md:h-1" />
+                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
+                            I started Hlty Beings because I believe we can do better. Not with lectures. Not with rules. But with stories, play, and experiences that make healthy feel like the obvious, natural, fun choice so by the time a child grows up, good habits aren&apos;t a discipline. They&apos;re just who they are.
                         </p>
 
-                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-[1.35] md:leading-normal lg:leading-snug">
-                            My own journey isn&apos;t finished. I&apos;m in my 90s now, working toward
-                            the 80s. That unfinished road is exactly why this matters to me.
+                        <div className="h-[3px] md:h-1" />
+                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
+                            My own journey isn&apos;t finished. I&apos;m in my 90s now, working toward the 80s. That unfinished road is exactly why this matters to me.
                         </p>
 
-                        <div className="text-[10px] md:text-[14px] lg:text-[16px] leading-[1.35] md:leading-normal lg:leading-snug flex flex-col items-start">
-                            <span className="whitespace-nowrap xl:whitespace-normal">If adults fight this hard to stay healthy, the least we can do is</span>
-                            <span className="whitespace-nowrap xl:whitespace-normal">build a world where children never have to fight that same</span>
-                            <span className="whitespace-nowrap xl:whitespace-normal">battle uphill.</span>
-                            <div className="flex items-center gap-1 mt-1">
-                                <span className="whitespace-nowrap">That&apos;s what we&apos;re building.</span>
-                                <div className="relative inline-block">
-                                    <span className="text-[#2D4341] font-jubilat italic relative z-10 whitespace-nowrap">
-                                        Welcome to the playground.
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
+                        <div className="h-[3px] md:h-1" />
+                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
+                            If adults fight this hard to stay healthy, the least we can do is build a world where children never have to fight that same battle uphill.<br />
+                            That&apos;s what we&apos;re building.
+                        </p>
 
-                        <div className="pt-1.5 md:pt-2 lg:pt-3 opacity-90">
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] italic leading-[1.35]">Warmly,</p>
-                            <p className="text-[10px] md:text-[14px] lg:text-[16px] font-bold mt-0.5 md:mt-1.5 lg:mt-2 leading-[1.35]">Suraj Prasad</p>
+                        <p className="text-[10px] md:text-[14px] lg:text-[16px] leading-snug md:leading-normal lg:leading-snug">
+                            Welcome to the playground.
+                        </p>
+
+                        <div className="pt-[2px]">
+                            <p className="font-jubilat text-[10px] md:text-[14px] lg:text-[16px]">Suraj Prasad</p>
                         </div>
                     </div>
                 </motion.div>

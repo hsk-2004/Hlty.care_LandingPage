@@ -3,10 +3,11 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="relative w-full h-[867px] lg:h-[1100px] flex flex-col items-center justify-start text-center px-4 pt-[clamp(128px,24vh,220px)]">
+    <section className="relative w-full h-[867px] lg:h-[1300px] flex flex-col items-center justify-start text-center px-4 pt-[clamp(128px,24vh,220px)]">
 
       {/* Background Image with Zoom Effect */}
       <motion.div
@@ -51,7 +52,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 lg:px-8 space-y-10 -translate-x-[20px] md:-translate-x-0 lg:-translate-x-[clamp(0px,6vw,80px)]">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 lg:px-8 space-y-10 -translate-x-[20px] md:-translate-x-0 lg:-translate-x-[clamp(40px,10vw,160px)]">
 
         {/* Top Trust Badges - Forced Single Line */}
         <div className="translate-y-[30px] md:translate-y-0">
@@ -137,14 +138,16 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="flex justify-start pt-3"
           >
+          <Link href="/get-started">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-[#183A39] text-white flex items-center justify-between px-4 w-[clamp(149px,20vw,240px)] h-[clamp(24px,4vw,48px)] rounded-full font-jubilat text-[clamp(10px,1.5vw,16px)] font-normal shadow-xl hover:bg-[#183A39]/90 transition-all group"
             >
-              <span className="flex-1 text-left whitespace-nowrap">Discover Now</span>
+              <span className="flex-1 text-left whitespace-nowrap">Get started</span>
               <ArrowRight className="w-[clamp(12px,1.5vw,20px)] h-[clamp(12px,1.5vw,20px)] group-hover:translate-x-1 transition-transform" />
             </motion.button>
+          </Link>
           </motion.div>
         </div>
       </div>
