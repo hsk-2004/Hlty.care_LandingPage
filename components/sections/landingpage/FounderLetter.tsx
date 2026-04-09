@@ -49,7 +49,7 @@ export default function FounderLetter() {
                 </div>
             </div>
 
-            <div className="container mx-auto relative z-10 flex justify-center mt-32 md:mt-64 lg:mt-20">
+            <div className="container mx-auto relative z-10 flex justify-center mt-[122px] md:mt-[252px] lg:mt-[76px]">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
                     whileInView={{ opacity: 1, scale: 1 }}
@@ -80,7 +80,7 @@ export default function FounderLetter() {
                     </div>
 
                     {/* Text Content - Scaling text for the smaller container */}
-                    <div className="max-w-[95%] font-jubilat text-[#2D4341] space-y-0.5 md:space-y-2 lg:space-y-1.5 -mt-[4px] md:mt-0 pt-0 md:pt-[4px] lg:pt-[8px]">
+                    <div className="max-w-[95%] font-jubilat text-[#2D4341] space-y-0.5 md:space-y-2 lg:space-y-1.5 -mt-[10px] md:-mt-[2px] lg:-mt-[2px] pt-0 md:pt-0 lg:pt-[2px]">
                         <h1 className="font-jubilat text-[24px] md:text-[36px] lg:text-[48px] font-medium leading-[1.1] mb-3 md:mb-6 lg:mb-8 text-[#1A2E2C]">
                             A letter from <br className="hidden md:block" /> the Founder
                         </h1>
@@ -145,6 +145,7 @@ export default function FounderLetter() {
                         </p>
 
                         <div className="pt-[2px]">
+                            <p className="font-jubilat text-[10px] md:text-[14px] lg:text-[16px]">Warmly,</p>
                             <p className="font-jubilat text-[10px] md:text-[14px] lg:text-[16px]">Suraj Prasad</p>
                         </div>
                     </div>
