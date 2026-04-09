@@ -63,7 +63,7 @@ export default function ParentStoriesSection() {
             </div>
 
             {/* Lamp Decoration (Desktop Only) */}
-            <div className="absolute hidden lg:block -right-48 top-1/2 -translate-y-1/2 rotate-[3.09deg]">
+            <div className="absolute hidden lg:block -right-60 top-1/2 -translate-y-1/2 rotate-[3.09deg]">
               <div className="relative w-[300px] h-[300px]">
                 <Image
                   src="/parents/lamp.svg"
@@ -75,8 +75,8 @@ export default function ParentStoriesSection() {
             </div>
 
             {/* Lamp Decoration (Mobile Only) */}
-            <div className="absolute lg:hidden -right-4 top-[-60px] z-20">
-              <div className="relative w-[130px] h-[130px]">
+            <div className="absolute lg:hidden right-3 top-[-60px] z-20">
+              <div className="relative w-[100px] h-[100px]">
                 <Image
                   src="/parents/lamp.svg"
                   alt="Lamp Illustration Mobile"
@@ -142,8 +142,8 @@ export default function ParentStoriesSection() {
             </div>
 
             {/* Chips Decoration (Mobile Only) */}
-            <div className="absolute lg:hidden -right-2 top-[-45px] -rotate-[10.34deg] z-20">
-              <div className="relative w-[120px] h-[120px]">
+            <div className="absolute lg:hidden -right-2 top-[-45px] rotate-[10.34deg] z-20">
+              <div className="relative w-[110px] h-[110px]">
                 <Image
                   src="/parents/chips.svg"
                   alt="Chips Illustration Mobile"
@@ -197,7 +197,7 @@ export default function ParentStoriesSection() {
             </div>
 
             {/* Boy Decoration (Desktop Only) */}
-            <div className="absolute hidden lg:block -right-48 top-1/2 -translate-y-1/2 rotate-[3.72deg]">
+            <div className="absolute hidden lg:block -right-60 top-[70%] -translate-y-1/2 rotate-[3.72deg]">
               <div className="relative w-[280px] h-[280px]">
                 <Image
                   src="/parents/boy.svg"

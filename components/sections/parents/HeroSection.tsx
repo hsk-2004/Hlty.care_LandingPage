@@ -27,11 +27,11 @@ export default function HeroSection() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="relative z-20 flex flex-col items-center gap-2 md:gap-4 pointer-events-none"
             >
-              <h1 className="font-jubilat font-normal text-[clamp(14px,4.5vw,32px)] md:text-[32px] lg:text-[42px] leading-[1.4] text-[#183A39] flex flex-col items-center gap-0">
-                <span className="bg-[#F0EEE6]/80 backdrop-blur-sm px-4 h-[clamp(22px,5.5vw,40px)] md:h-[40px] flex items-center justify-center whitespace-nowrap">
+              <h1 className="font-jubilat font-normal text-[clamp(10px,3.2vw,32px)] md:text-[32px] lg:text-[42px] leading-[1.4] text-[#183A39] flex flex-col items-center gap-0">
+                <span className="bg-[#F0EEE6]/80 backdrop-blur-sm px-4 h-[clamp(20px,5vw,40px)] md:h-[40px] flex items-center justify-center whitespace-nowrap">
                   Health doesn&apos;t need extra time.
                 </span>
-                <span className="bg-[#F0EEE6]/80 backdrop-blur-sm px-4 h-[clamp(22px,5.5vw,40px)] md:h-[40px] flex items-center justify-center whitespace-nowrap">
+                <span className="bg-[#F0EEE6]/80 backdrop-blur-sm px-4 h-[clamp(20px,5vw,40px)] md:h-[40px] flex items-center justify-center whitespace-nowrap">
                   It needs better defaults inside the day you already have.
                 </span>
               </h1>

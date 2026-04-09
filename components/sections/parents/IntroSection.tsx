@@ -17,14 +17,14 @@ export default function IntroSection() {
         </div>
 
         {/* Dark Green Card */}
-        <div className="bg-[#183A39] rounded-[8px] lg:rounded-[40px] overflow-hidden px-4 pt-4 pb-6 lg:p-10 flex flex-col-reverse lg:flex-row gap-8 items-center w-full max-w-[362px] md:max-w-[420px] min-h-[626px] md:min-h-[700px] lg:max-w-[1234px] lg:h-[531px] mx-auto transition-all duration-300">
+        <div className="bg-[#183A39] rounded-[8px] lg:rounded-[16px] overflow-hidden px-4 pt-4 pb-6 lg:p-10 flex flex-col-reverse lg:flex-row gap-8 items-center w-full max-w-[362px] md:max-w-[420px] min-h-[626px] md:min-h-[700px] lg:min-h-0 lg:max-w-[1234px] lg:h-[480px] mx-auto transition-all duration-300">
           {/* Left Column: Content */}
           <div className="flex-1 space-y-6 text-[#F0EEE6] lg:pl-4">
-            <h2 className="font-jubilat text-[clamp(24px,5vw,36px)] lg:text-[42px] leading-[1.1] text-[#61D0A1] lg:-translate-y-5">
+            <h2 className="font-jubilat text-[clamp(24px,5vw,36px)] lg:text-[42px] leading-[1.1] text-[#61D0A1] lg:-translate-y-2">
               Health lives in small, <br /> repeatable moments.
             </h2>
 
-            <div className="space-y-4 lg:space-y-3 font-haptik text-[clamp(12px,3vw,16px)] lg:text-[16px] leading-relaxed lg:leading-tight max-w-md lg:translate-y-5">
+            <div className="space-y-4 lg:space-y-3 font-haptik text-[clamp(12px,3vw,16px)] lg:text-[16px] leading-relaxed lg:leading-tight max-w-md lg:translate-y-0">
               <p className="font-normal">Most habits aren&apos;t built during &quot;health time.&quot;</p>
 
               <div className="space-y-1 lg:space-y-0.5">
@@ -40,14 +40,14 @@ export default function IntroSection() {
               <p className="font-normal">These moments are easy to miss — and easy to overthink. We design for them instead.</p>
             </div>
 
-            <button className="bg-[#61D0A1] text-[#183A39] lg:w-[412px] h-[32px] lg:h-[40px] px-6 py-2 rounded-full flex items-center justify-between font-haptik font-medium text-[clamp(10px,2vw,12px)] lg:text-[12px] group hover:opacity-90 transition-all lg:translate-y-5">
+            <button className="bg-[#61D0A1] text-[#183A39] w-[318px] lg:w-[412px] h-[32px] lg:h-[40px] px-6 py-2 rounded-full flex items-center justify-between font-haptik font-medium text-[clamp(10px,2vw,12px)] lg:text-[12px] group hover:opacity-90 transition-all lg:translate-y-2">
               <span>Check Out Our Summer Camp</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
 
           {/* Right Column: Image */}
-          <div className="flex-1 lg:flex-none w-full max-w-[330px] md:max-w-[380px] aspect-[330/243] lg:max-w-[667px] lg:h-[491px] relative rounded-[8px] overflow-hidden lg:translate-x-5">
+          <div className="flex-1 lg:flex-none w-full max-w-[330px] md:max-w-[380px] aspect-[330/243] lg:max-w-[667px] lg:h-[440px] relative rounded-[8px] overflow-hidden lg:translate-x-5">
             <Image
               src="/parents/parent3.png"
               alt="Family lifestyle"
