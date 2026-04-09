@@ -86,7 +86,7 @@ export default function IntroStory() {
               {/* Button */}
               <div className="mt-4 md:mt-6 lg:mt-4">
                 {index === 1 ? (
-                  <button className="bg-[#183A39] text-white rounded-full flex items-center justify-center w-[clamp(74px,15vw,100px)] h-[clamp(32px,5vw,40px)] md:w-fit md:px-8 md:py-2.5 font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[12px] font-medium hover:bg-[#183A39]/90 transition-colors shadow-sm whitespace-nowrap">
+                  <button className="bg-[#183A39] text-white rounded-full flex items-center justify-center w-[105px] h-[32px] md:w-[105px] md:h-[32px] font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[12px] font-medium hover:bg-[#183A39]/90 transition-colors shadow-sm whitespace-nowrap">
                     {card.buttonText}
                   </button>
                 ) : (
