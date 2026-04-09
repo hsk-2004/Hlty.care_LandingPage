@@ -40,8 +40,8 @@ export default function IntroSection() {
               <p className="font-normal">These moments are easy to miss — and easy to overthink. We design for them instead.</p>
             </div>
 
-            <button className="bg-[#61D0A1] text-[#183A39] w-[318px] lg:w-[412px] h-[32px] lg:h-[40px] px-6 py-2 rounded-full flex items-center justify-between font-haptik font-medium text-[clamp(10px,2vw,12px)] lg:text-[12px] group hover:opacity-90 transition-all lg:translate-y-2">
-              <span>Check Out Our Summer Camp</span>
+            <button className="bg-[#61D0A1] text-[#183A39] w-[318px] lg:w-[412px] h-[32px] lg:h-[40px] px-6 py-2 rounded-full flex items-center justify-between font-haptik font-medium text-[12px] lg:text-[16px] group hover:opacity-90 transition-all lg:translate-y-2">
+              <span className="lg:text-[16px]">Check Out Our Summer Camp</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </button>
           </div>

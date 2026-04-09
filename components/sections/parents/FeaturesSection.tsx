@@ -30,14 +30,19 @@ export default function FeaturesSection() {
         {/* Left Column: Heading & Intro */}
         <div className="lg:col-span-3 space-y-8">
           <h2 className="font-jubilat text-[24px] md:text-[clamp(28px,6vw,40px)] md:text-[40px] xl:text-[36px] leading-[1.1] text-[#183A39]">
-            Hlty Beings fits into your routines that you already follow.
+            <span className="lg:block lg:whitespace-nowrap">Hlty Beings fits into</span>
+            <span className="lg:block lg:whitespace-nowrap">your routines that</span>
+            <span className="lg:block lg:whitespace-nowrap">you already follow.</span>
           </h2>
-          <div className="space-y-6 font-haptik text-[12px] md:text-[16px] xl:text-[16px] text-[#183A39] opacity-90 leading-relaxed">
+          <div className="space-y-[10px] font-jubilat text-[12px] md:text-[16px] xl:text-[16px] text-[#183A39] opacity-90 leading-tight">
             <p>
-              Healthy routines stick when the environment does the work. We focus on cues, rhythms, and materials that guide behaviour without reminders, rewards, or willpower.
+              <span className="lg:block lg:whitespace-nowrap">Healthy routines stick when the environment</span>
+              <span className="lg:block lg:whitespace-nowrap">does the work. We focus on cues, rhythms,</span>
+              <span className="lg:block lg:whitespace-nowrap">and materials that guide behaviour without</span>
+              <span className="lg:block lg:whitespace-nowrap">reminders, rewards, or willpower.</span>
             </p>
-            <p className="pt-2">
-              That&apos;s how small choices become familiar.
+            <p>
+              <span className="lg:block lg:whitespace-nowrap">That&apos;s how small choices become familiar.</span>
             </p>
 
             {/* Mobile-only Image (Integrated) */}
@@ -69,7 +74,7 @@ export default function FeaturesSection() {
               <h3 className="font-haptik font-bold text-[14px] md:text-[16px] xl:text-[20px] tracking-wider text-[#183A39]">
                 {item.title}
               </h3>
-              <p className="font-haptik text-[15px] md:text-[16px] xl:text-[16px] text-[#183A39] opacity-80 leading-[1.1]">
+              <p className="font-jubilat text-[15px] md:text-[16px] xl:text-[16px] text-[#183A39] opacity-80 leading-[1.1]">
                 {item.description}
               </p>
               <button className="flex items-center gap-2 font-haptikRotalic italic font-bold text-[12px] md:text-[14px] text-[#183A39] group">
