@@ -68,7 +68,7 @@ export default function FounderLetter() {
                             />
                         </div>
                         {/* Pin - Moved outside overflow-hidden */}
-                        <div className="absolute -top-4 -right-1 md:-top-7 md:-right-3 lg:-top-8 lg:-right-1 w-8 md:w-12 lg:w-16 h-8 md:h-12 lg:h-16 z-30">
+                        <div className="absolute -top-9 -right-1 md:-top-14 md:-right-3 lg:-top-16 lg:-right-1 w-8 md:w-12 lg:w-16 h-8 md:h-12 lg:h-16 z-30">
                             <Image
                                 src="/landingpage/pin.svg"
                                 alt="Pin"

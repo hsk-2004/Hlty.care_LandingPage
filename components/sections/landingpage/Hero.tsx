@@ -142,7 +142,7 @@ export default function Hero() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#183A39] text-white flex items-center justify-between px-4 w-[clamp(149px,20vw,240px)] h-[clamp(24px,4vw,48px)] rounded-full font-jubilat text-[clamp(10px,1.5vw,16px)] font-normal shadow-xl hover:bg-[#183A39]/90 transition-all group"
+                className="bg-[#183A39] text-white flex items-center justify-between px-4 w-[clamp(149px,20vw,240px)] h-[clamp(24px,4vw,48px)] rounded-full font-haptik text-[clamp(10px,1.5vw,16px)] lg:text-[16px] font-medium shadow-xl hover:bg-[#183A39]/90 transition-all group"
               >
                 <span className="flex-1 text-left whitespace-nowrap">Get started</span>
                 <ArrowRight className="w-[clamp(12px,1.5vw,20px)] h-[clamp(12px,1.5vw,20px)] group-hover:translate-x-1 transition-transform" />
