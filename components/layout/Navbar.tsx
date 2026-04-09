@@ -43,7 +43,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
         { name: "+ EXPLORE", href: "/explore-dropdown" },
         { name: "+ OFFERINGS", href: "/offerings" },
         { name: "FOR PARENTS", href: "/parents" },
-        { name: "FOR EDUCATORS", href: "/educators" },
+        { name: "WHO LETTER", href: "#" },
     ];
 
     return (
