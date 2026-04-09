@@ -58,7 +58,7 @@ export default function Playshops() {
               <h2 className="font-jubilat text-[24px] md:text-[40px] lg:text-[36px] lg:font-normal leading-tight lg:leading-none text-[#183A39] max-w-[330px] md:max-w-xl lg:max-w-none mx-0 lg:mx-0">
                 School Playshops
               </h2>
-              <p className="font-jubilat font-normal not-italic text-[12px] md:text-[18px] lg:text-[16px] leading-tight mx-0 lg:mx-0 text-[#183A39] max-w-sm md:max-w-xl lg:max-w-none" style={{ lineHeight: '20px' }}>
+              <p className="font-jubilat font-normal not-italic text-[12px] md:text-[18px] lg:text-[16px] leading-tight mx-0 lg:mx-0 text-[#183A39] max-w-sm md:max-w-xl lg:max-w-none" style={{ lineHeight: "20px" }}>
                 Interactive sessions designed to fit into a child's <br className="hidden lg:inline" />
                 existing school day — without turning health <br className="hidden lg:inline" />
                 into another subject to study.
