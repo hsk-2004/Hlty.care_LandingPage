@@ -3,7 +3,8 @@
 import { ShoppingBag, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import ExploreMenu from "./ExploreMenu";
 
 interface NavbarProps {
     variant?: "light" | "dark";
@@ -20,7 +21,17 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
     const [hidden, setHidden] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
+    const [isExploreOpen, setIsExploreOpen] = useState(false);
     const { scrollY } = useScroll();
+
+    // Prevent scrolling when explore menu is open
+    useEffect(() => {
+        if (isExploreOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'unset';
+        }
+    }, [isExploreOpen]);
 
     const isDark = variant === "dark";
 
@@ -53,9 +64,9 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                 hidden: { y: "-100%", opacity: 0 },
             }}
             initial="visible"
-            animate={isOpen ? "visible" : (hidden ? "hidden" : "visible")}
+            animate={(isOpen || isExploreOpen) ? "visible" : (hidden ? "hidden" : "visible")}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className={`fixed top-0 left-0 w-full z-[100] flex justify-center items-center p-4 lg:py-4 lg:px-6 ${isOpen ? "bg-[#183A39]" : "transition-colors duration-300 " + (isDark ? "bg-[#183A39] lg:bg-transparent" : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"))
+            className={`fixed top-0 left-0 w-full z-[100] flex justify-center items-center p-4 lg:py-4 lg:px-6 ${(isOpen || isExploreOpen) ? "bg-[#183A39]" : "transition-colors duration-300 " + (isDark ? "bg-[#183A39] lg:bg-transparent" : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"))
                 }`}
         >
             <div className={`flex justify-between items-center w-full max-w-7xl ${isDark ? "lg:max-w-[1292px] lg:h-[68px] lg:bg-[#E4DBCD] lg:rounded-[32px] lg:px-2 lg:py-1.5" : ""}`}>
@@ -77,18 +88,26 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                     />
                 </Link>
 
-                {/* Desktop Navigation Links (Hidden on Mobile) */}
                 <div className="hidden lg:flex items-center gap-10">
-                    {navLinks.map((link) => (
-                        <Link
-                            key={link.name}
-                            href={link.href}
-                            style={{ color: textColor || (isDark ? "#183A39" : (scrolled ? "#183A39" : (variant === "light" ? "#183A39" : "#F0EEE6"))) }}
-                            className="font-haptik text-[15px] font-medium tracking-[0.1em] hover:opacity-60 transition-opacity"
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
+                    {navLinks.map((link) => {
+                        const isExplore = link.name === "+ EXPLORE";
+                        return (
+                            <Link
+                                key={link.name}
+                                href={isExplore ? "#" : link.href}
+                                onClick={(e) => {
+                                    if (isExplore) {
+                                        e.preventDefault();
+                                        setIsExploreOpen(true);
+                                    }
+                                }}
+                                style={{ color: textColor || (isDark ? "#183A39" : (scrolled ? "#183A39" : (variant === "light" ? "#183A39" : "#F0EEE6"))) }}
+                                className="font-haptik text-[15px] font-medium tracking-[0.1em] hover:opacity-60 transition-opacity"
+                            >
+                                {link.name}
+                            </Link>
+                        );
+                    })}
                 </div>
 
                 {/* Action Buttons & Menu */}
@@ -149,20 +168,29 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
 
                     {/* Nav Links */}
                     <div className="flex flex-col gap-4 w-full items-center">
-                        {navLinks.map((link) => (
-                            <div
-                                key={link.name}
-                                className="flex justify-center w-full"
-                            >
-                                <Link
-                                    href={link.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className="flex items-center justify-center w-[382px] h-[40px] border border-[#5EE2A0]/40 rounded-full font-haptik text-[14px] font-medium tracking-[0.15em] text-[#F0EEE6] hover:bg-[#F0EEE6]/5 transition-colors"
+                        {navLinks.map((link) => {
+                            const isExplore = link.name === "+ EXPLORE";
+                            return (
+                                <div
+                                    key={link.name}
+                                    className="flex justify-center w-full"
                                 >
-                                    {link.name}
-                                </Link>
-                            </div>
-                        ))}
+                                    <Link
+                                        href={isExplore ? "#" : link.href}
+                                        onClick={(e) => {
+                                            setIsOpen(false);
+                                            if (isExplore) {
+                                                e.preventDefault();
+                                                setIsExploreOpen(true);
+                                            }
+                                        }}
+                                        className="flex items-center justify-center w-[382px] h-[40px] border border-[#5EE2A0]/40 rounded-full font-haptik text-[14px] font-medium tracking-[0.15em] text-[#F0EEE6] hover:bg-[#F0EEE6]/5 transition-colors"
+                                    >
+                                        {link.name}
+                                    </Link>
+                                </div>
+                            );
+                        })}
                     </div>
 
                     {/* Bottom Actions */}
@@ -185,6 +213,11 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                     </div>
                 </div>
             )}
+
+            <ExploreMenu 
+                isOpen={isExploreOpen} 
+                onClose={() => setIsExploreOpen(false)} 
+            />
         </motion.nav>
     );
 }
