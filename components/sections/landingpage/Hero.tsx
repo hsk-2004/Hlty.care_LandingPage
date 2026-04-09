@@ -104,24 +104,24 @@ export default function Hero() {
           </div>
 
           {/* Process Flow - Unified for Mobile/Tablet */}
-          <div className="flex items-center justify-between gap-1 mt-[-6px] overflow-x-visible">
+          <div className="flex items-center justify-start gap-0 mt-[-6px] overflow-x-visible">
             <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm">
               <span className="text-[clamp(10px,1.2vw,14px)]">📖</span>
               <span className="font-jubilat text-[clamp(8px,1vw,12px)] font-bold text-[#183A39]">Stories</span>
             </div>
-            <ArrowRight className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] text-[#183A39]/40" />
+            <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[16px] lg:h-[8px]" />
 
             <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm">
               <span className="text-[clamp(10px,1.2vw,14px)]">🛝</span>
               <span className="font-jubilat text-[clamp(8px,1vw,12px)] font-bold text-[#183A39]">Play</span>
             </div>
-            <ArrowRight className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] text-[#183A39]/40" />
+            <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[16px] lg:h-[8px]" />
 
             <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm">
               <span className="text-[clamp(10px,1.2vw,14px)]">🔄</span>
               <span className="font-jubilat text-[clamp(8px,1vw,12px)] font-bold text-[#183A39]">Routine</span>
             </div>
-            <ArrowRight className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] text-[#183A39]/40" />
+            <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[16px] lg:h-[8px]" />
 
             <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm">
               <span className="text-[clamp(10px,1.2vw,14px)]">💪</span>
@@ -138,16 +138,16 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 1.2 }}
             className="flex justify-start pt-3"
           >
-          <Link href="/get-started">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="bg-[#183A39] text-white flex items-center justify-between px-4 w-[clamp(149px,20vw,240px)] h-[clamp(24px,4vw,48px)] rounded-full font-jubilat text-[clamp(10px,1.5vw,16px)] font-normal shadow-xl hover:bg-[#183A39]/90 transition-all group"
-            >
-              <span className="flex-1 text-left whitespace-nowrap">Get started</span>
-              <ArrowRight className="w-[clamp(12px,1.5vw,20px)] h-[clamp(12px,1.5vw,20px)] group-hover:translate-x-1 transition-transform" />
-            </motion.button>
-          </Link>
+            <Link href="/get-started">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="bg-[#183A39] text-white flex items-center justify-between px-4 w-[clamp(149px,20vw,240px)] h-[clamp(24px,4vw,48px)] rounded-full font-jubilat text-[clamp(10px,1.5vw,16px)] font-normal shadow-xl hover:bg-[#183A39]/90 transition-all group"
+              >
+                <span className="flex-1 text-left whitespace-nowrap">Get started</span>
+                <ArrowRight className="w-[clamp(12px,1.5vw,20px)] h-[clamp(12px,1.5vw,20px)] group-hover:translate-x-1 transition-transform" />
+              </motion.button>
+            </Link>
           </motion.div>
         </div>
       </div>
