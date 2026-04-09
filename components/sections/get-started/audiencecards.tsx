@@ -65,18 +65,18 @@ export default function AudienceCards() {
                         transition={{ duration: 0.6, delay: index * 0.1 }}
                         className="relative shrink-0 rounded-[16px] overflow-hidden xl:min-w-[307px] w-[307px] sm:w-auto sm:min-w-0 h-[448px] group cursor-pointer hover:shadow-lg transition-shadow snap-center xl:w-[307px]"
                     >
-                        {/* Background Image */}
                         {/* Background Image Container */}
                         <div className="absolute inset-0">
                             <Image
-                            src={card.image}
-                            alt={card.label}
-                            fill
-                            className={`object-cover scale-110 xl:scale-125 xl:origin-top ${index === 2 ? 'xl:-translate-y-[5%]' : 'xl:translate-y-[15%]'} xl:rounded-t-[80px] xl:rounded-b-[80px]`}
-                        />
+                                src={card.image}
+                                alt={card.label}
+                                fill
+                                className={`object-cover scale-110 xl:scale-125 xl:origin-top ${index === 2 ? 'xl:-translate-y-[5%]' : 'xl:translate-y-[15%]'} xl:rounded-t-[80px] xl:rounded-b-[80px]`}
+                            />
                         </div>
                         {/* White Gradient Overlay */}
                         <div className="absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-white via-white/90 to-transparent z-[5]" />
+                        <div className="absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-white/50 to-transparent z-[5]" />
 
                         {/* Content */}
                         <div className="relative z-10 p-3 h-full flex flex-col items-center">
@@ -104,8 +104,8 @@ export default function AudienceCards() {
                             </div>
 
                             {/* CTA */}
-                            <div className="absolute bottom-5 left-5 right-5 flex items-center justify-between">
-                                <span className="font-haptik text-[10px] md:text-[11px] text-[#183A39]/70 tracking-wider uppercase">
+                            <div className="absolute bottom-5 left-5 right-5 pt-4 border-t-2 border-black flex items-center justify-between">
+                                <span className="font-haptik text-[10px] md:text-[11px] xl:text-[14px] text-[#183A39] tracking-wider uppercase font-medium block">
                                     {card.cta}
                                 </span>
                                 <div className="w-8 h-8 rounded-full bg-[#183A39]/10 flex items-center justify-center group-hover:bg-[#183A39]/20 transition-colors">
