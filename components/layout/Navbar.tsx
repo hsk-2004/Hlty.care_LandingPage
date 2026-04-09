@@ -60,7 +60,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
         >
             <div className={`flex justify-between items-center w-full max-w-7xl ${isDark ? "lg:max-w-[1292px] lg:h-[68px] lg:bg-[#E4DBCD] lg:rounded-[32px] lg:px-2 lg:py-1.5" : ""}`}>
                 {/* Logo Section */}
-                <Link href="/" className="flex items-center gap-2 group">
+                <Link href="/" className="flex items-center gap-2 group lg:-ml-20">
                     {/* Mobile Logo: Always white logo_ for explore or when menu is open */}
                     <img 
                         src={isOpen ? "/logo_.svg" : (logo ? "/logo_.svg" : "/logo.png")} 

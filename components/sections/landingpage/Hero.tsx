@@ -39,7 +39,7 @@ export default function Hero() {
         </div>
 
         {/* Hero Text SVG - Desktop Only */}
-        <div className="absolute hidden lg:block left-[70%] top-[41.5%] min-[1680px]:top-[42%] min-[1850px]:top-[44.5%] -translate-x-1/2 -translate-y-1/2 z-[6] pointer-events-none">
+        <div className="absolute hidden lg:block left-[70%] top-[38%] min-[1536px]:max-[1679px]:top-[45%] min-[1680px]:top-[41%] min-[1850px]:top-[42%] -translate-x-1/2 -translate-y-1/2 z-[6] pointer-events-none">
           <div className="relative w-[680px] h-[680px] min-[1680px]:w-[740px] min-[1680px]:h-[740px] min-[1850px]:w-[850px] min-[1850px]:h-[850px]">
             <Image
               src="/landingpage/hero-text.svg"
