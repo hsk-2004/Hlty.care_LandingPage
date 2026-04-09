@@ -15,9 +15,10 @@ interface NavbarProps {
     logo?: string;
     showClose?: boolean;
     onCloseHref?: string;
+    logoClassName?: string;
 }
 
-export default function Navbar({ variant = "light", customLinks, textColor, buttonColor, cartIcon, logo, showClose, onCloseHref }: NavbarProps) {
+export default function Navbar({ variant = "light", customLinks, textColor, buttonColor, cartIcon, logo, showClose, onCloseHref, logoClassName }: NavbarProps) {
     const [hidden, setHidden] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -71,7 +72,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
         >
             <div className={`flex justify-between items-center w-full max-w-7xl ${isDark ? "lg:max-w-[1292px] lg:h-[68px] lg:bg-[#E4DBCD] lg:rounded-[32px] lg:px-2 lg:py-1.5" : ""}`}>
                 {/* Logo Section */}
-                <Link href="/" className="flex items-center gap-2 group lg:-ml-20">
+                <Link href="/" className={`flex items-center gap-2 group ${logoClassName || "lg:-ml-20"}`}>
                     {/* Mobile Logo: Always white logo_ for explore or when menu is open */}
                     <img 
                         src={isOpen ? "/logo_.svg" : (logo ? "/logo_.svg" : "/logo.png")} 

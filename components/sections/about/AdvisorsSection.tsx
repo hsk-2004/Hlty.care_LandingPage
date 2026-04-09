@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const advisors = [
-  { name: "RAFEEK MUHAMMED M", underlined: true },
-  { name: "SRIRAM SUBRAMANI", underlined: true },
-  { name: "AJITH G.", underlined: true },
-  { name: "RATHEESH ELAYAT", underlined: true },
-  { name: "KARTHIK S", underlined: false },
-  { name: "SONIKA CHOUDHURY", underlined: false },
-  { name: "PEEYUSH JAIN", underlined: false },
-  { name: "TITY LYNGDOH", underlined: false }
+  { name: "RAFEEK MUHAMMED M", underlined: true, image: "/about/ad1.png" },
+  { name: "SRIRAM SUBRAMANI", underlined: true, image: "/about/ad2.png" },
+  { name: "AJITH G.", underlined: true, image: "/about/ad3.png" },
+  { name: "RATHEESH ELAYAT", underlined: true, image: "/about/ad4.png" },
+  { name: "KARTHIK S", underlined: false, image: "/about/ad5.jpg" },
+  { name: "SONIKA CHOUDHURY", underlined: false, image: "/about/ad6.jpeg" },
+  { name: "PEEYUSH JAIN", underlined: false, image: "/about/ad7.jpg" },
+  { name: "TITY LYNGDOH", underlined: false, image: "/about/ad8.jpeg" }
 ];
 
 export default function AdvisorsSection() {
@@ -38,12 +38,11 @@ export default function AdvisorsSection() {
             >
               {/* Image Box */}
               <div className="w-[167.57px] md:w-full md:max-w-[297.69px] h-[203.12px] md:h-auto md:aspect-[297.69/306.2] bg-[#E5E2D9] rounded-[16px] mb-4 md:mb-6 overflow-hidden relative shadow-sm">
-                {/* Image placeholder - User can add specific advisor images here */}
                 <Image
-                  src="/about/hero.png"
+                  src={advisor.image}
                   alt={advisor.name}
                   fill
-                  className="object-cover opacity-10 grayscale"
+                  className="object-cover"
                 />
               </div>
 
