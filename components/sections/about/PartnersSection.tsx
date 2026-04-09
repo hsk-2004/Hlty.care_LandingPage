@@ -4,8 +4,14 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 const partners = [
-  { name: "Solutionec" },
-  { name: "SKYFORGE SYSTEM SOLUTIONS" }
+  { 
+    name: "Solutionec",
+    logo: "/about/solutionec.svg"
+  },
+  { 
+    name: "SKYFORGE SYSTEM SOLUTIONS",
+    logo: "/about/skyforge2.svg"
+  }
 ];
 
 export default function PartnersSection() {
@@ -21,32 +27,38 @@ export default function PartnersSection() {
 
         {/* Partners Grid */}
         <div className="grid grid-cols-2 md:flex md:flex-wrap justify-center gap-4 md:gap-16">
-          {partners.map((partner, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: i * 0.1 }}
-              viewport={{ once: true }}
-              className="flex flex-col items-center"
-            >
-              {/* Image Box */}
-              <div className="w-[149.37px] md:w-[280px] lg:w-[298px] h-[57.64px] md:h-auto md:aspect-[298/115] bg-[#E5E2D9] rounded-[12px] md:rounded-[24px] mb-4 md:mb-6 overflow-hidden relative shadow-sm">
-                {/* Logo Placeholder */}
-                <Image
-                  src="/landingpage/microsoft.svg"
-                  alt={partner.name}
-                  fill
-                  className="object-contain p-4 md:p-8 opacity-10 grayscale"
-                />
-              </div>
+          {partners.map((partner, i) => {
+            const isSolutionec = partner.name === "Solutionec";
+            return (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.1 }}
+                viewport={{ once: true }}
+                className="flex flex-col items-center"
+              >
+                {/* Logo Image */}
+                <div 
+                  className={`w-[140px] md:w-[240px] lg:w-[280px] h-[60px] md:h-[100px] mb-4 md:mb-6 relative ${
+                    isSolutionec ? "bg-transparent p-1 md:p-2" : ""
+                  }`}
+                >
+                  <Image
+                    src={partner.logo}
+                    alt={partner.name}
+                    fill
+                    className={`object-contain ${isSolutionec ? "scale-[2.5]" : "scale-110"}`}
+                  />
+                </div>
 
-              {/* Partner Name */}
-              <h3 className="font-haptik text-[10px] md:text-[14px] lg:text-[18px] text-[#183A39] font-medium tracking-widest text-center uppercase max-w-full md:max-w-[280px]">
-                {partner.name}
-              </h3>
-            </motion.div>
-          ))}
+                {/* Partner Name */}
+                <h3 className="font-haptik text-[10px] md:text-[14px] lg:text-[18px] text-[#183A39] font-medium tracking-widest text-center uppercase max-w-full md:max-w-[280px]">
+                  {partner.name}
+                </h3>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
