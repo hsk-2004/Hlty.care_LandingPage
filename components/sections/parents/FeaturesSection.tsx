@@ -29,10 +29,10 @@ export default function FeaturesSection() {
 
         {/* Left Column: Heading & Intro */}
         <div className="lg:col-span-3 space-y-8">
-          <h2 className="font-jubilat text-[clamp(28px,6vw,40px)] md:text-[40px] xl:text-[36px] leading-[1.1] text-[#183A39]">
+          <h2 className="font-jubilat text-[24px] md:text-[clamp(28px,6vw,40px)] md:text-[40px] xl:text-[36px] leading-[1.1] text-[#183A39]">
             Hlty Beings fits into your routines that you already follow.
           </h2>
-          <div className="space-y-6 font-haptik text-[16px] xl:text-[16px] text-[#183A39] opacity-90 leading-relaxed">
+          <div className="space-y-6 font-haptik text-[12px] md:text-[16px] xl:text-[16px] text-[#183A39] opacity-90 leading-relaxed">
             <p>
               Healthy routines stick when the environment does the work. We focus on cues, rhythms, and materials that guide behaviour without reminders, rewards, or willpower.
             </p>

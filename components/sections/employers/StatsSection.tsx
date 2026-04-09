@@ -26,7 +26,7 @@ export default function StatsSection() {
               className="bg-[#183A39] px-4 py-6 md:p-10 rounded-[20px] md:rounded-[40px] flex flex-col items-center text-center justify-center min-h-[160px] md:min-h-[280px] lg:w-[232px] lg:h-[176px] lg:min-h-0"
             >
               <div className="mb-2 md:mb-6 lg:mb-4">
-                <span className="font-jubilat text-3xl md:text-6xl lg:text-[64px] text-[#51D2A2] font-semibold leading-none tracking-tight">
+                <span className="font-haptik text-3xl md:text-6xl lg:text-[64px] text-[#51D2A2] font-medium leading-none tracking-tight whitespace-nowrap">
                   {stat.value}
                 </span>
               </div>
