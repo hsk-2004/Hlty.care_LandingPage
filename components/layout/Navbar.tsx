@@ -7,9 +7,14 @@ import { useState } from "react";
 
 interface NavbarProps {
     variant?: "light" | "dark";
+    customLinks?: { name: string; href: string }[];
+    textColor?: string;
+    buttonColor?: string;
+    cartIcon?: string;
+    logo?: string;
 }
 
-export default function Navbar({ variant = "light" }: NavbarProps) {
+export default function Navbar({ variant = "light", customLinks, textColor, buttonColor, cartIcon, logo }: NavbarProps) {
     const [hidden, setHidden] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -32,8 +37,8 @@ export default function Navbar({ variant = "light" }: NavbarProps) {
         }
     });
 
-    const navLinks = [
-        { name: "+ EXPLORE", href: "/explore" },
+    const navLinks = customLinks || [
+        { name: "+ EXPLORE", href: "/explore-dropdown" },
         { name: "+ OFFERINGS", href: "/offerings" },
         { name: "FOR PARENTS", href: "/parents" },
         { name: "FOR EDUCATORS", href: "/educators" },
@@ -55,9 +60,9 @@ export default function Navbar({ variant = "light" }: NavbarProps) {
                 {/* Logo Section */}
                 <Link href="/" className="flex items-center gap-2 group">
                     <img 
-                        src={isOpen ? "/logo_.svg" : "/logo.png"} 
+                        src={isOpen ? "/logo_.svg" : (logo || (isDark ? "/logo_.svg" : "/logo.png"))} 
                         alt="Logo" 
-                        className={isOpen ? "" : `w-auto h-14 lg:h-20 ${isDark ? "lg:ml-2" : ""}`} 
+                        className={isOpen ? "" : (logo ? "w-auto h-8 lg:w-[180px] lg:h-[28px]" : `w-auto h-14 lg:h-20 ${isDark ? "lg:ml-2" : ""}`)} 
                         style={isOpen ? { width: '46px', height: '35.86px' } : {}}
                     />
                 </Link>
@@ -68,7 +73,8 @@ export default function Navbar({ variant = "light" }: NavbarProps) {
                         <Link
                             key={link.name}
                             href={link.href}
-                            className="font-haptik text-[15px] font-medium tracking-[0.1em] hover:opacity-60 transition-opacity text-[#183A39]"
+                            style={{ color: textColor || (isDark ? "#183A39" : (scrolled ? "#183A39" : (variant === "light" ? "#183A39" : "#F0EEE6"))) }}
+                            className="font-haptik text-[15px] font-medium tracking-[0.1em] hover:opacity-60 transition-opacity"
                         >
                             {link.name}
                         </Link>
@@ -79,13 +85,20 @@ export default function Navbar({ variant = "light" }: NavbarProps) {
                 <div className="flex items-center gap-4">
                     {/* Desktop Only Actions */}
                     {!isDark && (
-                        <Link href="/get-started" className="hidden lg:block bg-[#183A39] text-[#F0EEE6] px-10 py-3 rounded-full font-haptik text-[14px] font-medium tracking-[0.05em] hover:bg-[#1a3636]/90 transition-all shadow-md">
+                        <Link 
+                            href="/get-started" 
+                            style={{ backgroundColor: buttonColor || "#183A39" }}
+                            className="hidden lg:block text-[#F0EEE6] px-10 py-3 rounded-full font-haptik text-[14px] font-medium tracking-[0.05em] hover:opacity-90 transition-all shadow-md"
+                        >
                             GET STARTED
                         </Link>
                     )}
 
-                    <Link href="/cart" className={`hidden lg:flex w-11 h-11 items-center justify-center rounded-full transition-all ${isDark ? "bg-[#183A39] text-[#F0EEE6] hover:bg-[#183A39]/90" : "bg-[#183A39] text-[#F0EEE6] hover:bg-[#1a3636]/90 shadow-md"}`}>
-                        <ShoppingBag size={20} />
+                    <Link 
+                        href="/cart" 
+                        className={cartIcon ? "hidden lg:flex transition-all hover:scale-105" : `hidden lg:flex w-[58px] h-[58px] items-center justify-center rounded-full transition-all ${isDark ? "bg-[#183A39] text-[#F0EEE6] hover:bg-[#183A39]/90" : "bg-[#183A39] text-[#F0EEE6] hover:bg-[#1a3636]/90 shadow-md"}`}
+                    >
+                        {cartIcon ? <img src={cartIcon} alt="Cart" className="w-[58px] h-[58px]" /> : <ShoppingBag size={20} />}
                     </Link>
 
                     {/* Original Mobile Menu Icon */}
