@@ -168,7 +168,7 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 1.8 }}
-        className="lg:hidden absolute bottom-[60px] right-8 w-[clamp(120px,15vw,200px)] h-auto z-[50] pointer-events-none"
+        className="lg:hidden absolute bottom-[60px] right-8 w-[clamp(120px,15vw,200px)] h-auto z-[40] pointer-events-none"
       >
         <img
           src="/landingpage/category.svg"

@@ -12,9 +12,11 @@ interface NavbarProps {
     buttonColor?: string;
     cartIcon?: string;
     logo?: string;
+    showClose?: boolean;
+    onCloseHref?: string;
 }
 
-export default function Navbar({ variant = "light", customLinks, textColor, buttonColor, cartIcon, logo }: NavbarProps) {
+export default function Navbar({ variant = "light", customLinks, textColor, buttonColor, cartIcon, logo, showClose, onCloseHref }: NavbarProps) {
     const [hidden, setHidden] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -53,16 +55,24 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
             initial="visible"
             animate={isOpen ? "visible" : (hidden ? "hidden" : "visible")}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className={`fixed top-0 left-0 w-full z-50 flex justify-center items-center p-4 lg:py-4 lg:px-6 ${isOpen ? "bg-[#183A39]" : "transition-colors duration-300 " + (isDark ? "bg-[#183A39] lg:bg-transparent" : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"))
+            className={`fixed top-0 left-0 w-full z-[100] flex justify-center items-center p-4 lg:py-4 lg:px-6 ${isOpen ? "bg-[#183A39]" : "transition-colors duration-300 " + (isDark ? "bg-[#183A39] lg:bg-transparent" : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"))
                 }`}
         >
             <div className={`flex justify-between items-center w-full max-w-7xl ${isDark ? "lg:max-w-[1292px] lg:h-[68px] lg:bg-[#E4DBCD] lg:rounded-[32px] lg:px-2 lg:py-1.5" : ""}`}>
                 {/* Logo Section */}
                 <Link href="/" className="flex items-center gap-2 group">
+                    {/* Mobile Logo: Always white logo_ for explore or when menu is open */}
+                    <img 
+                        src={isOpen ? "/logo_.svg" : (logo ? "/logo_.svg" : "/logo.png")} 
+                        alt="Logo" 
+                        className={`lg:hidden w-auto ${isOpen || logo ? "" : "h-14"}`} 
+                        style={(isOpen || logo) ? { width: '46px', height: '35.86px' } : {}}
+                    />
+                    {/* Desktop Logo */}
                     <img 
                         src={isOpen ? "/logo_.svg" : (logo || "/logo.png")} 
                         alt="Logo" 
-                        className={isOpen ? "" : (logo ? "w-auto h-8 lg:w-[180px] lg:h-[28px]" : `w-auto h-14 lg:h-20 ${isDark ? "lg:ml-2" : ""}`)} 
+                        className={`hidden lg:block ${isOpen ? "" : (logo ? "w-auto h-8 lg:w-[180px] lg:h-[28px]" : `w-auto h-14 lg:h-20 ${isDark ? "lg:ml-2" : ""}`)}`} 
                         style={isOpen ? { width: '46px', height: '35.86px' } : {}}
                     />
                 </Link>
@@ -101,20 +111,28 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                         {cartIcon ? <img src={cartIcon} alt="Cart" className="w-[58px] h-[58px]" /> : <ShoppingBag size={20} />}
                     </Link>
 
-                    {/* Original Mobile Menu Icon */}
-                    <button
-                        className={`lg:hidden p-1 hover:opacity-70 transition-opacity z-50 ${isDark ? "text-[#F0EEE6]" : "text-[#183A39]"}`}
-                        onClick={() => setIsOpen(!isOpen)}
-                    >
-                        {isOpen ? <X size={32} strokeWidth={2.5} /> : <Menu size={32} strokeWidth={2.5} />}
-                    </button>
+                    {showClose ? (
+                        <Link 
+                            href={onCloseHref || "/"}
+                            className="lg:hidden p-1 hover:opacity-70 transition-opacity z-50 text-[#F0EEE6]"
+                        >
+                            <X size={32} strokeWidth={2.5} />
+                        </Link>
+                    ) : (
+                        <button
+                            className={`lg:hidden p-1 hover:opacity-70 transition-opacity z-50 ${isDark ? "text-[#F0EEE6]" : "text-[#183A39]"}`}
+                            onClick={() => setIsOpen(!isOpen)}
+                        >
+                            {isOpen ? <X size={32} strokeWidth={2.5} /> : <Menu size={32} strokeWidth={2.5} />}
+                        </button>
+                    )}
                 </div>
             </div>
 
             {/* Mobile Menu Overlay */}
             {isOpen && (
                 <div
-                    className="fixed inset-0 bg-[#183A39] z-[60] flex flex-col px-6 py-8 lg:hidden"
+                    className="fixed inset-0 bg-[#183A39] z-[110] flex flex-col px-6 py-8 lg:hidden"
                 >
                     {/* Top Header inside menu */}
                     <div className="flex justify-between items-center mb-20">

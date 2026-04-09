@@ -22,6 +22,7 @@ export default function ExploreDropdownPage() {
                 buttonColor="#51D2A2" 
                 cartIcon="/explore-dropdown/cart-drop.svg"
                 logo="/explore-dropdown/edrop-logo.svg"
+                showClose={true}
             />
             
             <section className="pt-24 lg:pt-40 pb-20 lg:pb-32 px-6 md:px-12 lg:px-20">
