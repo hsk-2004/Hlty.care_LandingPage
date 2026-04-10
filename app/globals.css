@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'BitcountInk';
+    src: url('/BitcountInk-VariableFont_CRSV,ELSH,ELXP,SZP1,SZP2,XPN1,XPN2,YPN1,YPN2,slnt,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BitcountGridDouble';
+    src: url('/BitcountGridDouble-VariableFont_CRSV,ELSH,ELXP,slnt,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Haptik Medium';
+    src: url('/GT-Haptik-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GT Haptik Medium Rotalic';
+    src: url('/GT-Haptik-Medium-Rotalic.otf') format('opentype');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'BitcountSemiBold';
+    src: url('/Bitcount-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@layer base {
+    html,
+    body {
+        font-family: "jubilat", serif !important;
+    }
+
+    /* Selectively preserve the serif font (Fraunces) for headings */
+    h1,
+    h2,
+    h3,
+    .font-serif {
+        font-family: var(--font-serif), serif;
+    }
+
+    /* Optional: Keep GT Haptik for the specific class if you still need it */
+    .font-haptik {
+        font-family: 'GT Haptik Medium', sans-serif !important;
+    }
+
+    .font-jubilat {
+        font-family: "jubilat", serif !important;
+    }
+
+    .font-haptik-rotalic {
+        font-family: 'GT Haptik Medium Rotalic', sans-serif !important;
+        font-style: italic;
+    }
+}
+
+@layer utilities {
+    .scrollbar-hide {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+    .scrollbar-hide::-webkit-scrollbar {
+        display: none;
+    }
+
+    .font-bitcountink {
+        font-family: 'BitcountSemiBold', sans-serif !important;
+        color: #51D2A2 !important;
+    }
+}

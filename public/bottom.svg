@@ -1,0 +1,32 @@
+<svg width="392" height="50" viewBox="0 0 392 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_n_2085_9300)">
+<path d="M383.133 67.6592V6.10352e-05" stroke="#FCB11F" stroke-width="16.8147"/>
+<path d="M341.496 67.6591V6.10352e-05" stroke="#183A39" stroke-width="16.8147"/>
+<path d="M299.859 67.6592V6.10352e-05" stroke="#51D2A2" stroke-width="16.8147"/>
+<path d="M258.223 67.6592V6.10352e-05" stroke="#00529C" stroke-width="16.8147"/>
+<path d="M216.586 67.6592V6.10352e-05" stroke="#FCB11F" stroke-width="16.8147"/>
+<path d="M174.949 67.6591V6.10352e-05" stroke="#BB0B0B" stroke-width="16.8147"/>
+<path d="M133.316 67.6591V0" stroke="#00529C" stroke-width="16.8147"/>
+<path d="M91.6797 67.6591V0" stroke="#51D2A2" stroke-width="16.8147"/>
+<path d="M50.043 67.6591V0" stroke="#183A39" stroke-width="16.8147"/>
+<path d="M8.40625 67.6591V0" stroke="#BB0B0B" stroke-width="16.8147"/>
+</g>
+<defs>
+<filter id="filter0_n_2085_9300" x="0" y="0" width="391.539" height="67.6591" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.96069872379302979 0.96069872379302979" stitchTiles="stitch" numOctaves="3" result="noise" seed="6528" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="#E4DBCD" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect1_noise_2085_9300">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+</defs>
+</svg>

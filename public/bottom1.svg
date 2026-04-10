@@ -1,0 +1,48 @@
+<svg width="1321" height="81" viewBox="0 0 1321 81" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_n_2085_9090)">
+<path d="M1310.5 84.5V0" stroke="#00529C" stroke-width="21"/>
+<path d="M1258.5 84.5V0" stroke="#BB0B0B" stroke-width="21"/>
+<path d="M1206.5 84.5V0" stroke="#51D2A2" stroke-width="21"/>
+<path d="M1154.5 84.5V0" stroke="#FCB11F" stroke-width="21"/>
+<path d="M1102.5 84.5V0" stroke="#51D2A2" stroke-width="21"/>
+<path d="M1050.5 84.5V0" stroke="#183A39" stroke-width="21"/>
+<path d="M998.5 84.5V0" stroke="#FCB11F" stroke-width="21"/>
+<path d="M946.5 84.5V0" stroke="#00529C" stroke-width="21"/>
+<path d="M894.5 84.5V0" stroke="#BB0B0B" stroke-width="21"/>
+<path d="M842.5 84.5V0" stroke="#51D2A2" stroke-width="21"/>
+<path d="M790.5 84.5V0" stroke="#BB0B0B" stroke-width="21"/>
+<path d="M738.5 84.5V0" stroke="#FCB11F" stroke-width="21"/>
+<path d="M686.5 84.5V0" stroke="#51D2A2" stroke-width="21"/>
+<path d="M634.5 84.5V0" stroke="#BB0B0B" stroke-width="21"/>
+<path d="M582.5 84.5V0" stroke="#183A39" stroke-width="21"/>
+<path d="M530.5 84.5V0" stroke="#51D2A2" stroke-width="21"/>
+<path d="M478.5 84.5V0" stroke="#00529C" stroke-width="21"/>
+<path d="M426.5 84.5V0" stroke="#FCB11F" stroke-width="21"/>
+<path d="M374.5 84.5V0" stroke="#183A39" stroke-width="21"/>
+<path d="M322.5 84.5V0" stroke="#51D2A2" stroke-width="21"/>
+<path d="M270.5 84.5V0" stroke="#BB0B0B" stroke-width="21"/>
+<path d="M218.5 84.5V0" stroke="#FCB11F" stroke-width="21"/>
+<path d="M166.5 84.5V0" stroke="#00529C" stroke-width="21"/>
+<path d="M114.5 84.5V0" stroke="#51D2A2" stroke-width="21"/>
+<path d="M62.5 84.5V0" stroke="#183A39" stroke-width="21"/>
+<path d="M10.5 84.5V0" stroke="#BB0B0B" stroke-width="21"/>
+</g>
+<defs>
+<filter id="filter0_n_2085_9090" x="0" y="0" width="1321" height="84.5" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.76923078298568726 0.76923078298568726" stitchTiles="stitch" numOctaves="3" result="noise" seed="6528" />
+<feColorMatrix in="noise" type="luminanceToAlpha" result="alphaNoise" />
+<feComponentTransfer in="alphaNoise" result="coloredNoise1">
+<feFuncA type="discrete" tableValues="1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 "/>
+</feComponentTransfer>
+<feComposite operator="in" in2="shape" in="coloredNoise1" result="noise1Clipped" />
+<feFlood flood-color="#E4DBCD" result="color1Flood" />
+<feComposite operator="in" in2="noise1Clipped" in="color1Flood" result="color1" />
+<feMerge result="effect1_noise_2085_9090">
+<feMergeNode in="shape" />
+<feMergeNode in="color1" />
+</feMerge>
+</filter>
+</defs>
+</svg>

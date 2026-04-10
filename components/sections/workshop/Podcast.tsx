@@ -1,0 +1,121 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+
+export default function Testimonials() {
+  const [email, setEmail] = useState("");
+
+  const itemVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  return (
+    <section className="relative bg-background pt-0 pb-12 md:pb-24 lg:pt-32 lg:pb-28 px-6 md:px-12 lg:px-24 overflow-hidden">
+      <div className="max-w-xl lg:max-w-[1440px] w-full mx-auto relative z-10">
+        {/* Desktop Header Decorative Image */}
+        <motion.div
+          initial={{ opacity: 0, y: -20, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          className="hidden lg:block w-full mt-[-100px] mb-[70px] relative z-20"
+        >
+          <div className="relative w-full flex items-center justify-center">
+            {/* The PNG Image */}
+            <img
+              src="/back5.png"
+              alt="Decorative Header"
+              className="w-[95%] h-auto object-contain"
+            />
+
+            {/* Text Overlay */}
+            <div className="absolute inset-0 flex flex-col items-center justify-center text-center pt-0 mt-[50px]">
+              <h1 className="font-jubilat text-[48px] lg:text-[42px] text-[#183A39] leading-tight mb-4">
+                Experiences for Families
+              </h1>
+              <p className="font-jubilat font-normal not-italic text-[16px] lg:text-[20px] text-[#183A39] opacity-90 lg:whitespace-nowrap px-4">
+                Designed for the adults and environments that shape a child&apos;s everyday life.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        <div className="flex flex-col lg:flex-row gap-6 md:gap-14 lg:gap-4 items-stretch justify-center transform lg:translate-x-2">
+
+          {/* Left Column: Information Card */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="mx-auto lg:mx-0 relative z-10 bg-[#F5B82E] px-6 md:px-10 lg:px-12 pt-10 pb-8 md:py-14 lg:py-12 flex flex-col justify-between gap-4 overflow-hidden w-[340px] h-[360px] md:w-[600px] md:h-[520px] lg:!w-[950px] lg:!h-[465px] lg:rounded-[18px] rounded-[16px] max-w-full"
+          >
+            <div className="space-y-6 lg:space-y-12">
+              {/* Title */}
+              <h2 className="font-jubilat text-[22px] md:text-[34px] lg:text-[42px] font-normal leading-tight text-[#183A39]">
+                <span className="lg:hidden">Latest Podcast Episode</span>
+                <span className="hidden lg:inline">Being Hlty Club</span>
+              </h2>
+
+              {/* Body paragraphs */}
+              <div className="flex flex-col gap-3 lg:gap-8 font-jubilat text-[10px] md:text-[18px] lg:text-[20px] font-normal not-italic leading-relaxed lg:leading-tight text-[#1a3636]">
+                <p>
+                  <span className="lg:block lg:whitespace-nowrap">Shared experiences designed for children and the adults around them. Families move, </span>
+                  <span className="lg:block lg:whitespace-nowrap">play, listen, and explore together — without schedules, outcomes, or &ldquo;doing it right.&rdquo;</span>
+                </p>
+                <p>
+                  <span className="lg:block lg:whitespace-nowrap">These events aren&apos;t workshops or talks. They&apos;re spaces where health shows up </span>
+                  <span className="lg:block lg:whitespace-nowrap">naturally through games, stories, and everyday moments families already recognize.</span>
+                </p>
+                <p>
+                  <span className="lg:block lg:whitespace-nowrap">For parents who want to participate with their child, not observe from the sidelines.</span>
+                </p>
+              </div>
+            </div>
+
+            {/* Email input + CTA button */}
+            <div className="flex items-center gap-2 bg-[#F0EEE6] rounded-full p-1 pl-4 lg:pl-6 border border-white/20 w-full lg:max-w-[400px] mt-4 lg:mt-8">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="name@email.com"
+                className="flex-1 bg-transparent text-[13px] md:text-[18px] lg:text-[16px] text-[#1a3636] placeholder:text-[#1a3636]/50 outline-none font-sans min-w-0"
+              />
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="flex items-center bg-[#1a3636] text-[#F0EEE6] rounded-full font-haptik text-[12px] md:text-[18px] lg:text-[15px] font-medium whitespace-nowrap hover:bg-[#1a3636]/90 transition-all px-4 py-2 md:px-8 md:py-4 lg:px-6 lg:py-3"
+              >
+                Join Community
+                <ArrowRight size={16} className="ml-2 hidden lg:block" />
+              </motion.button>
+            </div>
+          </motion.div>
+
+          {/* Right Column: Image */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            className="order-first lg:order-last overflow-hidden mx-auto lg:mx-0 lg:w-[45%] w-[340px] h-[360px] md:w-[700px] md:h-[500px] lg:!w-[420px] lg:!h-[465px] lg:rounded-[18px] rounded-[13px] max-w-full"
+          >
+            <img
+              src="/t1.svg"
+              alt="Being Hlty Club"
+              className="w-full h-full object-cover"
+              style={{ borderRadius: "inherit" }}
+            />
+          </motion.div>
+
+
+
+        </div>
+      </div>
+    </section>
+  );
+}
