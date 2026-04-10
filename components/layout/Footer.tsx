@@ -217,8 +217,7 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                                 Legal
                             </h3>
                             <nav className="flex flex-col space-y-4 lg:space-y-5">
-                                <a href="#" className="font-jubilat text-[14px] lg:text-[16px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">Privacy</a>
-                                <a href="#" className="font-jubilat text-[14px] lg:text-[16px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">Terms</a>
+                                <a href="/privacy-policy" className="font-jubilat text-[14px] lg:text-[16px] text-[#F0EEE6] opacity-90 hover:opacity-100 transition-all font-normal">Privacy and Policy</a>
                             </nav>
                         </div>
                     </div>
