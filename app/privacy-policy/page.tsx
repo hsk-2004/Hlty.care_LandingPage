@@ -8,7 +8,7 @@ import Footer from "@/components/layout/Footer";
 const PrivacyPolicy = () => {
     return (
         <main className="min-h-screen bg-[#F0EEE6]">
-            <Navbar variant="dark" logoClassName="lg:-ml-2" bgTransparent logo="/footer-logo.svg" textColor="#E4DBCD" cartIcon="/get-started/cart.svg" showGetStarted cartBgColor="#51D2A2" buttonColor="#51D2A2" />
+            <Navbar variant="dark" logoClassName="lg:-ml-2" bgTransparent logo="/footer-logo.svg" mobileLogo="/logo_.svg" textColor="#E4DBCD" cartIcon="/get-started/cart.svg" showGetStarted cartBgColor="#51D2A2" buttonColor="#51D2A2" />
             <div className="text-[#1a3636] font-jubilat">
                 {/* Hero Section */}
                 <section className="bg-[#183A39] py-20 lg:py-32">

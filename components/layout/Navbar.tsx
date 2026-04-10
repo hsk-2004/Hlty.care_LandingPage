@@ -19,9 +19,10 @@ interface NavbarProps {
     bgTransparent?: boolean;
     cartBgColor?: string;
     showGetStarted?: boolean;
+    mobileLogo?: string;
 }
 
-export default function Navbar({ variant = "light", customLinks, textColor, buttonColor, cartIcon, logo, showClose, onCloseHref, logoClassName, bgTransparent, cartBgColor, showGetStarted }: NavbarProps) {
+export default function Navbar({ variant = "light", customLinks, textColor, buttonColor, cartIcon, logo, showClose, onCloseHref, logoClassName, bgTransparent, cartBgColor, showGetStarted, mobileLogo }: NavbarProps) {
     const [hidden, setHidden] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -78,10 +79,10 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                 <Link href="/" className={`flex items-center gap-2 group ${logoClassName || "lg:-ml-20"}`}>
                     {/* Mobile Logo: Always white logo_ for explore or when menu is open */}
                     <img 
-                        src={isOpen ? (logo || "/logo_.svg") : (logo ? logo : "/logo.png")} 
+                        src={isOpen ? (mobileLogo || logo || "/logo_.svg") : (mobileLogo || logo || "/logo.png")} 
                         alt="Logo" 
-                        className={`lg:hidden w-auto ${isOpen || logo ? "" : "h-14"}`} 
-                        style={(isOpen || logo) ? { width: '46px', height: '35.86px' } : {}}
+                        className={`lg:hidden w-auto ${isOpen || mobileLogo || logo ? "" : "h-14"}`} 
+                        style={(isOpen || mobileLogo || logo) ? { width: '46px', height: '35px' } : {}}
                     />
                     {/* Desktop Logo */}
                     <img 
