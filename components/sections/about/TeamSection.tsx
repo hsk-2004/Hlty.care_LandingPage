@@ -8,22 +8,27 @@ const teamMembers = [
     role: "FOUNDER",
     bgColor: "#F5A623",
     textColor: "#1A2E2C",
+    forceNowrap: true,
     paragraphs: [
-      "At Hlty Beings, Suraj builds the thing he wished existed, a health ecosystem that reaches children before the system needs to.",
-      "A pharmacist and IIM Kozhikode graduate with 22 years in healthcare, he\u2019s also a sci-fi author and storytelling professor, which explains a lot about how Hlty Beings thinks. His background blends clinical knowledge, business strategy, and narrative but what drives him most is a simple belief: that health should feel accessible, playful, and worth returning to. Not a burden you manage. A life you actually want.",
+      "At Hlty Beings, Suraj builds the thing he wished\nexisted, a health ecosystem that reaches children\nbefore the system needs to.",
+      "A pharmacist and IIM Kozhikode graduate\nwith 22 years in healthcare, he’s also a sci-fi\nauthor and storytelling professor, which\nexplains a lot about how Hlty Beings thinks.\nHis background blends clinical knowledge,\nbusiness strategy, and narrative but what\ndrives him most is a simple belief: that\nhealth should feel accessible, playful, and\nworth returning to. Not a burden you\nmanage. A life you actually want.",
     ],
     image: "/about/man.png",
+    imageDimensions: { width: 186, height: 227 }
   },
   {
     name: "Ankita Dey",
     role: "CREATIVE LEAD",
     bgColor: "#51D2A2",
     textColor: "#1A2E2C",
+    forceNowrap: true,
     paragraphs: [
-      "At Hlty Beings, Ankita leads creatives, shaping everything from how the brand speaks to how a picture book feels in a child\u2019s hands.",
-      "Her background blends visual communication, information design, and brand strategy, but what drives her most is finding the throughline: the logic that makes a product feel inevitable, not just good-looking. She\u2019s the person asking \"does this feel right?\" at every step and making sure the answer is yes.",
+      "At Hlty Beings, Ankita leads creatives, shaping\neverything from how the brand speaks to how\na picture book feels in a child's hands.",
+      "Her background blends visual\ncommunication, information design,\nand brand strategy, but what drives\nher most is finding the throughline:\nthe logic that makes a product feel\ninevitable, not just good-looking.\nShe's the person asking \"does this\nfeel right?\" at every step and making\nsure the answer is yes.",
     ],
     image: "/about/girl.png",
+    imageDimensions: { width: 220, height: 270 },
+    bottomOffset: -24
   },
 ];
 
@@ -74,7 +79,7 @@ export default function TeamSection() {
                     {member.name}
                   </h3>
                   <p
-                    className="font-haptik text-[16px] font-bold uppercase tracking-[0.15em] mb-6"
+                    className="font-haptik text-[16px] font-bold uppercase tracking-[0.15em] mb-5"
                     style={{ color: member.textColor }}
                   >
                     {member.role}
@@ -85,16 +90,30 @@ export default function TeamSection() {
                       <p
                         key={pIdx}
                         className="font-jubilat text-[20px] leading-[1.5]"
-                        style={{ color: member.textColor }}
+                        style={{
+                          color: member.textColor,
+                          whiteSpace: (member as any).forceNowrap ? 'nowrap' : 'normal'
+                        }}
                       >
-                        {para}
+                        {para.split('\n').map((line, i) => (
+                          <span key={i} className="block">
+                            {line}
+                          </span>
+                        ))}
                       </p>
                     ))}
                   </div>
                 </div>
 
                 {/* Image Area - bottom right absolute */}
-                <div className="absolute bottom-0 right-0 h-[227px] w-[186px] overflow-visible">
+                <div
+                  className="absolute right-0 overflow-visible"
+                  style={{
+                    height: `${member.imageDimensions?.height || 227}px`,
+                    width: `${member.imageDimensions?.width || 186}px`,
+                    bottom: `${(member as any).bottomOffset || 0}px`
+                  }}
+                >
                   <img
                     src={member.image}
                     alt={member.name}
