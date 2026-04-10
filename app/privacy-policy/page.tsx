@@ -8,10 +8,10 @@ import Footer from "@/components/layout/Footer";
 const PrivacyPolicy = () => {
     return (
         <main className="min-h-screen bg-[#F0EEE6]">
-            <Navbar />
+            <Navbar variant="dark" logoClassName="lg:-ml-2" bgTransparent logo="/footer-logo.svg" textColor="#E4DBCD" cartIcon="/get-started/cart.svg" showGetStarted cartBgColor="#51D2A2" buttonColor="#51D2A2" />
             <div className="text-[#1a3636] font-jubilat">
                 {/* Hero Section */}
-                <section className="bg-[#51D2A2] py-20 lg:py-32">
+                <section className="bg-[#183A39] py-20 lg:py-32">
                     <div className="max-w-4xl mx-auto px-6">
                         <motion.div
                             className="text-center"
@@ -19,10 +19,10 @@ const PrivacyPolicy = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <h1 className="text-5xl lg:text-7xl font-normal text-[#1a3636] mb-6 leading-tight">
+                            <h1 className="text-5xl lg:text-7xl font-normal font-jubilat text-[#E4DBCD] mb-6 leading-tight">
                                 Privacy Policy &<br />Terms of Use
                             </h1>
-                            <p className="text-lg font-haptik font-bold uppercase tracking-[0.2em] text-[#1a3636]/80 mb-8">
+                            <p className="text-lg font-haptik font-bold uppercase tracking-[0.2em] text-[#E4DBCD]/80 mb-8">
                                 Last Updated: 28-05-2025
                             </p>
                             <div className="flex justify-center mt-4">
@@ -47,7 +47,7 @@ const PrivacyPolicy = () => {
                         >
                             {/* Introduction */}
                             <div>
-                                <h2 className="text-3xl sm:text-4xl font-normal text-[#1a3636] mb-8">Introduction</h2>
+                                <h2 className="text-3xl sm:text-4xl font-normal font-jubilat text-[#1a3636] mb-8">Introduction</h2>
                                 <p className="text-[#2D4341] leading-relaxed mb-6 text-xl">
                                     Welcome to <span className="font-haptik font-bold">www.hlty.care</span>. Your privacy and trust are of utmost importance to us. This Privacy Policy and Terms of Use outline the information we collect, how we use and protect it, and the terms governing your use of our website and services. By accessing or using our website and services, you consent to these terms and agree to be bound by them.
                                 </p>
@@ -55,10 +55,10 @@ const PrivacyPolicy = () => {
 
                             {/* Privacy Policy */}
                             <div>
-                                <h2 className="text-3xl sm:text-4xl font-normal text-[#1a3636] mb-10 border-b border-[#1a3636]/10 pb-4">Privacy Policy</h2>
+                                <h2 className="text-3xl sm:text-4xl font-normal font-jubilat text-[#1a3636] mb-10 border-b border-[#1a3636]/10 pb-4">Privacy Policy</h2>
 
                                 <div className="mb-12">
-                                    <h3 className="text-lg font-bold text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">1. Information We Collect</h3>
+                                    <h3 className="text-lg font-bold font-jubilat text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">1. Information We Collect</h3>
                                     <p className="text-[#2D4341] leading-relaxed mb-6 text-xl opacity-90">
                                         We collect personal information when you interact with our website, including but not limited to:
                                     </p>
@@ -78,7 +78,7 @@ const PrivacyPolicy = () => {
                                 </div>
 
                                 <div className="mb-12">
-                                    <h3 className="text-lg font-bold text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">2. How We Use Your Information</h3>
+                                    <h3 className="text-lg font-bold font-jubilat text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">2. How We Use Your Information</h3>
                                     <p className="text-[#2D4341] leading-relaxed mb-6 text-xl opacity-90">
                                         The information collected is used to:
                                     </p>
@@ -99,7 +99,7 @@ const PrivacyPolicy = () => {
                                 </div>
 
                                 <div className="mb-12">
-                                    <h3 className="text-lg font-bold text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">3. Sharing of Information</h3>
+                                    <h3 className="text-lg font-bold font-jubilat text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">3. Sharing of Information</h3>
                                     <p className="text-[#2D4341] leading-relaxed mb-6 text-xl opacity-90">
                                         We do not sell or trade your personal information. However, we may share it with:
                                     </p>
@@ -116,7 +116,7 @@ const PrivacyPolicy = () => {
                                 </div>
 
                                 <div className="mb-12">
-                                    <h3 className="text-lg font-bold text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">4. Third-Party Services</h3>
+                                    <h3 className="text-lg font-bold font-jubilat text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">4. Third-Party Services</h3>
                                     <p className="text-[#2D4341] leading-relaxed mb-6 text-xl opacity-90">
                                         Our website integrates with third-party tools. Each has its own privacy policy. We recommend reviewing these policies:
                                     </p>
@@ -135,7 +135,7 @@ const PrivacyPolicy = () => {
                                 </div>
 
                                 <div className="mb-12">
-                                    <h3 className="text-lg font-bold text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">5. User Rights</h3>
+                                    <h3 className="text-lg font-bold font-jubilat text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">5. User Rights</h3>
                                     <p className="text-[#2D4341] leading-relaxed mb-6 text-xl opacity-90">
                                         You have the right to:
                                     </p>
@@ -153,21 +153,21 @@ const PrivacyPolicy = () => {
                                 </div>
 
                                 <div className="mb-12">
-                                    <h3 className="text-lg font-bold text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">6. Cookies and Tracking Technologies</h3>
+                                    <h3 className="text-lg font-bold font-jubilat text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">6. Cookies and Tracking Technologies</h3>
                                     <p className="text-[#2D4341] leading-relaxed text-xl opacity-90">
                                         We use cookies to improve website functionality and user experience. You can manage cookie preferences via browser settings. By using our website, you consent to the use of cookies.
                                     </p>
                                 </div>
 
                                 <div className="mb-12">
-                                    <h3 className="text-lg font-bold text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">7. Data Security</h3>
+                                    <h3 className="text-lg font-bold font-jubilat text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">7. Data Security</h3>
                                     <p className="text-[#2D4341] leading-relaxed text-xl opacity-90">
                                         We employ reasonable security measures to protect your personal data. However, no online transmission method is 100% secure, and we cannot guarantee absolute security.
                                     </p>
                                 </div>
 
                                 <div className="mb-12">
-                                    <h3 className="text-lg font-bold text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">8. Changes to the Privacy Policy</h3>
+                                    <h3 className="text-lg font-bold font-jubilat text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">8. Changes to the Privacy Policy</h3>
                                     <p className="text-[#2D4341] leading-relaxed text-xl opacity-90">
                                         This Privacy Policy may be updated periodically. Updates will be posted on this page, with the &quot;Last Updated&quot; date revised. Significant changes will be communicated via email or website notifications.
                                     </p>
@@ -176,11 +176,11 @@ const PrivacyPolicy = () => {
 
                             {/* Refund and Cancellation Policy */}
                             <div>
-                                <h2 className="text-3xl sm:text-4xl font-normal text-[#1a3636] mb-10 border-b border-[#1a3636]/10 pb-4">Refund and Cancellation Policy</h2>
+                                <h2 className="text-3xl sm:text-4xl font-normal font-jubilat text-[#1a3636] mb-10 border-b border-[#1a3636]/10 pb-4">Refund and Cancellation Policy</h2>
 
                                 <div className="grid md:grid-cols-2 gap-12 mb-12">
                                     <div className="bg-white/50 p-8 rounded-3xl border border-[#1a3636]/5">
-                                        <h3 className="text-lg font-bold text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">For Products (Books)</h3>
+                                        <h3 className="text-lg font-bold font-jubilat text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">For Products (Books)</h3>
                                         <ul className="space-y-6 text-[#2D4341] leading-relaxed text-lg list-none">
                                             <li>
                                                 <strong className="text-[#1a3636] block mb-2 font-medium">Refunds:</strong>
@@ -194,7 +194,7 @@ const PrivacyPolicy = () => {
                                     </div>
 
                                     <div className="bg-white/50 p-8 rounded-3xl border border-[#1a3636]/5">
-                                        <h3 className="text-lg font-bold text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">For Services</h3>
+                                        <h3 className="text-lg font-bold font-jubilat text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">For Services</h3>
                                         <ul className="space-y-6 text-[#2D4341] leading-relaxed text-lg list-none">
                                             <li>
                                                 <strong className="text-[#1a3636] block mb-2 font-medium">Refunds:</strong>
@@ -217,10 +217,10 @@ const PrivacyPolicy = () => {
 
                             {/* Terms of Use */}
                             <div>
-                                <h2 className="text-3xl sm:text-4xl font-normal text-[#1a3636] mb-10 border-b border-[#1a3636]/10 pb-4">Terms of Use</h2>
+                                <h2 className="text-3xl sm:text-4xl font-normal font-jubilat text-[#1a3636] mb-10 border-b border-[#1a3636]/10 pb-4">Terms of Use</h2>
 
                                 <div className="mb-12">
-                                    <h3 className="text-lg font-bold text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">1. General Terms</h3>
+                                    <h3 className="text-lg font-bold font-jubilat text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">1. General Terms</h3>
                                     <p className="text-[#2D4341] leading-relaxed mb-6 text-xl opacity-90">
                                         By using our website and services, you agree to the following:
                                     </p>
@@ -240,7 +240,7 @@ const PrivacyPolicy = () => {
                                 </div>
 
                                 <div className="mb-12">
-                                    <h3 className="text-lg font-bold text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">2. Payment and Refund Policy</h3>
+                                    <h3 className="text-lg font-bold font-jubilat text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">2. Payment and Refund Policy</h3>
                                     <ul className="space-y-4 text-[#2D4341] leading-relaxed text-xl list-none">
                                         <li className="flex gap-3">
                                             <span className="text-[#6EBCC2]">•</span>
@@ -258,21 +258,21 @@ const PrivacyPolicy = () => {
                                 </div>
 
                                 <div className="mb-12">
-                                    <h3 className="text-lg font-bold text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">3. Force Majeure</h3>
+                                    <h3 className="text-lg font-bold font-jubilat text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">3. Force Majeure</h3>
                                     <p className="text-[#2D4341] leading-relaxed text-xl opacity-90">
                                         Neither party is liable for failure to perform obligations due to unforeseen events beyond their control.
                                     </p>
                                 </div>
 
                                 <div className="mb-12">
-                                    <h3 className="text-lg font-bold text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">4. External Links</h3>
+                                    <h3 className="text-lg font-bold font-jubilat text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">4. External Links</h3>
                                     <p className="text-[#2D4341] leading-relaxed text-xl opacity-90">
                                         Our website may contain links to third-party websites. Once accessed, you are subject to their terms and policies.
                                     </p>
                                 </div>
 
                                 <div className="mb-12">
-                                    <h3 className="text-lg font-bold text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">5. Dispute Resolution and Governing Law</h3>
+                                    <h3 className="text-lg font-bold font-jubilat text-[#1a3636] mb-6 font-haptik uppercase tracking-widest">5. Dispute Resolution and Governing Law</h3>
                                     <ul className="space-y-4 text-[#2D4341] leading-relaxed text-xl list-none">
                                         <li className="flex gap-3">
                                             <span className="text-[#6EBCC2]">•</span>
@@ -288,8 +288,8 @@ const PrivacyPolicy = () => {
 
                             {/* Contact Us */}
                             <div className="pt-8">
-                                <div className="bg-[#1a3636] text-[#F0EEE6] rounded-3xl p-12 text-center">
-                                    <h2 className="text-3xl sm:text-4xl font-normal mb-8 uppercase tracking-widest">Contact Us</h2>
+                                <div className="bg-[#1a3636] text-[#E4DBCD] rounded-3xl p-12 text-center">
+                                    <h2 className="text-3xl sm:text-4xl font-normal font-jubilat mb-8 uppercase tracking-widest">Contact Us</h2>
                                     <p className="text-xl mb-8 opacity-80">
                                         For questions or concerns about this Privacy Policy or Terms of Use, contact us at:
                                     </p>

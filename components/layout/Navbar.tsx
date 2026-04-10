@@ -16,9 +16,12 @@ interface NavbarProps {
     showClose?: boolean;
     onCloseHref?: string;
     logoClassName?: string;
+    bgTransparent?: boolean;
+    cartBgColor?: string;
+    showGetStarted?: boolean;
 }
 
-export default function Navbar({ variant = "light", customLinks, textColor, buttonColor, cartIcon, logo, showClose, onCloseHref, logoClassName }: NavbarProps) {
+export default function Navbar({ variant = "light", customLinks, textColor, buttonColor, cartIcon, logo, showClose, onCloseHref, logoClassName, bgTransparent, cartBgColor, showGetStarted }: NavbarProps) {
     const [hidden, setHidden] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -70,19 +73,19 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
             className={`fixed top-0 left-0 w-full z-[100] flex justify-center items-center p-4 lg:py-4 lg:px-6 ${(isOpen || isExploreOpen) ? "bg-[#183A39]" : "transition-colors duration-300 " + (isDark ? "bg-[#183A39] lg:bg-transparent" : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"))
                 }`}
         >
-            <div className={`flex justify-between items-center w-full max-w-7xl ${isDark ? "lg:max-w-[1292px] lg:h-[68px] lg:bg-[#E4DBCD] lg:rounded-[32px] lg:px-2 lg:py-1.5" : ""}`}>
+            <div className={`flex justify-between items-center w-full max-w-7xl ${isDark ? `lg:max-w-[1292px] lg:h-[68px] ${bgTransparent ? "" : "lg:bg-[#E4DBCD]"} lg:rounded-[32px] lg:px-2 lg:py-1.5` : ""}`}>
                 {/* Logo Section */}
                 <Link href="/" className={`flex items-center gap-2 group ${logoClassName || "lg:-ml-20"}`}>
                     {/* Mobile Logo: Always white logo_ for explore or when menu is open */}
                     <img 
-                        src={isOpen ? "/logo_.svg" : (logo ? "/logo_.svg" : "/logo.png")} 
+                        src={isOpen ? (logo || "/logo_.svg") : (logo ? logo : "/logo.png")} 
                         alt="Logo" 
                         className={`lg:hidden w-auto ${isOpen || logo ? "" : "h-14"}`} 
                         style={(isOpen || logo) ? { width: '46px', height: '35.86px' } : {}}
                     />
                     {/* Desktop Logo */}
                     <img 
-                        src={isOpen ? "/logo_.svg" : (logo || "/logo.png")} 
+                        src={isOpen ? (logo || "/logo_.svg") : (logo || "/logo.png")} 
                         alt="Logo" 
                         className={`hidden lg:block ${isOpen ? "" : (logo ? "w-auto h-8 lg:w-[180px] lg:h-[28px]" : `w-auto h-14 lg:h-20 ${isDark ? "lg:ml-2" : ""}`)}`} 
                         style={isOpen ? { width: '46px', height: '35.86px' } : {}}
@@ -102,7 +105,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                                         setIsExploreOpen(true);
                                     }
                                 }}
-                                style={{ color: textColor || (isDark ? "#183A39" : (scrolled ? "#183A39" : (variant === "light" ? "#183A39" : "#F0EEE6"))) }}
+                                style={{ color: textColor || (isDark ? (bgTransparent ? "#E4DBCD" : "#183A39") : (scrolled ? "#183A39" : (variant === "light" ? "#183A39" : "#F0EEE6"))) }}
                                 className="font-haptik text-[15px] font-medium tracking-[0.1em] hover:opacity-60 transition-opacity"
                             >
                                 {link.name}
@@ -114,11 +117,11 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                 {/* Action Buttons & Menu */}
                 <div className="flex items-center gap-4">
                     {/* Desktop Only Actions */}
-                    {!isDark && (
+                    {(showGetStarted || !isDark) && (
                         <Link 
                             href="/get-started" 
-                            style={{ backgroundColor: buttonColor || "#183A39" }}
-                            className="hidden lg:block text-[#F0EEE6] px-10 py-3 rounded-full font-haptik text-[14px] font-medium tracking-[0.05em] hover:opacity-90 transition-all shadow-md"
+                            style={{ backgroundColor: buttonColor || (isDark ? "#51D2A2" : "#183A39") }}
+                            className={`hidden lg:flex w-[164px] h-[58px] items-center justify-center rounded-full font-haptik text-[14px] font-medium tracking-[0.05em] hover:opacity-90 transition-all shadow-md ${(buttonColor === "#51D2A2" || (isDark && !buttonColor)) ? "text-[#183A39]" : "text-[#F0EEE6]"}`}
                         >
                             GET STARTED
                         </Link>
@@ -126,9 +129,10 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
 
                     <Link 
                         href="/cart" 
-                        className={cartIcon ? "hidden lg:flex transition-all hover:scale-105" : `hidden lg:flex w-[58px] h-[58px] items-center justify-center rounded-full transition-all ${isDark ? "bg-[#183A39] text-[#F0EEE6] hover:bg-[#183A39]/90" : "bg-[#183A39] text-[#F0EEE6] hover:bg-[#1a3636]/90 shadow-md"}`}
+                        style={{ backgroundColor: cartBgColor || "#183A39" }}
+                        className={`hidden lg:flex w-[58px] h-[58px] items-center justify-center rounded-full transition-all hover:scale-105 shadow-md ${cartBgColor === "#51D2A2" ? "text-[#183A39]" : "text-[#F0EEE6]"}`}
                     >
-                        {cartIcon ? <img src={cartIcon} alt="Cart" className="w-[58px] h-[58px]" /> : <ShoppingBag size={20} />}
+                        {cartIcon ? <img src={cartIcon} alt="Cart" className="w-[30px] h-[30px]" /> : <ShoppingBag size={20} />}
                     </Link>
 
                     {showClose ? (
@@ -157,7 +161,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                     {/* Top Header inside menu */}
                     <div className="flex justify-between items-center mb-20">
                         <Link href="/" onClick={() => setIsOpen(false)}>
-                            <img src="/logo_.svg" alt="Logo" style={{ width: '46px', height: '35.86px' }} />
+                            <img src={logo || "/logo_.svg"} alt="Logo" style={{ width: '46px', height: '35.86px' }} />
                         </Link>
                         <button
                             className="text-[#F0EEE6] p-1"
@@ -185,7 +189,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                                                 setIsExploreOpen(true);
                                             }
                                         }}
-                                        className="flex items-center justify-center w-[382px] h-[40px] border border-[#5EE2A0]/40 rounded-full font-haptik text-[14px] font-medium tracking-[0.15em] text-[#F0EEE6] hover:bg-[#F0EEE6]/5 transition-colors"
+                                        className="flex items-center justify-center w-[382px] h-[40px] border border-[#5EE2A0]/40 rounded-full font-haptik text-[14px] font-medium tracking-[0.15em] text-[#E4DBCD] hover:bg-[#E4DBCD]/5 transition-colors"
                                     >
                                         {link.name}
                                     </Link>
@@ -199,7 +203,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                         <div
                             className="flex justify-center w-full"
                         >
-                            <Link href="/get-started" onClick={() => setIsOpen(false)} className="w-[382px] h-[40px] bg-[#F0EEE6] text-[#183A39] rounded-full font-haptik text-[18px] tracking-wide shadow-lg flex items-center justify-center">
+                            <Link href="/get-started" onClick={() => setIsOpen(false)} className="w-[382px] h-[40px] bg-[#E4DBCD] text-[#183A39] rounded-full font-haptik text-[18px] tracking-wide shadow-lg flex items-center justify-center">
                                 GET STARTED
                             </Link>
                         </div>
