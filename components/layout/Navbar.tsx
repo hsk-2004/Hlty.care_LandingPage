@@ -74,24 +74,26 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
             className={`fixed top-0 left-0 w-full z-[100] flex justify-center items-center p-4 lg:py-4 lg:px-6 ${(isOpen || isExploreOpen) ? "bg-[#183A39]" : "transition-colors duration-300 " + (isDark ? "bg-[#183A39] lg:bg-transparent" : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"))
                 }`}
         >
-            <div className={`flex justify-between items-center w-full max-w-7xl ${isDark ? `lg:max-w-[1292px] lg:h-[68px] ${bgTransparent ? "" : "lg:bg-[#E4DBCD]"} lg:rounded-[32px] lg:px-2 lg:py-1.5` : ""}`}>
+            <div className={`flex justify-between items-center w-full max-w-[1292px] lg:px-2 ${isDark ? `lg:h-[68px] ${bgTransparent ? "" : "lg:bg-[#E4DBCD]"} lg:rounded-[32px] lg:py-1.5` : ""}`}>
                 {/* Logo Section */}
-                <Link href="/" className={`flex items-center gap-2 group ${logoClassName || "lg:-ml-20"}`}>
-                    {/* Mobile Logo: Always white logo_ for explore or when menu is open */}
-                    <img 
-                        src={isOpen ? (mobileLogo || logo || "/logo_.svg") : (mobileLogo || logo || "/logo.png")} 
-                        alt="Logo" 
-                        className={`lg:hidden w-auto ${isOpen || mobileLogo || logo ? "" : "h-14"}`} 
-                        style={(isOpen || mobileLogo || logo) ? { width: '46px', height: '35px' } : {}}
-                    />
-                    {/* Desktop Logo */}
-                    <img 
-                        src={isOpen ? (logo || "/logo_.svg") : (logo || "/logo.png")} 
-                        alt="Logo" 
-                        className={`hidden lg:block ${isOpen ? "" : (logo ? "w-auto h-8 lg:w-[180px] lg:h-[28px]" : `w-auto h-14 lg:h-20 ${isDark ? "lg:ml-2" : ""}`)}`} 
-                        style={isOpen ? { width: '46px', height: '35.86px' } : {}}
-                    />
-                </Link>
+                <div className="flex lg:flex-1 justify-start items-center">
+                    <Link href="/" className={`flex items-center gap-2 group ${logoClassName || "lg:-ml-2"}`}>
+                        {/* Mobile Logo: Always white logo_ for explore or when menu is open */}
+                        <img 
+                            src={isOpen ? (mobileLogo || logo || "/logo_.svg") : (mobileLogo || logo || "/logo.png")} 
+                            alt="Logo" 
+                            className={`lg:hidden w-auto ${isOpen || mobileLogo || logo ? "" : "h-14"}`} 
+                            style={(isOpen || mobileLogo || logo) ? { width: '46px', height: '35px' } : {}}
+                        />
+                        {/* Desktop Logo */}
+                        <img 
+                            src={isOpen ? (logo || "/logo_.svg") : (logo || "/logo.png")} 
+                            alt="Logo" 
+                            className={`hidden lg:block ${isOpen ? "" : (logo ? "w-auto h-8 lg:w-[180px] lg:h-[28px]" : `w-auto h-14 lg:h-20 ${isDark ? "lg:ml-2" : ""}`)}`} 
+                            style={isOpen ? { width: '46px', height: '35.86px' } : {}}
+                        />
+                    </Link>
+                </div>
 
                 <div className="hidden lg:flex items-center gap-10">
                     {navLinks.map((link) => {
@@ -116,7 +118,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                 </div>
 
                 {/* Action Buttons & Menu */}
-                <div className="flex items-center gap-4">
+                <div className="flex lg:flex-1 items-center justify-end gap-4">
                     {/* Desktop Only Actions */}
                     {(showGetStarted || !isDark) && (
                         <Link 
