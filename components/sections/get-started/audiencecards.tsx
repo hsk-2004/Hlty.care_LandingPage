@@ -56,12 +56,12 @@ export default function AudienceCards() {
 
             {/* Cards Grid */}
             <div className="px-0 sm:px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
-                <div className="flex overflow-x-auto touch-pan-x gap-4 pb-4 snap-x snap-proximity scrollbar-hide pl-[calc(50%-153px)] pr-[calc(50%-153px)] sm:pl-0 sm:pr-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-4 md:gap-8 xl:flex xl:justify-center xl:gap-8">
+                <div className="flex items-start overflow-x-auto overflow-y-hidden gap-4 pb-4 snap-x snap-proximity scrollbar-hide pl-[calc(50%-153px)] pr-[calc(50%-153px)] sm:pl-0 sm:pr-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-4 md:gap-8 xl:flex xl:justify-center xl:gap-8">
                 {audienceData.map((card, index) => (
                     <Link 
                         href={card.link} 
                         key={index} 
-                        className="block shrink-0 snap-center w-[307px] sm:w-auto xl:w-[307px] xl:min-w-[307px] sm:min-w-0"
+                        className="block shrink-0 snap-center h-[448px] w-[307px] sm:w-auto xl:w-[307px] xl:min-w-[307px] sm:min-w-0"
                     >
                         <motion.div
                             initial={{ opacity: 0 }}
