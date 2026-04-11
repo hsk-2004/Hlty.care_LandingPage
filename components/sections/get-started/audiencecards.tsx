@@ -56,15 +56,19 @@ export default function AudienceCards() {
 
             {/* Cards Grid */}
             <div className="px-0 sm:px-6 md:px-12 lg:px-20 max-w-7xl mx-auto">
-                <div className="flex overflow-x-auto touch-pan-y gap-4 pb-4 snap-x snap-mandatory scrollbar-hide pl-[calc(50%-140px)] pr-[calc(50%-140px)] sm:pl-0 sm:pr-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-4 md:gap-8 xl:flex xl:justify-center xl:gap-8">
+                <div className="flex overflow-x-auto touch-pan-x gap-4 pb-4 snap-x snap-proximity scrollbar-hide pl-[calc(50%-153px)] pr-[calc(50%-153px)] sm:pl-0 sm:pr-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:pb-0 lg:grid-cols-4 md:gap-8 xl:flex xl:justify-center xl:gap-8">
                 {audienceData.map((card, index) => (
-                    <Link href={card.link} key={index} className="block">
+                    <Link 
+                        href={card.link} 
+                        key={index} 
+                        className="block shrink-0 snap-center w-[307px] sm:w-auto xl:w-[307px] xl:min-w-[307px] sm:min-w-0"
+                    >
                         <motion.div
                             initial={{ opacity: 0 }}
                             whileInView={{ opacity: 1 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.6, delay: index * 0.1 }}
-                            className="relative shrink-0 rounded-[16px] overflow-hidden xl:min-w-[307px] w-[307px] sm:w-auto sm:min-w-0 h-[448px] group cursor-pointer hover:shadow-lg transition-shadow snap-center xl:w-[307px]"
+                            className="relative rounded-[16px] overflow-hidden w-full h-[448px] group cursor-pointer hover:shadow-lg transition-shadow"
                         >
                             {/* Background Image Container */}
                             <div className="absolute inset-0">
@@ -84,7 +88,7 @@ export default function AudienceCards() {
                                 {/* Text Box */}
                                 <div className="bg-white/70 backdrop-blur-sm rounded-[12px] p-4 text-center w-full">
                                     {/* Label */}
-                                    <span className="font-haptik text-[10px] md:text-[11px] text-[#183A39] tracking-wider uppercase font-medium block">
+                                    <span className="font-haptik-rotalic text-[10px] md:text-[11px] text-[#183A39] tracking-wider block lowercase first-letter:uppercase mb-2">
                                         {card.label}
                                     </span>
 
@@ -96,7 +100,7 @@ export default function AudienceCards() {
                                     {/* Bullets */}
                                     <ul className="space-y-1 w-fit mx-auto">
                                         {card.bullets.map((bullet, i) => (
-                                            <li key={i} className="font-haptik text-[12px] md:text-[13px] text-[#183A39] flex items-start gap-2">
+                                            <li key={i} className="font-haptik-rotalic text-[12px] md:text-[13px] text-[#183A39] flex items-start gap-2">
                                                 <span className="text-[#183A39]">•</span>
                                                 {bullet}
                                             </li>
@@ -106,7 +110,7 @@ export default function AudienceCards() {
 
                                 {/* CTA */}
                                 <div className="absolute bottom-5 left-5 right-5 pt-4 border-t-2 border-black flex items-center justify-between">
-                                    <span className="font-haptik text-[10px] md:text-[11px] xl:text-[14px] text-[#183A39] tracking-wider uppercase font-medium block">
+                                    <span className="font-haptik-rotalic text-[12px] md:text-[13px] xl:text-[16px] text-[#183A39] tracking-normal block lowercase first-letter:uppercase">
                                         {card.cta}
                                     </span>
                                     <div className="w-8 h-8 rounded-full bg-[#183A39]/10 flex items-center justify-center group-hover:bg-[#183A39]/20 transition-colors">
