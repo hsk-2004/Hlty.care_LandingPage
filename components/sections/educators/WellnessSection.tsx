@@ -1,9 +1,13 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import WalkthroughContent from "../walkthrough/WalkthroughContent";
 
 export default function WellnessSection() {
+  const [isWalkthroughOpen, setIsWalkthroughOpen] = useState(false);
+
   const gaps = [
     {
       title: "Curriculum overload:",
@@ -69,6 +73,12 @@ export default function WellnessSection() {
 
   return (
     <section className="py-20 px-6 md:px-12 lg:px-20 overflow-hidden">
+      <AnimatePresence>
+        {isWalkthroughOpen && (
+          <WalkthroughContent onClose={() => setIsWalkthroughOpen(false)} />
+        )}
+      </AnimatePresence>
+
       <div className="max-w-[1280px] mx-auto">
         {/* Wellness Gap Box */}
         <motion.div
@@ -98,7 +108,10 @@ export default function WellnessSection() {
               </div>
 
               <div className="pt-6">
-                <button className="inline-flex items-center justify-between px-8 bg-[#5DE2A2] text-[#183A39] rounded-full font-haptik font-bold text-[14px] uppercase tracking-wider w-full md:w-[340px] lg:w-[498px] py-4 lg:py-0 lg:h-[40px] hover:scale-[1.02] transition-transform group">
+                <button 
+                  onClick={() => setIsWalkthroughOpen(true)}
+                  className="inline-flex items-center justify-between px-8 bg-[#5DE2A2] text-[#183A39] rounded-full font-haptik font-bold text-[14px] uppercase tracking-wider w-full md:w-[340px] lg:w-[498px] py-4 lg:py-0 lg:h-[40px] hover:scale-[1.02] transition-transform group"
+                >
                   Request Walkthrough
                   <ArrowRight size={20} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
                 </button>
