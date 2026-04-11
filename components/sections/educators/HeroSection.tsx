@@ -5,80 +5,84 @@ import { ArrowDown } from "lucide-react";
 
 export default function HeroSection() {
   return (
-    <section className="w-full bg-[#f2efe4] pt-28 pb-12 lg:pt-40 lg:pb-24">
-      <div className="max-w-[1240px] mx-auto px-6">
-        <div className="flex flex-col space-y-8 lg:space-y-12">
-          
-          {/* Badge */}
-          <motion.div 
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="w-[152px] h-[32px] lg:w-fit lg:h-auto bg-[#e2dcc8] lg:px-5 lg:py-2.5 rounded-full border border-[#183a39]/5 shadow-sm flex items-center justify-center"
-          >
-            <span className="font-jubilat text-[12px] lg:text-[13px] text-[#183A39] font-medium opacity-90 leading-none text-center">
-              IIM backed research
-            </span>
-          </motion.div>
+    <section className="w-full bg-[#f2efe4] pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden">
+      <div className="max-w-[1280px] mx-auto px-6">
+        <div className="flex flex-col lg:flex-row lg:items-start gap-12 lg:gap-20">
 
-          {/* Image Placeholder - User will import actual image */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.98 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="w-full rounded-[24px] overflow-hidden aspect-[1.3/1] lg:aspect-[2.4/1] bg-[#e2dcc8]/40 flex items-center justify-center relative shadow-sm border border-[#183a39]/5"
-          >
-            <div className="absolute inset-0 flex flex-col items-center justify-center text-[#183a39]/20 p-8 text-center">
-              <span className="font-jubilat text-xl lg:text-3xl uppercase tracking-[0.2em] font-bold">
-                [Illustration Placeholder]
+          {/* Left Content Column */}
+          <div className="flex flex-col lg:w-[45%] order-2 lg:order-1 space-y-8 lg:space-y-0 lg:pt-20">
+            {/* Badge */}
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="inline-flex items-center justify-center lg:w-[152px] lg:h-[32px] px-4 py-1.5 lg:px-0 lg:py-0 rounded-full border border-[#183a39]/20 bg-[#e2dcc8]/30 w-fit lg:-mt-20 lg:mb-6"
+            >
+              <span className="font-jubilat text-[11px] lg:text-[12px] text-[#183A39] font-medium tracking-wide uppercase">
+                IIM backed research
               </span>
-              <span className="font-jubilat text-sm lg:text-base mt-2 opacity-60">
-                (Import classroom illustration image here)
-              </span>
-            </div>
-          </motion.div>
+            </motion.div>
 
-          {/* Text Content */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6 max-w-4xl"
-          >
-            <h1 className="font-jubilat text-[42px] md:text-[56px] lg:text-[72px] text-[#183A39] leading-[1.05] font-medium tracking-tight">
-              Wellness shouldn’t compete with academics
-            </h1>
-
-            <div className="space-y-6">
-              <p className="font-jubilat text-[14px] md:text-[16px] lg:text-[18px] text-[#183A39]/90 leading-relaxed max-w-2xl">
-                Hlty Beings provides classroom activities, resources, and systems designed 
-                specifically for educators. No prep required. No mandates. 
+            {/* Description & List */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 }}
+              className="space-y-6 lg:mb-52"
+            >
+              <p className="font-jubilat text-[16px] md:text-[18px] lg:text-[20px] text-[#183A39] leading-[1.6] max-w-[480px]">
+                Hlty Beings provides classroom activities, resources, and systems designed
+                specifically for educators. No prep required. No mandates.
                 Just 3-5 minute moments that turn into lifelong habits.
               </p>
 
-              <ul className="space-y-3">
+              <ul className="space-y-2 pl-1">
                 {[
                   "Curriculum-aligned activities",
                   "Teacher-approved"
                 ].map((point, index) => (
-                  <li key={index} className="flex items-center gap-3 font-jubilat text-[14px] md:text-[16px] lg:text-[18px] text-[#183A39] font-medium">
+                  <li key={index} className="flex items-center gap-3 font-jubilat text-[15px] lg:text-[20px] text-[#183A39]">
                     <span className="w-1.5 h-1.5 bg-[#183A39] rounded-full shrink-0" />
                     {point}
                   </li>
                 ))}
               </ul>
+            </motion.div>
+
+            {/* Buttons Stack */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+              className="flex flex-col gap-4 max-w-[340px]"
+            >
+              <button className="w-full lg:w-[337px] lg:h-[40px] flex items-center justify-center bg-[#183A39] text-[#F0EEE6] rounded-full font-haptik font-bold text-[11px] lg:text-[12px] uppercase tracking-[0.15em] hover:bg-[#122b2a] transition-all shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0">
+                EXPLORE PLAYSHOPS
+              </button>
+              <button className="w-full lg:w-[337px] lg:h-[40px] border-2 border-[#183A39] text-[#183A39] rounded-full font-haptik font-bold text-[11px] lg:text-[12px] uppercase tracking-[0.15em] hover:bg-[#183A39] hover:text-[#F0EEE6] transition-all flex items-center justify-between px-8 group">
+                DOWNLOAD ACTIVITY SHEETS
+                <ArrowDown size={18} strokeWidth={2.5} className="group-hover:translate-y-0.5 transition-transform" />
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Right Image Column */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, x: 20 }}
+            animate={{ opacity: 1, scale: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="lg:w-auto order-1 lg:order-2 w-full flex justify-end"
+          >
+            <div className="w-full lg:w-[709px] lg:h-[577px] aspect-[4/3] lg:aspect-auto rounded-[20px] overflow-hidden relative group shrink-0">
+              <img
+                src="/educators/educator1.svg"
+                alt="Educators Illustration"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+              />
+
+              {/* Subtle glass effect overlay */}
+              <div className="absolute inset-0 bg-gradient-to-tr from-[#183a39]/5 to-transparent pointer-events-none" />
             </div>
           </motion.div>
-
-          {/* Buttons */}
-          <div className="flex flex-col gap-4 pt-4 lg:flex-row lg:gap-6">
-            <button className="w-[337px] h-[40px] lg:w-fit lg:h-auto lg:px-10 lg:py-5 bg-[#183A39] text-[#F0EEE6] rounded-full font-haptik font-bold text-[14px] uppercase tracking-[0.1em] hover:bg-[#152e2e] transition-all shadow-md flex items-center justify-center">
-              EXPLORE PLAYSHOPS
-            </button>
-            <button className="w-[337px] h-[40px] lg:w-fit lg:h-auto lg:px-10 lg:py-5 border border-[#183A39] text-[#183A39] rounded-full font-haptik font-bold text-[14px] uppercase tracking-[0.1em] hover:bg-[#183A39] hover:text-[#F0EEE6] transition-all flex items-center justify-center gap-3">
-              DOWNLOAD ACTIVITY SHEETS
-              <ArrowDown size={18} strokeWidth={2.5} />
-            </button>
-          </div>
         </div>
       </div>
     </section>
