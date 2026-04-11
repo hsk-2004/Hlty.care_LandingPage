@@ -6,6 +6,7 @@ import ProblemSection from "@/components/sections/landingpage/ProblemSection";
 import SolutionSection from "@/components/sections/landingpage/SolutionSection";
 import FounderLetter from "@/components/sections/landingpage/FounderLetter";
 import Partners from "@/components/sections/landingpage/Partners";
+import Offerings from "@/components/sections/landingpage/Offerings";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <SolutionSection />
       <FounderLetter />
       <Partners />
+      <Offerings />
       <Footer />
     </main>
   );
