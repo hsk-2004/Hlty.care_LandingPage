@@ -94,10 +94,10 @@ export default function Testimonials() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={handleJoin}
-                className="flex items-center bg-[#1a3636] text-[#F0EEE6] rounded-full font-haptik text-[13px] md:text-[18px] lg:text-[16px] font-medium whitespace-nowrap hover:bg-[#1a3636]/90 transition-all px-8 py-3 md:px-12 md:py-4 lg:px-10 lg:py-4 shadow-lg group"
+                className="flex items-center bg-[#1a3636] text-[#F0EEE6] rounded-full font-haptik text-[11px] md:text-[18px] lg:text-[16px] font-medium whitespace-nowrap hover:bg-[#1a3636]/90 transition-all px-6 py-2.5 md:px-12 md:py-4 lg:px-10 lg:py-4 shadow-lg group"
               >
                 Join Community
-                <ArrowRight size={20} className="ml-2 transition-transform group-hover:translate-x-1" />
+                <ArrowRight size={16} className="md:w-5 md:h-5 ml-2 transition-transform group-hover:translate-x-1" />
               </motion.button>
             </div>
           </motion.div>
