@@ -83,7 +83,7 @@ export default function Testimonials() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="name@email.com"
-                className="flex-1 bg-transparent text-[13px] md:text-[18px] lg:text-[16px] text-[#1a3636] placeholder:text-[#1a3636]/50 outline-none font-sans min-w-0"
+                className="flex-1 bg-transparent text-[13px] md:text-[18px] lg:text-[16px] text-[#1a3636] placeholder:text-[#1a3636]/50 outline-none font-sans min-w-0 rounded-full autofill:shadow-[inset_0_0_0_1000px_#F0EEE6] autofill:[-webkit-text-fill-color:#1a3636]"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}

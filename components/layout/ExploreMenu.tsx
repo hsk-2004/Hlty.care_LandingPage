@@ -102,7 +102,7 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
                       <input 
                         type="email" 
                         placeholder="placeholder@email.com" 
-                        className="bg-transparent border-none outline-none font-haptik text-[10px] lg:text-[14px] text-[#183A39] w-full placeholder:text-[#183A39]/40"
+                        className="bg-transparent border-none outline-none font-haptik text-[10px] lg:text-[14px] text-[#183A39] w-full placeholder:text-[#183A39]/40 rounded-full autofill:shadow-[inset_0_0_0_1000px_#F0EEE6] autofill:[-webkit-text-fill-color:#183A39]"
                       />
                       <motion.button 
                         whileHover={{ scale: 1.02 }}

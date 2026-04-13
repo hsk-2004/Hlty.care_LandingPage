@@ -60,7 +60,7 @@ export default function BlogHero() {
                         <input
                             type="email"
                             placeholder="name@email.com"
-                            className="bg-transparent flex-1 outline-none text-[12px] md:text-[16px] text-[#183A39] placeholder:text-[#183A39]/40 font-jubilat w-full"
+                            className="bg-transparent flex-1 outline-none text-[12px] md:text-[16px] text-[#183A39] placeholder:text-[#183A39]/40 font-jubilat w-full rounded-full autofill:shadow-[inset_0_0_0_1000px_#F0EEE6] autofill:[-webkit-text-fill-color:#183A39]"
                         />
                         <button className="bg-[#183A39] text-[#F0EEE6] px-4 md:px-8 py-1 md:py-2.5 rounded-full font-haptik text-[12px] md:text-[16px] font-medium tracking-wide hover:opacity-90 transition-opacity ml-1 h-full flex items-center">
                             Subscribe

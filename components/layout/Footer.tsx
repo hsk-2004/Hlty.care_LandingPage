@@ -142,7 +142,7 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                                             if (error) setError("");
                                         }}
                                         placeholder="name@email.com"
-                                        className="bg-transparent px-6 py-2 w-full text-[#183A39] placeholder-[#183A39]/50 focus:outline-none font-jubilat text-[14px]"
+                                        className="bg-transparent px-6 py-2 w-full text-[#183A39] placeholder-[#183A39]/50 focus:outline-none font-jubilat text-[14px] rounded-full autofill:shadow-[inset_0_0_0_1000px_#F0EEE6] autofill:[-webkit-text-fill-color:#183A39]"
                                     />
                                     <button 
                                         onClick={handleSubscribe}
