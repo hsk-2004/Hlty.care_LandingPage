@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Fraunces, Outfit } from "next/font/google";
 import "./globals.css";
+import CookieBanner from "@/components/layout/CookieBanner";
 
 const serifFont = Fraunces({
   subsets: ["latin"],
@@ -31,6 +32,7 @@ export default function RootLayout({
       </head>
       <body className="font-sans antialiased text-foreground bg-background">
         {children}
+        <CookieBanner />
       </body>
     </html>
   );
