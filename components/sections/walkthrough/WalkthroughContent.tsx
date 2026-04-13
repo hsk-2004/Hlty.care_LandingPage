@@ -1,8 +1,15 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X } from "lucide-react";
+import Script from "next/script";
+
+declare global {
+    interface Window {
+        Calendly: any;
+    }
+}
 
 interface WalkthroughContentProps {
     onClose?: () => void;
@@ -15,39 +22,41 @@ interface ModalWrapperProps {
 }
 
 const ModalWrapper = ({ children, centered = false, onClose }: ModalWrapperProps) => (
-    <div className="fixed inset-0 z-[200] bg-black/40 flex items-center justify-center p-4">
-        <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            className="bg-[#E4DCCD] rounded-[32px] md:rounded-[40px] p-6 lg:p-8 flex items-center justify-center w-full max-w-[800px] min-h-[500px] md:min-h-[600px] shadow-2xl relative"
-        >
-            {/* Thin inner border line */}
-            <div className="absolute inset-3 md:inset-5 border border-[#BEB4A5]/60 rounded-[20px] md:rounded-[32px] pointer-events-none" />
-            
-            {onClose && (
-                <button
-                    type="button"
-                    onClick={onClose}
-                    className="absolute top-8 right-8 text-[#183A39]/60 hover:text-[#183A39] transition-colors z-10"
-                >
-                    <X size={24} />
-                </button>
-            )}
-            
-            {/* Inner White Box */}
-            <div className={`bg-[#F4F1EA] rounded-[24px] w-full max-w-[480px] p-8 md:p-10 flex flex-col shadow-sm relative z-10 ${centered ? 'items-center justify-center text-center space-y-8' : 'space-y-8'}`}>
-                {children}
-            </div>
-        </motion.div>
-    </div>
+    <>
+        <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
+        <div className="fixed inset-0 z-[200] bg-black/40 flex items-center justify-center p-4">
+            <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="bg-[#E4DCCD] rounded-[32px] md:rounded-[40px] p-6 lg:p-8 flex items-center justify-center w-full max-w-[800px] min-h-[500px] md:min-h-[600px] shadow-2xl relative"
+            >
+                <div className="absolute inset-3 md:inset-5 border border-[#BEB4A5]/60 rounded-[20px] md:rounded-[32px] pointer-events-none" />
+
+                {onClose && (
+                    <button
+                        type="button"
+                        onClick={onClose}
+                        className="absolute top-8 right-8 text-[#183A39]/60 hover:text-[#183A39] transition-colors z-10"
+                    >
+                        <X size={24} />
+                    </button>
+                )}
+
+                <div className={`bg-[#F4F1EA] rounded-[24px] w-full max-w-[480px] p-8 md:p-10 flex flex-col shadow-sm relative z-10 ${centered ? 'items-center justify-center text-center space-y-8' : 'space-y-8'}`}>
+                    {children}
+                </div>
+            </motion.div>
+        </div>
+    </>
 );
 
 export default function WalkthroughContent({ onClose }: WalkthroughContentProps) {
-    const [view, setView] = useState<"role" | "grade" | "goals" | "time" | "confirmation">("role");
+    const [view, setView] = useState<"role" | "grade" | "goals" | "calendly" | "confirmation">("role");
     const [selectedRole, setSelectedRole] = useState<string | null>(null);
     const [selectedGrades, setSelectedGrades] = useState<string[]>([]);
     const [selectedGoals, setSelectedGoals] = useState<string[]>([]);
-    const [selectedTime, setSelectedTime] = useState<string | null>(null);
+    const [calendlyEventUri, setCalendlyEventUri] = useState<string | null>(null);
 
     const roles = [
         "School admin / teacher / principal",
@@ -56,7 +65,7 @@ export default function WalkthroughContent({ onClose }: WalkthroughContentProps)
     ];
 
     const grades = ["K-2", "3-5", "6-8", "9-12", "Mixed"];
-    
+
     const goals = [
         "See how playshops work",
         "Explore activity sheets",
@@ -64,14 +73,63 @@ export default function WalkthroughContent({ onClose }: WalkthroughContentProps)
         "Understand teacher training"
     ];
 
-    const times = [
-        "Tomorrow, 10 AM",
-        "Tomorrow, 2 PM"
-    ];
-
     const toggleItem = (list: string[], setList: (val: string[]) => void, item: string) => {
         setList(list.includes(item) ? list.filter(i => i !== item) : [...list, item]);
     };
+
+    // Capture event URI from Calendly confirmation
+    useEffect(() => {
+        const handleMessage = (e: MessageEvent) => {
+            if (e.data.event && e.data.event === "calendly.event_scheduled") {
+                // e.data.payload.event.uri looks like:
+                // https://api.calendly.com/scheduled_events/UUID
+                const eventUri = e.data?.payload?.event?.uri;
+                if (eventUri) {
+                    // Extract the UUID from the URI and build the calendar link
+                    const uuid = eventUri.split("/").pop();
+                    setCalendlyEventUri(`https://calendly.com/events/${uuid}`);
+                }
+                setView("confirmation");
+            }
+        };
+        window.addEventListener("message", handleMessage);
+        return () => window.removeEventListener("message", handleMessage);
+    }, []);
+
+    useEffect(() => {
+        if (view !== "calendly") return;
+
+        const initWidget = () => {
+            const parent = document.getElementById("calendly-inline-widget");
+            if (parent && window.Calendly) {
+                parent.innerHTML = "";
+                window.Calendly.initInlineWidget({
+                    url: "https://calendly.com/hskharmansingh/walkthrough-session?hide_gdpr_banner=1",
+                    parentElement: parent,
+                    prefill: {
+                        customAnswers: {
+                            a1: selectedRole || "",
+                            a2: selectedGrades.join(", "),
+                            a3: selectedGoals.join(", "),
+                        }
+                    },
+                    utm: {}
+                });
+            }
+        };
+
+        if (window.Calendly) {
+            setTimeout(initWidget, 50);
+        } else {
+            const interval = setInterval(() => {
+                if (window.Calendly) {
+                    clearInterval(interval);
+                    initWidget();
+                }
+            }, 100);
+            return () => clearInterval(interval);
+        }
+    }, [view, selectedRole, selectedGrades.join(","), selectedGoals.join(",")]);
 
     if (view === "role") {
         return (
@@ -225,7 +283,7 @@ export default function WalkthroughContent({ onClose }: WalkthroughContentProps)
                     <button
                         type="button"
                         disabled={selectedGoals.length === 0}
-                        onClick={(e) => { e.preventDefault(); setView("time"); }}
+                        onClick={(e) => { e.preventDefault(); setView("calendly"); }}
                         className={`px-6 md:px-8 h-[40px] md:h-[44px] rounded-[24px] font-haptik font-bold text-[13px] tracking-wider transition-all shadow-sm ${selectedGoals.length > 0
                             ? 'bg-[#E4DCCD] text-[#183A39] hover:bg-[#DED9CF]'
                             : 'bg-[#E4DCCD]/50 text-[#183A39]/30 cursor-not-allowed'
@@ -238,10 +296,20 @@ export default function WalkthroughContent({ onClose }: WalkthroughContentProps)
         );
     }
 
-    if (view === "time") {
+    if (view === "calendly") {
         return (
-            <ModalWrapper onClose={onClose}>
-                <div className="space-y-6 w-full">
+            <ModalWrapper centered onClose={onClose}>
+                <div className="w-full space-y-4">
+                    <div className="w-full flex justify-start relative z-20">
+                        <button
+                            type="button"
+                            onClick={(e) => { e.preventDefault(); setView("goals"); }}
+                            className="text-[#183A39]/60 hover:text-[#183A39] transition-colors font-haptik font-bold text-[12px] tracking-wider"
+                        >
+                            &larr; BACK
+                        </button>
+                    </div>
+
                     <div className="space-y-1 text-left">
                         <h2 className="font-jubilat text-[22px] md:text-[24px] text-[#183A39] leading-tight">
                             Pick a time that works for you
@@ -251,43 +319,10 @@ export default function WalkthroughContent({ onClose }: WalkthroughContentProps)
                         </p>
                     </div>
 
-                    <div className="flex flex-wrap gap-2 md:gap-3">
-                        {times.map((time) => (
-                            <button
-                                key={time}
-                                onClick={() => setSelectedTime(time)}
-                                className={`px-5 py-2.5 rounded-3xl border font-jubilat text-[14px] md:text-[15px] transition-all ${
-                                    selectedTime === time
-                                    ? 'bg-[#B0E7CC] border-[#183A39] text-[#183A39] shadow-sm'
-                                    : 'bg-transparent border-[#BEB4A5]/60 text-[#183A39]/80 hover:border-[#BEB4A5]'
-                                }`}
-                            >
-                                {time}
-                            </button>
-                        ))}
-                    </div>
-                </div>
-
-                <div className="flex gap-4">
-                    <button
-                        type="button"
-                        onClick={(e) => { e.preventDefault(); setView("goals"); }}
-                        className="px-6 md:px-8 h-[40px] md:h-[44px] rounded-[24px] font-haptik font-bold text-[13px] tracking-wider border border-[#BEB4A5]/60 text-[#183A39]/80 hover:bg-black/5 transition-all"
-                    >
-                        BACK
-                    </button>
-                    <button
-                        type="button"
-                        disabled={!selectedTime}
-                        onClick={(e) => { e.preventDefault(); setView("confirmation"); }}
-                        className={`px-6 md:px-8 h-[40px] md:h-[44px] rounded-[24px] font-haptik font-bold text-[13px] tracking-wider transition-all shadow-sm ${
-                            selectedTime
-                            ? 'bg-[#E4DCCD] text-[#183A39] hover:bg-[#DED9CF]'
-                            : 'bg-[#E4DCCD]/50 text-[#183A39]/30 cursor-not-allowed'
-                        }`}
-                    >
-                        CONTINUE
-                    </button>
+                    <div
+                        id="calendly-inline-widget"
+                        className="w-full h-[450px] md:h-[550px] overflow-hidden rounded-[16px]"
+                    />
                 </div>
             </ModalWrapper>
         );
@@ -301,17 +336,32 @@ export default function WalkthroughContent({ onClose }: WalkthroughContentProps)
                         You&apos;re booked!
                     </h2>
                     <p className="font-jubilat text-[14px] md:text-[15px] text-[#183A39]/80 leading-relaxed max-w-sm mx-auto">
-                        Your 15-min walkthrough is confirmed for {selectedTime || 'Friday, 11 AM'}. Check your inbox for the calendar invite and a prep guide.
+                        Your 15-min walkthrough is confirmed. Check your inbox for the calendar invite and a prep guide.
                     </p>
                 </div>
 
-                <button 
-                    type="button"
-                    onClick={(e) => { e.preventDefault(); onClose?.(); }}
-                    className="px-8 md:px-10 h-[40px] md:h-[44px] rounded-[24px] bg-[#E4DCCD] text-[#183A39] font-haptik font-bold text-[13px] tracking-wider hover:bg-[#DED9CF] transition-all shadow-sm"
-                >
-                    ADD TO CALENDAR
-                </button>
+                <div className="flex flex-col gap-3 w-full items-center">
+                    {/* Opens Gmail search for the invite which contains the .ics/google invite */}
+                    <button
+                        type="button"
+                        onClick={(e) => {
+                            e.preventDefault();
+                            const emailUrl = "https://mail.google.com/mail/u/0/#search/calendly";
+                            window.open(emailUrl, "_blank");
+                        }}
+                        className="px-8 md:px-10 h-[40px] md:h-[44px] rounded-[24px] bg-[#183A39] text-white font-haptik font-bold text-[13px] tracking-wider hover:bg-[#183A39]/90 transition-all shadow-sm flex items-center justify-center w-full"
+                    >
+                        ADD TO CALENDAR
+                    </button>
+
+                    <button
+                        type="button"
+                        onClick={(e) => { e.preventDefault(); onClose?.(); }}
+                        className="px-8 md:px-10 h-[40px] md:h-[44px] rounded-[24px] bg-[#E4DCCD] text-[#183A39] font-haptik font-bold text-[13px] tracking-wider hover:bg-[#DED9CF] transition-all shadow-sm w-full"
+                    >
+                        DONE
+                    </button>
+                </div>
             </ModalWrapper>
         );
     }
