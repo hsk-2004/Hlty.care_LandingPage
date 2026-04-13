@@ -1,6 +1,6 @@
 "use client";
  
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import { X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -10,7 +10,7 @@ interface ExploreMenuProps {
   onClose: () => void;
 }
  
-const menuVariants = {
+const menuVariants: Variants = {
   initial: {
     clipPath: "circle(0% at 85% 5%)",
     opacity: 0,
@@ -35,9 +35,9 @@ const menuVariants = {
   },
 };
  
-const itemVariants = {
+const itemVariants: Variants = {
   initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" } },
+  animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
 };
  
 export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
