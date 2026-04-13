@@ -128,23 +128,23 @@ export default function Testimonials() {
         onClose={() => setIsModalOpen(false)}
         centered
       >
-        <div className="w-full mb-6">
-          <h2 className="font-jubilat text-[22px] md:text-[24px] text-[#183A39] leading-tight">
+        <div className="w-full mb-4 md:mb-6">
+          <h2 className="font-jubilat text-[20px] md:text-[24px] text-[#183A39] leading-tight">
             Join Community
           </h2>
-          <p className="font-jubilat text-[14px] md:text-[15px] text-[#A69C8D] mt-1">
+          <p className="font-jubilat text-[13px] md:text-[15px] text-[#A69C8D] mt-1">
             Fill out the form below to get started.
           </p>
         </div>
 
-        <div className="w-full max-h-[80vh] overflow-y-auto pr-2 custom-scrollbar">
+        <div className="w-full max-h-[65vh] md:max-h-[80vh] overflow-y-auto pr-1 md:pr-2 custom-scrollbar">
           <iframe 
             data-tally-src={`https://tally.so/embed/7RD5R2?alignLeft=1&hideTitle=1&transparentBackground=1&source=workshop_podcast`}
             loading="lazy" 
             width="100%" 
-            height="650" 
+            height="550" 
             title="Join Community"
-            className="border-none"
+            className="border-none w-full min-h-[450px] md:min-h-[600px]"
           />
         </div>
       </BrandModal>
