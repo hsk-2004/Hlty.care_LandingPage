@@ -64,7 +64,7 @@ export default function Hero() {
           >
             <div className="flex items-center gap-1.5 md:gap-2">
               <span className="text-[clamp(10px,1.2vw,16px)]">🏛️</span>
-              <span>DPIIT Register</span>
+              <span>DPIIT Registered</span>
             </div>
             <div className="flex items-center gap-1.5 md:gap-2">
               <span className="text-[clamp(10px,1.2vw,16px)]">🎓</span>
