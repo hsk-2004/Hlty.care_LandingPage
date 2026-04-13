@@ -52,7 +52,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Content Container */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 lg:px-8 space-y-10 -translate-x-[20px] md:-translate-x-0 lg:-translate-x-[clamp(40px,10vw,160px)]">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-4 lg:px-8 space-y-6 lg:space-y-[clamp(24px,3vw,40px)] -translate-x-[20px] md:-translate-x-0 lg:-translate-x-0 xl:-translate-x-[clamp(0px,5vw,120px)]">
 
         {/* Top Trust Badges - Forced Single Line */}
         <div className="translate-y-[30px] md:translate-y-0">
@@ -60,7 +60,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-nowrap items-center justify-start gap-x-[clamp(10px,2vw,32px)] font-jubilat text-[clamp(10px,1.5vw,18px)] text-[#183A39]/80 whitespace-nowrap overflow-x-visible mb-0"
+            className="flex flex-nowrap items-center justify-start gap-x-[clamp(8px,1.5vw,24px)] xl:gap-x-8 font-jubilat text-[clamp(10px,1.2vw,14px)] xl:text-[18px] text-[#183A39]/80 whitespace-nowrap overflow-x-visible mb-0"
           >
             <div className="flex items-center gap-1.5 md:gap-2">
               <span className="text-[clamp(10px,1.2vw,16px)]">🏛️</span>
@@ -86,19 +86,19 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-[clamp(12px,3vw,40px)] pt-1 px-4 pb-4 md:p-[clamp(16px,4vw,32px)] text-left space-y-[clamp(12px,2vw,18px)] md:space-y-[clamp(16px,3vw,24px)] shadow-2xl relative w-[clamp(332px,52vw,673px)] h-auto min-h-[182px] mx-0"
+          className="bg-white/5 backdrop-blur-sm border border-white/20 rounded-[clamp(12px,3vw,40px)] pt-1 px-4 pb-4 md:p-[clamp(16px,4vw,24px)] xl:p-8 text-left space-y-[clamp(12px,2vw,16px)] xl:space-y-6 shadow-2xl relative w-[clamp(330px,50vw,520px)] xl:w-[673px] h-auto min-h-[182px] mx-0"
         >
           {/* Decorative Blur and Ring (Subtle) */}
           <div className="absolute top-0 right-0 w-64 h-64 bg-green-200/20 blur-3xl -z-10 rounded-full" />
 
           {/* Main Title */}
-          <div className="space-y-3 md:space-y-6">
-            <h1 className="font-jubilat text-[clamp(28px,3.5vw,36px)] leading-tight text-[#183A39] lg:max-w-none lg:whitespace-nowrap">
+          <div className="space-y-2 md:space-y-4 xl:space-y-6">
+            <h1 className="font-jubilat text-[clamp(24px,2.8vw,30px)] xl:text-[36px] leading-tight text-[#183A39] lg:max-w-none lg:whitespace-nowrap">
               A world where <span className="font-bold">health feels like home.</span>
             </h1>
 
             {/* Subheading */}
-            <p className="font-jubilat text-[clamp(12px,1.5vw,20px)] text-[#183A39]/90 max-w-4xl leading-normal md:leading-snug">
+            <p className="font-jubilat text-[clamp(12px,1.4vw,16px)] xl:text-[20px] text-[#183A39]/90 max-w-4xl leading-normal md:leading-snug">
               Your child builds <span className="font-bold">healthy habits</span> here. Through <br className="hidden lg:block" /> <span className="font-bold">stories, play & games.</span> Because lectures don&apos;t work.
             </p>
           </div>
@@ -109,19 +109,19 @@ export default function Hero() {
               <span className="text-[clamp(10px,1.2vw,14px)]">📖</span>
               <span className="font-jubilat text-[clamp(8px,1vw,12px)] font-bold text-[#183A39]">Stories</span>
             </div>
-            <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[16px] lg:h-[8px]" />
+            <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[12px] lg:h-[6px] xl:w-[16px] xl:h-[8px]" />
 
             <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm">
               <span className="text-[clamp(10px,1.2vw,14px)]">🛝</span>
               <span className="font-jubilat text-[clamp(8px,1vw,12px)] font-bold text-[#183A39]">Play</span>
             </div>
-            <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[16px] lg:h-[8px]" />
+            <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[12px] lg:h-[6px] xl:w-[16px] xl:h-[8px]" />
 
             <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm">
               <span className="text-[clamp(10px,1.2vw,14px)]">🔄</span>
               <span className="font-jubilat text-[clamp(8px,1vw,12px)] font-bold text-[#183A39]">Routine</span>
             </div>
-            <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[16px] lg:h-[8px]" />
+            <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[12px] lg:h-[6px] xl:w-[16px] xl:h-[8px]" />
 
             <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm">
               <span className="text-[clamp(10px,1.2vw,14px)]">💪</span>
@@ -142,10 +142,10 @@ export default function Hero() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#183A39] text-white flex items-center justify-between px-4 w-[clamp(149px,20vw,240px)] h-[clamp(24px,4vw,48px)] rounded-full font-haptik text-[clamp(10px,1.5vw,16px)] lg:text-[16px] font-medium shadow-xl hover:bg-[#183A39]/90 transition-all group"
+                className="bg-[#183A39] text-white flex items-center justify-between px-4 w-[clamp(149px,18vw,200px)] xl:w-[240px] h-[clamp(32px,3.5vw,40px)] xl:h-[48px] rounded-full font-haptik text-[clamp(10px,1.2vw,14px)] xl:text-[16px] font-medium shadow-xl hover:bg-[#183A39]/90 transition-all group"
               >
                 <span className="flex-1 text-left whitespace-nowrap">Get started</span>
-                <ArrowRight className="w-[clamp(12px,1.5vw,20px)] h-[clamp(12px,1.5vw,20px)] group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-[clamp(12px,1.2vw,16px)] xl:w-[20px] h-[clamp(12px,1.2vw,16px)] xl:h-[20px] group-hover:translate-x-1 transition-transform" />
               </motion.button>
             </Link>
           </motion.div>

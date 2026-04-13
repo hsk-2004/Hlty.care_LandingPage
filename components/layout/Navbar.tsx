@@ -74,7 +74,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
             className={`fixed top-0 left-0 w-full z-[100] flex justify-center items-center p-4 lg:py-4 lg:px-6 ${(isOpen || isExploreOpen) ? "bg-[#183A39]" : "transition-colors duration-300 " + (isDark ? "bg-[#183A39] lg:bg-transparent" : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"))
                 }`}
         >
-            <div className={`flex justify-between items-center w-full max-w-[1292px] lg:px-2 ${isDark ? `lg:h-[68px] ${bgTransparent ? "" : "lg:bg-[#E4DBCD]"} lg:rounded-[32px] lg:py-1.5` : ""}`}>
+            <div className={`flex justify-between items-center w-full max-w-7xl lg:px-2 ${isDark ? `lg:h-[56px] xl:h-[68px] ${bgTransparent ? "" : "lg:bg-[#E4DBCD]"} lg:rounded-[32px] lg:py-1.5` : ""}`}>
                 {/* Logo Section */}
                 <div className="flex lg:flex-1 justify-start items-center">
                     <Link href="/" className={`flex items-center gap-2 group ${logoClassName || "lg:-ml-2"}`}>
@@ -89,13 +89,13 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                         <img 
                             src={isOpen ? (logo || "/logo_.svg") : (logo || "/logo.png")} 
                             alt="Logo" 
-                            className={`hidden lg:block ${isOpen ? "" : (logo ? "w-auto h-8 lg:w-[180px] lg:h-[28px]" : `w-auto h-14 lg:h-20 ${isDark ? "lg:ml-2" : ""}`)}`} 
+                            className={`hidden lg:block ${isOpen ? "" : (logo ? "w-auto h-8 lg:w-[180px] lg:h-[28px]" : `w-auto h-14 lg:h-12 xl:h-20 ${isDark ? "lg:ml-2" : ""}`)}`} 
                             style={isOpen ? { width: '46px', height: '35.86px' } : {}}
                         />
                     </Link>
                 </div>
 
-                <div className="hidden lg:flex items-center gap-10">
+                <div className="hidden lg:flex items-center lg:gap-6 xl:gap-10">
                     {navLinks.map((link) => {
                         const isExplore = link.name === "+ EXPLORE";
                         return (
@@ -109,7 +109,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                                     }
                                 }}
                                 style={{ color: textColor || (isDark ? (bgTransparent ? "#E4DBCD" : "#183A39") : (scrolled ? "#183A39" : (variant === "light" ? "#183A39" : "#F0EEE6"))) }}
-                                className="font-haptik text-[15px] font-medium tracking-[0.1em] hover:opacity-60 transition-opacity"
+                                className="font-haptik lg:text-[13px] xl:text-[15px] font-medium tracking-[0.1em] hover:opacity-60 transition-opacity"
                             >
                                 {link.name}
                             </Link>
@@ -124,7 +124,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                         <Link 
                             href="/get-started" 
                             style={{ backgroundColor: buttonColor || (isDark ? "#51D2A2" : "#183A39") }}
-                            className={`hidden lg:flex w-[164px] h-[58px] items-center justify-center rounded-full font-haptik text-[14px] font-medium tracking-[0.05em] hover:opacity-90 transition-all shadow-md ${(buttonColor === "#51D2A2" || (isDark && !buttonColor)) ? "text-[#183A39]" : "text-[#F0EEE6]"}`}
+                            className={`hidden lg:flex lg:w-[130px] lg:h-[44px] xl:w-[164px] xl:h-[58px] items-center justify-center rounded-full font-haptik lg:text-[12px] xl:text-[14px] font-medium tracking-[0.05em] hover:opacity-90 transition-all shadow-md ${(buttonColor === "#51D2A2" || (isDark && !buttonColor)) ? "text-[#183A39]" : "text-[#F0EEE6]"}`}
                         >
                             GET STARTED
                         </Link>
@@ -133,9 +133,9 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                     <Link 
                         href="/cart" 
                         style={{ backgroundColor: cartBgColor || "#183A39" }}
-                        className={`hidden lg:flex w-[58px] h-[58px] items-center justify-center rounded-full transition-all hover:scale-105 shadow-md ${cartBgColor === "#51D2A2" ? "text-[#183A39]" : "text-[#F0EEE6]"}`}
+                        className={`hidden lg:flex lg:w-[44px] lg:h-[44px] xl:w-[58px] xl:h-[58px] items-center justify-center rounded-full transition-all hover:scale-105 shadow-md ${cartBgColor === "#51D2A2" ? "text-[#183A39]" : "text-[#F0EEE6]"}`}
                     >
-                        {cartIcon ? <img src={cartIcon} alt="Cart" className="w-[30px] h-[30px]" /> : <ShoppingBag size={20} />}
+                        {cartIcon ? <img src={cartIcon} alt="Cart" className="lg:w-[22px] lg:h-[22px] xl:w-[30px] xl:h-[30px]" /> : <ShoppingBag size={20} className="w-4 h-4 xl:w-5 xl:h-5" />}
                     </Link>
 
                     {showClose ? (

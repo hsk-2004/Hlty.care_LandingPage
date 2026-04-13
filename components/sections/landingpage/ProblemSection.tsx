@@ -108,10 +108,10 @@ export default function ProblemSection() {
 
 
                 {/* Fixed Layout with Crossfading Inner Content */}
-                <div className="relative w-full h-full flex flex-col justify-center md:flex-row-reverse md:items-center items-center md:justify-between px-[7.5vw] md:gap-16">
+                <div className="relative w-full h-full flex flex-col justify-center md:flex-row-reverse md:items-center items-center md:justify-between px-[5vw] lg:px-[4vw] md:gap-4 lg:gap-8 xl:gap-16">
                     {/* Image Area */}
-                    <div className="relative w-full md:w-[663px] flex justify-center">
-                        <div className="w-full aspect-[4/3] md:w-[663px] md:h-[401px] md:aspect-auto bg-[#183A39]/10 rounded-[20px] overflow-hidden relative shadow-lg">
+                    <div className="relative w-full md:w-[400px] lg:w-[450px] xl:w-[663px] flex justify-center">
+                        <div className="w-full aspect-[4/3] md:w-[400px] lg:w-[450px] xl:w-[663px] md:h-[240px] lg:h-[270px] xl:h-[401px] md:aspect-auto bg-[#183A39]/10 rounded-[20px] overflow-hidden relative shadow-lg">
                             {problems.map((problem, index) => {
                                 const opacity = getCardOpacity(index, progress);
                                 const isVisible = opacity > 0;
@@ -148,7 +148,7 @@ export default function ProblemSection() {
                         </div>
 
                         {/* Crossfading Texts Container */}
-                        <div className="relative w-full min-h-[220px] sm:min-h-[240px] md:min-h-[350px] lg:min-h-[400px]">
+                        <div className="relative w-full min-h-[220px] sm:min-h-[240px] md:min-h-[300px] lg:min-h-[320px] xl:min-h-[400px]">
                             {problems.map((problem, index) => {
                                 const opacity = getCardOpacity(index, progress);
                                 const isVisible = opacity > 0;
@@ -166,7 +166,7 @@ export default function ProblemSection() {
                                     >
                                         {/* Title */}
                                         <h2
-                                            className="font-jubilat text-[12px] md:text-[20px] lg:text-[24px] font-bold tracking-wide uppercase w-full"
+                                            className="font-jubilat text-[12px] md:text-[18px] lg:text-[clamp(18px,2.2vw,22px)] xl:text-[24px] font-bold tracking-wide uppercase w-full"
                                             style={{ color: problem.color ?? "#B22222" }}
                                         >
                                             {problem.title}
@@ -175,7 +175,7 @@ export default function ProblemSection() {
                                         {/* Body Text */}
                                         {problem.text && (
                                             <div
-                                                className="space-y-1 font-jubilat text-[11px] md:text-[16px] lg:text-[20px] leading-[1.4] w-full"
+                                                className="space-y-1 font-jubilat text-[11px] md:text-[14px] lg:text-[clamp(14px,1.8vw,18px)] xl:text-[20px] leading-[1.4] w-full"
                                                 style={{ color: problem.color ?? "#B22222" }}
                                             >
                                                 <p>{problem.text}</p>

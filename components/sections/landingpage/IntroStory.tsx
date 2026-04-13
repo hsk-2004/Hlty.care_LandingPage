@@ -40,7 +40,7 @@ export default function IntroStory() {
       <div className="max-w-7xl mx-auto">
         {/* Header Title */}
         <div className="text-center mb-10 md:mb-16">
-          <h2 className="font-jubilat text-[clamp(24px,6vw,36px)] md:text-[36px] lg:text-[32px] text-[#183A39] leading-tight">
+          <h2 className="font-jubilat text-[clamp(24px,6vw,36px)] md:text-[32px] lg:text-[28px] xl:text-[36px] text-[#183A39] leading-tight">
             Everything your family needs to<br />
             <span className="font-bold">stay healthy in one world</span>
           </h2>
@@ -51,11 +51,11 @@ export default function IntroStory() {
           {cards.map((card, index) => (
             <div
               key={index}
-              className="flex-shrink-0 w-[clamp(280px,40vw,320px)] min-h-[clamp(420px,55vw,480px)] md:w-[clamp(320px,45vw,400px)] lg:w-[280px] lg:min-h-[420px] bg-[#E4DBCD] border border-[#BEB4A5] rounded-[24px] md:rounded-[32px] pt-1 px-4 pb-4 md:p-6 lg:p-6 flex flex-col justify-between snap-start transition-all"
+              className="flex-shrink-0 w-[clamp(280px,40vw,320px)] min-h-[clamp(420px,55vw,480px)] md:w-[clamp(320px,45vw,400px)] lg:w-[230px] lg:min-h-[360px] xl:w-[290px] xl:min-h-[440px] bg-[#E4DBCD] border border-[#BEB4A5] rounded-[24px] md:rounded-[32px] pt-1 px-4 pb-4 md:p-6 lg:p-4 xl:p-6 flex flex-col justify-between snap-start transition-all"
             >
-              <div className="space-y-[clamp(4px,2vw,16px)] md:space-y-4 lg:space-y-2">
+              <div className="space-y-[clamp(4px,2vw,16px)] md:space-y-4 lg:space-y-2 xl:space-y-4">
                 {/* Feature Image */}
-                <div className="relative w-full h-[clamp(151px,20vw,200px)] rounded-xl md:rounded-2xl overflow-hidden mb-0 md:mb-2 mx-auto">
+                <div className="relative w-full h-[clamp(151px,20vw,200px)] lg:h-[160px] xl:h-[200px] rounded-xl md:rounded-2xl overflow-hidden mb-0 md:mb-2 mx-auto">
                   <Image
                     src={card.image}
                     alt={card.title}
@@ -66,18 +66,18 @@ export default function IntroStory() {
                 </div>
 
                 {/* Badge */}
-                <div className={`flex items-center justify-center bg-[#FAF9F6] border border-[#183A39]/10 rounded-full h-[clamp(19px,3vw,28px)] md:w-fit md:h-auto md:px-4 md:py-1 md:bg-white ${card.category === 'Activity Bundles' ? 'w-[106px]' : 'w-[82px]'}`}>
-                  <span className="font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[12px] text-[#183A39] whitespace-nowrap">
+                <div className={`flex items-center justify-center bg-[#FAF9F6] border border-[#183A39]/10 rounded-full h-[clamp(19px,3vw,28px)] md:w-fit md:h-auto md:px-4 md:py-1 md:bg-white ${card.category === 'Activity Bundles' ? 'w-[106px] lg:w-fit' : 'w-[82px] lg:w-fit'}`}>
+                  <span className="font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[11px] xl:text-[13px] text-[#183A39] whitespace-nowrap">
                     {card.category}
                   </span>
                 </div>
 
                 {/* Content */}
                 <div className="space-y-[clamp(4px,1vw,8px)] md:space-y-2 lg:space-y-1">
-                  <h3 className="font-jubilat text-[clamp(16px,4vw,22px)] md:text-[22px] lg:text-[16px] font-bold text-[#183A39] leading-tight">
+                  <h3 className="font-jubilat text-[clamp(16px,4vw,22px)] md:text-[22px] lg:text-[18px] xl:text-[22px] font-bold text-[#183A39] leading-tight">
                     {card.title}
                   </h3>
-                  <p className="font-jubilat text-[clamp(14px,3vw,16px)] md:text-[16px] lg:text-[14px] text-[#183A39]/80 leading-relaxed">
+                  <p className="font-jubilat text-[clamp(14px,3vw,16px)] md:text-[16px] lg:text-[13px] xl:text-[14px] text-[#183A39]/80 leading-relaxed">
                     {card.description}
                   </p>
                 </div>
@@ -86,11 +86,11 @@ export default function IntroStory() {
               {/* Button */}
               <div className="mt-4 md:mt-6 lg:mt-4">
                 {index === 1 ? (
-                  <button className="bg-[#183A39] text-white rounded-full flex items-center justify-center w-[105px] h-[32px] md:w-[105px] md:h-[32px] font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[12px] font-medium hover:bg-[#183A39]/90 transition-colors shadow-sm whitespace-nowrap">
+                  <button className="bg-[#183A39] text-white rounded-full flex items-center justify-center lg:w-[100px] lg:h-[30px] xl:w-[105px] xl:h-[32px] font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[11px] xl:text-[12px] font-medium hover:bg-[#183A39]/90 transition-colors shadow-sm whitespace-nowrap">
                     {card.buttonText}
                   </button>
                 ) : (
-                  <button className="border-2 border-[#183A39]/40 text-[#183A39] rounded-full flex items-center justify-center w-[clamp(110px,25vw,140px)] h-[clamp(32px,5vw,40px)] md:px-8 md:py-2.5 font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[13px] font-bold cursor-default whitespace-nowrap">
+                  <button className="border-2 border-[#183A39]/40 text-[#183A39] rounded-full flex items-center justify-center w-[clamp(110px,25vw,140px)] lg:w-[120px] lg:h-[36px] xl:w-[130px] xl:h-[38px] font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[12px] xl:text-[13px] font-bold cursor-default whitespace-nowrap">
                     Coming Soon
                   </button>
                 )}
@@ -101,13 +101,13 @@ export default function IntroStory() {
 
         {/* Secondary Scrollable Illustration Container */}
         <div className="mt-16 md:mt-24 text-center">
-          <h3 className="font-jubilat text-[20px] md:text-[32px] lg:text-[32px] text-[#183A39] mb-8">
+          <h3 className="font-jubilat text-[20px] md:text-[32px] lg:text-[28px] xl:text-[32px] text-[#183A39] mb-8">
             Families are noticing the difference
           </h3>
         </div>
         <div className="overflow-x-auto no-scrollbar snap-x snap-mandatory -mx-6 md:mx-0">
           <div className="min-w-[1048px] md:min-w-0 md:max-w-7xl md:mx-auto lg:mx-auto md:px-4 pl-0">
-            <div className="relative w-[1048px] h-[265px] md:w-full md:h-auto md:aspect-[1048/265] lg:w-[1017px] lg:h-[340px] lg:mx-auto">
+            <div className="relative w-[1048px] h-[265px] md:w-full md:h-auto md:aspect-[1048/265] lg:w-[850px] lg:h-[280px] xl:w-[1000px] xl:h-[300px] lg:mx-auto">
               <Image
                 src="/landingpage/intro-cards1.svg"
                 alt="Feature Illustration Row"
