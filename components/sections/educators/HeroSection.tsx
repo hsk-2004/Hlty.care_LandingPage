@@ -25,59 +25,59 @@ export default function HeroSection() {
         <div className="flex flex-col lg:flex-row lg:items-start gap-8 lg:gap-20">
 
           {/* Left Content Column */}
-          <div className="flex flex-col lg:w-[45%] order-2 lg:order-1 space-y-8 lg:space-y-0 lg:pt-20">
+          <div className="flex flex-col lg:w-[45%] order-2 lg:order-1 lg:pt-8">
             {/* Desktop Badge */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="hidden lg:inline-flex items-center justify-center lg:w-[152px] lg:h-[32px] rounded-full border border-[#183a39]/20 bg-[#e2dcc8]/30 w-fit lg:-mt-20 lg:mb-6"
+              className="hidden lg:inline-flex items-center justify-center lg:w-[152px] lg:h-[30px] rounded-full border border-[#183a39]/20 bg-[#e2dcc8]/30 w-fit lg:mb-6"
             >
-              <span className="font-jubilat text-[12px] text-[#183A39] font-medium tracking-wide uppercase">
+              <span className="font-jubilat text-[11px] text-[#183A39] font-medium tracking-wide uppercase">
                 IIM backed research
               </span>
             </motion.div>
-
+ 
             {/* Description & List */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="space-y-6 lg:mb-52"
+              className="space-y-4 lg:mb-24"
             >
-              <h1 className="font-jubilat text-[32px] md:text-[42px] lg:text-[48px] text-[#183A39] leading-[1.1] font-medium tracking-tight">
+              <h1 className="font-jubilat text-[32px] md:text-[40px] lg:text-[42px] text-[#183A39] leading-[1.1] font-medium tracking-tight">
                 Wellness shouldn't compete with academics
               </h1>
               
-              <p className="font-jubilat text-[16px] md:text-[18px] lg:text-[20px] text-[#183A39] leading-[1.6] max-w-[480px]">
+              <p className="font-jubilat text-[15px] md:text-[17px] lg:text-[18px] text-[#183A39] leading-[1.6] max-w-[480px]">
                 Hlty Beings provides classroom activities, resources, and systems designed
                 specifically for educators. No prep required. No mandates.
                 Just 3-5 minute moments that turn into lifelong habits.
               </p>
-
-              <ul className="space-y-2 pl-1">
+ 
+              <ul className="space-y-1.5 pl-1">
                 {[
                   "Curriculum-aligned activities",
                   "Teacher-approved"
                 ].map((point, index) => (
-                  <li key={index} className="flex items-center gap-3 font-jubilat text-[15px] lg:text-[20px] text-[#183A39]">
+                  <li key={index} className="flex items-center gap-3 font-jubilat text-[14px] lg:text-[16px] text-[#183A39]">
                     <span className="w-1.5 h-1.5 bg-[#183A39] rounded-full shrink-0" />
                     {point}
                   </li>
                 ))}
               </ul>
             </motion.div>
-
+ 
             {/* Buttons Stack */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="flex flex-col gap-4 max-w-full lg:max-w-[340px]"
+              className="flex flex-col gap-3 max-w-full lg:max-w-[320px]"
             >
-              <button className="w-full lg:w-[337px] h-[48px] lg:h-[40px] flex items-center justify-center bg-[#183A39] text-[#F0EEE6] rounded-full font-haptik font-bold text-[11px] lg:text-[12px] uppercase tracking-[0.15em] hover:bg-[#122b2a] transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0">
+              <button className="w-full lg:w-[320px] h-[48px] lg:h-[40px] flex items-center justify-center bg-[#183A39] text-[#F0EEE6] rounded-full font-haptik font-bold text-[11px] lg:text-[12px] uppercase tracking-[0.15em] hover:bg-[#122b2a] transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0">
                 EXPLORE PLAYSHOPS
               </button>
-              <button className="w-full lg:w-[337px] h-[48px] lg:h-[40px] border border-[#183A39] text-[#183A39] rounded-full font-haptik font-bold text-[11px] lg:text-[12px] uppercase tracking-[0.15em] hover:bg-[#183A39] hover:text-[#F0EEE6] transition-all flex items-center justify-between px-6 lg:px-8 group">
+              <button className="w-full lg:w-[320px] h-[48px] lg:h-[40px] border border-[#183A39] text-[#183A39] rounded-full font-haptik font-bold text-[11px] lg:text-[12px] uppercase tracking-[0.15em] hover:bg-[#183A39] hover:text-[#F0EEE6] transition-all flex items-center justify-between px-6 lg:px-8 group">
                 DOWNLOAD ACTIVITY SHEETS
                 <ArrowDown size={18} strokeWidth={2.5} className="group-hover:translate-y-0.5 transition-transform" />
               </button>
