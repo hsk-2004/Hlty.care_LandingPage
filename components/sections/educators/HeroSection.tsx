@@ -79,7 +79,7 @@ export default function HeroSection() {
                 whileTap={{ scale: 0.98 }}
                 className="w-full lg:w-[320px] h-[48px] lg:h-[40px] flex items-center justify-center bg-[#183A39] text-[#F0EEE6] rounded-full font-haptik font-bold text-[11px] lg:text-[12px] uppercase tracking-[0.15em] hover:bg-[#122b2a] transition-all shadow-sm hover:shadow-md active:translate-y-0"
               >
-                EXPLORE PLAYSHOPS
+                EXPLORE PLAYSHOP
               </motion.button>
               <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
