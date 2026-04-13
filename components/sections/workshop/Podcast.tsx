@@ -2,10 +2,22 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { BrandModal } from "@/components/ui/BrandModal";
 
 export default function Testimonials() {
-  const [email, setEmail] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Initialize Tally embeds when modal opens
+  useEffect(() => {
+    if (isModalOpen && typeof window !== "undefined" && window.Tally) {
+      window.Tally.loadEmbeds();
+    }
+  }, [isModalOpen]);
+
+  const handleJoin = () => {
+    setIsModalOpen(true);
+  };
 
   const itemVariants = {
     hidden: { opacity: 0, y: 30 },
@@ -76,22 +88,16 @@ export default function Testimonials() {
               </div>
             </div>
 
-            {/* Email input + CTA button */}
-            <div className="flex items-center gap-2 bg-[#F0EEE6] rounded-full p-1 pl-4 lg:pl-6 border border-white/20 w-full lg:max-w-[400px] mt-4 lg:mt-8">
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="name@email.com"
-                className="flex-1 bg-transparent text-[13px] md:text-[18px] lg:text-[16px] text-[#1a3636] placeholder:text-[#1a3636]/50 outline-none font-sans min-w-0 rounded-full autofill:shadow-[inset_0_0_0_1000px_#F0EEE6] autofill:[-webkit-text-fill-color:#1a3636]"
-              />
+            {/* CTA button */}
+            <div className="flex items-center mt-4 lg:mt-8">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="flex items-center bg-[#1a3636] text-[#F0EEE6] rounded-full font-haptik text-[12px] md:text-[18px] lg:text-[15px] font-medium whitespace-nowrap hover:bg-[#1a3636]/90 transition-all px-4 py-2 md:px-8 md:py-4 lg:px-6 lg:py-3"
+                onClick={handleJoin}
+                className="flex items-center bg-[#1a3636] text-[#F0EEE6] rounded-full font-haptik text-[13px] md:text-[18px] lg:text-[16px] font-medium whitespace-nowrap hover:bg-[#1a3636]/90 transition-all px-8 py-3 md:px-12 md:py-4 lg:px-10 lg:py-4 shadow-lg group"
               >
                 Join Community
-                <ArrowRight size={16} className="ml-2 hidden lg:block" />
+                <ArrowRight size={20} className="ml-2 transition-transform group-hover:translate-x-1" />
               </motion.button>
             </div>
           </motion.div>
@@ -116,6 +122,32 @@ export default function Testimonials() {
 
         </div>
       </div>
+
+      <BrandModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)}
+        centered
+      >
+        <div className="w-full mb-6">
+          <h2 className="font-jubilat text-[22px] md:text-[24px] text-[#183A39] leading-tight">
+            Join Community
+          </h2>
+          <p className="font-jubilat text-[14px] md:text-[15px] text-[#A69C8D] mt-1">
+            Fill out the form below to get started.
+          </p>
+        </div>
+
+        <div className="w-full max-h-[80vh] overflow-y-auto pr-2 custom-scrollbar">
+          <iframe 
+            data-tally-src={`https://tally.so/embed/7RD5R2?alignLeft=1&hideTitle=1&transparentBackground=1&source=workshop_podcast`}
+            loading="lazy" 
+            width="100%" 
+            height="650" 
+            title="Join Community"
+            className="border-none"
+          />
+        </div>
+      </BrandModal>
     </section>
   );
 }
