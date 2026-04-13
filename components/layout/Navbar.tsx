@@ -155,72 +155,94 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                 </div>
             </div>
 
-            {/* Mobile Menu Overlay */}
-            {isOpen && (
-                <div
-                    className="fixed inset-0 bg-[#183A39] z-[110] flex flex-col px-6 py-8 lg:hidden"
-                >
-                    {/* Top Header inside menu */}
-                    <div className="flex justify-between items-center mb-20">
-                        <Link href="/" onClick={() => setIsOpen(false)}>
-                            <img src={logo || "/logo_.svg"} alt="Logo" style={{ width: '46px', height: '35.86px' }} />
-                        </Link>
-                        <button
-                            className="text-[#F0EEE6] p-1"
-                            onClick={() => setIsOpen(false)}
-                        >
-                            <X size={32} strokeWidth={1.5} />
-                        </button>
-                    </div>
-
-                    {/* Nav Links */}
-                    <div className="flex flex-col gap-4 w-full items-center">
-                        {navLinks.map((link) => {
-                            const isExplore = link.name === "+ EXPLORE";
-                            return (
-                                <div
-                                    key={link.name}
-                                    className="flex justify-center w-full"
-                                >
-                                    <Link
-                                        href={isExplore ? "#" : link.href}
-                                        onClick={(e) => {
-                                            setIsOpen(false);
-                                            if (isExplore) {
-                                                e.preventDefault();
-                                                setIsExploreOpen(true);
-                                            }
-                                        }}
-                                        className="flex items-center justify-center w-[382px] h-[40px] border border-[#5EE2A0]/40 rounded-full font-haptik text-[14px] font-medium tracking-[0.15em] text-[#E4DBCD] hover:bg-[#E4DBCD]/5 transition-colors"
-                                    >
-                                        {link.name}
-                                    </Link>
-                                </div>
-                            );
-                        })}
-                    </div>
-
-                    {/* Bottom Actions */}
-                    <div className="mt-auto flex flex-col gap-4 items-center pb-12">
-                        <div
-                            className="flex justify-center w-full"
-                        >
-                            <Link href="/get-started" onClick={() => setIsOpen(false)} className="w-[382px] h-[40px] bg-[#E4DBCD] text-[#183A39] rounded-full font-haptik text-[18px] tracking-wide shadow-lg flex items-center justify-center">
-                                GET STARTED
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ clipPath: "circle(0% at 90% 5%)", opacity: 0 }}
+                        animate={{ 
+                            clipPath: "circle(150% at 90% 5%)", 
+                            opacity: 1,
+                            transition: {
+                                duration: 0.8,
+                                ease: [0.22, 1, 0.36, 1],
+                                staggerChildren: 0.1,
+                                delayChildren: 0.2
+                            }
+                        }}
+                        exit={{ clipPath: "circle(0% at 90% 5%)", opacity: 0, transition: { duration: 0.6 } }}
+                        className="fixed inset-0 bg-[#183A39] z-[110] flex flex-col px-6 py-8 lg:hidden overflow-y-auto"
+                    >
+                        {/* Top Header inside menu */}
+                        <div className="flex justify-between items-center mb-20 shrink-0">
+                            <Link href="/" onClick={() => setIsOpen(false)}>
+                                <img src={logo || "/logo_.svg"} alt="Logo" style={{ width: '46px', height: '35.86px' }} />
                             </Link>
+                            <button
+                                className="text-[#F0EEE6] p-1"
+                                onClick={() => setIsOpen(false)}
+                            >
+                                <X size={32} strokeWidth={1.5} />
+                            </button>
                         </div>
-
-                        <div
-                            className="flex justify-center w-full"
-                        >
-                            <div className="w-[382px] h-[40px] bg-[#5EE2A0] text-[#183A39] rounded-full font-haptik text-[18px] tracking-wide shadow-lg flex items-center justify-center">
-                                CART
-                            </div>
+ 
+                        {/* Nav Links */}
+                        <div className="flex flex-col gap-4 w-full items-center">
+                            {navLinks.map((link, i) => {
+                                const isExplore = link.name === "+ EXPLORE";
+                                return (
+                                    <motion.div
+                                        key={link.name}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ duration: 0.5 }}
+                                        className="flex justify-center w-full"
+                                    >
+                                        <Link
+                                            href={isExplore ? "#" : link.href}
+                                            onClick={(e) => {
+                                                setIsOpen(false);
+                                                if (isExplore) {
+                                                    e.preventDefault();
+                                                    setIsExploreOpen(true);
+                                                }
+                                            }}
+                                            className="flex items-center justify-center w-[382px] h-[40px] border border-[#5EE2A0]/40 rounded-full font-haptik text-[14px] font-medium tracking-[0.15em] text-[#E4DBCD] hover:bg-[#E4DBCD]/5 transition-colors"
+                                        >
+                                            {link.name}
+                                        </Link>
+                                    </motion.div>
+                                );
+                            })}
                         </div>
-                    </div>
-                </div>
-            )}
-
+ 
+                        {/* Bottom Actions */}
+                        <div className="mt-auto flex flex-col gap-4 items-center pb-12 pt-10 shrink-0">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.5 }}
+                                className="flex justify-center w-full"
+                            >
+                                <Link href="/get-started" onClick={() => setIsOpen(false)} className="w-[382px] h-[40px] bg-[#E4DBCD] text-[#183A39] rounded-full font-haptik text-[18px] tracking-wide shadow-lg flex items-center justify-center">
+                                    GET STARTED
+                                </Link>
+                            </motion.div>
+ 
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9 }}
+                                animate={{ opacity: 1, scale: 1 }}
+                                transition={{ delay: 0.6 }}
+                                className="flex justify-center w-full"
+                            >
+                                <div className="w-[382px] h-[40px] bg-[#5EE2A0] text-[#183A39] rounded-full font-haptik text-[18px] tracking-wide shadow-lg flex items-center justify-center">
+                                    CART
+                                </div>
+                            </motion.div>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+ 
             <ExploreMenu 
                 isOpen={isExploreOpen} 
                 onClose={() => setIsExploreOpen(false)} 
