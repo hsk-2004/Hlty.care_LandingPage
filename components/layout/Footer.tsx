@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail } from "lucide-react";
 
@@ -8,6 +9,27 @@ interface FooterProps {
 }
 
 export default function Footer({ hideTopDecoration = false }: FooterProps) {
+    const [email, setEmail] = useState("");
+    const [error, setError] = useState("");
+
+    const handleSubscribe = () => {
+        if (!email.trim()) {
+            setError("Email is required");
+            return;
+        }
+        
+        // Basic email validation regex
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            setError("Please enter a valid email address");
+            return;
+        }
+
+        // If valid, redirect to Substack
+        const substackUrl = `https://hltybites.substack.com/subscribe?email=${encodeURIComponent(email)}`;
+        window.location.href = substackUrl;
+    };
+
     const socialIcons = [
         {
             name: "WhatsApp",
@@ -110,15 +132,34 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
 
                         {/* Subscription Input */}
                         <div className="relative w-full max-w-[400px]">
-                            <div className="flex items-center bg-[#F0EEE6] rounded-full p-1 border border-[#F0EEE6]">
-                                <input
-                                    type="email"
-                                    placeholder="name@email.com"
-                                    className="bg-transparent px-6 py-2 w-full text-[#183A39] placeholder-[#183A39]/50 focus:outline-none font-jubilat text-[14px]"
-                                />
-                                <button className="bg-[#183A39] text-[#F0EEE6] px-8 py-2 rounded-full font-jubilat font-bold text-[14px] hover:opacity-90 transition-opacity whitespace-nowrap">
-                                    Subscribe
-                                </button>
+                            <div className="flex flex-col gap-3">
+                                <div className="flex items-center bg-[#F0EEE6] rounded-full p-1 border border-[#F0EEE6]">
+                                    <input
+                                        type="email"
+                                        value={email}
+                                        onChange={(e) => {
+                                            setEmail(e.target.value);
+                                            if (error) setError("");
+                                        }}
+                                        placeholder="name@email.com"
+                                        className="bg-transparent px-6 py-2 w-full text-[#183A39] placeholder-[#183A39]/50 focus:outline-none font-jubilat text-[14px]"
+                                    />
+                                    <button 
+                                        onClick={handleSubscribe}
+                                        className="bg-[#183A39] text-[#F0EEE6] px-8 py-2 rounded-full font-jubilat font-bold text-[14px] hover:opacity-90 transition-opacity whitespace-nowrap"
+                                    >
+                                        Subscribe
+                                    </button>
+                                </div>
+                                {error && (
+                                    <motion.p 
+                                        initial={{ opacity: 0, y: -10 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        className="text-[#51D2A2] text-[12px] font-jubilat px-5"
+                                    >
+                                        {error}
+                                    </motion.p>
+                                )}
                             </div>
                         </div>
 
