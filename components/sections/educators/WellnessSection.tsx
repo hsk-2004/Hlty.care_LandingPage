@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useState } from "react";
+import Image from "next/image";
 import WalkthroughContent from "../walkthrough/WalkthroughContent";
 
 export default function WellnessSection() {
@@ -121,10 +122,13 @@ export default function WellnessSection() {
             {/* Right Column: Image */}
             <div className="lg:w-auto w-full lg:h-full flex items-center justify-center pb-8 lg:pb-0 lg:ml-auto lg:translate-x-12 order-1 lg:order-2">
               <div className="w-[348px] max-w-full h-[414px] md:w-full md:h-auto md:aspect-[4/3] lg:aspect-auto rounded-[8px] md:rounded-[16px] overflow-hidden relative shadow-2xl group lg:w-[437px] lg:h-[520px] mx-auto md:mx-0">
-                <img
+                <Image
                   src="/educators/educator2.svg"
                   alt="Classroom Wellness"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  fill
+                  priority
+                  unoptimized
+                  className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                 />
                 {/* Visual Overlay like the image */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent pointer-events-none" />

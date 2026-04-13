@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowDown } from "lucide-react";
+import Image from "next/image";
 
 export default function HeroSection() {
   return (
@@ -72,16 +73,18 @@ export default function HeroSection() {
             transition={{ duration: 0.8 }}
             className="lg:w-auto order-1 lg:order-2 w-full flex justify-end"
           >
-            <div className="w-full lg:w-[709px] lg:h-[577px] aspect-[4/3] lg:aspect-auto rounded-[20px] overflow-hidden relative group shrink-0">
-              <img
-                src="/educators/educator1.svg"
-                alt="Educators Illustration"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
-              />
+          <div className="w-full lg:w-[709px] lg:h-[577px] aspect-[4/3] lg:aspect-auto rounded-[20px] overflow-hidden relative group shrink-0">
+            <Image
+              src="/educators/educator1.svg"
+              alt="Educators Illustration"
+              fill
+              priority
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+            />
 
-              {/* Subtle glass effect overlay */}
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#183a39]/5 to-transparent pointer-events-none" />
-            </div>
+            {/* Subtle glass effect overlay */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#183a39]/5 to-transparent pointer-events-none" />
+          </div>
           </motion.div>
         </div>
       </div>

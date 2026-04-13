@@ -66,11 +66,11 @@ export default function InterventionSection() {
       <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
         {/* Top pseudo-border */}
         <div className="absolute top-0 left-0 right-0 h-[2px]" style={{ backgroundImage: 'repeating-linear-gradient(to right, #51D2A2 0px, #51D2A2 6.61px, transparent 6.61px, transparent 13.22px)' }} />
-        
+
         {topics.map((topic, index) => {
           const isRightBorderOnMd = index % 2 !== 1;
           const isRightBorderOnLg = index % 3 !== 2;
-          
+
           return (
             <motion.div
               key={index}
@@ -80,42 +80,42 @@ export default function InterventionSection() {
               transition={{ duration: 0.6, delay: index * 0.05 }}
               className="px-6 py-8 md:px-10 md:py-8 lg:px-14 lg:py-8 flex flex-col relative"
             >
-            <h3 className="font-jubilat text-[24px] md:text-[28px] lg:text-[26px] text-[#183A39] font-bold leading-tight mb-2">
-              {topic.title}
-            </h3>
+              <h3 className="font-jubilat text-[24px] md:text-[28px] lg:text-[26px] text-[#183A39] font-bold leading-tight mb-2">
+                {topic.title}
+              </h3>
 
-            <ul className="space-y-0 mb-1">
-              {topic.points.map((point, i) => (
-                <li key={i} className="flex items-start gap-3">
-                  <div className="w-1 h-1 bg-[#183A39] rounded-full mt-2 shrink-0" />
-                  <span className="font-jubilat text-[16px] md:text-[17px] lg:text-[19px] text-[#183A39] opacity-80 leading-tight font-normal">
-                    {point}
-                  </span>
-                </li>
-              ))}
-            </ul>
+              <ul className="space-y-0 mb-1">
+                {topic.points.map((point, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <div className="w-1 h-1 bg-[#183A39] rounded-full mt-2 shrink-0" />
+                    <span className="font-jubilat text-[16px] md:text-[17px] lg:text-[19px] text-[#183A39] opacity-80 leading-tight font-normal">
+                      {point}
+                    </span>
+                  </li>
+                ))}
+              </ul>
 
-            <div>
-              <p className="font-jubilat text-[14px] md:text-[15px] lg:text-[19px] text-[#183A39] leading-tight">
-                <span className="font-bold">Used for:</span>{" "}
-                <span className="opacity-80 font-normal">{topic.usedFor}</span>
-              </p>
-            </div>
+              <div>
+                <p className="font-jubilat text-[14px] md:text-[15px] lg:text-[19px] text-[#183A39] leading-tight">
+                  <span className="font-bold">Used for:</span>{" "}
+                  <span className="opacity-80 font-normal">{topic.usedFor}</span>
+                </p>
+              </div>
 
-            {/* Bottom pseudo-border */}
-            <div className="absolute bottom-0 left-0 right-0 h-[2px]" style={{ backgroundImage: 'repeating-linear-gradient(to right, #51D2A2 0px, #51D2A2 6.61px, transparent 6.61px, transparent 13.22px)' }} />
+              {/* Bottom pseudo-border */}
+              <div className="absolute bottom-0 left-0 right-0 h-[2px]" style={{ backgroundImage: 'repeating-linear-gradient(to right, #51D2A2 0px, #51D2A2 6.61px, transparent 6.61px, transparent 13.22px)' }} />
 
-            {/* Right pseudo-border */}
-            <div 
-              className={`absolute right-0 top-0 bottom-0 w-[2px] hidden
+              {/* Right pseudo-border */}
+              <div
+                className={`absolute right-0 top-0 bottom-0 w-[2px] hidden
                 ${isRightBorderOnMd ? 'md:block' : 'md:hidden'}
                 ${isRightBorderOnLg ? 'lg:block' : 'lg:hidden'}
               `}
-              style={{ backgroundImage: 'repeating-linear-gradient(to bottom, #51D2A2 0px, #51D2A2 6.61px, transparent 6.61px, transparent 13.22px)' }} 
-            />
-          </motion.div>
-        );
-      })}
+                style={{ backgroundImage: 'repeating-linear-gradient(to bottom, #51D2A2 0px, #51D2A2 6.61px, transparent 6.61px, transparent 13.22px)' }}
+              />
+            </motion.div>
+          );
+        })}
       </div>
     </section>
   );

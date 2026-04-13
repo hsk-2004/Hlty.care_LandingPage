@@ -104,7 +104,7 @@ export default function WalkthroughContent({ onClose }: WalkthroughContentProps)
             if (parent && window.Calendly) {
                 parent.innerHTML = "";
                 window.Calendly.initInlineWidget({
-                    url: "https://calendly.com/hskharmansingh/walkthrough-session?hide_gdpr_banner=1",
+                    url: "https://calendly.com/hskharmansingh/walkthrough-session",
                     parentElement: parent,
                     prefill: {
                         customAnswers: {
