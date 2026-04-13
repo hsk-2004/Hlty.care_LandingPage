@@ -10,12 +10,24 @@ export default function Offerings() {
             <div className="max-w-6xl mx-auto text-center flex flex-col items-center">
                 
                 {/* Heading */}
-                <h2 className="font-jubilat italic text-[32px] md:text-[64px] text-[#183A39] mb-12 md:mb-16 leading-tight">
+                <motion.h2 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8 }}
+                    className="font-jubilat italic text-[32px] md:text-[64px] text-[#183A39] mb-12 md:mb-16 leading-tight"
+                >
                     Explore our offerings
-                </h2>
+                </motion.h2>
 
                 {/* Buttons Container - Grid on mobile, Flex on desktop */}
-                <div className="grid grid-cols-2 md:flex md:flex-row items-center justify-center gap-3 md:gap-5 w-full max-w-[400px] md:max-w-none mx-auto">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                    className="grid grid-cols-2 md:flex md:flex-row items-center justify-center gap-3 md:gap-5 w-full max-w-[400px] md:max-w-none mx-auto"
+                >
                     <Link href="/products" className="w-full md:w-auto">
                         <motion.button
                             whileHover={{ scale: 1.02, y: -2 }}
@@ -45,7 +57,7 @@ export default function Offerings() {
                             TAKE A 2 MIN QUIZ
                         </motion.button>
                     </Link>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

@@ -101,31 +101,43 @@ export default function Hero() {
             <p className="font-jubilat text-[clamp(12px,1.4vw,16px)] xl:text-[20px] text-[#183A39]/90 max-w-4xl leading-normal md:leading-snug">
               Your child builds <span className="font-bold">healthy habits</span> here. Through <br className="hidden lg:block" /> <span className="font-bold">stories, play & games.</span> Because lectures don&apos;t work.
             </p>
-          </div>
 
-          {/* Process Flow - Unified for Mobile/Tablet */}
-          <div className="flex items-center justify-start gap-0 mt-[-6px] overflow-x-visible">
-            <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm">
-              <span className="text-[clamp(10px,1.2vw,14px)]">📖</span>
-              <span className="font-jubilat text-[clamp(8px,1vw,12px)] font-bold text-[#183A39]">Stories</span>
-            </div>
-            <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[12px] lg:h-[6px] xl:w-[16px] xl:h-[8px]" />
+            {/* Process Flow - Unified for Mobile/Tablet */}
+            <div className="flex items-center justify-start gap-0 mt-[-6px] overflow-x-visible">
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm cursor-default"
+              >
+                <span className="text-[clamp(10px,1.2vw,14px)]">📖</span>
+                <span className="font-jubilat text-[clamp(8px,1vw,12px)] font-bold text-[#183A39]">Stories</span>
+              </motion.div>
+              <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[12px] lg:h-[6px] xl:w-[16px] xl:h-[8px]" />
 
-            <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm">
-              <span className="text-[clamp(10px,1.2vw,14px)]">🛝</span>
-              <span className="font-jubilat text-[clamp(8px,1vw,12px)] font-bold text-[#183A39]">Play</span>
-            </div>
-            <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[12px] lg:h-[6px] xl:w-[16px] xl:h-[8px]" />
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm cursor-default"
+              >
+                <span className="text-[clamp(10px,1.2vw,14px)]">🛝</span>
+                <span className="font-jubilat text-[clamp(8px,1vw,12px)] font-bold text-[#183A39]">Play</span>
+              </motion.div>
+              <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[12px] lg:h-[6px] xl:w-[16px] xl:h-[8px]" />
 
-            <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm">
-              <span className="text-[clamp(10px,1.2vw,14px)]">🔄</span>
-              <span className="font-jubilat text-[clamp(8px,1vw,12px)] font-bold text-[#183A39]">Routine</span>
-            </div>
-            <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[12px] lg:h-[6px] xl:w-[16px] xl:h-[8px]" />
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm cursor-default"
+              >
+                <span className="text-[clamp(10px,1.2vw,14px)]">🔄</span>
+                <span className="font-jubilat text-[clamp(8px,1vw,12px)] font-bold text-[#183A39]">Routine</span>
+              </motion.div>
+              <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[12px] lg:h-[6px] xl:w-[16px] xl:h-[8px]" />
 
-            <div className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm">
-              <span className="text-[clamp(10px,1.2vw,14px)]">💪</span>
-              <span className="font-jubilat text-[clamp(8px,1vw,12px)] font-bold text-[#183A39]">Habit</span>
+              <motion.div 
+                whileHover={{ scale: 1.05 }}
+                className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm cursor-default"
+              >
+                <span className="text-[clamp(10px,1.2vw,14px)]">💪</span>
+                <span className="font-jubilat text-[clamp(8px,1vw,12px)] font-bold text-[#183A39]">Habit</span>
+              </motion.div>
             </div>
           </div>
         </motion.div>

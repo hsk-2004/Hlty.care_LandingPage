@@ -8,7 +8,7 @@ export default function HeroSection() {
   return (
     <section className="w-full bg-[#f2efe4] pt-24 pb-12 lg:pt-32 lg:pb-24 overflow-hidden">
       <div className="max-w-[1280px] mx-auto px-6">
-        
+
         {/* Mobile Badge - Visible only on mobile, placed above the image */}
         <div className="lg:hidden mb-6">
           <motion.div
@@ -36,7 +36,7 @@ export default function HeroSection() {
                 IIM backed research
               </span>
             </motion.div>
- 
+
             {/* Description & List */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -47,13 +47,13 @@ export default function HeroSection() {
               <h1 className="font-jubilat text-[32px] md:text-[40px] lg:text-[42px] text-[#183A39] leading-[1.1] font-medium tracking-tight">
                 Wellness shouldn't compete with academics
               </h1>
-              
+
               <p className="font-jubilat text-[15px] md:text-[17px] lg:text-[18px] text-[#183A39] leading-[1.6] max-w-[480px]">
                 Hlty Beings provides classroom activities, resources, and systems designed
                 specifically for educators. No prep required. No mandates.
                 Just 3-5 minute moments that turn into lifelong habits.
               </p>
- 
+
               <ul className="space-y-1.5 pl-1">
                 {[
                   "Curriculum-aligned activities",
@@ -66,7 +66,7 @@ export default function HeroSection() {
                 ))}
               </ul>
             </motion.div>
- 
+
             {/* Buttons Stack */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -74,13 +74,21 @@ export default function HeroSection() {
               transition={{ delay: 0.2 }}
               className="flex flex-col gap-3 max-w-full lg:max-w-[320px]"
             >
-              <button className="w-full lg:w-[320px] h-[48px] lg:h-[40px] flex items-center justify-center bg-[#183A39] text-[#F0EEE6] rounded-full font-haptik font-bold text-[11px] lg:text-[12px] uppercase tracking-[0.15em] hover:bg-[#122b2a] transition-all shadow-sm hover:shadow-md hover:-translate-y-0.5 active:translate-y-0">
+              <motion.button
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full lg:w-[320px] h-[48px] lg:h-[40px] flex items-center justify-center bg-[#183A39] text-[#F0EEE6] rounded-full font-haptik font-bold text-[11px] lg:text-[12px] uppercase tracking-[0.15em] hover:bg-[#122b2a] transition-all shadow-sm hover:shadow-md active:translate-y-0"
+              >
                 EXPLORE PLAYSHOPS
-              </button>
-              <button className="w-full lg:w-[320px] h-[48px] lg:h-[40px] border border-[#183A39] text-[#183A39] rounded-full font-haptik font-bold text-[11px] lg:text-[12px] uppercase tracking-[0.15em] hover:bg-[#183A39] hover:text-[#F0EEE6] transition-all flex items-center justify-between px-6 lg:px-8 group">
+              </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                className="w-full lg:w-[320px] h-[48px] lg:h-[40px] border border-[#183A39] text-[#183A39] rounded-full font-haptik font-bold text-[11px] lg:text-[12px] uppercase tracking-[0.15em] hover:bg-[#183A39] hover:text-[#F0EEE6] transition-all flex items-center justify-between px-6 lg:px-8 group shadow-sm hover:shadow-md"
+              >
                 DOWNLOAD ACTIVITY SHEETS
                 <ArrowDown size={18} strokeWidth={2.5} className="group-hover:translate-y-0.5 transition-transform" />
-              </button>
+              </motion.button>
             </motion.div>
           </div>
 

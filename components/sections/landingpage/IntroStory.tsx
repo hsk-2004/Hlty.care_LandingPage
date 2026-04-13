@@ -39,19 +39,30 @@ export default function IntroStory() {
     <section className="bg-[#F0EEE6] py-12 md:py-20 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header Title */}
-        <div className="text-center mb-10 md:mb-16">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-10 md:mb-16"
+        >
           <h2 className="font-jubilat text-[clamp(24px,6vw,36px)] md:text-[32px] lg:text-[28px] xl:text-[36px] text-[#183A39] leading-tight">
             Everything your family needs to<br />
             <span className="font-bold">stay healthy in one world</span>
           </h2>
-        </div>
-
+        </motion.div>
+ 
         {/* Horizontal Scroll Container */}
-        <div className="flex overflow-x-auto pb-8 gap-4 md:gap-6 lg:justify-center no-scrollbar snap-x snap-mandatory">
+        <div className="flex overflow-x-auto pt-4 pb-8 gap-4 md:gap-6 lg:justify-center no-scrollbar snap-x snap-mandatory px-2">
           {cards.map((card, index) => (
-            <div
+            <motion.div
               key={index}
-              className="flex-shrink-0 w-[clamp(280px,40vw,320px)] min-h-[clamp(420px,55vw,480px)] md:w-[clamp(320px,45vw,400px)] lg:w-[230px] lg:min-h-[360px] xl:w-[290px] xl:min-h-[440px] bg-[#E4DBCD] border border-[#BEB4A5] rounded-[24px] md:rounded-[32px] pt-1 px-4 pb-4 md:p-6 lg:p-4 xl:p-6 flex flex-col justify-between snap-start transition-all"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              whileHover={{ y: -8, transition: { duration: 0.3 } }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="flex-shrink-0 w-[clamp(280px,40vw,320px)] min-h-[clamp(420px,55vw,480px)] md:w-[clamp(320px,45vw,400px)] lg:w-[230px] lg:min-h-[360px] xl:w-[290px] xl:min-h-[440px] bg-[#E4DBCD] border border-[#BEB4A5] hover:border-[#183A39]/30 rounded-[24px] md:rounded-[32px] pt-1 px-4 pb-4 md:p-6 lg:p-4 xl:p-6 flex flex-col justify-between snap-start transition-all cursor-default group"
             >
               <div className="space-y-[clamp(4px,2vw,16px)] md:space-y-4 lg:space-y-2 xl:space-y-4">
                 {/* Feature Image */}
@@ -95,18 +106,30 @@ export default function IntroStory() {
                   </button>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
 
         {/* Secondary Scrollable Illustration Container */}
         <div className="mt-16 md:mt-24 text-center">
-          <h3 className="font-jubilat text-[20px] md:text-[32px] lg:text-[28px] xl:text-[32px] text-[#183A39] mb-8">
+          <motion.h3 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="font-jubilat text-[20px] md:text-[32px] lg:text-[28px] xl:text-[32px] text-[#183A39] mb-8"
+          >
             Families are noticing the difference
-          </h3>
+          </motion.h3>
         </div>
         <div className="overflow-x-auto no-scrollbar snap-x snap-mandatory -mx-6 md:mx-0">
-          <div className="min-w-[1048px] md:min-w-0 md:max-w-7xl md:mx-auto lg:mx-auto md:px-4 pl-0">
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.98 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
+            className="min-w-[1048px] md:min-w-0 md:max-w-7xl md:mx-auto lg:mx-auto md:px-4 pl-0"
+          >
             <div className="relative w-[1048px] h-[265px] md:w-full md:h-auto md:aspect-[1048/265] lg:w-[850px] lg:h-[280px] xl:w-[1000px] xl:h-[300px] lg:mx-auto">
               <Image
                 src="/landingpage/intro-cards1.svg"
@@ -116,7 +139,7 @@ export default function IntroStory() {
                 priority
               />
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
 

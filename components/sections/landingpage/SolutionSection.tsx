@@ -10,8 +10,14 @@ export default function SolutionSection() {
         <section className="pt-12 md:pt-24 lg:pt-24 xl:pt-32 pb-12 md:pb-24 px-4 md:px-6 bg-[#F0EEE6]">
             {/* ... container ... */}
             <div className="max-w-[480px] md:max-w-3xl lg:max-w-[1024px] xl:max-w-[1298px] md:w-full lg:h-[600px] xl:h-[767px] mx-auto bg-[#183A39] rounded-[16px] md:rounded-[16px] lg:rounded-[16px] overflow-hidden shadow-2xl p-6 md:p-12 lg:p-12 xl:p-16 flex flex-col lg:flex-row-reverse md:items-center lg:gap-12 xl:gap-20">
-                {/* ... image ... */}
-                <div className="relative w-full max-w-[330px] md:max-w-[600px] mx-auto aspect-[330/425] md:aspect-[4/3] lg:aspect-auto md:w-[600px] lg:w-[450px] xl:w-[620px] md:h-auto lg:h-[560px] xl:h-[727px] rounded-[16px] overflow-hidden flex-shrink-0 lg:translate-x-6 xl:translate-x-12">
+                {/* image */}
+                <motion.div 
+                    initial={{ opacity: 0, x: 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                    className="relative w-full max-w-[330px] md:max-w-[600px] mx-auto aspect-[330/425] md:aspect-[4/3] lg:aspect-auto md:w-[600px] lg:w-[450px] xl:w-[620px] md:h-auto lg:h-[560px] xl:h-[727px] rounded-[16px] overflow-hidden flex-shrink-0 lg:translate-x-6 xl:translate-x-12"
+                >
                     <Image
                         src="/landingpage/s1.svg"
                         alt="Solution Illustration"
@@ -26,7 +32,7 @@ export default function SolutionSection() {
                         className="object-cover hidden lg:block"
                         priority
                     />
-                </div>
+                </motion.div>
 
                 {/* Text Content Container */}
                 <div className="mt-8 md:mt-0 flex-1 space-y-8 md:space-y-12 lg:translate-x-6 xl:translate-x-12">
