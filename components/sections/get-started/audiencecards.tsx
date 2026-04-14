@@ -7,7 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 const audienceData = [
     {
-        label: "FOR FAMILIES",
+        label: "FOR PARENTS",
         description: "I want health to fit into our day",
         bullets: ["Try a 7-Day Family Practice", "Explore Everyday Routines"],
         image: "/get-started/a1.png",
@@ -76,32 +76,32 @@ export default function AudienceCards() {
                                     src={card.image}
                                     alt={card.label}
                                     fill
-                                    className={`object-cover scale-110 xl:scale-125 xl:origin-top ${index === 2 ? 'xl:-translate-y-[5%]' : 'xl:translate-y-[15%]'} xl:rounded-t-[80px] xl:rounded-b-[80px]`}
+                                    className={`object-cover scale-125 origin-top ${index === 2 ? '-translate-y-[20%]' : 'translate-y-[0%]'}`}
                                 />
                             </div>
                             {/* White Gradient Overlay */}
-                            <div className="absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-white via-white/90 to-transparent z-[5]" />
+                            <div className="absolute inset-x-0 top-0 h-[25%] bg-gradient-to-b from-white/80 via-white/50 to-transparent z-[5]" />
                             <div className="absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-white/50 to-transparent z-[5]" />
 
                             {/* Content */}
                             <div className="relative z-10 p-3 h-full flex flex-col items-center">
                                 {/* Text Box */}
-                                <div className="bg-white/70 backdrop-blur-sm rounded-[12px] p-4 text-center w-full">
+                                <div className="bg-white/5 backdrop-blur-sm rounded-none px-4 py-0 text-left w-full">
                                     {/* Label */}
-                                    <span className="font-haptik-rotalic text-[10px] md:text-[11px] text-[#183A39] tracking-wider block lowercase first-letter:uppercase mb-2">
+                                    <span className="font-haptik font-medium text-[20px] text-[#183A39] tracking-wider block uppercase mb-0">
                                         {card.label}
                                     </span>
 
                                     {/* Description */}
-                                    <p className="font-jubilat text-[14px] md:text-[16px] text-[#183A39] mt-3 mb-4 leading-snug">
+                                    <p className="font-jubilat text-[16px] text-[#183A39] mt-0 mb-1 leading-tight">
                                         {card.description}
                                     </p>
 
                                     {/* Bullets */}
-                                    <ul className="space-y-1 w-fit mx-auto">
+                                    <ul className="space-y-0 w-full ml-1">
                                         {card.bullets.map((bullet, i) => (
-                                            <li key={i} className="font-haptik-rotalic text-[12px] md:text-[13px] text-[#183A39] flex items-start gap-2">
-                                                <span className="text-[#183A39]">•</span>
+                                            <li key={i} className="font-jubilat text-[16px] text-[#183A39] flex items-start gap-2 leading-none">
+                                                <span className="text-[#183A39] relative top-[2px]">•</span>
                                                 {bullet}
                                             </li>
                                         ))}
@@ -110,7 +110,7 @@ export default function AudienceCards() {
 
                                 {/* CTA */}
                                 <div className="absolute bottom-5 left-5 right-5 pt-4 border-t-2 border-black flex items-center justify-between">
-                                    <span className="font-haptik-rotalic text-[12px] md:text-[13px] xl:text-[16px] text-[#183A39] tracking-normal block lowercase first-letter:uppercase">
+                                    <span className="font-haptik-rotalic text-[14px] text-[#183A39] tracking-normal block lowercase first-letter:uppercase">
                                         {card.cta}
                                     </span>
                                     <div className="w-8 h-8 rounded-full bg-[#183A39]/10 flex items-center justify-center group-hover:bg-[#183A39]/20 transition-colors">
