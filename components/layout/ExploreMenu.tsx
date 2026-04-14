@@ -1,15 +1,15 @@
 "use client";
- 
+
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import { X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
- 
+
 interface ExploreMenuProps {
   isOpen: boolean;
   onClose: () => void;
 }
- 
+
 const menuVariants: Variants = {
   initial: {
     clipPath: "circle(0% at 85% 5%)",
@@ -34,12 +34,12 @@ const menuVariants: Variants = {
     },
   },
 };
- 
+
 const itemVariants: Variants = {
   initial: { opacity: 0, y: 20 },
   animate: { opacity: 1, y: 0, transition: { duration: 0.5, ease: "easeOut" as const } },
 };
- 
+
 export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
   return (
     <AnimatePresence mode="wait">
@@ -49,25 +49,25 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
           initial="initial"
           animate="animate"
           exit="exit"
-          className="fixed inset-0 bg-[#183A39] z-[120] overflow-y-auto"
+          className="fixed inset-0 bg-[#183A39] z-[120] overflow-hidden"
         >
           {/* Header Mirroring Navbar */}
           <div className="flex justify-between items-center p-4 lg:py-6 lg:px-24">
             <Link href="/" onClick={onClose} className="flex items-center gap-2">
-              <img 
-                src="/explore-dropdown/edrop-logo.svg" 
-                alt="Logo" 
-                className="hidden lg:block w-[180px] h-[28px]" 
+              <img
+                src="/explore-dropdown/edrop-logo.svg"
+                alt="Logo"
+                className="hidden lg:block w-[180px] h-[28px]"
               />
-              <img 
-                src="/logo_.svg" 
-                alt="Logo" 
-                className="lg:hidden" 
-                style={{ width: '46px', height: '35.86px' }} 
+              <img
+                src="/logo_.svg"
+                alt="Logo"
+                className="lg:hidden"
+                style={{ width: '46px', height: '35.86px' }}
               />
             </Link>
- 
-            <motion.button 
+
+            <motion.button
               whileHover={{ rotate: 90, scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               onClick={onClose}
@@ -76,45 +76,45 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
               <X size={32} strokeWidth={2.5} />
             </motion.button>
           </div>
- 
+
           <section className="pt-10 lg:pt-20 pb-20 lg:pb-32 px-6 md:px-12 lg:px-24">
             <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-20">
-              
+
               {/* Left Column: Newsletter & Links */}
               <div className="space-y-8 lg:space-y-12 flex flex-col items-center lg:items-start text-center lg:text-left">
                 {/* Newsletter Section */}
-                <motion.div variants={itemVariants} className="space-y-2 lg:space-y-6 flex flex-col items-center lg:items-start">
+                <motion.div variants={itemVariants} className="space-y-2 lg:space-y-6 flex flex-col items-start lg:items-start text-left lg:text-left self-start lg:self-auto px-4 lg:px-0">
                   <span className="font-haptik text-[8px] lg:text-[12px] text-[#F0EEE6]/60 tracking-[0.2em] uppercase font-medium">
                     Newsletter
                   </span>
-                  
-                  <h1 className="font-bitcountink text-[32px] lg:text-[80px] text-[#51D2A2] leading-none">
+
+                  <h1 className="font-bitcountink text-[52px] lg:text-[80px] text-[#51D2A2] leading-none whitespace-nowrap">
                     Hlty Bites
                   </h1>
-                  
-                  <p className="font-jubilat text-[14px] lg:text-[18px] text-[#F0EEE6] leading-relaxed max-w-[280px] mx-auto lg:mx-0">
-                    Writings about food, play, routines, and how habits form in real life 
-                    for parents, educators, and anyone shaping childhood environments.
+
+                  <p className="font-jubilat text-[10px] lg:text-[18px] text-[#F0EEE6] leading-relaxed lg:max-w-[280px] text-left lg:text-left">
+                    <span className="block whitespace-nowrap lg:whitespace-normal">Writings about food, play, routines, and how habits form in real life</span>
+                    <span className="block whitespace-nowrap lg:whitespace-normal">for parents, educators, and anyone shaping childhood environments.</span>
                   </p>
- 
-                  <div className="pt-1.5 lg:pt-4 w-full max-w-[280px] lg:max-w-md">
-                    <div className="bg-[#F0EEE6] rounded-full p-0.5 pl-3 lg:pl-6 flex items-center justify-between border border-[#F0EEE6]/20">
-                      <input 
-                        type="email" 
-                        placeholder="placeholder@email.com" 
+
+                  <div className="pt-1.5 lg:pt-4 w-[300px] lg:w-full lg:max-w-md">
+                    <div className="bg-[#F0EEE6] rounded-full p-0.5 pl-3 lg:pl-6 flex items-center justify-between border border-[#F0EEE6]/20 h-[36px] lg:h-auto">
+                      <input
+                        type="email"
+                        placeholder="placeholder@email.com"
                         className="bg-transparent border-none outline-none font-haptik text-[10px] lg:text-[14px] text-[#183A39] w-full placeholder:text-[#183A39]/40 rounded-full autofill:shadow-[inset_0_0_0_1000px_#F0EEE6] autofill:[-webkit-text-fill-color:#183A39]"
                       />
-                      <motion.button 
+                      <motion.button
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="bg-[#51D2A2] text-[#183A39] font-haptik font-medium px-3 lg:px-8 py-1.5 lg:py-3 rounded-full text-[10px] lg:text-[14px] hover:bg-[#5ee2a0] transition-colors shrink-0"
+                        className="bg-[#51D2A2] text-[#183A39] font-haptik font-medium px-3 lg:px-8 w-[99px] lg:w-auto h-[30px] lg:h-auto py-0 lg:py-3 rounded-full text-[12px] lg:text-[14px] hover:bg-[#5ee2a0] transition-colors shrink-0 flex items-center justify-center"
                       >
                         Subscribe
                       </motion.button>
                     </div>
                   </div>
                 </motion.div>
- 
+
                 {/* Links Section */}
                 <div className="space-y-3 lg:space-y-1 text-[#F0EEE6] w-full max-w-md">
                   {[
@@ -124,16 +124,16 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
                   ].map((link, i) => (
                     <motion.div key={i} variants={itemVariants}>
                       {/* Mobile Version: Pill Buttons */}
-                      <Link 
-                        href={link.href} 
+                      <Link
+                        href={link.href}
                         onClick={onClose}
-                        className="lg:hidden block w-full border border-[#F0EEE6]/20 rounded-full py-3 text-center group active:bg-[#F0EEE6]/10 transition-all"
+                        className="lg:hidden flex items-center justify-center w-[300px] h-[40px] border border-[#F0EEE6]/20 rounded-full mx-auto text-center group active:bg-[#F0EEE6]/10 transition-all"
                       >
                         <span className="font-haptik text-[12px] tracking-[0.12em] font-medium uppercase">
                           {link.name}
                         </span>
                       </Link>
- 
+
                       {/* Desktop Version: List with Dividers */}
                       <div className="hidden lg:block">
                         <div className="h-[1px] w-full bg-[#F0EEE6]/10" />
@@ -142,7 +142,7 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
                             <span className="font-haptik text-[16px] tracking-[0.1em] font-medium group-hover:translate-x-3 group-hover:text-[#51D2A2] transition-all uppercase">
                               {link.name}
                             </span>
-                            <motion.span 
+                            <motion.span
                               initial={{ opacity: 0, x: -10 }}
                               whileHover={{ opacity: 1, x: 0 }}
                               className="text-[#51D2A2]"
@@ -157,10 +157,10 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
                   ))}
                 </div>
               </div>
- 
+
               {/* Right Column: Featured Resources */}
-              <motion.div 
-                variants={itemVariants} 
+              <motion.div
+                variants={itemVariants}
                 className="space-y-6 lg:space-y-8 mt-10 lg:mt-0"
               >
                 <div className="flex flex-col space-y-2">
@@ -169,13 +169,13 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
                   </span>
                   <div className="h-[2px] w-12 bg-[#51D2A2]" />
                 </div>
- 
-                <motion.div 
+
+                <motion.div
                   whileHover={{ scale: 1.02 }}
                   transition={{ duration: 0.4 }}
                   className="flex justify-center lg:justify-start rounded-2xl overflow-hidden"
                 >
-                  <Image 
+                  <Image
                     src="/explore-dropdown/drop1.svg"
                     alt="Featured Resource"
                     width={597}
@@ -184,7 +184,7 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
                   />
                 </motion.div>
               </motion.div>
- 
+
             </div>
           </section>
         </motion.div>

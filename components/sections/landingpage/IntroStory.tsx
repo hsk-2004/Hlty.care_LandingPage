@@ -39,7 +39,7 @@ export default function IntroStory() {
     <section className="bg-[#F0EEE6] py-12 md:py-20 px-6 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Header Title */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -51,7 +51,7 @@ export default function IntroStory() {
             <span className="font-bold">stay healthy in one world</span>
           </h2>
         </motion.div>
- 
+
         {/* Horizontal Scroll Container */}
         <div className="flex overflow-x-auto pt-4 pb-8 gap-4 md:gap-6 lg:justify-center no-scrollbar snap-x snap-mandatory px-2">
           {cards.map((card, index) => (
@@ -62,7 +62,7 @@ export default function IntroStory() {
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="flex-shrink-0 w-[clamp(280px,40vw,320px)] min-h-[clamp(420px,55vw,480px)] md:w-[clamp(320px,45vw,400px)] lg:w-[230px] lg:min-h-[360px] xl:w-[290px] xl:min-h-[440px] bg-[#E4DBCD] border border-[#BEB4A5] hover:border-[#183A39]/30 rounded-[24px] md:rounded-[32px] pt-1 px-4 pb-4 md:p-6 lg:p-4 xl:p-6 flex flex-col justify-between snap-start transition-all cursor-default group"
+              className="flex-shrink-0 w-[280px] h-[380px] md:w-[clamp(320px,45vw,400px)] md:min-h-[clamp(420px,55vw,480px)] lg:w-[230px] lg:min-h-[360px] xl:w-[290px] xl:min-h-[440px] bg-[#E4DBCD] border border-[#BEB4A5] hover:border-[#183A39]/30 rounded-[24px] md:rounded-[32px] pt-1 px-4 pb-4 md:p-6 lg:p-4 xl:p-6 flex flex-col justify-between snap-start transition-all cursor-default group"
             >
               <div className="space-y-[clamp(4px,2vw,16px)] md:space-y-4 lg:space-y-2 xl:space-y-4">
                 {/* Feature Image */}
@@ -85,10 +85,10 @@ export default function IntroStory() {
 
                 {/* Content */}
                 <div className="space-y-[clamp(4px,1vw,8px)] md:space-y-2 lg:space-y-1">
-                  <h3 className="font-jubilat text-[clamp(16px,4vw,22px)] md:text-[22px] lg:text-[18px] xl:text-[22px] font-bold text-[#183A39] leading-tight">
+                  <h3 className="font-jubilat text-[clamp(16px,4vw,22px)] md:text-[22px] lg:text-[18px] xl:text-[22px] font-bold text-[#183A39] leading-tight translate-y-[4px] md:translate-y-0">
                     {card.title}
                   </h3>
-                  <p className="font-jubilat text-[clamp(14px,3vw,16px)] md:text-[16px] lg:text-[13px] xl:text-[14px] text-[#183A39]/80 leading-relaxed">
+                  <p className="font-jubilat text-[clamp(14px,3vw,16px)] md:text-[16px] lg:text-[13px] xl:text-[14px] text-[#183A39] leading-relaxed translate-y-[6px] md:translate-y-0">
                     {card.description}
                   </p>
                 </div>
@@ -97,11 +97,11 @@ export default function IntroStory() {
               {/* Button */}
               <div className="mt-4 md:mt-6 lg:mt-4">
                 {index === 1 ? (
-                  <button className="bg-[#183A39] text-white rounded-full flex items-center justify-center lg:w-[100px] lg:h-[30px] xl:w-[105px] xl:h-[32px] font-haptik text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[11px] xl:text-[12px] font-medium hover:bg-[#183A39]/90 transition-colors shadow-sm whitespace-nowrap">
+                  <button className="bg-[#183A39] text-white rounded-full flex items-center justify-center w-[105px] h-[32px] lg:w-[100px] lg:h-[30px] xl:w-[105px] xl:h-[32px] font-haptik text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[11px] xl:text-[12px] font-medium hover:bg-[#183A39]/90 transition-colors shadow-sm whitespace-nowrap">
                     {card.buttonText}
                   </button>
                 ) : (
-                  <button className="border-2 border-[#183A39]/40 text-[#183A39] rounded-full flex items-center justify-center w-[clamp(110px,25vw,140px)] lg:w-[120px] lg:h-[36px] xl:w-[130px] xl:h-[38px] font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[12px] xl:text-[13px] font-bold cursor-default whitespace-nowrap">
+                  <button className="border-2 border-[#183A39]/40 text-[#183A39] rounded-full flex items-center justify-center w-[106px] h-[32px] md:w-[clamp(110px,25vw,140px)] lg:w-[120px] lg:h-[36px] xl:w-[130px] xl:h-[38px] font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[12px] xl:text-[13px] font-bold cursor-default whitespace-nowrap">
                     Coming Soon
                   </button>
                 )}
@@ -112,7 +112,7 @@ export default function IntroStory() {
 
         {/* Secondary Scrollable Illustration Container */}
         <div className="mt-16 md:mt-24 text-center">
-          <motion.h3 
+          <motion.h3
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
@@ -123,7 +123,7 @@ export default function IntroStory() {
           </motion.h3>
         </div>
         <div className="overflow-x-auto no-scrollbar snap-x snap-mandatory -mx-6 md:mx-0">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.98 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}

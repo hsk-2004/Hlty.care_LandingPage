@@ -55,7 +55,7 @@ export default function SolutionSection() {
                             <h3 className="font-haptik text-[12px] md:text-[16px] lg:text-[16px] xl:text-[20px] font-medium text-[#F0EEE6] tracking-wider uppercase">
                                 FOR PARENTS
                             </h3>
-                            <p className="font-jubilat font-normal not-italic text-[10px] md:text-[18px] lg:text-[14px] xl:text-[16px] leading-[1.5] text-[#F0EEE6] opacity-80 decoration-0">
+                            <p className="font-jubilat font-normal not-italic text-[12px] md:text-[18px] lg:text-[14px] xl:text-[16px] leading-[1.5] text-[#F0EEE6] opacity-80 decoration-0">
                                 Hlty Beings offers a calmer way to support children&apos;s health without guilt, pressure, or constant correction. It fits into everyday routines, stories, and play at home.
                             </p>
                             <Link href="/parents" className="group flex items-center gap-2 lg:justify-between lg:w-full text-[#F0EEE6] font-serif italic text-[14px] md:text-[18px] hover:opacity-100 transition-opacity border-b border-[#F0EEE6]/20 pb-0.5">
@@ -75,7 +75,7 @@ export default function SolutionSection() {
                             <h3 className="font-haptik text-[12px] md:text-[16px] lg:text-[16px] xl:text-[20px] font-medium text-[#F0EEE6] tracking-wider uppercase">
                                 FOR SCHOOLS & EMPLOYERS
                             </h3>
-                            <p className="font-jubilat font-normal not-italic text-[10px] md:text-[18px] lg:text-[14px] xl:text-[16px] leading-[1.5] text-[#F0EEE6] opacity-80">
+                            <p className="font-jubilat font-normal not-italic text-[12px] md:text-[18px] lg:text-[14px] xl:text-[16px] leading-[1.5] text-[#F0EEE6] opacity-80">
                                 Hlty Beings provides structured, age-appropriate experiences that support wellbeing — without adding to curriculum load or administrative burden.
                             </p>
                             <Link href="/employers" className="group flex items-center gap-2 lg:justify-between lg:w-full text-[#F0EEE6] font-serif italic text-[14px] md:text-[18px] hover:opacity-100 transition-opacity border-b border-[#F0EEE6]/20 pb-0.5">

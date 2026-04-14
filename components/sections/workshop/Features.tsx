@@ -79,12 +79,12 @@ export default function Features() {
             <motion.div
               variants={itemVariants}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="lg:hidden relative w-full rounded-[40px] overflow-hidden bg-white/5"
+              className="lg:hidden relative w-full rounded-[16px] overflow-hidden bg-white/5"
             >
               <img
                 src="/f1.svg"
                 alt="Summer Fun Camps"
-                className="w-full h-auto rounded-[40px]"
+                className="w-full h-auto rounded-[16px]"
               />
             </motion.div>
 
