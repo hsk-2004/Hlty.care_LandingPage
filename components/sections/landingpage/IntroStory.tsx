@@ -62,7 +62,7 @@ export default function IntroStory() {
               whileHover={{ y: -8, transition: { duration: 0.3 } }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="flex-shrink-0 w-[280px] h-[380px] md:w-[clamp(320px,45vw,400px)] md:min-h-[clamp(420px,55vw,480px)] lg:w-[230px] lg:min-h-[360px] xl:w-[290px] xl:min-h-[440px] bg-[#E4DBCD] border border-[#BEB4A5] hover:border-[#183A39]/30 rounded-[24px] md:rounded-[32px] pt-1 px-4 pb-4 md:p-6 lg:p-4 xl:p-6 flex flex-col justify-between snap-start transition-all cursor-default group"
+              className="flex-shrink-0 w-[280px] h-[380px] md:h-auto md:w-[clamp(320px,45vw,400px)] md:min-h-[clamp(420px,55vw,480px)] lg:w-[230px] lg:min-h-[360px] xl:w-[290px] xl:min-h-[440px] bg-[#E4DBCD] border border-[#BEB4A5] hover:border-[#183A39]/30 rounded-[24px] md:rounded-[32px] pt-1 px-4 pb-4 md:p-6 lg:p-4 xl:p-6 flex flex-col justify-between snap-start transition-all cursor-default group"
             >
               <div className="space-y-[clamp(4px,2vw,16px)] md:space-y-4 lg:space-y-2 xl:space-y-4">
                 {/* Feature Image */}
@@ -77,7 +77,7 @@ export default function IntroStory() {
                 </div>
 
                 {/* Badge */}
-                <div className={`flex items-center justify-center bg-[#FAF9F6] border border-[#183A39]/10 rounded-full h-[clamp(19px,3vw,28px)] md:w-fit md:h-auto md:px-4 md:py-1 md:bg-white ${card.category === 'Activity Bundles' ? 'w-[106px] lg:w-fit' : 'w-[82px] lg:w-fit'}`}>
+                <div className="flex items-center justify-center bg-[#FAF9F6] border border-[#183A39]/10 rounded-full w-[82px] h-[19px] flex-shrink-0">
                   <span className="font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[11px] xl:text-[13px] text-[#183A39] whitespace-nowrap">
                     {card.category}
                   </span>
@@ -85,10 +85,10 @@ export default function IntroStory() {
 
                 {/* Content */}
                 <div className="space-y-[clamp(4px,1vw,8px)] md:space-y-2 lg:space-y-1">
-                  <h3 className="font-jubilat text-[clamp(16px,4vw,22px)] md:text-[22px] lg:text-[18px] xl:text-[22px] font-bold text-[#183A39] leading-tight translate-y-[4px] md:translate-y-0">
+                  <h3 className="font-jubilat text-[clamp(16px,4vw,22px)] md:text-[22px] lg:text-[18px] xl:text-[22px] font-bold text-[#183A39] leading-tight translate-y-[4px] md:translate-y-0 lg:-translate-y-[8px]">
                     {card.title}
                   </h3>
-                  <p className="font-jubilat text-[clamp(14px,3vw,16px)] md:text-[16px] lg:text-[13px] xl:text-[14px] text-[#183A39] leading-relaxed translate-y-[6px] md:translate-y-0">
+                  <p className="font-jubilat text-[clamp(14px,3vw,16px)] md:text-[16px] lg:text-[13px] xl:text-[14px] text-[#183A39] leading-relaxed translate-y-[6px] md:translate-y-0 lg:-translate-y-[8px]">
                     {card.description}
                   </p>
                 </div>
