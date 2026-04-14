@@ -17,7 +17,7 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
             setError("Email is required");
             return;
         }
-        
+
         // Basic email validation regex
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
@@ -144,7 +144,7 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                                         placeholder="name@email.com"
                                         className="bg-transparent px-6 py-2 w-full text-[#183A39] placeholder-[#183A39]/50 focus:outline-none font-jubilat text-[14px] rounded-full autofill:shadow-[inset_0_0_0_1000px_#F0EEE6] autofill:[-webkit-text-fill-color:#183A39]"
                                     />
-                                    <button 
+                                    <button
                                         onClick={handleSubscribe}
                                         className="bg-[#183A39] text-[#F0EEE6] px-8 py-2 rounded-full font-jubilat font-bold text-[14px] hover:opacity-90 transition-opacity whitespace-nowrap"
                                     >
@@ -152,7 +152,7 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                                     </button>
                                 </div>
                                 {error && (
-                                    <motion.p 
+                                    <motion.p
                                         initial={{ opacity: 0, y: -10 }}
                                         animate={{ opacity: 1, y: 0 }}
                                         className="text-[#51D2A2] text-[12px] font-jubilat px-5"
@@ -229,12 +229,12 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                                 </h3>
                                 <nav className="flex flex-col space-y-4 lg:space-y-5">
                                     {[
-                                        { name: "Workshops", href: "#" },
+                                        { name: "Playshops", href: "/workshop" },
                                         { name: "For Parents", href: "/parents" },
                                         { name: "For Clinicians", href: "/clinician" },
                                         { name: "For Employers", href: "/employers" },
                                         { name: "WHO Letter", href: "#" },
-                                        { name: "Get Started", href: "#" }
+                                        { name: "Get Started", href: "/get-started" }
                                     ].map((link) => (
                                         <a
                                             key={link.name}
