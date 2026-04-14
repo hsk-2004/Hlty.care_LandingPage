@@ -119,7 +119,7 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
                 <div className="space-y-3 lg:space-y-1 text-[#F0EEE6] w-full max-w-md">
                   {[
                     { name: "BUILDING HLTY BEINGS", href: "/about" },
-                    { name: "EVENTS", href: "#" },
+                    { name: "EVENTS", href: "/events" },
                     { name: "CHARACTERS", href: "#" }
                   ].map((link, i) => (
                     <motion.div key={i} variants={itemVariants}>

@@ -10,6 +10,7 @@ export default function ExploreDropdownPage() {
     const exploreLinks = [
         { name: "+ Explore", href: "/explore-dropdown" },
         { name: "Workshops", href: "/workshop" },
+        { name: "Events", href: "/events" },
         { name: "For Parents", href: "/parents" },
         { name: "WHO LETTER", href: "#" }, // Adding as requested
     ];
@@ -63,7 +64,7 @@ export default function ExploreDropdownPage() {
                         <div className="space-y-3 lg:space-y-0 text-[#F0EEE6] w-full max-w-md">
                             {[
                                 { name: "BUILDING HLTY BEINGS", href: "/about" },
-                                { name: "EVENTS", href: "#" },
+                                { name: "EVENTS", href: "/events" },
                                 { name: "CHARACTERS", href: "#" }
                             ].map((link, i) => (
                                 <div key={i}>

@@ -58,6 +58,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
     const navLinks = customLinks || [
         { name: "+ EXPLORE", href: "/explore-dropdown" },
         { name: "WORKSHOPS", href: "/workshop" },
+        { name: "EVENTS", href: "/events" },
         { name: "FOR PARENTS", href: "/parents" },
         { name: "WHO LETTER", href: "#" },
     ];
