@@ -55,7 +55,7 @@ export default function Hero() {
       <div className="relative z-10 w-full max-w-6xl mx-auto px-4 lg:px-8 space-y-6 lg:space-y-[clamp(24px,3vw,40px)] -translate-x-[20px] md:-translate-x-0 lg:-translate-x-0 xl:-translate-x-[clamp(0px,5vw,120px)]">
 
         {/* Top Trust Badges - Forced Single Line */}
-        <div className="translate-y-[30px] md:translate-y-0">
+        <div className="translate-y-[10px] md:translate-y-0">
           <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -93,18 +93,18 @@ export default function Hero() {
 
           {/* Main Title */}
           <div className="space-y-2 md:space-y-4 xl:space-y-6">
-            <h1 className="font-jubilat text-[clamp(24px,2.8vw,30px)] xl:text-[36px] leading-tight text-[#183A39] lg:max-w-none lg:whitespace-nowrap">
+            <h1 className="font-jubilat text-[28px] lg:text-[clamp(24px,2.8vw,30px)] xl:text-[36px] leading-tight text-[#183A39] lg:max-w-none lg:whitespace-nowrap mt-[8px] lg:mt-0">
               A world where <span className="font-bold">health feels like home.</span>
             </h1>
 
             {/* Subheading */}
             <p className="font-jubilat text-[clamp(12px,1.4vw,16px)] xl:text-[20px] text-[#183A39]/90 max-w-4xl leading-normal md:leading-snug">
-              Your child builds <span className="font-bold">healthy habits</span> here. Through <br className="hidden lg:block" /> <span className="font-bold">stories, play & games.</span> Because lectures don&apos;t work.
+              Your child builds <span className="font-extrabold lg:font-bold">healthy habits</span> here. Through <br className="hidden lg:block" /> <span className="font-bold">stories, play & games.</span> Because lectures don&apos;t work.
             </p>
 
             {/* Process Flow - Unified for Mobile/Tablet */}
-            <div className="flex items-center justify-start gap-0 mt-[-6px] overflow-x-visible">
-              <motion.div 
+            <div className="flex items-center justify-start gap-0 mt-6 lg:mt-[-6px] overflow-x-visible">
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm cursor-default"
               >
@@ -113,7 +113,7 @@ export default function Hero() {
               </motion.div>
               <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[12px] lg:h-[6px] xl:w-[16px] xl:h-[8px]" />
 
-              <motion.div 
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm cursor-default"
               >
@@ -122,7 +122,7 @@ export default function Hero() {
               </motion.div>
               <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[12px] lg:h-[6px] xl:w-[16px] xl:h-[8px]" />
 
-              <motion.div 
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm cursor-default"
               >
@@ -131,7 +131,7 @@ export default function Hero() {
               </motion.div>
               <img src="/landingpage/arrow.svg" alt="arrow" className="w-[clamp(8px,1vw,12px)] h-[clamp(8px,1vw,12px)] lg:w-[12px] lg:h-[6px] xl:w-[16px] xl:h-[8px]" />
 
-              <motion.div 
+              <motion.div
                 whileHover={{ scale: 1.05 }}
                 className="bg-[#F0EEE6]/80 backdrop-blur-sm border border-[#183A39]/10 rounded-full w-[clamp(64px,8vw,100px)] h-[clamp(19px,2.5vw,30px)] flex items-center justify-center gap-1 shadow-sm cursor-default"
               >
@@ -143,7 +143,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Mobile-only CTA Button - Fixed Size */}
-        <div className="-translate-y-[40px] md:translate-y-0">
+        <div className="-translate-y-[20px] md:translate-y-0">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -154,9 +154,9 @@ export default function Hero() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-[#183A39] text-white flex items-center justify-between px-4 w-[clamp(149px,18vw,200px)] xl:w-[240px] h-[clamp(32px,3.5vw,40px)] xl:h-[48px] rounded-full font-haptik text-[clamp(10px,1.2vw,14px)] xl:text-[16px] font-medium shadow-xl hover:bg-[#183A39]/90 transition-all group"
+                className="bg-[#183A39] text-white flex items-center justify-between px-4 w-[149px] lg:w-[clamp(149px,18vw,200px)] xl:w-[240px] h-[24px] lg:h-[clamp(32px,3.5vw,40px)] xl:h-[48px] rounded-full font-haptik text-[clamp(10px,1.2vw,14px)] xl:text-[16px] font-medium shadow-xl hover:bg-[#183A39]/90 transition-all group"
               >
-                <span className="flex-1 text-left whitespace-nowrap">Get started</span>
+                <span className="flex-1 text-left whitespace-nowrap">Discover Now</span>
                 <ArrowRight className="w-[clamp(12px,1.2vw,16px)] xl:w-[20px] h-[clamp(12px,1.2vw,16px)] xl:h-[20px] group-hover:translate-x-1 transition-transform" />
               </motion.button>
             </Link>
