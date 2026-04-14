@@ -49,7 +49,7 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
           initial="initial"
           animate="animate"
           exit="exit"
-          className="fixed inset-0 bg-[#183A39] z-[120] overflow-hidden"
+          className="fixed inset-0 bg-[#183A39] z-[120] overflow-y-auto"
         >
           {/* Header Mirroring Navbar */}
           <div className="flex justify-between items-center p-4 lg:py-6 lg:px-24">
@@ -83,7 +83,7 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
               {/* Left Column: Newsletter & Links */}
               <div className="space-y-8 lg:space-y-12 flex flex-col items-center lg:items-start text-center lg:text-left">
                 {/* Newsletter Section */}
-                <motion.div variants={itemVariants} className="space-y-2 lg:space-y-6 flex flex-col items-start lg:items-start text-left lg:text-left self-start lg:self-auto px-4 lg:px-0">
+                <motion.div variants={itemVariants} className="space-y-2 lg:space-y-6 flex flex-col items-center lg:items-start text-center lg:text-left">
                   <span className="font-haptik text-[8px] lg:text-[12px] text-[#F0EEE6]/60 tracking-[0.2em] uppercase font-medium">
                     Newsletter
                   </span>
@@ -92,7 +92,7 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
                     Hlty Bites
                   </h1>
 
-                  <p className="font-jubilat text-[10px] lg:text-[18px] text-[#F0EEE6] leading-relaxed lg:max-w-[280px] text-left lg:text-left">
+                  <p className="font-jubilat text-[10px] lg:text-[18px] text-[#F0EEE6] leading-relaxed lg:max-w-[280px] mx-auto lg:mx-0 text-center lg:text-left">
                     <span className="block whitespace-nowrap lg:whitespace-normal">Writings about food, play, routines, and how habits form in real life</span>
                     <span className="block whitespace-nowrap lg:whitespace-normal">for parents, educators, and anyone shaping childhood environments.</span>
                   </p>
@@ -107,7 +107,7 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
                       <motion.button
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
-                        className="bg-[#51D2A2] text-[#183A39] font-haptik font-medium px-3 lg:px-8 w-[99px] lg:w-auto h-[30px] lg:h-auto py-0 lg:py-3 rounded-full text-[12px] lg:text-[14px] hover:bg-[#5ee2a0] transition-colors shrink-0 flex items-center justify-center"
+                        className="bg-[#183A39] text-[#F0EEE6] font-haptik font-medium px-3 lg:px-8 w-[99px] lg:w-auto h-[30px] lg:h-auto py-0 lg:py-3 rounded-full text-[12px] lg:text-[14px] hover:bg-[#183A39]/90 transition-colors shrink-0 flex items-center justify-center"
                       >
                         Subscribe
                       </motion.button>
@@ -127,7 +127,7 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
                       <Link
                         href={link.href}
                         onClick={onClose}
-                        className="lg:hidden flex items-center justify-center w-[300px] h-[40px] border border-[#F0EEE6]/20 rounded-full mx-auto text-center group active:bg-[#F0EEE6]/10 transition-all"
+                        className="lg:hidden flex items-center justify-center w-[300px] h-[40px] border border-[#51D2A2] rounded-full mx-auto text-center group active:bg-[#F0EEE6]/10 transition-all"
                       >
                         <span className="font-haptik text-[12px] tracking-[0.12em] font-medium uppercase">
                           {link.name}
