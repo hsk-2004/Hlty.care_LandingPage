@@ -2,18 +2,12 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BrandModal } from "@/components/ui/BrandModal";
+import { JoinCommunityForm } from "@/components/forms/JoinCommunityForm";
 
 export default function Testimonials() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // Initialize Tally embeds when modal opens
-  useEffect(() => {
-    if (isModalOpen && typeof window !== "undefined" && window.Tally) {
-      window.Tally.loadEmbeds();
-    }
-  }, [isModalOpen]);
 
   const handleJoin = () => {
     setIsModalOpen(true);
@@ -126,26 +120,22 @@ export default function Testimonials() {
       <BrandModal 
         isOpen={isModalOpen} 
         onClose={() => setIsModalOpen(false)}
-        centered
       >
-        <div className="w-full mb-4 md:mb-6">
-          <h2 className="font-jubilat text-[20px] md:text-[24px] text-[#183A39] leading-tight">
-            Join Community
-          </h2>
-          <p className="font-jubilat text-[13px] md:text-[15px] text-[#A69C8D] mt-1">
-            Fill out the form below to get started.
-          </p>
-        </div>
+        <div className="w-full space-y-6">
+          <div className="space-y-1 text-left">
+            <p className="font-haptik text-[11px] uppercase tracking-[0.16em] text-[#183A39]/65">
+              Being Hlty Club
+            </p>
+            <h2 className="font-jubilat text-[22px] leading-tight text-[#183A39] md:text-[24px]">
+              Join the Hlty Beings Playground
+            </h2>
+            <p className="font-jubilat text-[14px] leading-relaxed text-[#A69C8D] md:text-[15px]">
+              Leave your details to receive updates about upcoming workshops,
+              events, and products from Hlty Beings.
+            </p>
+          </div>
 
-        <div className="w-full max-h-[65vh] md:max-h-[80vh] overflow-y-auto pr-1 md:pr-2 custom-scrollbar">
-          <iframe 
-            data-tally-src={`https://tally.so/embed/7RD5R2?alignLeft=1&hideTitle=1&transparentBackground=1&source=workshop_podcast`}
-            loading="lazy" 
-            width="100%" 
-            height="550" 
-            title="Join Community"
-            className="border-none w-full min-h-[450px] md:min-h-[600px]"
-          />
+          <JoinCommunityForm source="workshop_podcast_modal" />
         </div>
       </BrandModal>
     </section>

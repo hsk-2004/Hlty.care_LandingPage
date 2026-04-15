@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Fraunces, Outfit } from "next/font/google";
 import "./globals.css";
 import CookieBanner from "@/components/layout/CookieBanner";
-import Script from "next/script";
 
 const serifFont = Fraunces({
   subsets: ["latin"],
@@ -34,7 +33,6 @@ export default function RootLayout({
       <body className="font-sans antialiased text-foreground bg-background">
         {children}
         <CookieBanner />
-        <Script src="https://tally.so/widgets/embed.js" strategy="afterInteractive" />
       </body>
     </html>
   );
