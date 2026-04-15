@@ -109,6 +109,7 @@ export function JoinCommunityForm({
   const [error, setError] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [alreadyJoined, setAlreadyJoined] = useState(false);
 
   const toggleMultiSelect = (
     field: "interests" | "childInterests",
@@ -144,7 +145,15 @@ export function JoinCommunityForm({
         }),
       });
 
-      const result = (await response.json()) as { error?: string };
+      const result = (await response.json()) as {
+        error?: string;
+        already_joined?: boolean;
+      };
+
+      if (result.already_joined) {
+        setAlreadyJoined(true);
+        return;
+      }
 
       if (!response.ok) {
         throw new Error(result.error || "Unable to submit the form right now.");
@@ -162,6 +171,23 @@ export function JoinCommunityForm({
       setIsSubmitting(false);
     }
   };
+
+  if (alreadyJoined) {
+    return (
+      <div className="w-full rounded-[20px] border border-[#D3CBBD] bg-white px-6 py-8 text-left">
+        <p className="font-haptik text-[11px] uppercase tracking-[0.16em] text-[#183A39]/65">
+          Welcome back
+        </p>
+        <h3 className="mt-2 font-jubilat text-[22px] leading-tight text-[#183A39] md:text-[24px]">
+          You&apos;re already part of the playground!
+        </h3>
+        <p className="mt-3 font-jubilat text-[14px] leading-relaxed text-[#183A39]/80">
+          This email is already registered. We&apos;ll keep you updated on
+          workshops, events, and new products.
+        </p>
+      </div>
+    );
+  }
 
   if (isSubmitted) {
     return (

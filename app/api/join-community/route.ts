@@ -106,6 +106,28 @@ export async function POST(request: Request) {
       );
     }
 
+    // Check if email already exists
+    const checkResponse = await fetch(
+      `${supabaseUrl}/rest/v1/${encodeURIComponent(tableName)}?email=eq.${encodeURIComponent(email)}&select=id`,
+      {
+        headers: {
+          apikey: supabaseServiceRoleKey,
+          Authorization: `Bearer ${supabaseServiceRoleKey}`,
+        },
+      },
+    );
+
+    if (checkResponse.ok) {
+      const existing = (await checkResponse.json()) as { id: string }[];
+      if (existing.length > 0) {
+        return NextResponse.json(
+          { already_joined: true, message: "You've already joined the Hlty Beings Playground!" },
+          { status: 409 },
+        );
+      }
+    }
+
+    // Insert new signup
     const response = await fetch(
       `${supabaseUrl}/rest/v1/${encodeURIComponent(tableName)}`,
       {
