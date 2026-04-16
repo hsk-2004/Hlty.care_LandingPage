@@ -91,7 +91,7 @@ export default function LetterSection() {
               <p className="font-['GT_Haptik'] font-medium text-[#51d2a2] text-[14px] uppercase leading-[56px] w-[134px] h-[56px] overflow-hidden">Takes 60 seconds</p>
             </div>
             <div className="flex flex-col gap-[77px] items-start relative shrink-0">
-              <h2 className="text-[#e4dbcd] text-[42px] font-['Jubilat'] font-normal leading-normal uppercase w-[227px] h-[159px] overflow-hidden">
+              <h2 className="text-[#e4dbcd] text-[42px] font-['Jubilat'] font-normal leading-normal uppercase w-[227px] min-h-[159px]">
                 SEND YOUR<br />LETTER<br />TO WHO.
               </h2>
               <p className="text-[#e4dbcd] text-[20px] font-['Jubilat'] font-normal leading-normal w-[367px] h-[150px] overflow-hidden">
@@ -101,11 +101,11 @@ export default function LetterSection() {
             </div>
           </div>
         </div>
-        <div className="bg-[#51d2a2] border border-[#235250] flex flex-col items-start relative rounded-[20px] w-[836px] h-[450px]" data-node-id="2790:7517">
-          <div className="bg-[#235250] flex items-center justify-center h-[65px] px-[40px] py-[20px] relative rounded-t-[20px] w-full">
-            <p className="font-['GT_Haptik'] font-medium text-[#e4dbcd] text-[20px] font-normal uppercase leading-normal">Your Letter to WHO — Pre-Written & Ready</p>
+        <div className="bg-[#235250] flex flex-col items-start relative rounded-[30px] w-[836px] h-[450px] overflow-hidden" data-node-id="2790:7517">
+          <div className="bg-[#235250] flex items-center justify-center h-[65px] px-[40px] py-[20px] relative w-full">
+            <p className="font-haptik text-[#e4dbcd] text-[20px] uppercase leading-normal">Your Letter to WHO — Pre-Written & Ready</p>
           </div>
-          <div className="flex flex-col gap-[16px] p-[35px] relative shrink-0 w-full">
+          <div className="bg-[#51d2a2] flex flex-col gap-[16px] p-[35px] relative shrink-0 w-full rounded-b-[30px]">
             <div className="flex gap-[20px] items-start justify-center relative shrink-0 w-full">
               <input type="text" placeholder="YOUR NAME" className="bg-[#235250] border border-[#183a39] h-[40px] px-[20px] rounded-[16px] w-[373px] font-['GT_Haptik'] font-medium text-[12px] text-[#e4dbcd] placeholder:text-[#809493] focus:outline-none uppercase" />
               <input type="email" placeholder="YOUR EMAIL ID" className="bg-[#235250] border border-[#183a39] h-[40px] px-[20px] rounded-[16px] w-[373px] font-['GT_Haptik'] font-medium text-[12px] text-[#e4dbcd] placeholder:text-[#809493] focus:outline-none uppercase" />
@@ -124,8 +124,10 @@ export default function LetterSection() {
               </p>
             </div>
             <button className="bg-[#183a39] flex h-[40px] items-center justify-between px-[24px] rounded-[16px] w-full group overflow-hidden relative">
-              <span className="font-['GT_Haptik'] font-medium text-[#e4dbcd] text-[16px] uppercase leading-[56px]">Send your email to who</span>
-              <img src={imgArrow2} className="w-[18px]" alt="" />
+              <span className="font-['GT_Haptik'] font-medium text-[#e4dbcd] text-[16px] uppercase leading-normal">Send your email to who</span>
+              <svg className="w-[24px] h-[24px]" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h14M13 6l6 6-6 6" stroke="#E4DBCD" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </button>
           </div>
         </div>

@@ -14,23 +14,18 @@ export const metadata = {
 };
 
 export default function WhoPage() {
-  const exploreLinks = [
-    { name: "+ Explore", href: "/explore-dropdown" },
-    { name: "Workshops", href: "/workshop" },
-    { name: "Events", href: "/events" },
-    { name: "For Parents", href: "/parents" },
-    { name: "WHO LETTER", href: "/who" },
-  ];
-
   return (
     <main className="min-h-screen bg-[#183a39]">
       <Navbar 
-        customLinks={exploreLinks} 
+        variant="dark" 
+        logoClassName="lg:-ml-2" 
+        bgTransparent 
+        logo="/footer-logo.svg" 
+        mobileLogo="/logo_.svg" 
         textColor="#E4DBCD" 
-        buttonColor="#51D2A2" 
-        cartIcon="/explore-dropdown/cart-drop.svg"
-        logo="/explore-dropdown/edrop-logo.svg"
-        showClose={true}
+        cartIcon="/get-started/cart.svg" 
+        cartBgColor="#51D2A2"
+        showGetStarted={true}
       />
       
       <div className="flex flex-col items-center relative w-full overflow-hidden">

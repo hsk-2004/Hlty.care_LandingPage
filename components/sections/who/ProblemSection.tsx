@@ -7,8 +7,16 @@ const mobImgFrame1437 = "https://www.figma.com/api/mcp/asset/272d7701-f19c-42e6-
 
 function StatusBadge({ text, color, textColor }: { text: string, color: string, textColor: string }) {
   return (
-    <div className={`${color} ${textColor} flex h-[25px] items-center justify-center px-[20px] rounded-[20px]`}>
-      <p className="font-['GT_Haptik'] font-medium text-[12px] uppercase leading-[56px] whitespace-nowrap">{text}</p>
+    <div className={`${color} ${textColor} flex h-[25px] lg:h-[25px] items-center justify-center px-[20px] rounded-full sm:h-[35px] ${
+      text === 'Missing' ? 'lg:w-[89px]' : 
+      text === 'Not explicit' ? 'lg:w-[121px]' : 
+      text === 'Draft only' ? 'lg:w-[116px]' : 
+      text === 'Exists (SDG 2.2)' ? 'lg:w-[134px]' :
+      text === 'Partial coverage' ? 'lg:w-[158px]' :
+      text === 'Not mandated' ? 'lg:w-[140px]' :
+      'lg:w-[121px]'
+    }`}>
+      <p className="font-haptik text-[12px] uppercase whitespace-nowrap tracking-wider">{text}</p>
     </div>
   );
 }
@@ -155,39 +163,52 @@ export default function ProblemSection() {
             </div>
           </div>
         </div>
-        <div className="relative w-[553px] h-[510px]" data-node-id="2790:7441">
-          <div className="flex h-[32px] items-center relative rounded-[20px] mb-[20px]">
+        <div className="relative w-[750px] h-full" data-node-id="2790:7441">
+          <div className="flex h-[32px] items-center relative rounded-[20px] mb-[60px]">
             <p className="font-['GT_Haptik'] font-medium text-[#51d2a2] text-[14px] uppercase leading-[56px]">What Exists vs. What's Needed</p>
           </div>
-          <div className="flex gap-[100px] items-start relative h-[458px]">
-            <div className="flex flex-col gap-[40px] h-full items-start justify-end relative shrink-0 w-[295px]">
-              <p className="font-['GT_Haptik'] font-medium text-[#566f6e] text-[14px] uppercase leading-[56px] mb-[10px]">Issue</p>
-              <div className="flex flex-col gap-[20px] text-[#e4dbcd] text-[20px] font-['Jubilat'] font-normal">
-                <p>Dedicated childhood obesity SDG</p>
-                <p>Coverage for ages 5–19</p>
-                <p>Clinical management guidelines</p>
-                <p>Ring-fenced funding mandate</p>
-                <p>Under-5 overweight targets</p>
-                <p>NCD reduction goal (SDG 3.4)</p>
-                <p>National monitoring obligation</p>
-              </div>
-            </div>
-            <div className="flex flex-col gap-[40px] h-full items-start justify-end relative shrink-0">
-              <p className="font-['GT_Haptik'] font-medium text-[#566f6e] text-[14px] uppercase leading-[56px] mb-[10px]">Current Status</p>
-              <div className="flex flex-col gap-[20px]">
-                <StatusBadge text="Missing" color="bg-[#bb0b0b]/50" textColor="text-[#e4dbcd]" />
-                <StatusBadge text="Not explicit" color="bg-[#bb0b0b]/50" textColor="text-[#e4dbcd]" />
-                <StatusBadge text="Draft only" color="bg-[#fcb11f]/70" textColor="text-[#183a39]" />
-                <StatusBadge text="Missing" color="bg-[#bb0b0b]/50" textColor="text-[#e4dbcd]" />
-                <StatusBadge text="Exists (SDG 2.2)" color="bg-[#51d2a2]" textColor="text-[#183a39]" />
-                <StatusBadge text="Partial coverage" color="bg-[#fcb11f]/70" textColor="text-[#183a39]" />
-                <StatusBadge text="Not mandated" color="bg-[#bb0b0b]/50" textColor="text-[#e4dbcd]" />
-              </div>
+          <div className="flex w-full pb-0 mb-10 relative items-center">
+            <p className="font-haptik text-[#566f6e] text-[14px] uppercase tracking-widest leading-none z-10 bg-[#183a39] pr-4">Issue</p>
+            <div 
+              className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[8px]" 
+              style={{ 
+                backgroundImage: 'radial-gradient(circle, #566f6e 1.5px, transparent 1.5px)', 
+                backgroundSize: '8px 8px', 
+                backgroundRepeat: 'repeat-x',
+                backgroundPosition: 'center'
+              }} 
+            />
+            <div className="z-10 bg-[#183a39] ml-auto w-[180px]">
+              <p className="font-haptik text-[#566f6e] text-[14px] uppercase tracking-widest leading-none pl-4 text-left">Current Status</p>
             </div>
           </div>
-          <div className="absolute left-[67px] top-[157px] w-[303px] h-[1.5px] bg-[#51d2a2]/30 rotate-[0.28deg]" />
-          <div className="absolute left-[214px] top-[227px] w-[157px] h-[272px]">
-            <img src={imgFrame1437} className="w-full h-full opacity-50" alt="" />
+          
+          <div className="flex flex-col gap-[20px]">
+            {[
+              { label: "Dedicated childhood obesity SDG", status: { text: "Missing", color: "bg-[rgba(187,11,11,0.5)]", textColor: "text-[#e4dbcd]" } },
+              { label: "Coverage for ages 5–19", status: { text: "Not explicit", color: "bg-[rgba(187,11,11,0.5)]", textColor: "text-[#e4dbcd]" } },
+              { label: "Clinical management guidelines", status: { text: "Draft only", color: "bg-[rgba(252,177,31,0.7)]", textColor: "text-[#183a39]" } },
+              { label: "Ring-fenced funding mandate", status: { text: "Missing", color: "bg-[rgba(187,11,11,0.5)]", textColor: "text-[#e4dbcd]" } },
+              { label: "Under-5 overweight targets", status: { text: "Exists (SDG 2.2)", color: "bg-[#51d2a2]", textColor: "text-[#183a39]" } },
+              { label: "NCD reduction goal (SDG 3.4)", status: { text: "Partial coverage", color: "bg-[rgba(252,177,31,0.7)]", textColor: "text-[#183a39]" } },
+              { label: "National monitoring obligation", status: { text: "Not mandated", color: "bg-[rgba(187,11,11,0.5)]", textColor: "text-[#e4dbcd]" } }
+            ].map((item, index) => (
+              <div key={index} className="flex items-center w-full relative">
+                <span className="text-[#e4dbcd] text-[20px] font-['Jubilat'] font-normal whitespace-nowrap z-10 bg-[#183a39] pr-4">{item.label}</span>
+                <div 
+                  className="absolute inset-x-0 top-1/2 -translate-y-1/2 h-[8px]" 
+                  style={{ 
+                    backgroundImage: 'radial-gradient(circle, #e4dbcd4d 1.5px, transparent 1.5px)', 
+                    backgroundSize: '8px 8px', 
+                    backgroundRepeat: 'repeat-x',
+                    backgroundPosition: 'center'
+                  }} 
+                />
+                <div className="flex justify-start z-10 bg-[#183a39] pl-4 ml-auto w-[180px]">
+                  <StatusBadge {...item.status} />
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>

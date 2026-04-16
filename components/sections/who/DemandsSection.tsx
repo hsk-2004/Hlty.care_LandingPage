@@ -45,7 +45,7 @@ export default function DemandsSection() {
               </div>
             </div>
           </div>
-          <p className="font-['Jubilat'] font-normal leading-[normal] not-italic relative shrink-0 text-[#e4dbcd] text-[20px] whitespace-nowrap">Three Things We're Demanding</p>
+          <p className="font-jubilat text-[#e4dbcd] text-[20px] whitespace-nowrap">Three Things We're Demanding</p>
         </div>
         <div className="content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0">
           {demands.map((demand) => (
@@ -68,16 +68,16 @@ export default function DemandsSection() {
       </div>
 
       {/* Desktop Demands Content */}
-      <div className="hidden lg:flex lg:flex-col lg:items-center lg:relative lg:w-[910px] lg:h-[429px] mt-[200px]" data-node-id="2790:7478">
-        <h2 className="text-[#e4dbcd] text-[42px] font-['Jubilat'] font-normal leading-normal uppercase mb-[40px] w-[594px] h-[53px] text-center overflow-hidden">Three Things We're Demanding</h2>
+      <div className="hidden lg:flex lg:flex-col lg:items-center lg:relative lg:w-[910px] lg:h-auto mt-[200px]" data-node-id="2790:7478">
+        <h2 className="text-[#e4dbcd] text-[32px] font-jubilat uppercase mb-[40px] w-auto h-auto text-center">Three Things We're Demanding</h2>
         <div className="flex gap-[20px] items-center relative w-[910px] h-[336px]" data-node-id="2790:7480">
           {demands.map((demand, i) => (
             <div key={i} className="bg-[#51d2a2] border border-[#e4dbcd] flex flex-col items-start justify-between p-[20px] rounded-[20px] w-[290px] h-full relative" data-node-id={demand.frameId}>
               <div className="flex flex-col gap-[20px] items-start relative w-full">
-                <p className="font-['GT_Haptik'] font-medium text-[#183a39] text-[20px] uppercase leading-tight w-[250px] h-[50px] overflow-hidden whitespace-pre-wrap">{demand.title}</p>
-                <p className="font-['Jubilat'] font-normal text-[#183a39] text-[16px] leading-normal w-[250px] overflow-hidden">{demand.desc}</p>
+                <p className="font-haptik text-[#183a39] text-[20px] uppercase leading-tight w-full h-auto whitespace-pre-wrap">{demand.id === "1" ? "A Dedicated SDG Target" : demand.title}</p>
+                <p className="font-jubilat text-[#183a39] text-[16px] leading-normal w-[250px] overflow-hidden">{demand.desc}</p>
               </div>
-              <p className="font-['GT_Haptik'] font-medium text-[#183a39] text-[64px] leading-[56px] uppercase w-[35px] h-[56px] overflow-hidden">{demand.id}</p>
+              <p className="font-haptik text-[#183a39] text-[64px] leading-[56px] uppercase w-auto h-auto">{demand.id}</p>
             </div>
           ))}
         </div>
