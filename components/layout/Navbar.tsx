@@ -60,7 +60,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
         { name: "WORKSHOPS", href: "/workshop" },
         { name: "EVENTS", href: "/events" },
         { name: "FOR PARENTS", href: "/parents" },
-        { name: "WHO LETTER", href: "#" },
+        { name: "WHO LETTER", href: "/who" },
     ];
 
     return (
