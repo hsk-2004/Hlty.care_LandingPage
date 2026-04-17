@@ -112,6 +112,9 @@ const CharacterSection = () => {
     <section className="h-[4167px] bg-[#E4DBCD] w-[95%] lg:w-[1435px] mx-auto rounded-[40px] mt-12 mb-12 flex flex-col items-center p-4 md:p-8 overflow-hidden" id="character-section">
         {/* Character Cards Container */}
         <div className="relative w-full max-w-[1345px] mx-auto min-h-[4069px]">
+          <h1 className="font-bitcount text-[60px] lg:text-[100px] text-[#183A39] leading-none mb-8 lg:mb-12 pt-10 relative z-20 text-center uppercase">
+            Cast of Characters
+          </h1>
           {/* Main Background Image (Dashed Box) */}
           <div className="absolute inset-0 z-0">
             <Image

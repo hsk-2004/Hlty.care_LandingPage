@@ -25,6 +25,7 @@ const config: Config = {
                 haptikRotalic: ["'GT Haptik Medium Rotalic'", "sans-serif"],
                 jubilat: ["jubilat", "serif"],
                 bitcountink: ["BitcountGridDouble", "sans-serif"],
+                bitcount: ["BitcountSemiBold", "sans-serif"],
             },
         },
     },
