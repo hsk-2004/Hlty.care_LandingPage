@@ -120,7 +120,7 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
                   {[
                     { name: "BUILDING HLTY BEINGS", href: "/about" },
                     { name: "EVENTS", href: "/events" },
-                    { name: "CHARACTERS", href: "#" }
+                    { name: "CHARACTERS", href: "/character" }
                   ].map((link, i) => (
                     <motion.div key={i} variants={itemVariants}>
                       {/* Mobile Version: Pill Buttons */}

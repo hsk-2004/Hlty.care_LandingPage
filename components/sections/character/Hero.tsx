@@ -52,22 +52,6 @@ export default function CharacterHero() {
           </p>
         </motion.div>
 
-        {/* CC1 Image */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.6 }}
-          className="w-full max-w-[1306px] px-4"
-        >
-          <Image
-            src="/character/cc1.svg"
-            alt="Character Cast"
-            width={1306}
-            height={837}
-            className="w-full h-auto object-contain"
-            priority
-          />
-        </motion.div>
       </div>
     </section>
   );

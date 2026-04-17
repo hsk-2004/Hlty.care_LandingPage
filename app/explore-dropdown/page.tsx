@@ -65,7 +65,7 @@ export default function ExploreDropdownPage() {
                             {[
                                 { name: "BUILDING HLTY BEINGS", href: "/about" },
                                 { name: "EVENTS", href: "/events" },
-                                { name: "CHARACTERS", href: "#" }
+                                { name: "CHARACTERS", href: "/character" }
                             ].map((link, i) => (
                                 <div key={i}>
                                     {/* Mobile Version: Pill Buttons */}
