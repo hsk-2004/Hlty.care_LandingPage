@@ -85,10 +85,10 @@ export default function EventTabs() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTabId(tab.id)}
-                className={`text-left font-jubilat transition-all duration-300 py-1 ${
+                className={`text-left font-jubilat transition-all duration-300 py-1 text-[18px] md:text-[20px] ${
                   activeTabId === tab.id
-                    ? "text-[#183A39] text-[20px] md:text-[22px] font-bold"
-                    : "text-[#183A39] hover:text-[#183A39] text-[18px] md:text-[20px]"
+                    ? "text-[#399F87] font-bold"
+                    : "text-[#183A39] hover:text-[#399F87]"
                 }`}
               >
                 <span className="mr-3">{tab.id}.</span>
