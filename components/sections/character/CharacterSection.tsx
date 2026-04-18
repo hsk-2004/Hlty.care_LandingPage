@@ -1,4 +1,6 @@
-import React from 'react';
+"use client";
+
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 interface Character {
   name: string;
@@ -13,6 +15,8 @@ interface Character {
   textY?: number;
   textWidth?: number;
   textHeight?: number;
+  imageScale?: number;
+  rotate?: number;
 }
 
 const characters: Character[] = [
@@ -26,9 +30,11 @@ const characters: Character[] = [
     x: -350,
     y: -300,
     textX: 0,
-    textY: 0,
+    textY: 60,
     textWidth: 411,
-    textHeight: 244
+    textHeight: 244,
+    imageScale: 1.5,
+    rotate: 3.08
   },
   {
     name: "Luca",
@@ -42,7 +48,8 @@ const characters: Character[] = [
     textX: 0,
     textY: 0,
     textWidth: 324,
-    textHeight: 264
+    textHeight: 264,
+    rotate: -5.55
   },
   {
     name: "Lila",
@@ -56,7 +63,8 @@ const characters: Character[] = [
     textX: 0,
     textY: 0,
     textWidth: 379,
-    textHeight: 244
+    textHeight: 244,
+    rotate: -5.55
   },
   {
     name: "Kai",
@@ -70,7 +78,8 @@ const characters: Character[] = [
     textX: 0,
     textY: 0,
     textWidth: 315,
-    textHeight: 284
+    textHeight: 284,
+    rotate: 7.78
   },
   {
     name: "Aria",
@@ -84,7 +93,8 @@ const characters: Character[] = [
     textX: 0,
     textY: 0,
     textWidth: 343,
-    textHeight: 264
+    textHeight: 264,
+    rotate: 4.5
   },
   {
     name: "Faye",
@@ -98,7 +108,8 @@ const characters: Character[] = [
     textX: 0,
     textY: 0,
     textWidth: 389,
-    textHeight: 260
+    textHeight: 260,
+    rotate: -5.55
   },
   {
     name: "Nami",
@@ -112,7 +123,8 @@ const characters: Character[] = [
     textX: 0,
     textY: 0,
     textWidth: 379,
-    textHeight: 244
+    textHeight: 244,
+    rotate: -5.55
   },
   {
     name: "Rhythm",
@@ -126,7 +138,8 @@ const characters: Character[] = [
     textX: 0,
     textY: 0,
     textWidth: 402,
-    textHeight: 262
+    textHeight: 262,
+    rotate: 2.19
   },
   {
     name: "Zac",
@@ -140,7 +153,10 @@ const characters: Character[] = [
     textX: 0,
     textY: 0,
     textWidth: 410,
-    textHeight: 314
+    textHeight: 314,
+    imageX: 0,
+    imageY: -200,
+    rotate: 2.19
   },
   {
     name: "Dr. Dhanish",
@@ -154,7 +170,8 @@ const characters: Character[] = [
     textX: 0,
     textY: 0,
     textWidth: 510,
-    textHeight: 244
+    textHeight: 244,
+    rotate: 2.19
   },
   {
     name: "Dr. Ayla",
@@ -168,7 +185,8 @@ const characters: Character[] = [
     textX: 0,
     textY: 0,
     textWidth: 446,
-    textHeight: 244
+    textHeight: 244,
+    rotate: -9.26
   },
   {
     name: "Patti",
@@ -182,7 +200,8 @@ const characters: Character[] = [
     textX: 0,
     textY: 0,
     textWidth: 403,
-    textHeight: 244
+    textHeight: 244,
+    rotate: -9.26
   },
   {
     name: "Thatha",
@@ -196,93 +215,130 @@ const characters: Character[] = [
     textX: 0,
     textY: 0,
     textWidth: 413,
-    textHeight: 244
+    textHeight: 244,
+    rotate: -9.26,
+    imageScale: 1.5
   }
 ];
 
 const CharacterSection = () => {
+  const [scale, setScale] = useState(1);
+
+  useEffect(() => {
+    const updateScale = () => {
+      const w = window.innerWidth;
+      // Only scale down on desktop when viewport is smaller than design width
+      if (w >= 1024 && w < 1435) {
+        setScale(w / 1435);
+      } else {
+        setScale(1);
+      }
+    };
+    updateScale();
+    window.addEventListener('resize', updateScale);
+    return () => window.removeEventListener('resize', updateScale);
+  }, []);
+
   return (
-    <section className="h-[4167px] bg-[#E4DBCD] w-[95%] lg:w-[1435px] mx-auto rounded-[40px] mt-12 mb-12 flex flex-col items-center p-4 md:p-8 overflow-hidden" id="character-section">
-      {/* Character Cards Container */}
-      <div className="relative w-full max-w-[1345px] mx-auto min-h-[4069px]">
-        <h1 className="font-bitcount text-[60px] lg:text-[100px] text-[#183A39] leading-none mb-8 lg:mb-12 pt-10 relative z-20 text-center uppercase">
-          Cast of Characters
-        </h1>
-        {/* Main Background Image (Dashed Box) */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/character/cc2.svg"
-            alt="Character Collection"
-            fill
-            className="object-contain"
-            priority
-          />
-        </div>
+    <section
+      style={{ height: scale < 1 ? `${Math.round(4167 * scale)}px` : '4167px' }}
+      className="bg-[#E4DBCD] w-[95%] max-w-[1435px] mx-auto rounded-[40px] mt-12 mb-12 flex flex-col items-center p-4 md:p-8 overflow-hidden"
+      id="character-section"
+    >
+      {/* Scale wrapper — at 100% scale=1 (no change), at 150% zoom it shrinks */}
+      <div
+        style={{
+          transform: `scale(${scale})`,
+          transformOrigin: 'top center',
+          width: scale < 1 ? '1435px' : '100%',
+        }}
+      >
+        {/* Character Cards Container — UNTOUCHED from original */}
+        <div className="relative w-full max-w-[1345px] mx-auto min-h-[4069px]">
+          <h1 className="font-bitcount text-[60px] lg:text-[100px] text-[#183A39] leading-none mb-8 lg:mb-12 pt-10 relative z-20 text-center uppercase">
+            Cast of Characters
+          </h1>
+          {/* Main Background Image (Dashed Box) */}
+          <div className="absolute inset-0 z-0" style={{ height: '4069px' }}>
+            <Image
+              src="/character/cc2.svg"
+              alt="Character Collection"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
 
-        {/* Desktop Content Layer */}
-        <div className="relative z-10 hidden lg:flex flex-wrap justify-center gap-x-10 gap-y-24 px-10 pt-20">
-          {characters.map((char, index) => (
-            <div
-              key={index}
-              style={{
-                width: `${char.width}px`,
-                height: `${char.height}px`,
-                transform: `translate(${char.x || 0}px, ${char.y || 0}px)`
-              }}
-              className="relative flex flex-col items-center justify-end group transition-all duration-300"
-            >
-              {/* Character Image - Positioned Behind */}
-              <div className="absolute inset-0 z-0 transition-transform duration-500 group-hover:scale-105">
-                <Image
-                  src={char.image}
-                  alt={char.name}
-                  fill
-                  className="object-contain object-bottom"
-                />
-              </div>
-
-              {/* Text Content - Positioned in Front */}
+          {/* Desktop Content Layer */}
+          <div className="relative z-10 hidden lg:flex flex-wrap justify-center gap-x-10 gap-y-24 px-10 pt-20">
+            {characters.map((char, index) => (
               <div
+                key={index}
                 style={{
-                  width: `${char.textWidth || 411}px`,
-                  height: `${char.textHeight || 244}px`,
-                  transform: `translate(${char.textX || 0}px, ${char.textY || 0}px)`
+                  width: `${char.width}px`,
+                  height: `${char.height}px`,
+                  transform: `translate(${char.x || 0}px, ${char.y || 0}px)`
                 }}
-                className="relative z-10 bg-[#E4DBCD] rounded-[40px] p-8 flex flex-col justify-center shadow-2xl border-[4px] border-[#BEB4A5] mb-[-60px]"
+                className="relative flex flex-col items-center justify-end group transition-all duration-300"
               >
-                <h2 className="font-bitcountink text-[48px] text-[#183A39] leading-none mb-1">{char.name}</h2>
-                <h3 className="font-haptik text-[18px] text-[#183A39] font-bold italic mb-3">{char.tagline}</h3>
-                <p className="font-jubilat text-[15px] text-[#1a3636] leading-[1.4]">
-                  {char.bio}
-                </p>
-              </div>
-            </div>
-          ))}
-        </div>
+                {/* Character Image - Positioned Behind */}
+                <div
+                  style={{
+                    transform: `translate(${char.imageX || 0}px, ${char.imageY || 0}px) scale(${char.imageScale || 1})`
+                  }}
+                  className="absolute inset-0 z-0 transition-transform duration-500 group-hover:scale-105"
+                >
+                  <Image
+                    src={char.image}
+                    alt={char.name}
+                    fill
+                    className="object-contain object-bottom"
+                  />
+                </div>
 
-        {/* Mobile Content Layer */}
-        <div className="lg:hidden relative z-10 flex flex-col gap-12 mb-8 w-full pt-10 px-4">
-          {characters.map((char, index) => (
-            <div key={index} className="relative flex flex-col items-center justify-end h-[350px]">
-              {/* Character Image Background */}
-              <div className="absolute inset-0 z-0">
-                <Image
-                  src={char.image}
-                  alt={char.name}
-                  fill
-                  className="object-contain object-bottom"
-                />
+                {/* Text Content - Positioned in Front */}
+                <div
+                  style={{
+                    width: `${char.textWidth || 411}px`,
+                    height: `${char.textHeight || 244}px`,
+                    transform: `translate(${char.textX || 0}px, ${char.textY || 0}px) rotate(${char.rotate || 0}deg)`
+                  }}
+                  className="relative z-10 bg-[#E4DBCD] rounded-[20px] p-8 flex flex-col justify-center shadow-2xl border-[4px] border-[#BEB4A5] mb-[-60px]"
+                >
+                  <h2 className="font-bitcountink text-[48px] text-[#183A39] leading-none mb-1">{char.name}</h2>
+                  <h3 className="font-haptik text-[18px] text-[#183A39] font-bold italic mb-3">{char.tagline}</h3>
+                  <p className="font-jubilat text-[15px] text-[#1a3636] leading-[1.4]">
+                    {char.bio}
+                  </p>
+                </div>
               </div>
+            ))}
+          </div>
 
-              <div className="relative z-10 p-6 bg-[#F0EEE6] rounded-[32px] border border-[#183A39]/5 shadow-lg w-full mb-[-40px]">
-                <h2 className="font-bitcountink text-[40px] text-[#183A39] leading-tight mb-0">{char.name}</h2>
-                <h3 className="font-haptik text-[18px] text-[#183A39] font-bold italic mb-4">{char.tagline}</h3>
-                <p className="font-jubilat text-[14px] text-[#1a3636] leading-[1.5]">
-                  {char.bio}
-                </p>
+          {/* Mobile Content Layer */}
+          <div className="lg:hidden relative z-10 flex flex-col gap-12 mb-8 w-full pt-10 px-4">
+            {characters.map((char, index) => (
+              <div key={index} className="relative flex flex-col items-center justify-end h-[350px]">
+                {/* Character Image Background */}
+                <div className="absolute inset-0 z-0">
+                  <Image
+                    src={char.image}
+                    alt={char.name}
+                    fill
+                    className="object-contain object-bottom"
+                  />
+                </div>
+
+                <div className="relative z-10 p-6 bg-[#E4DBCD] rounded-[20px] border-[4px] border-[#BEB4A5] shadow-lg w-full mb-[-40px]">
+                  <h2 className="font-bitcountink text-[40px] text-[#183A39] leading-tight mb-0">{char.name}</h2>
+                  <h3 className="font-haptik text-[18px] text-[#183A39] font-bold italic mb-4">{char.tagline}</h3>
+                  <p className="font-jubilat text-[14px] text-[#1a3636] leading-[1.5]">
+                    {char.bio}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

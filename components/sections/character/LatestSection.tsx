@@ -1,22 +1,23 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const updates = [
-  { 
-    id: 1, 
-    title: "Fueling Up Compilation | Healthy Eating Habits | Kids Nutrition", 
-    image: "", // User will import
+  {
+    id: 1,
+    title: "Brave Taster Adventure | Trying New Foods for Kids | Food discovery for kids",
+    image: "/character/yt1.webp",
   },
-  { 
-    id: 2, 
-    title: "Fueling Up Compilation | Healthy Eating Habits | Kids Nutrition", 
-    image: "",
+  {
+    id: 2,
+    title: "Fueling Up Compilation | Healthy Eating Habits | Kids Nutrition Compilation",
+    image: "/character/yt2.webp",
   },
-  { 
-    id: 3, 
-    title: "Fueling Up Compilation | Healthy Eating Habits | Kids Nutrition", 
-    image: "",
+  {
+    id: 3,
+    title: "Brain: Your Thinking Machine | 1-Minute Health & Learning Story for Kids",
+    image: "/character/yt3.webp",
     hasPlayIcon: true
   },
 ];
@@ -45,18 +46,27 @@ export default function LatestSection() {
               className="flex flex-col group cursor-pointer"
             >
               {/* Image Container */}
-              <div className="relative aspect-[4/3] bg-[#C4C4C4] rounded-[12px] md:rounded-[20px] overflow-hidden mb-6">
+              <div className="relative w-full h-[200px] md:h-[249px] lg:w-[400px] lg:h-[249px] bg-[#C4C4C4] rounded-[9.29px] overflow-hidden mb-6">
                 {/* Overlay Icon for the 3rd card (as seen in image) */}
                 {item.hasPlayIcon && (
                   <div className="absolute top-4 left-4 z-10 w-10 h-10 bg-black/80 rounded-lg flex items-center justify-center shadow-lg">
                     <div className="w-0 h-0 border-t-[6px] border-t-transparent border-l-[10px] border-l-white border-b-[6px] border-b-transparent ml-1" />
                   </div>
                 )}
-                
+
                 {/* Empty for now as user will import */}
-                <div className="w-full h-full bg-[#C4C4C4]" />
+                {item.image ? (
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-[#C4C4C4]" />
+                )}
               </div>
-              
+
               {/* Card Title */}
               <p className="font-jubilat text-[14px] md:text-[18px] text-[#183A39] leading-[1.4] font-medium pr-4">
                 {item.title}
