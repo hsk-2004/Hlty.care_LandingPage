@@ -15,6 +15,8 @@ interface Character {
   textY?: number;
   textWidth?: number;
   textHeight?: number;
+  imageX?: number;
+  imageY?: number;
   imageScale?: number;
   rotate?: number;
 }
