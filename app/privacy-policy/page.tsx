@@ -127,8 +127,8 @@ const PrivacyPolicy = () => {
                 textColor={scrolled ? "#183A39" : "#E4DBCD"}
                 cartIcon="/get-started/cart.svg"
                 showGetStarted
-                cartBgColor="#183A39"
-                buttonColor="#183A39"
+                cartBgColor="#51D2A2"
+                buttonColor="#51D2A2"
             />
 
             <div className="text-[#1a3636] font-jubilat">
