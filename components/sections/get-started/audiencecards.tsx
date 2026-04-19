@@ -88,19 +88,19 @@ export default function AudienceCards() {
                                     {/* Text Box */}
                                     <div className="bg-[#FFFFFF66] backdrop-blur-sm rounded-none px-4 py-0 text-left w-full">
                                         {/* Label */}
-                                        <span className="font-haptik font-medium text-[20px] text-[#183A39] tracking-wider block uppercase mb-0">
+                                        <span className="font-haptik font-medium text-[20px] text-[#183A39] tracking-wider block uppercase mb-[2px]">
                                             {card.label}
                                         </span>
 
                                         {/* Description */}
-                                        <p className="font-jubilat text-[16px] text-[#183A39] mt-0 mb-1 leading-tight">
+                                        <p className="font-jubilat text-[16px] text-[#183A39] mt-0 mb-[2px] leading-tight">
                                             {card.description}
                                         </p>
 
                                         {/* Bullets */}
-                                        <ul className="space-y-0 w-full ml-1">
+                                        <ul className="space-y-[2px] w-full ml-1">
                                             {card.bullets.map((bullet, i) => (
-                                                <li key={i} className="font-jubilat text-[16px] text-[#183A39] flex items-start gap-2 leading-none">
+                                                <li key={i} className="font-jubilat text-[16px] text-[#183A39] flex items-start gap-2 leading-[1.3]">
                                                     <span className="text-[#183A39] relative top-[2px]">•</span>
                                                     {bullet}
                                                 </li>
