@@ -72,7 +72,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
             initial="visible"
             animate={(isOpen || isExploreOpen) ? "visible" : (hidden ? "hidden" : "visible")}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className={`fixed top-0 left-0 w-full z-[100] flex justify-center items-center p-4 lg:py-4 lg:px-6 ${(isOpen || isExploreOpen) ? "bg-[#183A39]" : "transition-colors duration-300 " + (isDark ? "bg-[#183A39] lg:bg-transparent" : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"))
+            className={`fixed top-0 left-0 w-full z-[100] flex justify-center items-center p-4 lg:py-4 lg:px-6 ${(isOpen || isExploreOpen) ? "bg-[#183A39]" : "transition-colors duration-300 " + (isDark ? (bgTransparent ? "bg-transparent" : "bg-[#183A39] lg:bg-transparent") : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"))
                 }`}
         >
             <div className={`flex justify-between items-center w-full max-w-7xl lg:px-2 ${isDark ? `lg:h-[56px] xl:h-[68px] ${bgTransparent ? "" : "lg:bg-[#E4DBCD]"} lg:rounded-[32px] lg:py-1.5` : ""}`}>
@@ -147,7 +147,8 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                         </Link>
                     ) : (
                         <button
-                            className={`lg:hidden p-1 hover:opacity-70 transition-opacity z-50 ${isDark ? "text-[#F0EEE6]" : "text-[#183A39]"}`}
+                            className={`lg:hidden p-1 hover:opacity-70 transition-opacity z-50`}
+                            style={{ color: textColor || (isDark ? "#F0EEE6" : (scrolled ? "#183A39" : "#183A39")) }}
                             onClick={() => setIsOpen(!isOpen)}
                         >
                             {isOpen ? <X size={32} strokeWidth={2.5} /> : <Menu size={32} strokeWidth={2.5} />}

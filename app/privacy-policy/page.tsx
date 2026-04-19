@@ -144,13 +144,13 @@ const PrivacyPolicy = () => {
                             <h1 className="text-5xl lg:text-7xl font-normal font-jubilat text-[#E4DBCD] mb-6 leading-tight">
                                 Privacy Policy,<br />Terms & Refund
                             </h1>
-                            <p className="text-sm font-haptik font-bold uppercase tracking-[0.2em] text-[#E4DBCD]/60 mb-2">
+                            <p className="text-sm font-haptik font-bold uppercase tracking-[0.2em] text-white mb-2">
                                 VOS Health and Life Solutions Private Limited (Hlty Beings)
                             </p>
-                            <p className="text-sm font-haptik font-bold uppercase tracking-[0.2em] text-[#E4DBCD]/80 mb-2">
+                            <p className="text-sm font-haptik font-bold uppercase tracking-[0.2em] text-white mb-2">
                                 Last Updated: 13 April 2026 &nbsp;·&nbsp; Effective Date: 13 April 2026
                             </p>
-                            <p className="text-sm font-haptik uppercase tracking-[0.15em] text-[#E4DBCD]/50 mb-8">
+                            <p className="text-sm font-haptik uppercase tracking-[0.15em] text-white mb-8">
                                 Jurisdiction: Bangalore, Karnataka, India &nbsp;·&nbsp; CIN: U86909KA2023PTC181856
                             </p>
                             <div className="flex justify-center mt-4">
