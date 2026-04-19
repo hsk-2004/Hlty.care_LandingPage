@@ -34,7 +34,7 @@ const BulletList = ({ items }: { items: (string | React.ReactNode)[] }) => (
     <ul className="space-y-4 text-[#2D4341] leading-relaxed text-xl list-none">
         {items.map((item, idx) => (
             <li key={idx} className="flex gap-3">
-                <span className="text-[#6EBCC2] shrink-0">•</span>
+                <span className="text-[#183A39] shrink-0">•</span>
                 <span>{item}</span>
             </li>
         ))}
@@ -88,9 +88,9 @@ const ContactCard = ({
     sla: string;
 }) => (
     <div className="bg-white/50 p-6 rounded-2xl border border-[#1a3636]/5 space-y-2">
-        <p className="font-haptik font-bold text-xs uppercase tracking-widest text-[#6EBCC2]">{title}</p>
+        <p className="font-haptik font-bold text-xs uppercase tracking-widest text-[#183A39]">{title}</p>
         <p className="font-jubilat text-lg text-[#1a3636]">{name}</p>
-        <a href={`mailto:${email}`} className="block text-[#6EBCC2] hover:underline text-sm">{email}</a>
+        <a href={`mailto:${email}`} className="block text-[#183A39] hover:underline text-sm">{email}</a>
         <p className="text-[#2D4341] text-sm leading-relaxed">{address}</p>
         <p className="text-[#2D4341]/60 text-xs">{sla}</p>
     </div>
@@ -127,8 +127,8 @@ const PrivacyPolicy = () => {
                 textColor={scrolled ? "#183A39" : "#E4DBCD"}
                 cartIcon="/get-started/cart.svg"
                 showGetStarted
-                cartBgColor="#51D2A2"
-                buttonColor="#51D2A2"
+                cartBgColor="#183A39"
+                buttonColor="#183A39"
             />
 
             <div className="text-[#1a3636] font-jubilat">
@@ -155,9 +155,9 @@ const PrivacyPolicy = () => {
                             </p>
                             <div className="flex justify-center mt-4">
                                 <div className="flex space-x-2">
-                                    <div className="w-8 h-1 bg-[#6EBCC2] rounded-full opacity-60"></div>
-                                    <div className="w-8 h-1 bg-[#6EBCC2] rounded-full opacity-40"></div>
-                                    <div className="w-8 h-1 bg-[#6EBCC2] rounded-full opacity-20"></div>
+                                    <div className="w-8 h-1 bg-[#183A39] rounded-full opacity-60"></div>
+                                    <div className="w-8 h-1 bg-[#183A39] rounded-full opacity-40"></div>
+                                    <div className="w-8 h-1 bg-[#183A39] rounded-full opacity-20"></div>
                                 </div>
                             </div>
                         </motion.div>
@@ -173,7 +173,7 @@ const PrivacyPolicy = () => {
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
                                     className={`px-6 py-4 text-sm font-haptik font-bold uppercase tracking-widest whitespace-nowrap transition-all border-b-2 ${activeTab === tab.id
-                                            ? "border-[#51D2A2] text-[#1a3636]"
+                                            ? "border-[#183A39] text-[#1a3636]"
                                             : "border-transparent text-[#1a3636]/50 hover:text-[#1a3636]"
                                         }`}
                                 >
@@ -200,7 +200,7 @@ const PrivacyPolicy = () => {
                                 <>
                                     <div>
                                         <SectionTitle>Part I: Privacy Policy</SectionTitle>
-                                        <p className="text-xs font-haptik uppercase tracking-widest text-[#6EBCC2] mb-4">Compliant with Digital Personal Data Protection Act, 2023 (DPDP Act)</p>
+                                        <p className="text-xs font-haptik uppercase tracking-widest text-[#183A39] mb-4">Compliant with Digital Personal Data Protection Act, 2023 (DPDP Act)</p>
                                         <Body>
                                             Welcome to <strong>www.hlty.care</strong>. VOS Health and Life Solutions Private Limited ("Hlty Beings," "we," "our," or "us") operates this website, providing educational health experiences, books, and workshops for children and families. Your privacy and trust are of utmost importance to us.
                                         </Body>
@@ -240,13 +240,13 @@ const PrivacyPolicy = () => {
                                             <><strong>Processing Restrictions:</strong> We do not track children's behaviour for advertising or profiling.</>,
                                             <><strong>Breach Notification:</strong> Parents notified within 24 hours of any breach affecting children's data.</>,
                                         ]} />
-                                        <Body className="mt-6">Guardian's Rights: Parents may review, correct, or delete their child's data by contacting our DPO at <a href="mailto:dpo@hlty.care" className="text-[#6EBCC2] hover:underline">dpo@hlty.care</a>.</Body>
+                                        <Body className="mt-6">Guardian's Rights: Parents may review, correct, or delete their child's data by contacting our DPO at <a href="mailto:dpo@hlty.care" className="text-[#183A39] hover:underline">dpo@hlty.care</a>.</Body>
                                     </div>
 
                                     {/* 4. Cross-Border */}
                                     <div>
                                         <SubTitle>4. Cross-Border Data Transfers</SubTitle>
-                                        <Body className="mb-4">All transfers comply with Section 16, DPDP Act. Data principals may request copies of SCCs by emailing <a href="mailto:dpo@hlty.care" className="text-[#6EBCC2] hover:underline">dpo@hlty.care</a>.</Body>
+                                        <Body className="mb-4">All transfers comply with Section 16, DPDP Act. Data principals may request copies of SCCs by emailing <a href="mailto:dpo@hlty.care" className="text-[#183A39] hover:underline">dpo@hlty.care</a>.</Body>
                                         <InfoTable
                                             headers={["Service", "Location", "Data Transferred", "Safeguard"]}
                                             rows={[
@@ -256,7 +256,7 @@ const PrivacyPolicy = () => {
                                         />
                                         <div className="mt-4">
                                             <Body className="mb-2">Review their privacy policies:</Body>
-                                            <ul className="space-y-2 text-[#6EBCC2] text-xl">
+                                            <ul className="space-y-2 text-[#183A39] text-xl">
                                                 <li><a href="https://framer.com/privacy" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center gap-2"><span className="text-sm">↗</span> framer.com/privacy</a></li>
                                                 <li><a href="https://formspark.io/privacy" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center gap-2"><span className="text-sm">↗</span> formspark.io/privacy</a></li>
                                             </ul>
@@ -269,12 +269,12 @@ const PrivacyPolicy = () => {
                                         <InfoTable
                                             headers={["Right", "How to Exercise", "Timeline"]}
                                             rows={[
-                                                ["Access", <a href="mailto:dpo@hlty.care" className="text-[#6EBCC2] hover:underline">dpo@hlty.care</a>, "30 days"],
-                                                ["Correction", <a href="mailto:dpo@hlty.care" className="text-[#6EBCC2] hover:underline">dpo@hlty.care</a>, "15 days"],
-                                                ["Deletion", <a href="mailto:dpo@hlty.care" className="text-[#6EBCC2] hover:underline">dpo@hlty.care</a>, "30 days"],
+                                                ["Access", <a href="mailto:dpo@hlty.care" className="text-[#183A39] hover:underline">dpo@hlty.care</a>, "30 days"],
+                                                ["Correction", <a href="mailto:dpo@hlty.care" className="text-[#183A39] hover:underline">dpo@hlty.care</a>, "15 days"],
+                                                ["Deletion", <a href="mailto:dpo@hlty.care" className="text-[#183A39] hover:underline">dpo@hlty.care</a>, "30 days"],
                                                 ["Nomination", "Email dpo@hlty.care with nominee details", "Immediate"],
-                                                ["Grievance Redressal", <a href="mailto:grievance@hlty.care" className="text-[#6EBCC2] hover:underline">grievance@hlty.care</a>, "48 hrs acknowledgment; 30 days resolution"],
-                                                ["Consent Withdrawal", <a href="mailto:dpo@hlty.care" className="text-[#6EBCC2] hover:underline">dpo@hlty.care</a>, "Immediate for future processing"],
+                                                ["Grievance Redressal", <a href="mailto:grievance@hlty.care" className="text-[#183A39] hover:underline">grievance@hlty.care</a>, "48 hrs acknowledgment; 30 days resolution"],
+                                                ["Consent Withdrawal", <a href="mailto:dpo@hlty.care" className="text-[#183A39] hover:underline">dpo@hlty.care</a>, "Immediate for future processing"],
                                             ]}
                                         />
                                     </div>
@@ -323,7 +323,7 @@ const PrivacyPolicy = () => {
                                 <>
                                     <div>
                                         <SectionTitle>Part II: Terms of Use</SectionTitle>
-                                        <p className="text-xs font-haptik uppercase tracking-widest text-[#6EBCC2] mb-4">Compliant with Consumer Protection Act 2019 & E-Commerce Rules 2020</p>
+                                        <p className="text-xs font-haptik uppercase tracking-widest text-[#183A39] mb-4">Compliant with Consumer Protection Act 2019 & E-Commerce Rules 2020</p>
                                     </div>
 
                                     {/* Business Info */}
@@ -335,11 +335,11 @@ const PrivacyPolicy = () => {
                                             <p><strong className="text-[#1a3636]">Trade Name:</strong> Hlty Beings</p>
                                             <p><strong className="text-[#1a3636]">Registered Address:</strong> {REGISTERED_ADDRESS}</p>
                                             <p><strong className="text-[#1a3636]">Contact:</strong>{" "}
-                                                <a href="mailto:hello@hlty.care" className="text-[#6EBCC2] hover:underline">hello@hlty.care</a> &nbsp;|&nbsp;
-                                                <a href="mailto:grievance@hlty.care" className="text-[#6EBCC2] hover:underline">grievance@hlty.care</a> &nbsp;|&nbsp;
-                                                <a href="mailto:nodal@hlty.care" className="text-[#6EBCC2] hover:underline">nodal@hlty.care</a>
+                                                <a href="mailto:hello@hlty.care" className="text-[#183A39] hover:underline">hello@hlty.care</a> &nbsp;|&nbsp;
+                                                <a href="mailto:grievance@hlty.care" className="text-[#183A39] hover:underline">grievance@hlty.care</a> &nbsp;|&nbsp;
+                                                <a href="mailto:nodal@hlty.care" className="text-[#183A39] hover:underline">nodal@hlty.care</a>
                                             </p>
-                                            <p><strong className="text-[#1a3636]">Website:</strong> <a href="https://www.hlty.care" className="text-[#6EBCC2] hover:underline">www.hlty.care</a></p>
+                                            <p><strong className="text-[#1a3636]">Website:</strong> <a href="https://www.hlty.care" className="text-[#183A39] hover:underline">www.hlty.care</a></p>
                                         </div>
                                     </div>
 
@@ -393,7 +393,7 @@ const PrivacyPolicy = () => {
                                         <SubTitle>7. Dispute Resolution & Governing Law</SubTitle>
                                         <Body className="mb-4"><strong>Governing Law:</strong> Laws of India — Consumer Protection Act 2019, DPDP Act 2023, Contract Act 1872.</Body>
                                         <BulletList items={[
-                                            <><strong>Step 1 — Amicable Resolution:</strong> Contact Grievance Officer Suraj Prasad at <a href="mailto:grievance@hlty.care" className="text-[#6EBCC2] hover:underline">grievance@hlty.care</a> (48-hour response).</>,
+                                            <><strong>Step 1 — Amicable Resolution:</strong> Contact Grievance Officer Suraj Prasad at <a href="mailto:grievance@hlty.care" className="text-[#183A39] hover:underline">grievance@hlty.care</a> (48-hour response).</>,
                                             <><strong>Step 2 — Consumer Court:</strong> File complaint at Consumer Helpline 1915 or District Consumer Disputes Redressal Commission, Bangalore.</>,
                                             <><strong>Step 3 — Arbitration:</strong> For commercial disputes above ₹5 lakhs, arbitration in Bangalore under the Indian Arbitration Act.</>,
                                         ]} />
@@ -458,7 +458,7 @@ const PrivacyPolicy = () => {
                                                     <p className="font-haptik font-bold text-sm text-[#1a3636] mb-3 uppercase tracking-wide">{s.label}</p>
                                                     <ul className="space-y-2 text-[#2D4341] text-base leading-relaxed">
                                                         {s.items.map((i, idx) => (
-                                                            <li key={idx} className="flex gap-2"><span className="text-[#6EBCC2] shrink-0">•</span><span>{i}</span></li>
+                                                            <li key={idx} className="flex gap-2"><span className="text-[#183A39] shrink-0">•</span><span>{i}</span></li>
                                                         ))}
                                                     </ul>
                                                 </div>
@@ -482,7 +482,7 @@ const PrivacyPolicy = () => {
                                         />
 
                                         <Body className="mb-4">
-                                            <strong>Transfer Rights:</strong> You may transfer your seat to another child (same age group) at any time before the workshop starts at no charge. Email <a href="mailto:hello@hlty.care" className="text-[#6EBCC2] hover:underline">hello@hlty.care</a> with new attendee details.
+                                            <strong>Transfer Rights:</strong> You may transfer your seat to another child (same age group) at any time before the workshop starts at no charge. Email <a href="mailto:hello@hlty.care" className="text-[#183A39] hover:underline">hello@hlty.care</a> with new attendee details.
                                         </Body>
 
                                         <p className="font-haptik font-bold text-xs uppercase tracking-widest text-[#1a3636] mb-3 mt-6">Cancellation by Us</p>
@@ -510,7 +510,7 @@ const PrivacyPolicy = () => {
                                     </div>
 
                                     {/* Acknowledgment */}
-                                    <div className="bg-[#6EBCC2]/10 border border-[#6EBCC2]/20 rounded-3xl p-8">
+                                    <div className="bg-[#183A39]/10 border border-[#183A39]/20 rounded-3xl p-8">
                                         <p className="text-[#1a3636] font-normal text-xl text-center">
                                             By completing a transaction on our website, you acknowledge and agree to this Refund & Cancellation Policy and our full <span className="font-bold">Terms of Use</span>.
                                         </p>
