@@ -90,7 +90,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                         <img 
                             src={isOpen ? (logo || "/logo_.svg") : (logo || "/logo.png")} 
                             alt="Logo" 
-                            className={`hidden lg:block ${isOpen ? "" : (logo ? "w-auto h-8 lg:w-[180px] lg:h-[28px]" : `w-auto h-14 lg:h-12 xl:h-20 ${isDark ? "lg:ml-2" : ""}`)}`} 
+                            className={`hidden lg:block ${isOpen ? "" : (logo ? "w-auto h-8 lg:h-[28px] object-contain" : `w-auto h-14 lg:h-12 xl:h-20 ${isDark ? "lg:ml-2" : ""}`)}`} 
                             style={isOpen ? { width: '46px', height: '35.86px' } : {}}
                         />
                     </Link>

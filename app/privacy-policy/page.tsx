@@ -100,6 +100,15 @@ const REGISTERED_ADDRESS = "A-301 Purva Panorama, Kalena Agrahara, Bannerghatta 
 
 const PrivacyPolicy = () => {
     const [activeTab, setActiveTab] = useState<"privacy" | "terms" | "refund">("privacy");
+    const [scrolled, setScrolled] = useState(false);
+
+    React.useEffect(() => {
+        const handleScroll = () => {
+            setScrolled(window.scrollY > 400);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, []);
 
     const tabs: { id: "privacy" | "terms" | "refund"; label: string }[] = [
         { id: "privacy", label: "Privacy Policy" },
@@ -113,9 +122,9 @@ const PrivacyPolicy = () => {
                 variant="dark"
                 logoClassName="lg:-ml-2"
                 bgTransparent
-                logo="/footer-logo.svg"
+                logo={scrolled ? undefined : "/footer-logo.svg"}
                 mobileLogo="/logo_.svg"
-                textColor="#E4DBCD"
+                textColor={scrolled ? "#183A39" : "#E4DBCD"}
                 cartIcon="/get-started/cart.svg"
                 showGetStarted
                 cartBgColor="#51D2A2"
