@@ -45,11 +45,11 @@ export default function AudienceCards() {
         <section className="py-12 md:py-24 bg-[#183A39]">
             {/* Header */}
             <div className="px-6 md:px-12 lg:px-20 max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start mb-10 md:mb-16 gap-4 text-center md:text-left items-center md:items-start">
-                <h2 className="mt-2 md:mt-4 xl:-ml-2 font-jubilat italic text-[24px] md:text-[32px] lg:text-[42px] text-[#399F87] leading-tight lg:translate-y-12 lg:-translate-x-24">
+                <h2 className="mt-2 md:mt-4 xl:-ml-2 font-jubilat italic text-[24px] md:text-[32px] lg:text-[42px] text-[#51D2A2] leading-tight lg:translate-y-12 lg:-translate-x-24">
                     Start where you are.<br />
                     We'll take it from there.
                 </h2>
-                <p className="font-jubilat text-[12px] md:text-[14px] lg:text-[20px] text-[#F0EEE6]/80 max-w-sm lg:max-w-none leading-relaxed lg:whitespace-nowrap lg:translate-y-24 lg:translate-x-24">
+                <p className="font-jubilat text-[12px] md:text-[14px] lg:text-[20px] text-[#51D2A2] max-w-sm lg:max-w-none leading-relaxed lg:whitespace-nowrap lg:translate-y-24 lg:translate-x-24">
                     Everyone arrives at Hlty Beings differently — a parent, an<br className="hidden lg:block" /> educator, a school, a doctor, an HR or simply curious.
                 </p>
             </div>
@@ -80,13 +80,13 @@ export default function AudienceCards() {
                                     />
                                 </div>
                                 {/* White Gradient Overlay */}
-                                <div className="absolute inset-x-0 top-0 h-[25%] bg-gradient-to-b from-white/80 via-white/50 to-transparent z-[5]" />
-                                <div className="absolute inset-x-0 bottom-0 h-[30%] bg-gradient-to-t from-white/50 to-transparent z-[5]" />
+                                <div className="absolute inset-x-0 top-0 h-[25%] bg-gradient-to-b from-[#E4DBCD] via-[#E4DBCD]/60 to-[#E4DBCD]/0 z-[5]" />
+                                <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#E4DBCD] to-[#E4DBCD]/0 z-[5]" />
 
                                 {/* Content */}
                                 <div className="relative z-10 p-3 h-full flex flex-col items-center">
                                     {/* Text Box */}
-                                    <div className="bg-white/5 backdrop-blur-sm rounded-none px-4 py-0 text-left w-full">
+                                    <div className="bg-[#FFFFFF66] backdrop-blur-sm rounded-none px-4 py-0 text-left w-full">
                                         {/* Label */}
                                         <span className="font-haptik font-medium text-[20px] text-[#183A39] tracking-wider block uppercase mb-0">
                                             {card.label}
