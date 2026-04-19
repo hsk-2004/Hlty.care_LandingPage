@@ -17,38 +17,39 @@ export default function LetterSection() {
                 </div>
               </div>
             </div>
-            <div className="content-stretch flex flex-col font-['Jubilat'] font-normal gap-[20px] items-start not-italic relative shrink-0 text-[#e4dbcd]">
+            <div className="content-stretch flex flex-col font-['Jubilat'] font-normal gap-[12px] items-start not-italic relative shrink-0 text-[#e4dbcd]">
               <p className="leading-[normal] relative shrink-0 text-[24px] whitespace-nowrap">SEND YOUR<br aria-hidden="true" />LETTER<br aria-hidden="true" />TO WHO.</p>
               <div className="leading-[0] relative shrink-0 text-[12px] w-[367px] whitespace-pre-wrap">
                 <p className="leading-[normal] mb-0">A pre-written email is ready for you. Add your name, personalise if you want and send it directly to WHO leadership.</p>
                 <p className="leading-[normal] mb-0">&nbsp;</p>
-                <p className="leading-[normal]">Every message counts. Policymakers notice volume. Be part of the pressure.</p>
+                <p className="leading-[normal] mb-0">Every message counts. Policymakers</p>
+                <p className="leading-[normal]">notice volume. Be part of the pressure.</p>
               </div>
             </div>
           </div>
         </div>
         <div className="bg-[#51d2a2] border border-[#235250] border-solid content-stretch flex flex-col gap-[20px] items-start pb-[20px] relative rounded-[12px] shrink-0 w-full">
-          <div className="bg-[#235250] content-stretch flex items-center justify-center p-[20px] relative rounded-tl-[12px] rounded-tr-[12px] shrink-0 w-full">
+          <div className="bg-[#183A39] border border-[#51D2A2] border-solid content-stretch flex items-center justify-start p-[20px] relative rounded-tl-[12px] rounded-tr-[12px] shrink-0 w-full">
             <div className="flex flex-[1_0_0] flex-col font-['GT_Haptik'] font-medium justify-center leading-[0] min-w-px not-italic relative text-[#e4dbcd] text-[12px] uppercase">
               <p className="leading-[normal]">Your Letter to WHO — Pre-Written & Ready</p>
             </div>
           </div>
-          <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full">
+          <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full mt-[-10px]">
             <div className="content-stretch flex flex-col gap-[8px] items-center px-[16px] relative shrink-0 w-full">
-              <div className="bg-[#235250] border border-[#183a39] border-solid content-stretch flex h-[28px] items-center px-[20px] relative rounded-[16px] shrink-0 w-full">
-                <div className="flex flex-col font-['GT_Haptik'] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#809493] text-[12px] text-center uppercase whitespace-nowrap">
+              <div className="bg-[#E4DBCD] border border-[#183a39] border-solid content-stretch flex h-[28px] items-center px-[20px] relative rounded-[16px] shrink-0 w-full">
+                <div className="flex flex-col font-['GT_Haptik'] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#183A39]/60 text-[12px] text-center uppercase whitespace-nowrap">
                   <p className="leading-[56px]">YOUR NAME</p>
                 </div>
               </div>
-              <div className="bg-[#235250] border border-[#183a39] border-solid content-stretch flex h-[28px] items-center px-[20px] relative rounded-[16px] shrink-0 w-full">
-                <div className="flex flex-col font-['GT_Haptik'] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#809493] text-[12px] text-center uppercase whitespace-nowrap">
+              <div className="bg-[#E4DBCD] border border-[#183a39] border-solid content-stretch flex h-[28px] items-center px-[20px] relative rounded-[16px] shrink-0 w-full">
+                <div className="flex flex-col font-['GT_Haptik'] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#183A39]/60 text-[12px] text-center uppercase whitespace-nowrap">
                   <p className="leading-[56px]">YOUR EMAIL ID</p>
                 </div>
               </div>
             </div>
             <div className="content-stretch flex items-start justify-center px-[20px] relative shrink-0 w-full">
-              <div className="bg-[#235250] border border-[#183a39] border-solid content-stretch flex h-[231px] items-start overflow-clip p-[20px] relative rounded-[12px] shrink-0 w-[346px]">
-                <div className="flex-[1_0_0] font-['Jubilat'] font-normal leading-[0] min-w-px not-italic relative text-[#e4dbcd] text-[12px] whitespace-pre-wrap">
+              <div className="bg-[#E4DBCD] border border-[#183a39] border-solid content-stretch flex h-[231px] items-start overflow-y-auto scrollbar-hide p-[20px] relative rounded-[12px] shrink-0 w-[346px]">
+                <div className="flex-[1_0_0] font-['Jubilat'] font-normal leading-[0] min-w-px not-italic relative text-[#183A39] text-[12px] whitespace-pre-wrap">
                   <p className="leading-[normal] mb-0">Dear Dr. Tedros Adhanom Ghebreyesus and WHO Leadership,</p>
                   <p className="leading-[normal] mb-0">&nbsp;</p>
                   <p className="leading-[normal] mb-0">I am writing as a concerned parent and citizen to urge the World Health Organization to take urgent, dedicated action on childhood obesity.</p>
@@ -90,28 +91,29 @@ export default function LetterSection() {
             <div className="flex h-[32px] items-center relative rounded-[20px] shrink-0">
               <p className="font-['GT_Haptik'] font-medium text-[#51d2a2] text-[14px] uppercase leading-[56px] w-[134px] h-[56px] overflow-hidden">Takes 60 seconds</p>
             </div>
-            <div className="flex flex-col gap-[77px] items-start relative shrink-0">
+            <div className="flex flex-col gap-[40px] items-start relative shrink-0">
               <h2 className="text-[#e4dbcd] text-[42px] font-['Jubilat'] font-normal leading-normal uppercase w-[227px] min-h-[159px]">
                 SEND YOUR<br />LETTER<br />TO WHO.
               </h2>
-              <p className="text-[#e4dbcd] text-[20px] font-['Jubilat'] font-normal leading-normal w-[367px] h-[150px] overflow-hidden">
+              <p className="text-[#e4dbcd] text-[20px] font-['Jubilat'] font-normal leading-normal w-[367px]">
                 A pre-written email is ready for you. Add your name, personalise if you want and send it directly to WHO leadership. <br /><br />
-                Every message counts. Policymakers notice volume. Be part of the pressure.
+                Every message counts. Policymakers <br />
+                notice volume. Be part of the pressure.
               </p>
             </div>
           </div>
         </div>
-        <div className="bg-[#235250] flex flex-col items-start relative rounded-[30px] w-[836px] h-[450px] overflow-hidden" data-node-id="2790:7517">
-          <div className="bg-[#235250] flex items-center justify-center h-[65px] px-[40px] py-[20px] relative w-full">
+        <div className="bg-[#183A39] flex flex-col items-start relative rounded-[30px] w-[836px] h-[450px] overflow-hidden" data-node-id="2790:7517">
+          <div className="bg-[#183A39] border border-[#51D2A2] flex items-center justify-start h-[65px] px-[35px] py-[20px] relative w-full rounded-t-[30px]">
             <p className="font-haptik text-[#e4dbcd] text-[20px] uppercase leading-normal">Your Letter to WHO — Pre-Written & Ready</p>
           </div>
-          <div className="bg-[#51d2a2] flex flex-col gap-[16px] p-[35px] relative shrink-0 w-full rounded-b-[30px]">
+          <div className="bg-[#51d2a2] flex flex-col gap-[16px] pt-[20px] px-[35px] pb-[35px] relative shrink-0 w-full rounded-b-[30px]">
             <div className="flex gap-[20px] items-start justify-center relative shrink-0 w-full">
-              <input type="text" placeholder="YOUR NAME" className="bg-[#235250] border border-[#183a39] h-[40px] px-[20px] rounded-[16px] w-[373px] font-['GT_Haptik'] font-medium text-[12px] text-[#e4dbcd] placeholder:text-[#809493] focus:outline-none uppercase" />
-              <input type="email" placeholder="YOUR EMAIL ID" className="bg-[#235250] border border-[#183a39] h-[40px] px-[20px] rounded-[16px] w-[373px] font-['GT_Haptik'] font-medium text-[12px] text-[#e4dbcd] placeholder:text-[#809493] focus:outline-none uppercase" />
+              <input type="text" placeholder="YOUR NAME" className="bg-[#E4DBCD] border border-[#183a39] h-[40px] px-[20px] rounded-[16px] w-[373px] font-['GT_Haptik'] font-medium text-[12px] text-[#183A39] placeholder:text-[#183A39]/60 focus:outline-none uppercase" />
+              <input type="email" placeholder="YOUR EMAIL ID" className="bg-[#E4DBCD] border border-[#183a39] h-[40px] px-[20px] rounded-[16px] w-[373px] font-['GT_Haptik'] font-medium text-[12px] text-[#183A39] placeholder:text-[#183A39]/60 focus:outline-none uppercase" />
             </div>
-            <div className="bg-[#235250] border border-[#183a39] flex h-[231px] p-[20px] overflow-y-auto rounded-[16px] w-full">
-              <p className="font-['Jubilat'] font-normal text-[#e4dbcd] text-[14px] leading-normal whitespace-pre-wrap">
+            <div className="bg-[#E4DBCD] border border-[#183a39] flex h-[231px] p-[20px] overflow-y-auto scrollbar-hide rounded-[16px] w-full">
+              <p className="font-['Jubilat'] font-normal text-[#183A39] text-[14px] leading-normal whitespace-pre-wrap">
                 Dear Dr. Tedros Adhanom Ghebreyesus and WHO Leadership,<br /><br />
                 I am writing as a concerned parent and citizen to urge the World Health Organization to take urgent, dedicated action on childhood obesity.<br /><br />
                 With over 160 million children worldwide living with obesity — a figure that has tripled since 1975 — the current policy framework is not enough. Childhood obesity is buried within SDG 2.2 under malnutrition and SDG 3.4 under non-communicable diseases. It does not have a standalone target, dedicated funding mandate, or explicit coverage for children aged 5–19.<br /><br />

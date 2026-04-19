@@ -229,8 +229,10 @@ const CharacterSection = () => {
   useEffect(() => {
     const updateScale = () => {
       const w = window.innerWidth;
-      // Only scale down on desktop when viewport is smaller than design width
-      if (w >= 1024 && w < 1435) {
+      // Scale down more aggressively on mobile
+      if (w < 768) {
+        setScale(w / 1530);
+      } else if (w < 1435) {
         setScale(w / 1435);
       } else {
         setScale(1);
@@ -244,7 +246,7 @@ const CharacterSection = () => {
   return (
     <section
       style={{ height: scale < 1 ? `${Math.round(4167 * scale)}px` : '4167px' }}
-      className="bg-[#E4DBCD] w-[95%] max-w-[1435px] mx-auto rounded-[40px] mt-12 mb-12 flex flex-col items-center p-4 md:p-8 overflow-hidden"
+      className="bg-[#E4DBCD] w-[95%] max-w-[1435px] mx-auto rounded-[12.2px] md:rounded-[40px] mt-12 mb-12 flex flex-col items-center p-4 md:p-8 overflow-hidden"
       id="character-section"
     >
       {/* Scale wrapper — at 100% scale=1 (no change), at 150% zoom it shrinks */}
@@ -257,7 +259,7 @@ const CharacterSection = () => {
       >
         {/* Character Cards Container — UNTOUCHED from original */}
         <div className="relative w-full max-w-[1345px] mx-auto min-h-[4069px]">
-          <h1 className="font-bitcount text-[60px] lg:text-[100px] text-[#183A39] leading-none mb-8 lg:mb-12 pt-10 relative z-20 text-center uppercase">
+          <h1 className="font-bitcount text-[100px] text-[#183A39] leading-none mb-12 pt-10 relative z-20 text-center uppercase">
             Cast of Characters
           </h1>
           {/* Main Background Image (Dashed Box) */}
@@ -272,7 +274,7 @@ const CharacterSection = () => {
           </div>
 
           {/* Desktop Content Layer */}
-          <div className="relative z-10 hidden lg:flex flex-wrap justify-center gap-x-10 gap-y-24 px-10 pt-20">
+          <div className="relative z-10 flex flex-wrap justify-center gap-x-10 gap-y-24 px-10 pt-20">
             {characters.map((char, index) => (
               <div
                 key={index}
@@ -317,30 +319,7 @@ const CharacterSection = () => {
             ))}
           </div>
 
-          {/* Mobile Content Layer */}
-          <div className="lg:hidden relative z-10 flex flex-col gap-12 mb-8 w-full pt-10 px-4">
-            {characters.map((char, index) => (
-              <div key={index} className="relative flex flex-col items-center justify-end h-[350px]">
-                {/* Character Image Background */}
-                <div className="absolute inset-0 z-0">
-                  <Image
-                    src={char.image}
-                    alt={char.name}
-                    fill
-                    className="object-contain object-bottom"
-                  />
-                </div>
 
-                <div className="relative z-10 p-6 bg-[#E4DBCD] rounded-[20px] border-[4px] border-[#BEB4A5] shadow-lg w-full mb-[-40px]">
-                  <h2 className="font-bitcountink text-[40px] text-[#183A39] leading-tight mb-0">{char.name}</h2>
-                  <h3 className="font-haptik text-[18px] text-[#183A39] font-bold italic mb-4">{char.tagline}</h3>
-                  <p className="font-jubilat text-[14px] text-[#1a3636] leading-[1.5]">
-                    {char.bio}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>

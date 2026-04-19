@@ -19,8 +19,8 @@ export default function ShareSection() {
   return (
     <div className="mt-[150px] mb-[150px] flex flex-col items-center gap-[48px] relative w-full" data-node-id="2790:7533">
       <div className="flex flex-col gap-[20px] items-center text-center">
-        <h2 className="text-[#e4dbcd] text-[42px] font-['Jubilat'] font-normal uppercase leading-tight italic">SPREAD THE WORD.</h2>
-        <div className="text-[#e4dbcd] text-[24px] font-['Jubilat'] font-normal max-w-[813px] leading-relaxed">
+        <h2 className="text-[#e4dbcd] text-[42px] font-jubilat font-normal uppercase leading-tight">SPREAD THE WORD.</h2>
+        <div className="text-[#e4dbcd] text-[24px] font-jubilat font-normal max-w-[813px] leading-relaxed">
           <p>The more voices, the louder the message.</p>
           <p>Share this page with every parent you know.</p>
         </div>
