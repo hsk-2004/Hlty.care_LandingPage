@@ -173,8 +173,8 @@ const PrivacyPolicy = () => {
                                     key={tab.id}
                                     onClick={() => setActiveTab(tab.id)}
                                     className={`px-6 py-4 text-sm font-haptik font-bold uppercase tracking-widest whitespace-nowrap transition-all border-b-2 ${activeTab === tab.id
-                                            ? "border-[#183A39] text-[#1a3636]"
-                                            : "border-transparent text-[#1a3636]/50 hover:text-[#1a3636]"
+                                        ? "border-[#183A39] text-[#1a3636]"
+                                        : "border-transparent text-[#1a3636]/50 hover:text-[#1a3636]"
                                         }`}
                                 >
                                     {tab.label}

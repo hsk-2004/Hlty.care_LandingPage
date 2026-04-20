@@ -26,10 +26,7 @@ export default function FarawayChristmasContent() {
           </div>
         </div>
 
-        {/* Placeholder for Additional Concluding Text */}
-        <p className="font-jubilat text-[14px] md:text-[18px] lg:text-[22px] text-[#1a3636] leading-relaxed max-w-4xl">
-          The Faraway Christmas event demonstrated how wellness and tradition can coexist beautifully, creating memories that children cherish.
-        </p>
+
       </div>
     </>
   );

@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import HealthyHubbaContent from "./HealthyHubbaContent";
-import KukdookuContent from "./KukdookuContent";
+import KukdukooContent from "./KukdukooContent";
 import FarawayChristmasContent from "./FarawayChristmasContent";
 import Peakst8Content from "./Peakst8Content";
 import PANContent from "./PANContent";
@@ -21,10 +21,10 @@ const TABS = [
   },
   {
     id: "B",
-    name: "Kukdooku",
-    title: "Kukdooku",
+    name: "Kukdukoo",
+    title: "Kukdukoo",
     subtitle: "A children's festival built around play, discovery, and imagination.",
-    description: "At Kukdokuu, a vibrant children’s festival bringing together brands, experiences, and performances\nfor young audiences, we created a space where health could live naturally within play. Surrounded\nby storytelling, workshops, and family experiences, our interventions invited children to engage\nwith food, movement, and wellbeing along with fun, intuitive, hands-on activities.\n\nDesigned for both children and their families, our presence focused on making health feel like a\nseamless part of exploration—something to experience, not instruct.",
+    description: "At Kukdukoo, a vibrant children’s festival bringing together brands, experiences, and performances\nfor young audiences, we created a space where health could live naturally within play. Surrounded\nby storytelling, workshops, and family experiences, our interventions invited children to engage\nwith food, movement, and wellbeing along with fun, intuitive, hands-on activities.\n\nDesigned for both children and their families, our presence focused on making health feel like a\nseamless part of exploration—something to experience, not instruct.",
     image: "/events/kk1.png",
     imageHeight: 421
   },
@@ -72,7 +72,7 @@ export default function EventTabs() {
         <div className="flex flex-col md:flex-row gap-8 lg:gap-20">
 
           {/* Sidebar - Navigation */}
-          <div className="w-full md:w-[15%] flex flex-col gap-4 md:gap-5 relative">
+          <div className="w-full md:w-[20%] flex flex-col gap-4 md:gap-5 relative">
 
             {/* Vertical Line Design (Desktop Only) */}
             <div className="hidden md:flex absolute -right-6 -top-[41px] bottom-0 flex-col items-center">
@@ -85,7 +85,7 @@ export default function EventTabs() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTabId(tab.id)}
-                className={`text-left font-jubilat transition-all duration-300 py-1 text-[18px] md:text-[20px] ${
+                className={`text-left font-jubilat transition-all duration-300 py-1 text-[18px] md:text-[20px] whitespace-nowrap ${
                   activeTabId === tab.id
                     ? "text-[#399F87] font-bold"
                     : "text-[#183A39] hover:text-[#399F87]"
@@ -161,7 +161,7 @@ export default function EventTabs() {
 
                 {/* Detailed Sections */}
                 {activeTab.id === "A" && <HealthyHubbaContent />}
-                {activeTab.id === "B" && <KukdookuContent />}
+                {activeTab.id === "B" && <KukdukooContent />}
                 {activeTab.id === "C" && <FarawayChristmasContent />}
               </motion.div>
             </AnimatePresence>
