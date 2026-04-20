@@ -81,17 +81,17 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                     <Link href="/" className={`flex items-center gap-2 group ${logoClassName || "lg:-ml-2"}`}>
                         {/* Mobile Logo: Always white logo_ for explore or when menu is open */}
                         <img 
-                            src={isOpen ? (mobileLogo || logo || "/logo_.svg") : (mobileLogo || logo || "/logo.png")} 
+                            src={isOpen ? "/logo_.svg" : (mobileLogo || logo || "/logo.png")} 
                             alt="Logo" 
                             className={`lg:hidden w-auto ${isOpen || mobileLogo || logo ? "" : "h-14"}`} 
                             style={(isOpen || mobileLogo || logo) ? { width: '46px', height: '35px' } : {}}
                         />
                         {/* Desktop Logo */}
                         <img 
-                            src={isOpen ? (logo || "/logo_.svg") : (logo || "/logo.png")} 
+                            src={isOpen ? "/logo_.svg" : (logo || "/logo.png")} 
                             alt="Logo" 
                             className={`hidden lg:block ${isOpen ? "" : (logo ? "w-auto h-8 lg:h-[28px] object-contain" : `w-auto h-14 lg:h-12 xl:h-20 ${isDark ? "lg:ml-2" : ""}`)}`} 
-                            style={isOpen ? { width: '46px', height: '35.86px' } : {}}
+                            style={isOpen ? { width: '46px', height: '35px' } : {}}
                         />
                     </Link>
                 </div>
@@ -177,7 +177,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                         {/* Top Header inside menu */}
                         <div className="flex justify-between items-center mb-20 shrink-0">
                             <Link href="/" onClick={() => setIsOpen(false)}>
-                                <img src={logo || "/logo_.svg"} alt="Logo" style={{ width: '46px', height: '35.86px' }} />
+                                <img src="/logo_.svg" alt="Logo" style={{ width: '46px', height: '35px' }} />
                             </Link>
                             <button
                                 className="text-[#F0EEE6] p-1"

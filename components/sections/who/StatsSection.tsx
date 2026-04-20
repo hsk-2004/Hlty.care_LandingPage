@@ -32,10 +32,10 @@ export default function StatsSection() {
   return (
     <>
       {/* Mobile Stats Content */}
-      <div className="lg:hidden content-start flex flex-wrap gap-[12.117px] items-start relative shrink-0 w-full px-6">
+      <div className="lg:hidden grid grid-cols-2 gap-[8px] w-full px-4">
         {stats.map((stat, i) => (
-          <div key={i} className="bg-[#51d2a2] border-[#e4dbcd] border-[0.606px] border-solid flex flex-col items-start p-[16px] relative rounded-[15px] shrink-0 w-[calc(50%-6.05px)] min-h-[160px]">
-            <div className="flex flex-col gap-[12px] items-start relative w-full h-full">
+          <div key={i} className="bg-[#51d2a2] border-[#e4dbcd] border-[0.606px] border-solid flex flex-col items-start p-[16px] relative rounded-[15px] shrink-0 w-full h-[153px]">
+            <div className="flex flex-col gap-[4px] items-start relative w-full h-full">
               <div className="flex font-haptik items-center justify-center relative shrink-0 text-[32px] text-[#183a39] uppercase leading-none w-full">
                 {stat.isIcon ? (
                   <div className="w-[32px] h-[32px] rounded-full border-[3px] border-[#183a39] flex items-center justify-center">
@@ -46,8 +46,8 @@ export default function StatsSection() {
                 )}
               </div>
               <div className="flex flex-col gap-1">
-                <p className="font-['Jubilat'] font-bold leading-[normal] text-[#183a39] text-[12px]">{stat.subtitle}</p>
-                <p className="font-['Jubilat'] font-normal leading-[1.3] text-[#183a39] text-[11px]">{stat.desc}</p>
+                <p className="font-['Jubilat'] font-bold leading-tight text-[#183a39] text-[12px]">{stat.subtitle}</p>
+                <p className="font-['Jubilat'] font-normal leading-[1.15] text-[#183a39] text-[11px]">{stat.desc}</p>
               </div>
             </div>
           </div>
@@ -68,7 +68,7 @@ export default function StatsSection() {
                   stat.title
                 )}
               </div>
-              <div className="flex flex-col gap-2">
+              <div className={`flex flex-col gap-2 ${i === 2 ? 'lg:-mt-3' : ''}`}>
                 <p className="font-['Jubilat'] font-bold text-[#183a39] text-[16px] leading-tight">{stat.subtitle}</p>
                 <p className="font-['Jubilat'] font-normal text-[#183a39] text-[14px] leading-snug">{stat.desc}</p>
               </div>

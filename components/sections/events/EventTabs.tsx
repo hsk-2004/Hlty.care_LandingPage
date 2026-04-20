@@ -60,11 +60,11 @@ export default function EventTabs() {
   const activeTab = TABS.find((tab) => tab.id === activeTabId) || TABS[0];
 
   return (
-    <section className="bg-[#F0EEE6] py-10 md:py-16 px-6 md:px-12 lg:px-20 border-t border-[#183A39]/10">
+    <section className="bg-[#F0EEE6] pt-4 pb-10 md:py-16 px-6 md:px-12 lg:px-20 border-t border-[#183A39]/10">
       <div className="max-w-7xl mx-auto">
 
         {/* Horizontal Line with Dots */}
-        <div className="relative w-full h-[2px] bg-[#51D2A2] mb-10">
+        <div className="relative w-full h-[2px] bg-[#51D2A2] mb-4 md:mb-10">
           <div className="absolute left-0 -top-[5px] w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-l-[8px] border-l-[#51D2A2]" />
           <div className="absolute right-0 -top-[5px] w-0 h-0 border-t-[6px] border-t-transparent border-b-[6px] border-b-transparent border-r-[8px] border-r-[#51D2A2]" />
         </div>
@@ -72,7 +72,7 @@ export default function EventTabs() {
         <div className="flex flex-col md:flex-row gap-8 lg:gap-20">
 
           {/* Sidebar - Navigation */}
-          <div className="w-full md:w-[20%] flex flex-col gap-4 md:gap-5 relative">
+          <div className="w-full md:w-[20%] flex flex-col gap-1 md:gap-5 relative">
 
             {/* Vertical Line Design (Desktop Only) */}
             <div className="hidden md:flex absolute -right-6 -top-[41px] bottom-0 flex-col items-center">
@@ -85,7 +85,7 @@ export default function EventTabs() {
               <button
                 key={tab.id}
                 onClick={() => setActiveTabId(tab.id)}
-                className={`text-left font-jubilat transition-all duration-300 py-1 text-[18px] md:text-[20px] whitespace-nowrap ${
+                className={`text-left font-jubilat transition-all duration-300 py-[1px] md:py-1 text-[12px] md:text-[20px] whitespace-nowrap ${
                   activeTabId === tab.id
                     ? "text-[#399F87] font-bold"
                     : "text-[#183A39] hover:text-[#399F87]"
@@ -112,7 +112,7 @@ export default function EventTabs() {
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
                 transition={{ duration: 0.5 }}
-                className="space-y-6"
+                className="space-y-3 md:space-y-6"
               >
                 {/* Title */}
                 <h2 className="font-serif text-[28px] md:text-[36px] lg:text-[44px] text-[#183A39] leading-tight">

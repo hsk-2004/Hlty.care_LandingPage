@@ -35,7 +35,7 @@ export default function LatestSection() {
         </div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10 lg:gap-12">
+        <div className="flex flex-nowrap overflow-x-auto scrollbar-hide -mx-6 px-6 gap-6 md:mx-0 md:px-0 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-10 lg:gap-12 pb-4">
           {updates.map((item, index) => (
             <motion.div
               key={item.id}
@@ -43,7 +43,7 @@ export default function LatestSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1, duration: 0.6 }}
-              className="flex flex-col group cursor-pointer"
+              className="flex flex-col group cursor-pointer shrink-0 w-[350px] md:w-auto"
             >
               {/* Image Container */}
               <div className="relative w-full h-[200px] md:h-[249px] lg:w-[400px] lg:h-[249px] bg-[#C4C4C4] rounded-[9.29px] overflow-hidden mb-6">

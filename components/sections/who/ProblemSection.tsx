@@ -25,7 +25,7 @@ export default function ProblemSection() {
   return (
     <>
       {/* Mobile Problem Content */}
-      <div className="lg:hidden content-stretch flex flex-col gap-[23.66px] items-start justify-end relative shrink-0 w-[378px]">
+      <div className="lg:hidden content-stretch flex flex-col gap-[23.66px] items-start justify-end relative shrink-0 w-[378px] ml-4">
         <div className="content-stretch flex flex-col h-[287.303px] items-start justify-between relative shrink-0 w-[378px]">
           <div className="content-stretch flex flex-col gap-[11.267px] items-start relative shrink-0">
             <div className="content-stretch flex h-[18.027px] items-center relative rounded-[11.267px] shrink-0">

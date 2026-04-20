@@ -1,12 +1,7 @@
 import React from 'react';
 import { MoveRight } from 'lucide-react';
 
-const imgArrow1 = "https://www.figma.com/api/mcp/asset/89f24f13-f017-4dbd-ba96-6ef091b2364b";
-const imgGroup1341 = "https://www.figma.com/api/mcp/asset/ce423798-424a-4e0b-974a-d987fb0ce595";
-const imgGroup1342 = "https://www.figma.com/api/mcp/asset/65b67b32-ecb0-4e9a-829c-3c8aa2f033cb";
-const mobImgArrow1 = "https://www.figma.com/api/mcp/asset/46b35ae0-fe8b-47f9-b6ad-157369a8e43e";
-const mobImgGroup1341 = "https://www.figma.com/api/mcp/asset/3926ffd1-6906-4443-97dc-076a26bb36cf";
-const mobImgGroup1342 = "https://www.figma.com/api/mcp/asset/8bbecfdf-cfc1-4439-ab7f-dd2e7bee4621";
+const whoLogo = "/events/who-logo.svg";
 
 export default function HeroSection() {
   return (
@@ -39,8 +34,8 @@ export default function HeroSection() {
           </button>
         </div>
 
-        <div className="relative w-full aspect-[2/1] max-w-[400px]">
-          <img alt="WHO Decoration" className="w-full h-full object-contain" src={mobImgGroup1341} />
+        <div className="relative w-[378px] h-[136px]">
+          <img alt="WHO Logo" className="w-full h-full object-contain" src={whoLogo} />
         </div>
       </div>
 
@@ -81,16 +76,8 @@ export default function HeroSection() {
         </div>
 
         {/* Right Side WHO logo & Exclamations */}
-        <div className="relative w-[500px] h-[350px] flex items-end justify-end">
-          <div className="relative">
-            <img alt="World Health Organization" className="w-[450px] object-contain opacity-90" src={imgGroup1341} />
-            
-            {/* Red Exclamation Marks */}
-            <div className="absolute -top-12 right-4 flex gap-1">
-              <span className="text-[#ff0000] text-[60px] font-bold rotate-[10deg] leading-none">!</span>
-              <span className="text-[#ff0000] text-[60px] font-bold rotate-[15deg] leading-none">!</span>
-            </div>
-          </div>
+        <div className="relative w-[548px] h-[198px] flex items-end justify-end">
+          <img alt="World Health Organization" className="w-full h-full object-contain" src={whoLogo} />
         </div>
       </div>
     </>

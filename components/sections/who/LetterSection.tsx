@@ -7,8 +7,8 @@ export default function LetterSection() {
   return (
     <>
       {/* Mobile Letter Content */}
-      <div className="lg:hidden content-stretch flex flex-col gap-[42px] items-start justify-end relative shrink-0 w-[378px]">
-        <div className="content-stretch flex flex-col items-start relative shrink-0 w-[402px]">
+      <div className="lg:hidden content-stretch flex flex-col gap-[42px] items-start justify-end relative shrink-0 w-[378px] pb-10 ml-4">
+        <div className="content-stretch flex flex-col items-start relative shrink-0 w-[378px]">
           <div className="content-stretch flex flex-col gap-[20px] items-start relative shrink-0">
             <div className="content-stretch flex h-[32px] items-center relative rounded-[20px] shrink-0">
               <div className="content-stretch flex h-[24px] items-center justify-center py-[10px] relative shrink-0">
@@ -28,7 +28,7 @@ export default function LetterSection() {
             </div>
           </div>
         </div>
-        <div className="bg-[#51d2a2] border border-[#235250] border-solid content-stretch flex flex-col gap-[20px] items-start pb-[20px] relative rounded-[12px] shrink-0 w-full">
+        <div className="bg-[#51d2a2] border border-[#235250] border-solid content-stretch flex flex-col gap-[20px] items-start pb-[20px] relative rounded-[12px] shrink-0 w-[378px] h-[450px]">
           <div className="bg-[#183A39] border border-[#51D2A2] border-solid content-stretch flex items-center justify-start p-[20px] relative rounded-tl-[12px] rounded-tr-[12px] shrink-0 w-full">
             <div className="flex flex-[1_0_0] flex-col font-['GT_Haptik'] font-medium justify-center leading-[0] min-w-px not-italic relative text-[#e4dbcd] text-[12px] uppercase">
               <p className="leading-[normal]">Your Letter to WHO — Pre-Written & Ready</p>
@@ -36,20 +36,20 @@ export default function LetterSection() {
           </div>
           <div className="content-stretch flex flex-col gap-[16px] items-start relative shrink-0 w-full mt-[-10px]">
             <div className="content-stretch flex flex-col gap-[8px] items-center px-[16px] relative shrink-0 w-full">
-              <div className="bg-[#E4DBCD] border border-[#183a39] border-solid content-stretch flex h-[28px] items-center px-[20px] relative rounded-[16px] shrink-0 w-full">
-                <div className="flex flex-col font-['GT_Haptik'] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#183A39]/60 text-[12px] text-center uppercase whitespace-nowrap">
+              <div className="bg-[#235250] border border-[#183A39] border-solid content-stretch flex h-[28px] items-center px-[20px] relative rounded-[16px] shrink-0 w-full">
+                <div className="flex flex-col font-['GT_Haptik'] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#E4DBCD]/60 text-[12px] text-center uppercase whitespace-nowrap">
                   <p className="leading-[56px]">YOUR NAME</p>
                 </div>
               </div>
-              <div className="bg-[#E4DBCD] border border-[#183a39] border-solid content-stretch flex h-[28px] items-center px-[20px] relative rounded-[16px] shrink-0 w-full">
-                <div className="flex flex-col font-['GT_Haptik'] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#183A39]/60 text-[12px] text-center uppercase whitespace-nowrap">
+              <div className="bg-[#235250] border border-[#183A39] border-solid content-stretch flex h-[28px] items-center px-[20px] relative rounded-[16px] shrink-0 w-full">
+                <div className="flex flex-col font-['GT_Haptik'] font-medium justify-center leading-[0] not-italic relative shrink-0 text-[#E4DBCD]/60 text-[12px] text-center uppercase whitespace-nowrap">
                   <p className="leading-[56px]">YOUR EMAIL ID</p>
                 </div>
               </div>
             </div>
             <div className="content-stretch flex items-start justify-center px-[20px] relative shrink-0 w-full">
-              <div className="bg-[#E4DBCD] border border-[#183a39] border-solid content-stretch flex h-[231px] items-start overflow-y-auto scrollbar-hide p-[20px] relative rounded-[12px] shrink-0 w-[346px]">
-                <div className="flex-[1_0_0] font-['Jubilat'] font-normal leading-[0] min-w-px not-italic relative text-[#183A39] text-[12px] whitespace-pre-wrap">
+              <div className="bg-[#235250] border border-[#183A39] border-solid content-stretch flex h-[231px] items-start overflow-y-auto scrollbar-hide p-[20px] relative rounded-[12px] shrink-0 w-[346px]">
+                <div className="flex-[1_0_0] font-['Jubilat'] font-normal leading-[0] min-w-px not-italic relative text-[#E4DBCD] text-[12px] whitespace-pre-wrap">
                   <p className="leading-[normal] mb-0">Dear Dr. Tedros Adhanom Ghebreyesus and WHO Leadership,</p>
                   <p className="leading-[normal] mb-0">&nbsp;</p>
                   <p className="leading-[normal] mb-0">I am writing as a concerned parent and citizen to urge the World Health Organization to take urgent, dedicated action on childhood obesity.</p>

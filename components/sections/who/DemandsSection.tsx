@@ -33,7 +33,7 @@ export default function DemandsSection() {
   return (
     <>
       {/* Mobile Demands Content */}
-      <div className="lg:hidden content-stretch flex flex-col gap-[20.835px] items-start overflow-clip relative shrink-0 w-[378px]">
+      <div className="lg:hidden content-stretch flex flex-col gap-[20.835px] items-start overflow-clip relative shrink-0 w-full mb-10">
         <div className="content-stretch flex gap-[8px] items-end justify-center relative shrink-0 w-full">
           <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
             <div className="col-1 h-[38.773px] ml-[16.73px] mt-[17.16px] relative row-1 w-[29.102px]">
@@ -47,20 +47,15 @@ export default function DemandsSection() {
           </div>
           <p className="font-jubilat text-[#e4dbcd] text-[20px] whitespace-nowrap">Three Things We're Demanding</p>
         </div>
-        <div className="content-stretch flex gap-[8px] items-center overflow-clip relative shrink-0">
-          {demands.map((demand) => (
-            <div key={demand.id} className="flex flex-row items-center self-stretch">
-              <div className="bg-[#51d2a2] border-[#e4dbcd] border-[0.521px] border-solid content-stretch flex flex-col h-full items-start justify-between not-italic p-[10.418px] relative rounded-[10.418px] shrink-0 text-[#183a39] w-[190px]">
-                <div className="content-stretch flex flex-col gap-[10.418px] items-start relative shrink-0 text-[12px] w-full">
-                  <div className="flex flex-col font-['GT_Haptik'] font-medium justify-center leading-[0] relative shrink-0 uppercase w-full whitespace-pre-wrap">
-                    <p className="leading-[normal] mb-0">{demand.titleLines[0]}</p>
-                    {demand.titleLines[1] ? <p className="leading-[normal]">{demand.titleLines[1]}</p> : null}
-                  </div>
-                  <p className="font-['Jubilat'] font-normal leading-[normal] relative shrink-0 w-full">{demand.desc}</p>
-                </div>
-                <div className="flex flex-col font-['GT_Haptik'] font-medium justify-center leading-[0] relative shrink-0 text-[33.336px] text-center uppercase whitespace-nowrap">
-                  <p className="leading-[29.169px]">{demand.id}</p>
-                </div>
+        <div className="w-full flex gap-[8px] items-stretch overflow-x-auto scrollbar-hide px-6 relative">
+          {demands.map((demand, i) => (
+            <div key={i} className="bg-[#51d2a2] border-[#e4dbcd] border-[0.521px] border-solid flex flex-col items-start justify-between p-[10.418px] rounded-[10.418px] w-[190px] min-h-[200px] shrink-0 relative">
+              <div className="flex flex-col gap-[10.418px] items-start relative w-full">
+                <p className="font-haptik text-[#183a39] text-[12px] uppercase leading-tight w-full h-auto whitespace-pre-wrap">{demand.id === "1" ? "A Dedicated SDG Target" : demand.title}</p>
+                <p className="font-['Jubilat'] font-normal text-[#183a39] text-[11px] leading-normal">{demand.desc}</p>
+              </div>
+              <div className="flex flex-col font-['GT_Haptik'] font-medium justify-center leading-[0] relative shrink-0 text-[33.336px] text-center uppercase whitespace-nowrap">
+                <p className="leading-[29.169px]">{demand.id}</p>
               </div>
             </div>
           ))}
