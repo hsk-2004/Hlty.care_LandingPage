@@ -45,7 +45,7 @@ export default function AudienceCards() {
         <section className="py-12 md:py-24 bg-[#183A39]">
             {/* Header */}
             <div className="px-6 md:px-12 lg:px-20 max-w-7xl mx-auto flex flex-col md:flex-row md:justify-between md:items-start mb-10 md:mb-16 gap-4 text-center md:text-left items-center md:items-start">
-                <h2 className="mt-2 md:mt-4 xl:-ml-2 font-jubilat italic text-[24px] md:text-[32px] lg:text-[42px] text-[#51D2A2] leading-tight lg:translate-y-12 lg:-translate-x-24">
+                <h2 className="mt-2 md:mt-4 xl:-ml-2 font-jubilat text-[24px] md:text-[32px] lg:text-[42px] text-[#51D2A2] leading-tight lg:translate-y-12 lg:-translate-x-24">
                     Start where you are.<br />
                     We'll take it from there.
                 </h2>
