@@ -1,3 +1,4 @@
+/*
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/products/HeroSection";
@@ -22,3 +23,9 @@ export default function ProductsPage() {
         </main>
     );
 }
+*/
+
+export default function ProductsPage() {
+    return null;
+}
+

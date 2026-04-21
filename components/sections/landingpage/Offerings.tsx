@@ -28,7 +28,12 @@ export default function Offerings() {
                     transition={{ duration: 0.8, delay: 0.2 }}
                     className="grid grid-cols-2 md:flex md:flex-row items-center justify-center gap-3 md:gap-5 w-full max-w-[400px] md:max-w-none mx-auto"
                 >
-                    <Link href="/products" className="w-full md:w-auto">
+                    <Link 
+                        href="https://hlty-beings.myshopify.com/" 
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-full md:w-auto"
+                    >
                         <motion.button
                             whileHover={{ scale: 1.02, y: -2 }}
                             whileTap={{ scale: 0.98 }}

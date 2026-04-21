@@ -133,12 +133,15 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                         </Link>
                     )}
 
-                    <div 
+                    <Link 
+                        href="https://hlty-beings.myshopify.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         style={{ backgroundColor: cartBgColor || "#183A39" }}
                         className={`hidden lg:flex lg:w-[44px] lg:h-[44px] xl:w-[58px] xl:h-[58px] items-center justify-center rounded-full shadow-md ${cartBgColor === "#51D2A2" ? "text-[#183A39]" : "text-[#F0EEE6]"}`}
                     >
                         {cartIcon ? <img src={cartIcon} alt="Cart" className="lg:w-[22px] lg:h-[22px] xl:w-[30px] xl:h-[30px]" /> : <ShoppingBag size={20} className="w-4 h-4 xl:w-5 xl:h-5" />}
-                    </div>
+                    </Link>
 
                     {showClose ? (
                         <Link 
@@ -238,9 +241,15 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                                 transition={{ delay: 0.6 }}
                                 className="flex justify-center w-full"
                             >
-                                <div className="w-[382px] h-[40px] bg-[#5EE2A0] text-[#183A39] rounded-full font-haptik text-[18px] tracking-wide shadow-lg flex items-center justify-center">
+                                <Link 
+                                    href="https://hlty-beings.myshopify.com/" 
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => setIsOpen(false)} 
+                                    className="w-[382px] h-[40px] bg-[#5EE2A0] text-[#183A39] rounded-full font-haptik text-[18px] tracking-wide shadow-lg flex items-center justify-center"
+                                >
                                     CART
-                                </div>
+                                </Link>
                             </motion.div>
                         </div>
                     </motion.div>
