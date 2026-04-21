@@ -32,16 +32,16 @@ export default function ConversationSection() {
 
                         {/* Content Below */}
                         <div className="p-6 pt-2">
-                            <h2 className="font-jubilat italic text-[24px] md:text-[32px] text-[#183A39] leading-tight mb-4">
+                            <h2 className="font-jubilat text-[24px] md:text-[32px] text-[#183A39] leading-tight mb-4">
                                 I have something else in mind
                             </h2>
                             
-                            <p className="font-haptik text-[14px] md:text-[16px] text-[#183A39]/90 leading-relaxed mb-1">
-                                Not everything fits neatly into a category.
+                            <p className="font-jubilat text-[14px] md:text-[16px] text-[#183A39] leading-relaxed mb-1">
+                                <strong>Not everything fits neatly into a category.</strong>
                             </p>
-                            <p className="font-haptik text-[14px] md:text-[16px] text-[#183A39]/90 leading-relaxed mb-6">
-                                If you're thinking about a specific context — a school menu, a program, a space,
-                                a routine, or something that doesn't exist yet — we're open to exploring it together.
+                            <p className="font-jubilat text-[14px] md:text-[16px] text-[#183A39] leading-relaxed mb-6">
+                                If you&apos;re thinking about a specific context — a school menu, a program, a space,
+                                a routine, or something that doesn&apos;t exist yet — we&apos;re open to exploring it together.
                             </p>
 
                             {/* CTA Button */}
@@ -75,16 +75,14 @@ export default function ConversationSection() {
 
                         {/* Content Overlay */}
                         <div className="relative z-10 p-12 py-16">
-                            <h2 className="font-jubilat italic text-[40px] text-[#183A39] leading-tight mb-6 text-left">
+                            <h2 className="font-jubilat text-[40px] text-[#183A39] leading-tight mb-6 text-left">
                                 I have something else in mind
                             </h2>
                             
-                            <p className="font-haptik text-[16px] text-[#183A39]/90 leading-relaxed mb-2 text-left">
-                                Not everything fits neatly into a category.
-                            </p>
-                            <p className="font-haptik text-[16px] text-[#183A39]/90 leading-relaxed mb-8 text-left max-w-xl">
-                                If you're thinking about a specific context — a school menu, a program, a space,<br />
-                                a routine, or something that doesn't exist yet — we're open to exploring it together.
+                            <p className="font-jubilat text-[16px] text-[#183A39] leading-relaxed mb-8 text-left max-w-2xl">
+                                <strong>Not everything fits neatly into a category.</strong><br className="hidden xl:block" />
+                                If you&apos;re thinking about a specific context — a school menu, a program, a space,<br className="hidden xl:block" />
+                                a routine, or something that doesn&apos;t exist yet — we&apos;re open to exploring it together.
                             </p>
 
                             {/* CTA Button */}

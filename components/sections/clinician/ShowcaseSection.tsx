@@ -25,8 +25,8 @@ export default function ShowcaseSection() {
       {/* Space Transformation Section - Full Width Display */}
       <div className="w-full mt-16 md:mt-24 lg:mt-32">
         <div className="flex flex-col items-center text-center space-y-8 px-4">
-          <h2 className="font-jubilat text-[12px] md:text-[36px] lg:text-[44px] text-[#183A39] leading-tight font-medium max-w-4xl">
-            We turn <span className="italic text-[#51D2A2]">healthcare spaces</span> into everyday learning environments.
+          <h2 className="font-jubilat text-[12px] md:text-[36px] lg:text-[44px] text-[#183A39] leading-tight font-medium max-w-4xl lg:max-w-7xl">
+            We turn <span className="italic text-[#399F87]">healthcare spaces</span> into everyday learning environments.
           </h2>
 
           <div className="flex flex-nowrap md:flex-wrap justify-center gap-1 md:gap-4 pt-2 w-full md:w-auto px-1">
@@ -39,7 +39,7 @@ export default function ShowcaseSection() {
             ].map((tag, i) => (
               <div
                 key={i}
-                className="w-[70px] h-[14px] md:w-auto md:h-auto px-0 md:px-6 py-0 md:py-3 rounded-full bg-[#183A39]/5 border border-[#183A39]/10 text-[#51D2A2] font-haptikRotalic text-[8px] md:text-base whitespace-nowrap hover:bg-[#183A39]/10 transition-colors cursor-default flex items-center justify-center flex-shrink-0"
+                className="w-[70px] h-[14px] lg:w-[139px] lg:h-[28px] px-0 md:px-4 py-0 rounded-full bg-[#183A39]/5 border border-[#183A39]/10 text-[#399F87] font-haptikRotalic text-[8px] lg:text-[14px] md:text-base whitespace-nowrap hover:bg-[#183A39]/10 transition-colors cursor-default flex items-center justify-center flex-shrink-0"
               >
                 {tag}
               </div>

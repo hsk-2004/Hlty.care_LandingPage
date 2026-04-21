@@ -37,17 +37,23 @@ export default function WellnessSection() {
       badge: "Workshops",
       badgeWidth: "lg:w-[81px]",
       title: "Classroom Playshops",
+      image: "/educators/well1.svg",
+      imageWidth: 196,
+      imageHeight: 107,
       points: [
         "Builds habits through play & storytelling",
         "Curriculum-aligned learning outcomes"
       ],
       buttonText: "Explore",
-      buttonWidth: "lg:w-[74px]"
+      buttonWidth: "w-[74px]"
     },
     {
       badge: "Visual Learning Systems",
       badgeWidth: "lg:w-[151px]",
       title: "Posters, charts & daily reminders",
+      image: "/educators/well3.svg",
+      imageWidth: 80,
+      imageHeight: 104,
       points: [
         "Passive reinforcement (students absorb healthier thinking)",
         "Colorful, age-appropriate designs",
@@ -55,12 +61,15 @@ export default function WellnessSection() {
         "Works alongside regular lessons"
       ],
       buttonText: "Download Sample",
-      buttonWidth: "lg:w-[132px]"
+      buttonWidth: "w-[132px]"
     },
     {
       badge: "Teacher Guides & Training",
       badgeWidth: "lg:w-[161px]",
       title: "Everything you need to succeed",
+      image: "/educators/well2.svg",
+      imageWidth: 200,
+      imageHeight: 141,
       points: [
         "One-page guides per activity (zero friction)",
         "Student conversation starters included",
@@ -68,7 +77,7 @@ export default function WellnessSection() {
         "Optional training for deeper implementation"
       ],
       buttonText: "Register Interest",
-      buttonWidth: "lg:w-[124px]"
+      buttonWidth: "w-[124px]"
     }
   ];
 
@@ -127,7 +136,7 @@ export default function WellnessSection() {
               <div className="pt-2 lg:pt-6">
                 <button
                   onClick={() => setIsWalkthroughOpen(true)}
-                  className="inline-flex items-center justify-between px-6 lg:px-8 bg-[#5DE2A2] text-[#183A39] rounded-full font-haptik font-bold text-[14px] lg:uppercase lg:tracking-wider w-full md:w-[340px] lg:w-[498px] py-3.5 lg:py-0 lg:h-[40px] hover:scale-[1.02] transition-transform group"
+                  className="inline-flex items-center justify-between px-6 lg:px-8 bg-[#5DE2A2] text-[#183A39] rounded-full font-haptik text-[14px] lg:uppercase lg:tracking-wider w-full md:w-[340px] lg:w-[498px] py-3.5 lg:py-0 lg:h-[40px] hover:scale-[1.02] transition-transform group"
                 >
                   Request Walkthrough
                   <ArrowRight size={20} strokeWidth={2.5} className="group-hover:translate-x-1 transition-transform" />
@@ -140,13 +149,14 @@ export default function WellnessSection() {
 
         {/* Three Core Pillars Section */}
         <div
-          className="relative bg-[#F2EFE4] lg:bg-transparent lg:bg-[url('/educators/wellness-back.svg')] lg:bg-cover lg:bg-center lg:bg-no-repeat rounded-[24px] lg:rounded-[40px] px-6 md:px-12 lg:px-20 py-12 lg:py-0 mt-12 lg:mt-16 mx-auto lg:w-[1320px] lg:h-[547px] flex flex-col justify-center overflow-hidden lg:overflow-visible"
+          className="relative bg-[#F2EFE4] lg:bg-transparent lg:bg-[url('/educators/wellness-back.svg')] lg:bg-cover lg:bg-center lg:bg-no-repeat rounded-[24px] lg:rounded-[40px] px-6 md:px-12 lg:px-20 py-12 lg:py-0 mt-12 lg:mt-16 mx-auto lg:w-[1320px] lg:h-[547px] flex flex-col justify-center"
         >
-          <style dangerouslySetInnerHTML={{__html: `
+          <style dangerouslySetInnerHTML={{
+            __html: `
             .hide-scrollbar::-webkit-scrollbar { display: none; }
             .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
           `}} />
-          
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -170,11 +180,11 @@ export default function WellnessSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-[#EBE4D5] rounded-[20px] pt-4 lg:pt-5 pb-6 lg:pb-7 px-6 lg:px-7 flex flex-col shrink-0 w-[280px] h-[293px] border border-[#183A39]/10 relative group hover:shadow-xl transition-all duration-500 overflow-hidden snap-center"
+                className="bg-[#EBE4D5] rounded-[20px] pt-4 lg:pt-5 pb-6 lg:pb-7 px-6 lg:px-7 flex flex-col shrink-0 w-[280px] h-[293px] border border-[#183A39]/10 relative group hover:shadow-xl transition-all duration-500 snap-center"
               >
                 {/* Badge */}
                 <div className="mb-2">
-                  <span className={`inline-flex items-center justify-center ${pillar.badgeWidth} lg:h-[19px] px-3 border border-[#183A39]/30 rounded-full text-[8px] md:text-[9px] font-haptik font-bold uppercase tracking-tight text-[#183A39]`}>
+                  <span className={`inline-flex items-center justify-center ${pillar.badgeWidth} lg:h-[19px] px-3 border border-[#BEB4A5] bg-[#F2F0E3] rounded-full text-[8px] md:text-[9px] font-haptik uppercase tracking-tight text-[#183A39]`}>
                     {pillar.badge}
                   </span>
                 </div>
@@ -197,11 +207,27 @@ export default function WellnessSection() {
                   </ul>
                 </div>
 
-                {/* CTA Button */}
-                <div className="mt-auto">
-                  <button className={`bg-[#183A39] text-[#F0EEE6] ${pillar.buttonWidth} lg:h-[32px] flex items-center justify-center rounded-full font-haptik font-bold text-[9px] md:text-[10px] uppercase tracking-widest hover:scale-[1.02] active:scale-[0.98] transition-all w-full md:w-fit`}>
+                {/* CTA Button & Image Overlay */}
+                <div className="mt-auto relative flex items-end">
+                  <button className={`bg-[#183A39] text-[#F0EEE6] ${pillar.buttonWidth} h-[32px] shrink-0 flex items-center justify-center rounded-full font-haptik text-[9px] uppercase tracking-wider whitespace-nowrap hover:scale-[1.02] active:scale-[0.98] transition-all z-10`}>
                     {pillar.buttonText}
                   </button>
+                  <div
+                    className={`absolute bottom-0 right-0 ${index === 2
+                        ? "translate-x-[100px] translate-y-[80px]"
+                        : index === 1
+                          ? "translate-x-4 translate-y-12"
+                          : "translate-x-12 -translate-y-4"
+                      } pointer-events-none`}
+                    style={{ width: `${pillar.imageWidth}px`, height: `${pillar.imageHeight}px` }}
+                  >
+                    <Image
+                      src={pillar.image}
+                      alt={pillar.title}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
                 </div>
               </motion.div>
             ))}

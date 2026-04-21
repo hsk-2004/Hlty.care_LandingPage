@@ -11,7 +11,7 @@ export default function CollaborationBanner() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="w-[380px] max-w-full h-[157px] lg:w-[1037px] lg:h-[120px] mx-auto bg-[#E5E1D3] rounded-[24px] md:rounded-[40px] p-4 md:p-12 lg:p-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between"
+        className="w-[380px] max-w-full h-[157px] lg:w-[1037px] lg:h-[120px] mx-auto bg-[#E5E1D3] rounded-[20px] p-4 md:p-12 lg:p-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between"
       >
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12 w-full lg:px-10">
 
@@ -20,11 +20,11 @@ export default function CollaborationBanner() {
             {/* Hlty Beings Logo */}
             <div className="flex items-center">
               <Image
-                src="/logo.png"
+                src="/logo.svg"
                 alt="Hlty Beings Logo"
                 width={215}
                 height={51}
-                className="h-8 md:h-10 lg:h-[51px] w-auto object-contain"
+                className="h-8 md:h-10 lg:w-[215px] lg:h-[51px] object-contain"
               />
             </div>
 
@@ -32,8 +32,13 @@ export default function CollaborationBanner() {
             <div className="text-[#183A39]/30 text-xl lg:text-xl font-light">✕</div>
 
             {/* Xoxoday Logo Simulation */}
-            <div className="flex items-center">
-              <span className="font-jubilat text-xl md:text-2xl lg:text-2xl text-[#183A39] font-bold whitespace-nowrap">xoxo<span className="text-blue-500">day</span></span>
+            <div className="relative w-[80px] h-[30px] lg:w-[181px] lg:h-[61px]">
+              <Image
+                src="/employer/xoxo.svg"
+                alt="xoxoday logo"
+                fill
+                className="object-contain"
+              />
             </div>
           </div>
 

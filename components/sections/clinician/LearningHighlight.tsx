@@ -7,7 +7,7 @@ import Image from "next/image";
 export default function LearningHighlight() {
   return (
     <section className="w-full bg-[#F0EEE6] py-16 md:py-24 px-6 md:px-12 lg:px-16">
-      <div className="mx-auto overflow-hidden bg-[#183A39] rounded-[8px] p-8 md:p-12 lg:p-0 lg:w-[1284px] lg:h-[504px] flex flex-col-reverse lg:flex-row gap-12 lg:gap-0 items-center justify-between lg:px-10">
+      <div className="mx-auto overflow-hidden bg-[#183A39] rounded-[16px] p-8 md:p-12 lg:p-0 lg:w-[1284px] lg:h-[504px] flex flex-col-reverse lg:flex-row gap-12 lg:gap-0 items-center justify-between lg:px-10">
 
         {/* Left Side: Content */}
         <div className="flex-1 space-y-8 lg:space-y-10">
@@ -58,19 +58,21 @@ export default function LearningHighlight() {
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="relative aspect-[4/3] w-full max-w-[650px] lg:max-w-none lg:w-[648px] lg:h-[464px] lg:aspect-none shrink-0"
+          className="relative aspect-[4/3] w-full max-w-[650px] lg:max-w-none lg:w-[648px] lg:h-[464px] lg:aspect-none shrink-0 lg:translate-x-4"
         >
-          {/* Badge */}
-          <div className="absolute top-[40%] -left-6 z-20 hidden lg:block">
-            <div className="relative bg-[#112d2d] border border-[#51D2A2]/30 px-6 py-3 rounded-full shadow-2xl">
-              <span className="font-jubilat text-[#51D2A2] text-lg font-medium">Takeaways</span>
-              {/* Pointer tail */}
-              <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 w-4 h-4 bg-[#112d2d] border-b border-r border-[#51D2A2]/30 rotate-45" />
+          <div className="absolute top-[22%] -left-20 z-20 hidden lg:block">
+            <div className="relative bg-[#183A39] border-[1px] border-[#51D2A2] rounded-full shadow-2xl w-[163px] h-[45px] flex items-center justify-center">
+              <span className="font-jubilat text-[#51D2A2] text-[20px] font-medium tracking-tight">
+                Takeaways
+              </span>
+              {/* Pointer tail - scaled for the new box size */}
+              <div className="absolute -bottom-[10px] right-8 w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[12px] border-t-[#51D2A2]" />
+              <div className="absolute -bottom-[7px] right-8 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[10px] border-t-[#183A39]" />
             </div>
           </div>
 
           {/* Main Image */}
-          <div className="relative w-full h-full rounded-[8px] lg:rounded-[8px] overflow-hidden shadow-2xl">
+          <div className="relative w-full h-full rounded-[16px] overflow-hidden shadow-2xl">
             <Image
               src="/clinician/learning.png" // Keeping the existing source for now, user can update the image file itself
               alt="Workbook illustration with stickers"

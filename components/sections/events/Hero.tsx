@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function EventsHero() {
   return (
-    <section className="relative w-full min-h-[50vh] md:min-h-[70vh] flex flex-col items-center justify-center text-center px-6 pt-4 pb-4 md:py-32 overflow-hidden bg-[#F0EEE6]">
+    <section className="relative w-full min-h-[50vh] md:min-h-[70vh] flex flex-col items-center justify-center text-center px-6 pt-4 pb-0 md:pt-32 md:pb-12 overflow-hidden bg-[#F0EEE6]">
       
       {/* Background Pattern */}
       <div className="absolute inset-0 z-0 pointer-events-none flex items-center justify-center">
@@ -30,13 +30,13 @@ export default function EventsHero() {
         />
       </div>
 
-      <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center">
+      <div className="relative z-10 max-w-5xl mx-auto flex flex-col items-center md:-mt-10 lg:-mt-16">
         {/* Main Hero Image Instead of Title */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          className="mb-8 md:mb-12"
+          className="mb-8 md:mb-8"
         >
           <Image
             src="/events/ehero.svg"
@@ -53,13 +53,15 @@ export default function EventsHero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="max-w-[320px] md:max-w-2xl lg:max-w-4xl xl:max-w-5xl space-y-1 md:space-y-2"
+          className="max-w-[320px] md:max-w-4xl lg:max-w-5xl xl:max-w-6xl space-y-0"
         >
-          <p className="font-jubilat text-[12px] md:text-[20px] lg:text-[20px] text-[#183A39] leading-[1.3] md:leading-[1.4] font-medium">
-            We&apos;ve Brought Our Playground To Health Festivals, Community Gatherings, And Children&apos;s Events. Including Hosting Our Own Healthy Hubba.
+          <p className="font-jubilat text-[12px] md:text-[20px] lg:text-[20px] text-[#183A39] leading-[1.1] font-medium">
+            <span className="whitespace-nowrap">We&apos;ve brought our playground to health festivals, community gatherings,</span><br />
+            <span className="whitespace-nowrap">and children&apos;s events. including hosting our own Healthy Hubba.</span>
           </p>
-          <p className="font-jubilat text-[12px] md:text-[20px] lg:text-[20px] text-[#183A39] leading-[1.3] md:leading-[1.4] font-medium">
-            These Spaces Help Us Test Ideas In The Real World And Refine What Children Naturally Return To.
+          <p className="font-jubilat text-[12px] md:text-[20px] lg:text-[20px] text-[#183A39] leading-[1.1] font-medium">
+            <span className="whitespace-nowrap">These spaces help us test ideas in the real world and refine what</span><br />
+            <span className="whitespace-nowrap">children naturally return to.</span>
           </p>
         </motion.div>
       </div>

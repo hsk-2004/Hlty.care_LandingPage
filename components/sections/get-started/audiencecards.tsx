@@ -113,9 +113,7 @@ export default function AudienceCards() {
                                         <span className="font-haptik-rotalic text-[14px] text-[#183A39] tracking-normal block lowercase first-letter:uppercase">
                                             {card.cta}
                                         </span>
-                                        <div className="w-8 h-8 rounded-full bg-[#183A39]/10 flex items-center justify-center group-hover:bg-[#183A39]/20 transition-colors">
-                                            <ArrowRight size={16} className="text-[#183A39]" />
-                                        </div>
+                                        <ArrowRight size={16} className="text-[#183A39]" />
                                     </div>
                                 </div>
                             </motion.div>

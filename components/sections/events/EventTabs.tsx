@@ -60,7 +60,7 @@ export default function EventTabs() {
   const activeTab = TABS.find((tab) => tab.id === activeTabId) || TABS[0];
 
   return (
-    <section className="bg-[#F0EEE6] pt-4 pb-10 md:py-16 px-6 md:px-12 lg:px-20 border-t border-[#183A39]/10">
+    <section className="bg-[#F0EEE6] pt-0 pb-10 md:pt-4 md:pb-16 px-6 md:px-12 lg:px-20">
       <div className="max-w-7xl mx-auto">
 
         {/* Horizontal Line with Dots */}

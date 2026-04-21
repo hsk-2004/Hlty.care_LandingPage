@@ -207,7 +207,7 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                                     {[
                                         { name: "Hlty Bites", href: "#" },
                                         { name: "Building Hlty Beings", href: "/about" },
-                                        { name: "Events", href: "#" },
+                                        { name: "Events", href: "/events" },
                                         { name: "Hlty Universe", href: "#" },
                                         { name: "Research Report", href: "#" }
                                     ].map((link) => (
@@ -233,7 +233,7 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                                         { name: "For Parents", href: "/parents" },
                                         { name: "For Clinicians", href: "/clinician" },
                                         { name: "For Employers", href: "/employers" },
-                                        { name: "WHO Letter", href: "#" },
+                                        { name: "WHO Letter", href: "/who" },
                                         { name: "Get Started", href: "/get-started" }
                                     ].map((link) => (
                                         <a

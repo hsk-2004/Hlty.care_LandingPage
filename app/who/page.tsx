@@ -19,7 +19,7 @@ export default function WhoPage() {
       <Navbar 
         variant="dark" 
         logoClassName="lg:-ml-2" 
-        bgTransparent 
+        desktopBgColor="#183A39"
         logo="/footer-logo.svg" 
         mobileLogo="/logo_.svg" 
         textColor="#E4DBCD" 

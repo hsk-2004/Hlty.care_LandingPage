@@ -12,8 +12,7 @@ const solutions = [
       "Sleep routines that actually hold",
       "Screen time and digital balance",
       "Movement & body awareness"
-    ],
-    cta: "Talk To Us"
+    ]
   },
   {
     category: "Digital Toolkit",
@@ -24,8 +23,7 @@ const solutions = [
       "Routine cue cards & visual systems",
       "Age-by-age health guides",
       "Food & sleep trackers"
-    ],
-    cta: "Explore Toolkit"
+    ]
   },
   {
     category: "Environmental",
@@ -36,8 +34,7 @@ const solutions = [
       "Nutrition & food label posters",
       "Parent corner setups",
       "Branded for your workplace"
-    ],
-    cta: "See Sample Poster"
+    ]
   },
   {
     category: "xoxoday Special",
@@ -48,8 +45,7 @@ const solutions = [
       "Live Q&A with pediatric experts",
       "Take-home kits for families",
       "Team participation tracking"
-    ],
-    cta: "View Calendar"
+    ]
   },
   {
     category: "Expert Access",
@@ -60,8 +56,7 @@ const solutions = [
       "Async question submission",
       "Curated answer library",
       "Condition-specific deep dives"
-    ],
-    cta: "Learn More"
+    ]
   },
   {
     category: "For HR & People Teams",
@@ -72,8 +67,7 @@ const solutions = [
       "Anonymous participation metrics",
       "Benchmark comparisons",
       "Renewal recommendations"
-    ],
-    cta: "Request Sample Report"
+    ]
   }
 ];
 
@@ -106,15 +100,15 @@ export default function SolutionsSection() {
           </motion.p>
         </div>
 
-        {/* Desktop View: 3-column Grid matching the reference */}
-        <div className="hidden lg:grid grid-cols-3 gap-8 xl:gap-10">
+        {/* Desktop View: Centered layout to prevent gaps */}
+        <div className="hidden lg:flex flex-wrap justify-center gap-4 xl:gap-6 max-w-[950px] mx-auto">
            {solutions.map((sol, idx) => (
              <SolutionCard key={idx} solution={sol} index={idx} />
            ))}
         </div>
 
         {/* Mobile View: Horizontal Scroll */}
-        <div className="lg:hidden flex gap-4 overflow-x-auto pb-10 scrollbar-hide -mx-6 px-6 snap-x snap-mandatory">
+        <div className="lg:hidden flex gap-2 overflow-x-auto pb-10 scrollbar-hide -mx-6 px-6 snap-x snap-mandatory">
            {solutions.map((sol, idx) => (
              <div key={idx} className="w-[280px] shrink-0 snap-center">
                 <SolutionCard solution={sol} index={idx} isMobile />
@@ -133,39 +127,34 @@ function SolutionCard({ solution, index, isMobile = false }: { solution: any, in
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: isMobile ? 0 : index * 0.1 }}
-      className={`bg-[#E5E1D3] rounded-[8px] md:rounded-[40px] ${isMobile ? 'p-4 h-[270px]' : 'p-8 md:p-10 lg:p-12 h-full'} flex flex-col border border-[#183A39]/5 shadow-sm`}
+      className={`bg-[#E4DBCD] rounded-[24px] md:rounded-[40px] ${isMobile ? 'w-[280px] min-h-[311px] p-6' : 'lg:w-[280px] lg:min-h-[311px] p-8 md:p-10 lg:p-7'} flex flex-col border border-[#BEB4A5] shadow-sm shrink-0`}
     >
       {/* Category Pill */}
-      <div className={`${isMobile ? 'mb-2' : 'mb-6'}`}>
-        <span className="inline-block px-4 py-1.5 rounded-full bg-white/40 border border-[#183A39]/10 font-haptik text-[10px] md:text-[11px] xl:text-[12px] uppercase tracking-wider font-bold text-[#183A39]">
+      <div className="mb-2">
+        <span className="inline-flex items-center h-[19px] w-auto px-3 rounded-full bg-[#F2F0E3] border border-[#BEB4A5] font-haptik text-[10px] md:text-[11px] xl:text-[12px] uppercase tracking-wider text-[#183A39]">
           {solution.category}
         </span>
       </div>
 
-      <h3 className={`font-jubilat ${isMobile ? 'text-[14px] mb-1' : 'text-[22px] md:text-[28px] mb-5'} text-[#183A39] font-bold leading-tight`}>
+      <h3 className="font-jubilat text-[16px] text-[#183A39] font-bold leading-tight mb-3">
         {solution.title}
       </h3>
 
-      <p className={`font-jubilat ${isMobile ? 'text-[12px] mb-2 leading-tight' : 'text-[14px] md:text-[16px] mb-6 leading-relaxed flex-1'} text-[#183A39]/80 italic md:not-italic overflow-hidden`}>
+      <p className={`font-jubilat text-[14px] ${isMobile ? 'mb-2 leading-tight' : 'mb-3 leading-snug'} text-[#183A39] italic md:not-italic`}>
         {solution.description}
       </p>
 
       {/* Bullet Points */}
-      <ul className={`${isMobile ? 'space-y-0.5 mb-2' : 'space-y-3 mb-10'}`}>
+      <ul className={`${isMobile ? 'space-y-0.5' : 'space-y-1'}`}>
         {solution.items.map((item: string, i: number) => (
-          <li key={i} className={`font-jubilat ${isMobile ? 'text-[12px] leading-tight' : 'text-[14px] md:text-[16px]'} text-[#183A39]/70 flex items-start gap-3`}>
-            <span className={`${isMobile ? 'mt-1.5' : 'mt-2'} w-1 h-1 bg-[#183A39]/40 rounded-full flex-shrink-0`} />
+          <li key={i} className="font-jubilat text-[14px] text-[#183A39] flex items-start gap-3 leading-tight">
+            <span className="mt-1.5 w-1 h-1 bg-[#183A39]/40 rounded-full flex-shrink-0" />
             {item}
           </li>
         ))}
       </ul>
 
-      {/* CTA Button */}
-      <div className={`${isMobile ? 'mt-4' : 'mt-auto'}`}>
-        <button className={`bg-[#183A39] text-[#F0EEE6] rounded-full font-haptik font-bold uppercase tracking-widest hover:bg-[#122b2a] transition-all flex items-center justify-center ${isMobile ? 'w-[90px] h-[32px] p-0 text-[8px] tracking-tight' : 'px-8 py-4 text-[12px] md:text-[13px] tracking-widest'}`}>
-           {solution.cta}
-        </button>
-      </div>
+
     </motion.div>
   );
 }

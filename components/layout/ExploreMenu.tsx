@@ -101,7 +101,7 @@ export default function ExploreMenu({ isOpen, onClose }: ExploreMenuProps) {
                     <div className="bg-[#F0EEE6] rounded-full p-0.5 pl-3 lg:pl-6 flex items-center justify-between border border-[#F0EEE6]/20 h-[36px] lg:h-auto">
                       <input
                         type="email"
-                        placeholder="placeholder@email.com"
+                        placeholder="name@email.com"
                         className="bg-transparent border-none outline-none font-haptik text-[10px] lg:text-[14px] text-[#183A39] w-full placeholder:text-[#183A39]/40 rounded-full autofill:shadow-[inset_0_0_0_1000px_#F0EEE6] autofill:[-webkit-text-fill-color:#183A39]"
                       />
                       <motion.button

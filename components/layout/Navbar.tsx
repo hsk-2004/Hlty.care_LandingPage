@@ -20,9 +20,10 @@ interface NavbarProps {
     cartBgColor?: string;
     showGetStarted?: boolean;
     mobileLogo?: string;
+    desktopBgColor?: string;
 }
 
-export default function Navbar({ variant = "light", customLinks, textColor, buttonColor, cartIcon, logo, showClose, onCloseHref, logoClassName, bgTransparent, cartBgColor, showGetStarted, mobileLogo }: NavbarProps) {
+export default function Navbar({ variant = "light", customLinks, textColor, buttonColor, cartIcon, logo, showClose, onCloseHref, logoClassName, bgTransparent, cartBgColor, showGetStarted, mobileLogo, desktopBgColor }: NavbarProps) {
     const [hidden, setHidden] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -58,7 +59,6 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
     const navLinks = customLinks || [
         { name: "+ EXPLORE", href: "/explore-dropdown" },
         { name: "WORKSHOPS", href: "/workshop" },
-        { name: "EVENTS", href: "/events" },
         { name: "FOR PARENTS", href: "/parents" },
         { name: "WHO LETTER", href: "/who" },
     ];
@@ -72,10 +72,12 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
             initial="visible"
             animate={(isOpen || isExploreOpen) ? "visible" : (hidden ? "hidden" : "visible")}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className={`fixed top-0 left-0 w-full z-[100] flex justify-center items-center p-4 lg:py-4 lg:px-6 ${(isOpen || isExploreOpen) ? "bg-[#183A39]" : "transition-colors duration-300 " + (isDark ? (bgTransparent ? "bg-transparent" : "bg-[#183A39] lg:bg-transparent") : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"))
+            className={`fixed top-0 left-0 w-full z-[100] flex justify-center items-center p-4 lg:py-4 lg:px-6 ${(isOpen || isExploreOpen) ? "bg-[#183A39]" : "transition-colors duration-300 " + (isDark ? (bgTransparent ? "bg-transparent" : `bg-[#183A39] ${desktopBgColor ? "" : "lg:bg-transparent"}`) : (scrolled ? "bg-background/80 backdrop-blur-md shadow-sm" : "bg-transparent"))
                 }`}
+            style={!isOpen && !isExploreOpen && isDark && !bgTransparent && desktopBgColor ? { backgroundColor: desktopBgColor } : {}}
         >
-            <div className={`flex justify-between items-center w-full max-w-7xl lg:px-2 ${isDark ? `lg:h-[56px] xl:h-[68px] ${bgTransparent ? "" : "lg:bg-[#E4DBCD]"} lg:rounded-[32px] lg:py-1.5` : ""}`}>
+            <div className={`flex justify-between items-center w-full max-w-7xl lg:px-2 ${isDark ? `lg:h-[56px] xl:h-[68px] ${bgTransparent ? "" : (desktopBgColor ? "" : "lg:bg-[#E4DBCD]")} lg:rounded-[32px] lg:py-1.5` : ""}`}
+                 style={!isOpen && !isExploreOpen && isDark && !bgTransparent && desktopBgColor ? { backgroundColor: desktopBgColor } : {}}>
                 {/* Logo Section */}
                 <div className="flex lg:flex-1 justify-start items-center">
                     <Link href="/" className={`flex items-center gap-2 group ${logoClassName || "lg:-ml-2"}`}>

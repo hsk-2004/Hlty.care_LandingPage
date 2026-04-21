@@ -14,7 +14,7 @@ export default function HeroSection() {
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
-            className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-[#183a39]/20 bg-[#e2dcc8]/30 w-fit"
+            className="inline-flex items-center justify-center px-4 py-1.5 rounded-full border border-[#BEB4A5] bg-[#E4DBCD] w-fit"
           >
             <span className="font-jubilat text-[11px] text-[#183A39] font-medium tracking-wide uppercase">
               IIM backed research
@@ -30,7 +30,7 @@ export default function HeroSection() {
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="hidden lg:inline-flex items-center justify-center lg:w-[152px] lg:h-[30px] rounded-full border border-[#183a39]/20 bg-[#e2dcc8]/30 w-fit lg:mb-6"
+              className="hidden lg:inline-flex items-center justify-center lg:w-[152px] lg:h-[30px] rounded-full border border-[#BEB4A5] bg-[#E4DBCD] w-fit lg:mb-6"
             >
               <span className="font-jubilat text-[11px] text-[#183A39] font-medium tracking-wide uppercase">
                 IIM backed research
@@ -77,7 +77,7 @@ export default function HeroSection() {
               <motion.button
                 whileHover={{ scale: 1.02, y: -2 }}
                 whileTap={{ scale: 0.98 }}
-                className="w-full lg:w-[320px] h-[48px] lg:h-[40px] flex items-center justify-center bg-[#183A39] text-[#F0EEE6] rounded-full font-haptik font-bold text-[11px] lg:text-[12px] uppercase tracking-[0.15em] hover:bg-[#122b2a] transition-all shadow-sm hover:shadow-md active:translate-y-0"
+                className="w-full lg:w-[320px] h-[48px] lg:h-[40px] flex items-center justify-start px-6 lg:px-8 bg-[#183A39] text-[#F0EEE6] rounded-full font-haptik font-bold text-[11px] lg:text-[12px] uppercase tracking-[0.15em] hover:bg-[#122b2a] transition-all shadow-sm hover:shadow-md active:translate-y-0"
               >
                 EXPLORE PLAYSHOPS
               </motion.button>

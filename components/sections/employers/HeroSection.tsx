@@ -14,16 +14,41 @@ export default function HeroSection() {
           <div className="flex-1 space-y-8 lg:space-y-12">
             {/* Top Badges */}
             <div className="flex items-center gap-3 lg:gap-4">
-              <div className="px-5 py-2.5 lg:p-0 rounded-full bg-[#E5E1D3] border border-[#183A39]/10 lg:w-[132px] lg:h-[32px] flex items-center justify-center">
+              <div className="w-[132px] h-[32px] rounded-full bg-[#E4DBCD] border border-[#BEB4A5] flex items-center justify-center">
                 <span className="font-jubilat text-[13px] md:text-[14px] text-[#183A39]/80 font-medium whitespace-nowrap">For Workplaces</span>
               </div>
-              <div className="px-5 py-2.5 lg:p-0 rounded-full bg-white/40 border border-[#183A39]/10 lg:w-[210px] lg:h-[32px] flex items-center justify-center gap-2">
-                <span className="font-jubilat text-[13px] md:text-[14px] text-[#183A39]/60 font-medium leading-none">In collaboration with</span>
-                <span className="font-jubilat text-[13px] md:text-[14px] text-[#183A39]/90 font-bold leading-none">xoxo<span className="text-blue-500">day</span></span>
+              <div className="w-[210px] h-[32px] rounded-full bg-[#F2F0E3] border border-[#BEB4A5] flex items-center justify-center gap-2">
+                <span className="font-haptik text-[11px] md:text-[12px] text-[#183A39]/60 leading-none">In collaboration with</span>
+                <div className="relative w-[52px] h-[13px]">
+                  <Image 
+                    src="/employer/xoxo.svg" 
+                    alt="xoxoday logo" 
+                    fill 
+                    className="object-contain"
+                  />
+                </div>
               </div>
             </div>
 
             <div className="space-y-6 lg:space-y-8">
+              {/* Mobile Hero Image */}
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1 }}
+                className="lg:hidden mx-auto"
+              >
+                <div className="relative w-[379px] h-[379px] mx-auto rounded-[8px] overflow-hidden">
+                  <Image 
+                    src="/employer/e1.png" 
+                    alt="Healthy Families"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+              </motion.div>
+
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -59,12 +84,12 @@ export default function HeroSection() {
             </motion.div>
           </div>
 
-          {/* Image Column */}
+          {/* Image Column (Desktop Only) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
-            className="flex-shrink-0 relative lg:ml-auto"
+            className="hidden lg:block flex-shrink-0 relative lg:ml-auto"
           >
             <div className="relative w-full aspect-square lg:w-[711px] lg:h-[711px] rounded-[32px] lg:rounded-[20px] overflow-hidden">
               <Image 

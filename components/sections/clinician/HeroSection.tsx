@@ -52,9 +52,7 @@ export default function HeroSection() {
                 className="inline-flex items-center justify-between w-[339px] h-[40px] gap-5 px-6 py-0 bg-[#183A39] text-[#F0EEE6] rounded-full font-haptik font-bold text-[13px] uppercase tracking-[0.12em] hover:bg-[#0f2827] transition-colors duration-200 shadow-md"
               >
                 <span>DOWNLOAD SAMPLE POSTERS</span>
-                <span className="flex items-center justify-center w-7 h-7 rounded-full bg-[#F0EEE6]/15 shrink-0">
-                  <ArrowDown size={15} strokeWidth={2.5} />
-                </span>
+                <ArrowDown size={15} strokeWidth={2.5} />
               </button>
             </div>
           </motion.div>
