@@ -248,7 +248,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                                     onClick={() => setIsOpen(false)} 
                                     className="w-[382px] h-[40px] bg-[#5EE2A0] text-[#183A39] rounded-full font-haptik text-[18px] tracking-wide shadow-lg flex items-center justify-center"
                                 >
-                                    CART
+                                    PRODUCTS
                                 </Link>
                             </motion.div>
                         </div>

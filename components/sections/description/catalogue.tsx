@@ -21,7 +21,9 @@ export default function Catalogue() {
       <div className="max-w-[1320px] mx-auto">
         {/* Back Link */}
         <Link
-          href="/products"
+          href="https://hlty-beings.myshopify.com/"
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-[#183A39] font-jubilat text-lg md:text-xl mb-8 hover:opacity-70 transition-opacity"
         >
           <ChevronLeft className="w-5 h-5" />
