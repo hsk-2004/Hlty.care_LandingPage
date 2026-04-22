@@ -1,6 +1,6 @@
 "use client";
 
-import { ShoppingBag, Menu, X } from "lucide-react";
+import { Store, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
@@ -140,7 +140,7 @@ export default function Navbar({ variant = "light", customLinks, textColor, butt
                         style={{ backgroundColor: cartBgColor || "#183A39" }}
                         className={`hidden lg:flex lg:w-[44px] lg:h-[44px] xl:w-[58px] xl:h-[58px] items-center justify-center rounded-full shadow-md ${cartBgColor === "#51D2A2" ? "text-[#183A39]" : "text-[#F0EEE6]"}`}
                     >
-                        {cartIcon ? <img src={cartIcon} alt="Cart" className="lg:w-[22px] lg:h-[22px] xl:w-[30px] xl:h-[30px]" /> : <ShoppingBag size={20} className="w-4 h-4 xl:w-5 xl:h-5" />}
+                        {cartIcon ? <img src={cartIcon} alt="Cart" className="lg:w-[22px] lg:h-[22px] xl:w-[30px] xl:h-[30px]" /> : <Store size={20} className="w-4 h-4 xl:w-5 xl:h-5" />}
                     </Link>
 
                     {showClose ? (
