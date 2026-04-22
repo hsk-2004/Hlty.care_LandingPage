@@ -11,7 +11,7 @@ export default function CollaborationBanner() {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="w-[380px] max-w-full h-[157px] lg:w-[1037px] lg:h-[120px] mx-auto bg-[#E5E1D3] rounded-[20px] p-4 md:p-12 lg:p-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between"
+        className="w-[380px] max-w-full h-[157px] lg:w-[1037px] lg:h-[120px] mx-auto bg-[#E5E1D3] rounded-[8px] lg:rounded-[20px] p-4 md:p-12 lg:p-4 flex flex-col lg:flex-row items-center justify-center lg:justify-between"
       >
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-12 w-full lg:px-10">
 
@@ -24,15 +24,15 @@ export default function CollaborationBanner() {
                 alt="Hlty Beings Logo"
                 width={215}
                 height={51}
-                className="h-8 md:h-10 lg:w-[215px] lg:h-[51px] object-contain"
+                className="w-[163px] h-[39px] lg:w-[215px] lg:h-[51px] object-contain"
               />
             </div>
 
             {/* X divider icon */}
-            <div className="text-[#183A39]/30 text-xl lg:text-xl font-light">✕</div>
+            <div className="text-[#183A39] text-[17px] lg:text-xl font-light">✕</div>
 
             {/* Xoxoday Logo Simulation */}
-            <div className="relative w-[80px] h-[30px] lg:w-[181px] lg:h-[61px]">
+            <div className="relative w-[137px] h-[46px] lg:w-[181px] lg:h-[61px]">
               <Image
                 src="/employer/xoxo.svg"
                 alt="xoxoday logo"
@@ -43,10 +43,10 @@ export default function CollaborationBanner() {
           </div>
 
           {/* Right Column: Narrative Copy */}
-          <div className="max-w-[580px] text-center lg:text-left">
+          <div className="max-w-[580px] text-left">
             <p className="font-jubilat text-xs md:text-sm lg:text-[14px] text-[#183A39]/80 leading-snug font-normal">
               Together, we&apos;ve designed a workplace wellbeing programme that combines
-              Hlty Beings&apos; family health systems with xoxoday&apos;s employee experience
+              Hlty Beings&apos; family health systems with xoxo days&apos; employee experience
               expertise so your team gets more than perks. They get real change.
             </p>
           </div>

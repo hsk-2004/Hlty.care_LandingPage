@@ -108,7 +108,7 @@ export default function SolutionsSection() {
         </div>
 
         {/* Mobile View: Horizontal Scroll */}
-        <div className="lg:hidden flex gap-2 overflow-x-auto pb-10 scrollbar-hide -mx-6 px-6 snap-x snap-mandatory">
+        <div className="lg:hidden flex gap-2 overflow-x-auto overflow-y-hidden touch-pan-x pb-10 scrollbar-hide -mx-6 px-6 snap-x snap-mandatory">
            {solutions.map((sol, idx) => (
              <div key={idx} className="w-[280px] shrink-0 snap-center">
                 <SolutionCard solution={sol} index={idx} isMobile />
@@ -127,7 +127,7 @@ function SolutionCard({ solution, index, isMobile = false }: { solution: any, in
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: isMobile ? 0 : index * 0.1 }}
-      className={`bg-[#E4DBCD] rounded-[24px] md:rounded-[40px] ${isMobile ? 'w-[280px] min-h-[311px] p-6' : 'lg:w-[280px] lg:min-h-[311px] p-8 md:p-10 lg:p-7'} flex flex-col border border-[#BEB4A5] shadow-sm shrink-0`}
+      className={`bg-[#E4DBCD] rounded-[8px] lg:rounded-[20px] ${isMobile ? 'w-[280px] h-[270px] p-6' : 'lg:w-[280px] lg:min-h-[311px] p-8 md:p-10 lg:p-7'} flex flex-col border border-[#BEB4A5] shadow-sm shrink-0`}
     >
       {/* Category Pill */}
       <div className="mb-2">
