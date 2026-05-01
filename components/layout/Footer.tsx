@@ -217,8 +217,9 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                                         { name: "Hlty Bites", href: "#" },
                                         { name: "Building Hlty Beings", href: "/about" },
                                         { name: "Events", href: "/events" },
-                                        { name: "Hlty Universe", href: "#" },
-                                        { name: "Research Report", href: "#" }
+                                        { name: "Characters", href: "/character" },
+                                        { name: "Research Report", href: "#" },
+                                        { name: "Shop", href: "https://hlty-beings.myshopify.com/" }
                                     ].map((link) => (
                                         <a
                                             key={link.name}
