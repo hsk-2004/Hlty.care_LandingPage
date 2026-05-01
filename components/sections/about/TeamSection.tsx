@@ -14,7 +14,13 @@ const teamMembers = [
       "A pharmacist and IIM Kozhikode graduate\nwith 22 years in healthcare, he’s also a sci-fi\nauthor and storytelling professor, which\nexplains a lot about how Hlty Beings thinks.\nHis background blends clinical knowledge,\nbusiness strategy, and narrative but what\ndrives him most is a simple belief: that\nhealth should feel accessible, playful, and\nworth returning to. Not a burden you\nmanage. A life you actually want.",
     ],
     image: "/about/man.png",
-    imageDimensions: { width: 186, height: 227 }
+    imageDimensions: { width: 186, height: 227 },
+    socials: [
+      { platform: "linkedin", url: "https://www.linkedin.com/in/surajprasad/", iconPath: "/about/linkdin.svg" },
+      { platform: "youtube", url: "https://www.youtube.com/@theunhealthyme118", iconPath: "/about/yt.svg" },
+      { platform: "instagram", url: "#", iconPath: "/about/insta.svg" },
+      { platform: "x", url: "https://x.com/HealthPotholes", iconPath: "/about/x.svg" },
+    ]
   },
   {
     name: "Ankita Dey",
@@ -66,12 +72,12 @@ export default function TeamSection() {
                 delay: idx * 0.15,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="relative w-[585px] h-[552px] rounded-[20px] overflow-hidden border-[6px] border-[#E5E2D9] flex-shrink-0"
+              className="relative w-[585px] h-[650px] rounded-[40px] overflow-hidden border-[10px] border-white flex-shrink-0"
               style={{ backgroundColor: member.bgColor }}
             >
               <div className="flex flex-col h-full">
                 {/* Text Content */}
-                <div className="p-8 pb-4 flex-1">
+                <div className="p-8 pb-10 flex-1">
                   <h3
                     className="font-jubilat text-[32px] font-normal leading-tight mb-1"
                     style={{ color: member.textColor }}
@@ -102,6 +108,27 @@ export default function TeamSection() {
                         ))}
                       </p>
                     ))}
+                  </div>
+
+                  {/* Social Icons */}
+                  <div className="flex gap-6 mt-8">
+                    {member.socials?.map((social, sIdx) => {
+                      return (
+                        <a
+                          key={sIdx}
+                          href={social.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="transition-transform hover:scale-110 opacity-90 hover:opacity-100"
+                        >
+                          <img 
+                            src={social.iconPath} 
+                            alt={social.platform} 
+                            className="w-7 h-7 object-contain"
+                          />
+                        </a>
+                      );
+                    })}
                   </div>
                 </div>
 
