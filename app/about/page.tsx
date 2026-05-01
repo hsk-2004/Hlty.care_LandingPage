@@ -6,6 +6,7 @@ import BehindTheScenesSection from "@/components/sections/about/BehindTheScenesS
 import AdvisorsSection from "@/components/sections/about/AdvisorsSection";
 import PartnersSection from "@/components/sections/about/PartnersSection";
 import TeamSection from "@/components/sections/about/TeamSection";
+import LatestSection from "@/components/sections/character/LatestSection";
 
 export const metadata = {
   title: "About Us | Hlty.care",
@@ -22,6 +23,7 @@ export default function AboutPage() {
       <BehindTheScenesSection />
       <AdvisorsSection />
       <PartnersSection />
+      <LatestSection />
       <Footer />
     </main>
   );
