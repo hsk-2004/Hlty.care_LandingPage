@@ -46,7 +46,7 @@ export default function ConversationSection() {
 
                             {/* CTA Button */}
                             <button className="w-full flex items-center justify-between bg-transparent border border-[#183A39]/30 rounded-full px-6 py-3 group hover:bg-[#183A39]/5 transition-colors">
-                                <span className="font-haptik text-[13px] text-[#183A39] tracking-wider">
+                                <span className="font-haptik text-[18px] text-[#183A39] tracking-wider">
                                     Check Out Our Summer Camp
                                 </span>
                                 <ArrowRight size={18} className="text-[#183A39]" />
@@ -87,7 +87,7 @@ export default function ConversationSection() {
 
                             {/* CTA Button */}
                             <button className="inline-flex items-center gap-3 bg-[#183A39] border border-[#F0EEE6]/30 rounded-full px-6 py-3 group hover:bg-[#183A39]/90 transition-colors">
-                                <span className="font-haptik text-[13px] text-[#F0EEE6] tracking-wider">
+                                <span className="font-haptik text-[18px] text-[#F0EEE6] tracking-wider">
                                     Start A Conversation
                                 </span>
                                 <ArrowRight size={18} className="text-[#F0EEE6]" />

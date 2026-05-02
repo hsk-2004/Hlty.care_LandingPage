@@ -125,7 +125,6 @@ const PrivacyPolicy = () => {
                 logo={scrolled ? undefined : "/footer-logo.svg"}
                 mobileLogo="/logo_.svg"
                 textColor={scrolled ? "#183A39" : "#E4DBCD"}
-                cartIcon="/get-started/cart.svg"
                 showGetStarted
                 cartBgColor="#51D2A2"
                 buttonColor="#51D2A2"

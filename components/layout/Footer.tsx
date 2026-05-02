@@ -214,7 +214,7 @@ export default function Footer({ hideTopDecoration = false }: FooterProps) {
                                 </h3>
                                 <nav className="flex flex-col space-y-4 lg:space-y-5">
                                     {[
-                                        { name: "Hlty Bites", href: "#" },
+
                                         { name: "Building Hlty Beings", href: "/about" },
                                         { name: "Events", href: "/events" },
                                         { name: "Characters", href: "/character" },

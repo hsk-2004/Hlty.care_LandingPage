@@ -53,15 +53,7 @@ export default function Offerings() {
                         </motion.button>
                     </Link>
 
-                    <Link href="/get-started" className="col-span-2 w-full md:w-auto">
-                        <motion.button
-                            whileHover={{ scale: 1.02, y: -2 }}
-                            whileTap={{ scale: 0.98 }}
-                            className="border border-[#183A39] text-[#183A39] px-6 md:px-10 h-[40px] md:h-auto py-0 md:py-4 rounded-full font-haptik text-[12px] md:text-[16px] font-medium tracking-[0.1em] hover:bg-[#183A39]/5 transition-all w-[281px] md:w-auto md:min-w-[200px] flex items-center justify-center mx-auto"
-                        >
-                            TAKE A 2 MIN QUIZ
-                        </motion.button>
-                    </Link>
+
                 </motion.div>
             </div>
         </section>

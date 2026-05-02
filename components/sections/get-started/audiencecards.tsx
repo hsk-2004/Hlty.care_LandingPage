@@ -110,7 +110,7 @@ export default function AudienceCards() {
 
                                     {/* CTA */}
                                     <div className="absolute bottom-5 left-5 right-5 pt-4 border-t-2 border-black flex items-center justify-between">
-                                        <span className="font-haptik-rotalic text-[14px] text-[#183A39] tracking-normal block lowercase first-letter:uppercase">
+                                        <span className="font-haptik-rotalic text-[18px] text-[#183A39] tracking-normal block lowercase first-letter:uppercase">
                                             {card.cta}
                                         </span>
                                         <ArrowRight size={16} className="text-[#183A39]" />

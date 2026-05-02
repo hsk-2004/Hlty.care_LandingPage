@@ -44,11 +44,12 @@ export default function CharacterHero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="max-w-[320px] md:max-w-2xl lg:max-w-4xl xl:max-w-5xl space-y-1 md:space-y-2 mb-4 md:mb-12"
         >
-          <p className="font-jubilat text-[12px] md:text-[20px] lg:text-[20px] text-[#183A39] leading-[1.3] md:leading-[1.4] font-medium">
-            We&apos;ve Brought Our Playground To Health Festivals, Community Gatherings, And Children&apos;s Events. Including Hosting Our Own Healthy Hubba.
-          </p>
-          <p className="font-jubilat text-[12px] md:text-[20px] lg:text-[20px] text-[#183A39] leading-[1.3] md:leading-[1.4] font-medium">
-            These Spaces Help Us Test Ideas In The Real World And Refine What Children Naturally Return To.
+          <p className="font-jubilat text-[12px] md:text-[20px] lg:text-[20px] text-[#183A39] leading-[1.3] md:leading-[1.4] font-medium lg:whitespace-nowrap">
+            HAHA Squad Is The Storytelling Arm Of Hlty Beings. A Growing Library<br />
+            Of Preschool-Friendly Videos That Introduce Food, Movement, Sleep,<br />
+            Emotions, And Routines Through Characters Children Return To. Each<br />
+            Episode Is Built Around Repetition, Familiarity, And Small Everyday<br />
+            Actions. Not Rules Or Lectures.
           </p>
         </motion.div>
 

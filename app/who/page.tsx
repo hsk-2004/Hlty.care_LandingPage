@@ -23,7 +23,6 @@ export default function WhoPage() {
         logo="/footer-logo.svg" 
         mobileLogo="/logo_.svg" 
         textColor="#E4DBCD" 
-        cartIcon="/get-started/cart.svg" 
         cartBgColor="#51D2A2"
         showGetStarted={true}
       />
