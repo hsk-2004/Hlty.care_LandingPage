@@ -34,17 +34,8 @@ export default function DemandsSection() {
     <>
       {/* Mobile Demands Content */}
       <div className="lg:hidden content-stretch flex flex-col gap-[20.835px] items-start overflow-clip relative shrink-0 w-full mb-10">
-        <div className="content-stretch flex gap-[8px] items-end justify-center relative shrink-0 w-full">
-          <div className="grid-cols-[max-content] grid-rows-[max-content] inline-grid leading-[0] place-items-start relative shrink-0">
-            <div className="col-1 h-[38.773px] ml-[16.73px] mt-[17.16px] relative row-1 w-[29.102px]">
-              <img alt="" className="absolute block inset-0 max-w-none size-full" src={mobImgGroup1339} />
-            </div>
-            <div className="col-1 h-[21.478px] ml-0 mt-0 relative row-1 w-[21.107px]">
-              <div className="absolute inset-[-12.13%_-12.34%]">
-                <img alt="" className="block max-w-none size-full" src={mobImgGroup1340} />
-              </div>
-            </div>
-          </div>
+        <div className="content-stretch flex gap-[12px] items-center justify-center relative shrink-0 w-full">
+          <img src="/siren.svg" alt="Siren" className="w-[45px] h-[55px] shrink-0" />
           <p className="font-jubilat text-[#e4dbcd] text-[20px] whitespace-nowrap">Three Things We're Demanding</p>
         </div>
         <div className="w-full flex gap-[8px] items-stretch overflow-x-auto scrollbar-hide px-6 relative">
@@ -64,7 +55,10 @@ export default function DemandsSection() {
 
       {/* Desktop Demands Content */}
       <div className="hidden lg:flex lg:flex-col lg:items-center lg:relative lg:w-[910px] lg:h-auto mt-[200px]" data-node-id="2790:7478">
-        <h2 className="text-[#e4dbcd] text-[32px] font-jubilat uppercase mb-[40px] w-auto h-auto text-center">Three Things We're Demanding</h2>
+        <div className="flex items-center justify-center gap-6 mb-[40px]">
+          <img src="/siren.svg" alt="Siren" className="w-[88px] h-[107px] shrink-0" />
+          <h2 className="text-[#e4dbcd] text-[32px] font-jubilat uppercase w-auto h-auto text-center">Three Things We're Demanding</h2>
+        </div>
         <div className="flex gap-[20px] items-center relative w-[910px] h-[336px]" data-node-id="2790:7480">
           {demands.map((demand, i) => (
             <div key={i} className="bg-[#51d2a2] border border-[#e4dbcd] flex flex-col items-start justify-between p-[20px] rounded-[20px] w-[290px] h-full relative" data-node-id={demand.frameId}>
@@ -76,10 +70,7 @@ export default function DemandsSection() {
             </div>
           ))}
         </div>
-        <div className="absolute left-[20px] top-[-54px] w-[88px] h-[107px]">
-          <img src={imgGroup1339} className="absolute left-[32px] top-[33px] w-[56px] h-[74px]" alt="" />
-          <img src={imgGroup1340} className="absolute left-[0px] top-[0px] w-[40px] h-[41px]" alt="" />
-        </div>
+
       </div>
     </>
   );
