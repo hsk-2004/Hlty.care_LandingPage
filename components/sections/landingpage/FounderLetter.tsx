@@ -62,7 +62,7 @@ export default function FounderLetter() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-                    className="bg-white rounded-[7.69px] lg:rounded-[16px] border-[10px] lg:border-[20px] border-[#E5E2D9] shadow-2xl p-6 lg:p-14 relative w-[336px] lg:w-[699px] h-auto min-h-[668px] lg:h-[1054px] overflow-visible"
+                    className="bg-white rounded-[7.69px] lg:rounded-[16px] border-[10px] lg:border-[20px] border-[#E5E2D9] shadow-2xl p-6 lg:p-14 relative w-[336px] lg:w-[699px] h-auto min-h-[668px] lg:min-h-[1054px] lg:h-auto overflow-visible"
                 >
                     {/* Founder Photo & Paperclip */}
                     <div className="absolute -top-[-4px] -right-[-15px] lg:right-[50px] lg:top-[10px] w-[78.83px] lg:w-[165px] h-[96.14px] lg:h-[200px] transform rotate-[3.8deg] z-20">
@@ -87,7 +87,7 @@ export default function FounderLetter() {
                     </div>
  
                     {/* Text Content - Scaling text for the smaller container */}
-                    <div className="max-w-[95%] font-jubilat text-[#2D4341] space-y-0.5 lg:space-y-1.5 -mt-[10px] md:-mt-[2px] lg:-mt-[2px] pt-0 md:pt-0 lg:pt-[2px]">
+                    <div className="max-w-[95%] font-jubilat text-[#2D4341] space-y-0.5 lg:space-y-1.5 -mt-[10px] md:-mt-[2px] lg:-mt-[2px] pt-0 md:pt-0 lg:pt-[2px] pb-6 lg:pb-12">
                         <h1 className="font-jubilat text-[24px] lg:text-[48px] font-medium leading-[1.1] mb-3 lg:mb-8 text-[#1A2E2C]">
                             A letter from <br className="hidden md:block" /> the Founder
                         </h1>

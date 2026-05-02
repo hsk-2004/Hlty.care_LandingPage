@@ -2,35 +2,38 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const cards = [
   {
-    category: "Story Books",
+    category: "Books",
     title: "The Hlty Adventures",
     description: "Illustrated storybooks where children become the hero, making healthy choices feel natural and cool.",
-    buttonText: "Explore",
-    image: "/landingpage/intro1.png" // Placeholder - User will import
+    buttonText: "Visit Store",
+    link: "https://www.amazon.in/l/27943762031?ie=UTF8&marketplaceID=A21TJRUUN4KGV&product=B0G57Z6XR9&me=A3NECL0ZT505LM",
+    image: "/landingpage/intro1.png"
   },
   {
     category: "Workshops",
     title: "Playshops + Camps",
     description: "Live 2-hour sessions disguised as escape rooms and creative labs attended by 100+ children so far.",
     buttonText: "Book Session",
-    image: "/landingpage/intro2.png" // Placeholder - User will import
+    image: "/landingpage/intro2.png"
   },
   {
     category: "Games",
     title: "Uh-oh & Boing",
     description: "A snakes and ladder game with added fun elements that builds healthy habits, facilitates conversations in families.",
     buttonText: "Explore",
-    image: "/landingpage/intro3.png" // Placeholder - User will import
+    image: "/landingpage/intro3.png"
   },
   {
     category: "Activity Bundles",
     title: "Free Digital Downloads",
     description: "Activities and guides to keep your kids active and engaged, all in one place.",
-    buttonText: "Explore",
-    image: "/landingpage/intro4.png" // Placeholder - User will import
+    buttonText: "Check them out",
+    link: "https://hlty-beings.myshopify.com/",
+    image: "/landingpage/intro4.png"
   }
 ];
 
@@ -77,7 +80,7 @@ export default function IntroStory() {
                 </div>
 
                 {/* Badge */}
-                <div className="flex items-center justify-center bg-[#FAF9F6] border border-[#183A39]/10 rounded-full w-[82px] h-[19px] flex-shrink-0">
+                <div className="flex items-center justify-center bg-[#FAF9F6] border border-[#183A39]/10 rounded-full px-3 h-[24px] md:h-[26px] w-fit flex-shrink-0">
                   <span className="font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[11px] xl:text-[13px] text-[#183A39] whitespace-nowrap">
                     {card.category}
                   </span>
@@ -96,10 +99,20 @@ export default function IntroStory() {
 
               {/* Button */}
               <div className="mt-4 md:mt-6 lg:mt-4">
-                {index === 1 ? (
-                  <button className="bg-[#183A39] text-white rounded-full flex items-center justify-center w-[105px] h-[32px] lg:w-[100px] lg:h-[30px] xl:w-[105px] xl:h-[32px] font-haptik text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[11px] xl:text-[12px] font-medium hover:bg-[#183A39]/90 transition-colors shadow-sm whitespace-nowrap">
-                    {card.buttonText}
-                  </button>
+                {index === 0 || index === 1 || index === 3 ? (
+                  card.link ? (
+                    <Link
+                      href={card.link}
+                      target="_blank"
+                      className="bg-[#183A39] text-white rounded-full flex items-center justify-center px-4 h-[32px] lg:h-[30px] xl:h-[32px] w-fit min-w-[105px] font-haptik text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[11px] xl:text-[12px] font-medium hover:bg-[#183A39]/90 transition-colors shadow-sm whitespace-nowrap"
+                    >
+                      {card.buttonText}
+                    </Link>
+                  ) : (
+                    <button className="bg-[#183A39] text-white rounded-full flex items-center justify-center px-4 h-[32px] lg:h-[30px] xl:h-[32px] w-fit min-w-[105px] font-haptik text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[11px] xl:text-[12px] font-medium hover:bg-[#183A39]/90 transition-colors shadow-sm whitespace-nowrap">
+                      {card.buttonText}
+                    </button>
+                  )
                 ) : (
                   <button className="border-2 border-[#183A39]/40 text-[#183A39] rounded-full flex items-center justify-center w-[106px] h-[32px] md:w-[clamp(110px,25vw,140px)] lg:w-[120px] lg:h-[36px] xl:w-[130px] xl:h-[38px] font-jubilat text-[clamp(12px,2vw,14px)] md:text-[14px] lg:text-[12px] xl:text-[13px] font-bold cursor-default whitespace-nowrap">
                     Coming Soon
